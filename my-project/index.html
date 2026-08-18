@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCIE3314 Crops and Cropping Systems - Lecture Series 2026</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #27348B 0%, #1a2461 100%);
+      color: #333;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin-bottom: 5px;
+    }
+
+    .institution {
+      font-size: 1em;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    .lecture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .lecture-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .lecture-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .lecture-number {
+      background: #27348B;
+      color: white;
+      padding: 16px 20px;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    .lecture-content {
+      padding: 24px;
+    }
+
+    .lecture-title {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #27348B;
+      line-height: 1.4;
+    }
+
+    .lecture-description {
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.95em;
+    }
+
+    .lecture-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+      font-size: 0.85em;
+      color: #888;
+    }
+
+    .lecture-icon {
+      font-size: 1.2em;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 60px;
+      padding: 20px;
+      opacity: 0.8;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-box h2 {
+      color: #27348B;
+      margin-bottom: 16px;
+      font-size: 1.5em;
+    }
+
+    .info-box p {
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .info-box ul {
+      list-style-position: inside;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .lecture-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SCIE3314 Crops and Cropping Systems</h1>
+      <p class="subtitle">Lecture Series 2026</p>
+      <p class="institution">The University of Western Australia</p>
+    </header>
+
+    <div class="info-box">
+      <h2>About This Course</h2>
+      <p>This unit provides a comprehensive introduction to crop production in temperate agricultural systems, with particular emphasis on Western Australian cropping systems. The lectures integrate agronomic principles, crop physiology, environmental factors, and practical management strategies.</p>
+    </div>
+
+    <div class="lecture-grid">
+      <a href="presentations-uwa/L01_Introduction_to_Cropping_Systems/index.html" class="lecture-card">
+        <div class="lecture-number">Lecture 01</div>
+        <div class="lecture-content">
+          <div class="lecture-title">Introduction to Cropping Systems</div>
+          <div class="lecture-description">
+            Overview of cropping systems, the farming enterprise context, and the Mediterranean climate challenge facing WA agriculture.
+          </div>
+          <div class="lecture-meta">
+            <span class="lecture-icon">📚</span>
+            <span>Foundation concepts</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="presentations-uwa/L02_Crop_Modelling/index.html" class="lecture-card">
+        <div class="lecture-number">Lecture 02</div>
+        <div class="lecture-content">
+          <div class="lecture-title">Crop Modelling</div>
+          <div class="lecture-description">
+            Crop simulation models as tools for decision-making, yield prediction, and understanding G × E × M interactions.
+          </div>
+          <div class="lecture-meta">
+            <span class="lecture-icon">🔬</span>
+            <span>Tools & methodology</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="presentations-uwa/L03_Soil_Sampling_Fertiliser_Recommendation/index.html" class="lecture-card">
+        <div class="lecture-number">Lecture 03</div>
+        <div class="lecture-content">
+          <div class="lecture-title">Soil Sampling & Fertiliser Recommendation</div>
+          <div class="lecture-description">
+            Soil testing protocols, nutrient budgeting, and evidence-based fertiliser recommendations for crop production.
+          </div>
+          <div class="lecture-meta">
+            <span class="lecture-icon">🌱</span>
+            <span>Soil & nutrition</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="presentations-uwa/L04_L05_Climate_and_Australian_Agriculture/index.html" class="lecture-card">
+        <div class="lecture-number">Lecture 04-05</div>
+        <div class="lecture-content">
+          <div class="lecture-title">Climate and Australian Agriculture</div>
+          <div class="lecture-description">
+            Climate patterns, rainfall variability, and their impact on Australian cropping systems and management strategies.
+          </div>
+          <div class="lecture-meta">
+            <span class="lecture-icon">🌦️</span>
+            <span>Environment & climate</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="presentations-uwa/L04_WA_Climate/index.html" class="lecture-card">
+        <div class="lecture-number">Lecture 04</div>
+        <div class="lecture-content">
+          <div class="lecture-title">Western Australian Climate</div>
+          <div class="lecture-description">
+            Deep dive into WA's Mediterranean climate, seasonal patterns, rainfall zones, and implications for crop production.
+          </div>
+          <div class="lecture-meta">
+            <span class="lecture-icon">☀️</span>
+            <span>Regional context</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="presentations-uwa/L06/index.html" class="lecture-card">
+        <div class="lecture-number">Lecture 06</div>
+        <div class="lecture-content">
+          <div class="lecture-title">Agronomy of Cereals</div>
+          <div class="lecture-description">
+            Growth stages, yield formation, compensation mechanisms, water-use efficiency, and grain quality management in cereals.
+          </div>
+          <div class="lecture-meta">
+            <span class="lecture-icon">🌾</span>
+            <span>Crop production</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="info-box">
+      <h2>Technical Information</h2>
+      <p><strong>Presentation Format:</strong> RevealJS HTML slides with speaker notes</p>
+      <p><strong>Navigation:</strong> Use arrow keys or on-screen controls to navigate slides. Press 'S' for speaker notes view.</p>
+      <p><strong>Repository:</strong> <a href="https://github.com/00113844/SCIE3314_Lectures_2026" style="color: #27348B; text-decoration: none; font-weight: 600;">github.com/00113844/SCIE3314_Lectures_2026</a></p>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 The University of Western Australia</p>
+      <p>Generated with the SCIE3314 RevealJS Pipeline</p>
+    </footer>
+  </div>
+</body>
+</html>
