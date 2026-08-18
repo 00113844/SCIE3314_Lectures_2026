@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agronomy of Cereals: Wheat and Barley &mdash; SCIE3314, Lecture 06</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme" />
+<link rel="stylesheet" href="../_shared/uwa-revealjs.css" />
+<link rel="stylesheet" href="../_shared/layouts.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/style.css" />
+
+<style>
+  /* ---- Per-deck overrides for L06 ----------------------------------------
+     BUG FIX (local): _shared/uwa-revealjs.css sets
+       .reveal .slides section li { display: list-item !important; }
+     and forces `list-style: disc/decimal outside` on section ul/ol. Both win
+     on specificity over layouts.css's .journey-list / .concepts-list rules,
+     so those two components render with a DOUBLE marker (native bullet plus
+     the styled badge) and the text wraps underneath instead of sitting beside
+     the badge. Restated here at higher specificity. The same bug affects L01,
+     L04_L05 and L04_WA_Climate; the durable fix is to raise the specificity of
+     these rules in _shared/layouts.css, which is left for a deliberate
+     shared-CSS change rather than done as a side effect of authoring L06. */
+  .reveal .slides section .journey-list,
+  .reveal .slides section .concepts-list {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  .reveal .slides section .journey-list li,
+  .reveal .slides section .concepts-list li {
+    display: flex !important;
+  }
+  .reveal .slides section .journey-list li::marker,
+  .reveal .slides section .concepts-list li::marker { content: none; }
+
+  /* Photo plates of Zadoks stages are tall portraits; cap them so a row of
+     three still fits above the fold, and align tops so the row reads as a set
+     rather than a staircase. */
+  .gs-plate { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8em; align-items: start; }
+  .gs-plate img { width: 100%; max-height: 330px; object-fit: contain; border-radius: 4px; }
+  .gs-plate figcaption { font-size: .40em; line-height: 1.25; margin-top: .35em; opacity: .85; }
+  .gs-plate figure { margin: 0; }
+  /* A single centred figure that should fill most of the slide. */
+  .wide-fig { text-align: center; }
+  /* px, not vh: reveal.js lays out on a fixed 1280x720 stage and scales it with
+     a CSS transform, so vh would refer to the real viewport and resize
+     unpredictably between the projector and a laptop. */
+  .wide-fig img { max-width: 100%; max-height: 440px; border-radius: 4px; }
+  /* Two wide/short charts sharing one x-axis, stacked so the growth stages
+     line up vertically between them. */
+  .wide-fig.stacked img { max-height: 248px; display: block; margin: 0 auto .35em; }
+  /* Embedded video. Sized in px for the same reason as .wide-fig above: the
+     720px stage is fixed, so a 16:9 box at 880x495 leaves room for the heading
+     and one caption line. The iframe uses data-src, not src, so reveal.js
+     loads it on arrival and TEARS IT DOWN on leaving -- without that, YouTube
+     audio keeps playing over the following slides. */
+  .video-frame { width: 880px; max-width: 100%; margin: 0 auto; }
+  .video-frame iframe {
+    width: 100%; aspect-ratio: 16 / 9; height: auto;
+    display: block; border: 0; border-radius: 6px; background: #000;
+  }
+  /* layouts.css gives .split-media img width:100%, which makes the tall
+     portrait Zadoks plates overrun the bottom of the 720px stage. Cap the
+     height and let width follow; wide figures are unaffected. */
+  .split-media img {
+    width: auto; max-width: 100%; max-height: 520px;
+    display: block; margin: 0 auto;
+  }
+  /* layouts.css sizes .figure-placeholder at width:100% and then adds 1em of
+     padding, so under the default content-box sizing it overruns its column. */
+  .figure-placeholder { box-sizing: border-box; }
+
+  /* On the dark close slide, uwa-revealjs.css paints every <li> white
+     (section[data-background-color="#27348B"] li { color:#fff }). The
+     .synthesis-list cards have a light #F5F7FF background, so their text was
+     white-on-near-white and unreadable. The same `display:list-item !important`
+     rule also collapsed the three-column grid into three stacked rows. */
+  .reveal .slides section .synthesis-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: .5em;
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  .reveal .slides section .synthesis-list li { display: block !important; color: #222 !important; }
+  .reveal .slides section .synthesis-list strong { color: #27348B !important; }
+
+  /* layouts.css gives .layout-quote height:100%; with the section's own
+     padding that totals ~753px on a 720px stage. Nothing clips (the quote is
+     centred) but border-box keeps the geometry honest. */
+  .layout-quote { box-sizing: border-box; }
+
+  /* Inline "spec" pill used in the grain-quality section. */
+  .spec { background: #F5F7FF; border-left: 4px solid #E2B600; padding: .5em .8em; font-size: .55em; margin-top: .6em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ===================================================================
+         PACING BUDGET — 2-hour slot (120 min)
+         Opening 6 | Part 1 15 | Part 2 15 | BREAK 10 | Part 3 52
+         Part 4 17 | Part 5 25 | Close 5   =  135 teaching + 10 break = 145 min.
+         Each slide's <aside class="notes"> opens with its own target; the part
+         dividers carry the part total. Part 3 includes ~4 min for the GRDC growth-stage
+         video — CONFIRM THE CLIP'S RUNTIME when previewing and adjust this figure.
+
+         THIS DECK NOW OVERRUNS A 2-HOUR SLOT BY ~25 MIN. That is deliberate — the
+         phenology and malting-barley material was added on the understanding that the
+         lecture would grow — but it must be cut to fit a single 2-hour delivery. In
+         priority order, dropping these recovers 11 min and lands it at ~130:
+           1. 'Water-Use Efficiency: the Scoreboard' (3 min) — French–Schultz is
+              peripheral to this lecture's topic and is covered in L01.
+           2. 'Staging Through Stem Elongation in the Field' (2 min) — a drill, not
+              new content; the reference-definition plate carries the idea.
+           3. 'Grain Brightness' (2 min) — a coda, not an examinable core idea.
+           4. The Part 1 discussion prompt (layout-quote, 2 min).
+           5. 'Floral Initiation: the Decision You Cannot See' (2 min) — the best of
+              the droppables; cut last, and only if the microscope practical covers it.
+         The GRDC video slide is NOT on the cut list: it is placed deliberately before the
+         scale is explained, and it is the cheapest way to give students the physical skill.
+         If time is desperate, set it as pre-reading to watch before the lecture instead of
+         dropping it — the following slides assume they have seen someone stage a plant.
+         To reach 120 exactly, the honest option is to split delivery across two
+         sessions at the Part 3 break, which is what the source material assumed.
+         =================================================================== -->
+
+    <!-- ===================== TITLE ===================== -->
+    <section class="title-slide" data-background-color="#27348B">
+      <p class="eyebrow" style="color:#E2B600;">SCIE3314 &middot; Crops and Cropping Systems</p>
+      <h1 style="color:#fff;">Agronomy of Cereals: Wheat and Barley</h1>
+      <p class="title-subtitle" style="color:#fff;">How a cereal crop builds a yield &mdash; and how the grower turns that yield into grain a buyer will pay for</p>
+      <p class="title-meta" style="color:#fff;">Lecture 06 &middot; 2 hours &middot; University of Western Australia<br />Presented by Gustavo Alckmin</p>
+      <aside class="notes">
+        Target: ~2 min. Housekeeping, then frame the session. This is the first of the crop-specific
+        lectures &mdash; L04&ndash;L05 established the climate envelope and the economic context, and
+        from here on we work inside it, crop by crop. Start with cereals because they are the majority
+        of the WA cropped area and because everything in the next three lectures (canola, lupins,
+        herbicides) is defined by contrast with them.
+        Hook to open with: "A wheat crop is not a thing that grows; it is a sequence of decisions,
+        each one made at a stage rather than on a date. Today we learn to read the stage." Preview the
+        five-part shape and flag the break after Part 2 (about the one-hour mark).
+      </aside>
+    </section>
+
+    <!-- ===================== OBJECTIVES ===================== -->
+    <section class="layout-takeaway">
+      <div>
+        <h2>What you'll be able to do by the end</h2>
+        <ul class="dense-bullets">
+          <li><b>Recall the growth stages</b> of wheat and barley and read the Zadoks decimal scale in the field.</li>
+          <li><b>Explain why growth stage, not calendar date,</b> governs the timing of herbicide, nitrogen, fungicide and PGR decisions.</li>
+          <li><b>Discuss G &times; E &times; M</b> and its interactions on cereal phenology and yield.</li>
+          <li><b>Explain how cereals compensate</b> for drought and nutrient stress at different stages &mdash; and where compensation runs out.</li>
+          <li><b>Argue why cereals are less risky</b> than legumes or canola for growers in the drier parts of the grainbelt.</li>
+          <li><b>Describe the key wheat and barley quality characteristics</b> and the agronomy that delivers them.</li>
+        </ul>
+      </div>
+      <div class="takeaway-card">
+        <span>Why it matters</span>
+        <p>Two-thirds of the WA cropped area is cereal. Every input decision on that country is timed by a growth stage, and every dollar earned on it is set by a grain specification.</p>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. These map one-to-one onto the unit learning outcomes under "Cereal phenology
+        and crop agronomy" &mdash; read them aloud and say so explicitly, because students should be
+        able to see the exam shape in them. Note the deliberate pairing: the first three objectives
+        are about <em>how the crop develops</em>; the last three are about <em>what the grower does
+        with that knowledge</em>. Flag that the compensation objective (fourth) is the conceptual
+        centre of the lecture &mdash; it is the mechanism that explains both the resilience of cereals
+        and the risk argument that follows.
+      </aside>
+    </section>
+
+    <!-- ===================== ROADMAP ===================== -->
+    <section>
+      <h2>The shape of the next two hours</h2>
+      <ul class="journey-list">
+        <li><b>1</b><span><strong>Why cereals dominate.</strong> Reliability, markets, and the risk gradient that explains rotation geography across the belt. (~15 min)</span></li>
+        <li><b>2</b><span><strong>The cereal plant and its yield components.</strong> Architecture, and the multiplicative chain that lets you attribute a yield loss to a date. (~15 min)</span></li>
+        <li><b>&#9743;</b><span><strong>Break</strong> &mdash; 10 minutes.</span></li>
+        <li><b>3</b><span><strong>Development and the Zadoks scale.</strong> Germination to ripening, and why every input is timed by stage. (~35 min)</span></li>
+        <li><b>4</b><span><strong>Yield formation.</strong> G &times; E &times; M, stress compensation, and water-use efficiency as the scoreboard. (~17 min)</span></li>
+        <li><b>5</b><span><strong>Grain quality and price.</strong> Wheat classification, protein, and the malting barley premium. (~22 min)</span></li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. Point out the logic rather than reading the list: Parts 1&ndash;2 are the
+        <em>what</em> (the crop and its architecture), Part 3 is the <em>when</em> (development and
+        timing), Part 4 is the <em>why</em> (how yield is actually formed and lost), Part 5 is the
+        <em>so what</em> (how it converts to income). Tell students that if they only remember one
+        slide it should be the yield-components chain in Part 2, because Parts 3, 4 and 5 are all
+        commentary on it.
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         PART 1 — WHY CEREALS DOMINATE
+         =================================================================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 1</p>
+      <h2 style="color:#fff;">Why Cereals Dominate the WA Grainbelt</h2>
+      <p class="divider-note" style="color:#fff;">Reliability, market depth, and the risk gradient that explains why rotations look different at Merredin than at Esperance.</p>
+      <aside class="notes">
+        Target: ~15 min for this part. Preview: first the descriptive fact (cereals are most of the
+        area), then the complementary roles of the two crops, then the argument that answers the
+        learning outcome head-on &mdash; why cereals are less risky than break crops &mdash; and
+        finally the consequence for rotation geography. Warn students the risk argument will be
+        <em>asserted</em> here and <em>explained physiologically</em> in Parts 2 and 4; today's job in
+        Part 1 is to make them want the mechanism.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Wheat and Barley: the Backbone of WA Cropping</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Together they occupy the <b>majority of the WA cropped area</b> and generate most of the region's grain export income.</li>
+            <li><b>Adapted to the Mediterranean pattern</b> &mdash; winter-growing, spring-finishing, matched to a cool wet season and a dry finish.</li>
+            <li><b>Establish reliably</b>, even from a marginal or late break.</li>
+            <li><b>Tolerate poor, variable and constrained soils</b> better than the alternatives.</li>
+            <li><b>Deep, liquid export markets</b> with well-understood specifications.</li>
+            <li><b>Mature support system</b> &mdash; agronomy, breeding, machinery and advice all built around them.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/image1.jpg" alt="Wide view of a young green cereal crop growing through retained standing stubble in a Western Australian paddock under a clear sky, with scattered trees on the horizon" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Open on the photo, not the bullets: this is the default landscape of the
+        grainbelt &mdash; cereal sown into retained stubble, no-till, the system L01 and the
+        conservation-agriculture material described. Make the point that "dominant" is not an accident
+        of habit; each bullet is a genuine agronomic or economic advantage, and the rest of the
+        lecture unpacks the middle two (reliable establishment, stress tolerance) as physiology.
+        Anticipate the obvious student question &mdash; "if break crops are more valuable, why not
+        grow more of them?" &mdash; and promise it is answered two slides from now. Connect back to
+        L04&ndash;L05: the Mediterranean pattern named there is exactly what these crops are matched to.
+        The number that reframes the whole unit, and worth putting up early: <b>roughly 90% of WA
+        grain is exported.</b> Almost nothing grown here is eaten here. That single fact explains a
+        great deal of what follows &mdash; why grain is bought against published specifications rather
+        than by negotiation, why WA specialises into particular Asian classes such as the noodle
+        wheats, why "nil tolerance" insect standards apply in storage, and why Part 5 spends twenty
+        minutes on quality parameters that a domestic-market system could afford to treat loosely.
+        A grower here is not selling food; they are filling a container against a contract.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Two Crops, Complementary Roles</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Wheat</h3>
+          <ul class="dense-bullets">
+            <li>The <b>higher-value milling staple</b> and the rotational anchor &mdash; the crop the system is built around.</li>
+            <li>Graded into <b>protein-based quality classes</b> that reward nitrogen management.</li>
+            <li>WA grows <b>spring wheats</b>: little or no vernalisation requirement, low photoperiod sensitivity, suited to a short season.</li>
+            <li>Slightly longer season and less salt-tolerant than barley.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Barley</h3>
+          <ul class="dense-bullets">
+            <li>Faster and more robust &mdash; often <b>more drought- and salt-tolerant</b>, and better suited to the tougher country.</li>
+            <li>Takes the <b>later sowing slots</b> when the break is late.</li>
+            <li>Two markets: a <b>malting premium</b> against exacting specifications, or <b>feed</b> with looser ones.</li>
+            <li>WA grows almost exclusively <b>two-rowed spring barley</b>.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. The framing to land: these are not competing choices so much as
+        complementary tools &mdash; wheat is what you grow when you can, barley is what you grow when
+        the paddock or the calendar is against you, and also what you grow deliberately when you want
+        a shot at the malting premium. The two-rowed / six-rowed distinction is worth 30 seconds:
+        both types have three florets per node, but in two-rowed barley only the central floret is
+        fertile, which is why two-rowed grain is plumper and more even &mdash; and plumpness is
+        exactly what the maltster is buying. That is the reason WA grows two-rowed almost exclusively.
+        Flag the spring-versus-winter habit point too, because it recurs in the phenology section:
+        winter types need vernalisation and a 9&ndash;10 month season; WA's season is 6&ndash;7 months,
+        so spring types dominate here while winter types are used in Tasmania and Victoria.
+        Give them the WA geography and the pace of change, because both surprise students.
+        <b>Barley production concentrates in Agzones 2 and 3</b>, Agzone 2 being the largest producing
+        region &mdash; barley is not evenly spread across the belt, it clusters where the soils and
+        the finish suit it. And WA growers turn varieties over remarkably fast: <b>La Trobe was about
+        30% of WA barley production in 2017</b> and has since been displaced, with <b>Spartacus</b>
+        surging in behind it (it returned <b>104% of site mean yield in 2018</b> trials).
+        Draw the lesson rather than the list: a variety table has a shelf life of about three years,
+        so what students need to carry out of this unit is the <em>method</em> for evaluating a
+        variety against a site and a market, not the names on today's slide.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Why Cereals Are Less Risky Than Break Crops</h2>
+      <ol class="concepts-list">
+        <li><span class="concept-num">1</span><span><b>Establishment reliability.</b> Large seed, vigorous coleoptile, tolerant of a wide range of sowing conditions. Canola and pulses have small seed and narrower requirements, so a dry start is far more likely to cost the whole stand.</span></li>
+        <li><span class="concept-num">2</span><span><b>Stress tolerance and compensation.</b> Cereals tolerate drought, heat and nutrient stress better, and &mdash; crucially &mdash; <em>compensate</em> for early stress through tillering. Canola and pulses are much less forgiving.</span></li>
+        <li><span class="concept-num">3</span><span><b>Market depth and price stability.</b> Wheat and barley trade into large, liquid, well-understood markets. Pulse and even canola markets are thinner and more volatile.</span></li>
+        <li><span class="concept-num">4</span><span><b>Agronomic maturity.</b> Weed, disease and nutrition programs for cereals are well established, well supported and comparatively low-risk to execute.</span></li>
+      </ol>
+      <aside class="notes">
+        Target: ~4 min. This slide answers a unit learning outcome directly &mdash; say that out loud.
+        Work through the four reasons but weight them: reasons 1 and 2 are biological and are the ones
+        we will explain properly later today; reasons 3 and 4 are economic and institutional. The
+        sharpest way to put reason 2 for a third-year audience: a cereal that loses half its plants in
+        a poor establishment will tiller harder and may still make a respectable head count, whereas a
+        canola crop that loses half its plants has simply lost half its plants. That is a difference in
+        <em>architecture</em>, not in toughness &mdash; and the architecture is what the next part of
+        the lecture is about. Ask the room to hold the question: "if cereals are so much safer, why
+        grow anything else?" The answer &mdash; disease and weed breaks, nitrogen, and higher gross
+        margins in the right season &mdash; comes on the next slide and returns in L07/L08.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Risk Gradient Explains Rotation Geography</h2>
+      <div class="context-card">
+        <p class="context-q">Across the WA grainbelt, rotation composition tracks rainfall &mdash; and therefore risk:</p>
+        <ul>
+          <li><b>Low-rainfall, high-risk east (e.g. Merredin, Mullewa):</b> growers lean heavily on cereals and use break crops sparingly and strategically. Rotations here optimise for <em>maximum profit</em>, not maximum diversity.</li>
+          <li><b>Higher-rainfall, lower-risk south and west (e.g. Esperance, Great Southern):</b> the more valuable but riskier break crops &mdash; canola, lupins, pulses &mdash; can safely occupy a larger share.</li>
+          <li>The break crops still earn their place everywhere: <b>disease and weed breaks, and nitrogen</b>. Wheat after lupins shows Take-all incidence falling from about <b>54%</b> to roughly <b>15&ndash;19%</b>.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. The idea to land is that the map of WA rotations is a map of risk tolerance.
+        A grower in a 300 mm zone is not being unadventurous by running long cereal sequences &mdash;
+        they are making a rational allocation under a distribution with a fat lower tail, exactly the
+        yield-distribution thinking from L01. Then complicate it immediately with the Take-all
+        number: the cereal-heavy rotation carries a hidden cost that compounds over years, so "lean
+        on cereals" is not the same as "grow only cereals". This tension &mdash; short-run risk versus
+        long-run system health &mdash; is the theme of L13 (crop rotation) and returns in L08 when we
+        make the case for lupins. Do not resolve it here; leave it open.
+      </aside>
+    </section>
+
+    <section class="layout-quote">
+      <blockquote>A grower at Merredin and a grower at Esperance both know that canola pays more than wheat. They plant different rotations anyway. What are they each optimising for &mdash; and what would have to change for them to swap?</blockquote>
+      <aside class="notes">
+        Target: ~2 min. Run this as a genuine 60-second turn-and-talk, then take two or three answers.
+        Answers to steer toward: the Merredin grower is optimising the <em>lower tail</em> (avoiding a
+        failed establishment and a total loss in a dry year), the Esperance grower can optimise the
+        <em>mean</em> because their lower tail is much shallower. What would have to change: a more
+        reliable break (better establishment technology, a shorter-season canola), a bigger price
+        premium to compensate for the variance, or a worsening disease/resistance burden that makes
+        continuous cereal untenable &mdash; which is precisely what herbicide-resistant ryegrass is
+        doing across the belt (L09). Use this to bridge into Part 2: to make the risk argument
+        properly we need the architecture of the plant.
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         PART 2 — THE CEREAL PLANT AND ITS YIELD COMPONENTS
+         =================================================================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 2</p>
+      <h2 style="color:#fff;">The Cereal Plant and Its Yield Components</h2>
+      <p class="divider-note" style="color:#fff;">The architecture that makes compensation possible, and the multiplicative chain that lets you attribute a yield loss to a date.</p>
+      <aside class="notes">
+        Target: ~15 min for this part. Preview: the vegetative body (tillers, leaves, the flag leaf),
+        then the reproductive structure (spike, spikelet, floret), then the yield-component chain that
+        connects the two, and finally the sequencing of when each component is fixed. Tell students
+        this is the most conceptually loaded stretch of the lecture and that everything after the
+        break refers back to it.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Cereal Plant: Vegetative Architecture</h2>
+      <div class="layout-split image-left">
+        <div>
+          <ul class="dense-bullets">
+            <li>A <b>main stem</b> plus <b>tillers</b> &mdash; side shoots from the crown, each one a potential head.</li>
+            <li>Stems are built of <b>nodes and internodes</b>; the swollen nodes you can feel through the sheath are how stem elongation is scored.</li>
+            <li>Each leaf has a <b>blade</b>, a <b>sheath</b>, and at their junction a <b>ligule</b> and <b>auricles</b> &mdash; the ligule is the marker for "fully emerged" when counting leaves.</li>
+            <li>The topmost leaf is the <b>flag leaf</b>; it and the ear supply most of the carbohydrate that fills the grain.</li>
+            <li>Below ground: <b>seminal roots</b> from the seed, then <b>nodal roots</b> from the crown once the crown establishes at a consistent depth.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/image51.JPG" alt="Line diagram of wheat plant anatomy showing the whole shoot with ear, blade and sheath labelled, an enlargement of the leaf blade junction showing ligule, auricles, sheath and split, and an enlargement of a stem section showing node and internode" />
+        </div>
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;2</span>
+      <aside class="notes">
+        Target: ~3 min. This is vocabulary, but it is vocabulary with a purpose: every term on this
+        slide appears in a growth-stage definition later. Ligule &rarr; "fully emerged leaf" for
+        Z1x scoring. Node &rarr; "first node detectable" for Z31. Tiller &rarr; Z2x. Flag leaf &rarr;
+        Z39 and the fungicide decision. Say that explicitly so students see the anatomy as the index
+        to the staging scale rather than as botany for its own sake.
+        The crown deserves a moment: it forms at a fairly consistent shallow depth regardless of
+        sowing depth, and the sub-crown internode extends to put it there &mdash; which is why sowing
+        depth costs the seedling energy rather than simply burying the plant. That sets up the sowing
+        depth photograph in Part 3.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Where the Grain Actually Sits: Ear, Spikelet, Floret</h2>
+      <div class="wide-fig">
+        <img src="assets/image46.JPG" alt="Line diagram of wheat inflorescence structure at four levels of magnification: the whole ear, the rachis with attached spikelets, an individual spikelet showing florets and glumes, and a single floret showing anthers, ovary, lemma, palea and awn" />
+      </div>
+      <p class="diagram-caption">Wheat inflorescence: ear &rarr; spikelet (on the rachis) &rarr; floret (lemma, palea, anthers, ovary). Roughly <b>18&ndash;22 spikelets per head</b>, <b>1&ndash;5 florets per spikelet</b>, and typically <b>30&ndash;50 grains per head</b>.</p>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;2</span>
+      <aside class="notes">
+        Target: ~3 min. Walk the magnification series left to right and make the arithmetic explicit,
+        because it is the arithmetic that matters: 18&ndash;22 spikelets, up to 5 florets each &mdash;
+        so a head has on the order of 80&ndash;100 <em>potential</em> grain sites but delivers 30&ndash;50.
+        The gap between potential and delivered sites is where flowering-time stress does its damage,
+        and it is a much bigger lever than most students expect.
+        Point out the anthers specifically: they are how anthesis is scored in the field (Z61 first
+        anthers at mid-ear, Z65 half way, Z69 complete), and their exposure is why heat above about
+        35 &deg;C at flowering is so destructive &mdash; pollen is the vulnerable tissue.
+        Barley contrast worth 30 seconds: three florets at every node, but in the two-rowed types
+        WA grows only the central floret is fertile, hence the two neat rows of large even grain.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Yield Components: the Multiplicative Chain</h2>
+      <ol class="concepts-list">
+        <li><span class="concept-num">1</span><span><b>Plants per m&sup2;</b> &mdash; set at <em>establishment</em>. Driven by seed rate, seedbed moisture, sowing depth, seed size and pests.</span></li>
+        <li><span class="concept-num">2</span><span><b>&times; Heads per plant</b> &mdash; set during <em>tillering</em> and tiller survival. Driven by nitrogen, moisture, light (density) and temperature.</span></li>
+        <li><span class="concept-num">3</span><span><b>&times; Grains per head</b> &mdash; set from <em>stem elongation to flowering</em>. Cut by frost, heat, water and nutrient stress.</span></li>
+        <li><span class="concept-num">4</span><span><b>&times; Weight per grain</b> &mdash; set during <em>grain fill</em>, by assimilate supply against the duration of filling. Typically <b>30&ndash;40 mg</b> in a kind finish.</span></li>
+      </ol>
+      <div class="spec">
+        <b>150 plants/m&sup2; &times; 3 heads &times; 30 grains &times; 35 mg &asymp; 4.7 t/ha.</b> &nbsp;Hold everything else and drop grains per head to 20, and the same crop makes 3.2 t/ha. The chain is <em>multiplicative</em>, so proportional losses compound &mdash; and each link is forged in a different fortnight.
+      </div>
+      <aside class="notes">
+        Target: ~5 min. This framework traces to Engledow and Wadham and it underpins all cereal
+        agronomy and every crop model in the unit. Two things to stress.
+        First, it is <em>multiplicative</em>: a component driven to zero drives yield to zero, and
+        proportional changes compound. Do the arithmetic on the board &mdash; 150 plants/m&sup2;
+        &times; 3 heads &times; 30 grains &times; 35 mg is about 4.7 t/ha; drop grains per head to 20
+        and you are at 3.2 t/ha with everything else unchanged.
+        Second, and this is the point of the whole framework: because each component is fixed in a
+        <em>different window</em>, an agronomist who knows which component is short can name the
+        fortnight in which the yield was lost. That is diagnosis, and it is exactly what the crop-
+        diagnosis material later in the unit formalises. Ask: "you cut a crop at harvest and find
+        plenty of heads but only 18 grains per head &mdash; when did this crop have its bad week?"
+        (Answer: somewhere between Z31 and flowering.)
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Components Are Set Sequentially &mdash; and They Overlap</h2>
+      <div class="wide-fig">
+        <img src="assets/image50.JPG" alt="Line graph showing the development of cereal yield components through the crop life cycle: tiller number rises from emergence and peaks then declines around terminal spikelet, spikelet number rises from ear initiation, floret number rises to a peak just before flowering then falls sharply, and grain weight rises from flowering to maturity" />
+      </div>
+      <p class="diagram-caption">Tiller number peaks and then <b>self-thins</b>; floret number peaks and is then heavily <b>aborted</b> around flowering; grain weight accumulates only after flowering. The crop is continuously revising its own yield target as resources allow.</p>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;3</span>
+      <aside class="notes">
+        Target: ~4 min. This is the single most important diagram in the lecture &mdash; give it time.
+        Three features to point at.
+        (1) Tiller number <em>overshoots then falls</em>. The crop deliberately produces more tillers
+        than it can support and then aborts the late ones when resources tighten at stem elongation.
+        That is not failure; it is the crop matching head number to the season it is actually getting.
+        (2) Floret number does the same thing on a shorter timescale and with much bigger stakes:
+        the crop initiates far more florets than it sets grains, and the abortion happens right at
+        flowering.
+        (3) Grain weight only starts at flowering, which is why it is the <em>last</em> component
+        available to compensate and why a kind finish matters so much.
+        The synthesis: this overshoot-then-abort architecture is the physiological machinery behind
+        the "cereals are less risky" claim from Part 1. The crop is built to revise its ambitions
+        downward gracefully. Canola and pulses have far less of this machinery.
+        End the pre-break segment here and set up the break by saying: "after the break we put dates
+        on this diagram."
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         BREAK
+         =================================================================== -->
+    <section class="section-divider" data-background-color="#27348B">
+      <p class="eyebrow" style="color:#E2B600;">Pause</p>
+      <h2 style="color:#fff;">Break &mdash; 10 minutes</h2>
+      <p class="divider-note" style="color:#fff;">When we come back: the Zadoks scale, and why every decision in a cereal crop is timed by a stage rather than a date.</p>
+      <aside class="notes">
+        Target: 10 min. Hold the break firmly at the hour mark. Before releasing, give the room one
+        thing to come back to: "the diagram we just looked at has no dates on it. After the break we
+        add the staging system that puts dates on it &mdash; and that system is the single most
+        practically useful thing in this lecture."
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         PART 3 — DEVELOPMENT AND THE ZADOKS SCALE
+         =================================================================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 3</p>
+      <h2 style="color:#fff;">Development and the Zadoks Scale</h2>
+      <p class="divider-note" style="color:#fff;">Germination to ripening in ten principal stages &mdash; and the field skill of reading them off a variable paddock.</p>
+      <aside class="notes">
+        Target: ~52 min for this part &mdash; the longest section by a distance, and the most
+        examinable. Preview the arc: what drives development and how the crop keeps time, then the
+        GRDC video showing staging done in the field, then the scale itself and the rules for
+        reading it, then a walk through the crop's life in four
+        movements (vegetative, reproductive, grain fill, maturity), then the consolidation slide on
+        why staging governs management, and finally the stress-timing table that connects staging
+        back to Part 2's yield components.
+        This part carries the whole of the added phenology material, so it is also where the deck
+        overruns. If you are short of time, the cuts listed in the pacing comment at the top of the
+        file come from here and from Part 5 &mdash; do not compress the Zadoks rules slide, which is
+        the most examinable single slide in the lecture.
+      </aside>
+    </section>
+
+    <section>
+      <h2>What Actually Drives Development</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/image5.png" alt="Simplified diagram of wheat phases plotted against thermal time from sowing to maturity: a basic vegetative phase, a vegetative phase sensitive to day length and vernalisation, a phase in which the crop is committed to flowering, and a final flowering to maturity phase, with day length and vernalisation marked as inputs to the middle phases" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Four things, together, fix the <b>number of days between germination and flowering</b>:</li>
+            <li><b>Thermal time</b> &mdash; accumulated temperature. The engine; always running.</li>
+            <li><b>Vernalisation (<i>Vrn</i>)</b> &mdash; a requirement for a period of cold before the plant will commit to flowering.</li>
+            <li><b>Photoperiod (<i>Ppd</i>)</b> &mdash; a long-day response; the plant waits for the days to lengthen.</li>
+            <li><b>Earliness <i>per se</i></b> &mdash; the inherent varietal differences left over once <i>Vrn</i> and <i>Ppd</i> are accounted for.</li>
+            <li>Genotype enters through named genes &mdash; <b>VRN1</b>, <b>PPD1</b> &mdash; whose allele combinations are what make one variety quick and another slow.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec">
+        <b>The WA case.</b> Varieties such as <b>Mace</b> and <b>Scepter</b> are quick spring types: little vernalisation requirement, low photoperiod sensitivity. Their development is driven almost entirely by <b>thermal time</b>. Winter wheats and long-spring types will not commit to flowering until they have had cold, long days, or both.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This slide is the genetic and physiological basis of the single highest-leverage
+        decision in cereal agronomy, so do not rush it &mdash; everything later in Part 3 about timing
+        assumes students know what sets the clock.
+        The framing that makes it stick: the crop is not counting days, it is satisfying conditions.
+        Thermal time is the one that always accumulates; vernalisation and photoperiod are <em>gates</em>
+        that can hold a plant in the vegetative phase no matter how warm it gets. A winter wheat sown in
+        WA in May without adequate cold simply will not flower properly &mdash; not late, but wrong.
+        Introduce earliness <em>per se</em> carefully, because the name is unhelpful. It is the residual:
+        two varieties with identical vernalisation and photoperiod responses can still differ in time to
+        heading, and breeders use that residual for fine adjustment. It is how you get a family of
+        varieties that all suit WA but spread flowering across three weeks.
+        Then the practical payoff, which is worth saying explicitly: <b>variety and sowing date are one
+        decision, not two.</b> The same sowing date is early for a slow variety and late for a quick one.
+        Growers choose the pair that lands flowering inside the window between the last damaging frost
+        and the onset of terminal drought &mdash; and in WA that window is narrow, which is why quick
+        spring types dominate.
+        Flag forward: this is the phenology an APSIM run is simulating when it predicts a flowering date,
+        which is the L02 material arriving with a physiological basis underneath it.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Thermal Time: How the Crop Keeps Time</h2>
+      <ul class="dense-bullets">
+        <li>Every phase of development requires a <b>minimum accumulation of temperature</b> before it can complete and the plant can move on.</li>
+        <li>In effect the plant senses temperature each day and adds it to a running total. That total is <b>thermal time</b>, or the heat sum, measured in <b>degree-days (&deg;Cd)</b>.</li>
+        <li>Each day contributes the <b>mean temperature less a base temperature</b> &mdash; about <b>5&nbsp;&deg;C</b> for wheat, below which development effectively stops.</li>
+      </ul>
+      <div class="layout-stats">
+        <div class="stat-card"><span class="stat-num">35 / 15</span><span class="stat-label">The day's <b>maximum and minimum</b>, in &deg;C.</span></div>
+        <div class="stat-card"><span class="stat-num">25 &deg;C</span><span class="stat-label"><b>Mean</b> = (max + min) &divide; 2 = (35 + 15) &divide; 2.</span></div>
+        <div class="stat-card"><span class="stat-num">20 &deg;Cd</span><span class="stat-label">Less the <b>5 &deg;C base</b>. That day's contribution to the heat sum.</span></div>
+      </div>
+      <div class="spec">
+        So a <b>warm week advances the crop further than a cool week of the same length</b>. Two crops sown on the same date in different seasons reach Z30 on different dates &mdash; which is precisely why every chemical label is written in growth stages and never in weeks after sowing.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Do the arithmetic on the board with the room, slowly. It is the only calculation
+        in this lecture and students remember the concept far better once they have done one by hand.
+        Walk it: take a day, 35 &deg;C max and 15 &deg;C min. Mean is 25. Subtract the 5 &deg;C base, because
+        below about 5 &deg;C a wheat plant is not developing in any useful sense. That day banked 20 &deg;Cd.
+        Do the same for every day of a phase and total it &mdash; that is the heat sum for the phase.
+        Anticipate the two questions that always come. First: "is the base really 5?" It is a working
+        approximation and it differs by species and by phase; the principle is what matters. Second:
+        "what about a 40 &deg;C day?" Above an optimum, development rate stops increasing and heat starts
+        doing damage instead &mdash; the simple linear sum is a model, and like all models it has a
+        domain. Say so; it is good practice for L02.
+        The payoff to land: this is why the calendar is a poor guide and staging is not. A crop sown on
+        the same day in a warm season and a cool season is at genuinely different growth stages in mid
+        August, and the spray that is correct for one is off-label for the other.
+        Connect forward to the thermal-time figure later in this part &mdash; the horizontal axis on that
+        chart runs to about 3100 &deg;Cd, and students should now know exactly what that number is
+        counting.
+      </aside>
+    </section>
+
+
+    <section>
+      <h2>Watch First: Staging a Crop in the Field</h2>
+      <div class="video-frame">
+        <iframe
+          data-src="https://www.youtube.com/embed/JGQJ6eZ1DeQ?si=_vJza0sW5kydjJg3"
+          title="Identifying cereal crop growth stages: Zadoks Cereal Growth Stage Key (GRDC)"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+      <p class="diagram-caption"><b>Identifying cereal crop growth stages: Zadoks Cereal Growth Stage Key</b> &mdash; see the stages identified and scored <em>before</em> we take the scale apart.</p>
+      <span class="source-chip">Grains Research and Development Corporation (GRDC)</span>
+      <aside class="notes">
+        Target: ~4 min including set-up &mdash; confirm the clip's runtime when you preview it and
+        adjust the part budget accordingly.
+        Play this <b>before</b> teaching the scale, not after. The reason is deliberate: staging is a
+        practical skill, and students absorb the sequence far better if they have watched a crop taken
+        through it once before they meet the decimal code as an abstraction. The next four slides then
+        become explanation of something they have already seen rather than a definition they must hold
+        in memory.
+        Set it up in one sentence and give them a job while they watch, or they will watch passively.
+        Ask for three things: <b>which structure is being counted at each stage</b> (leaves first, then
+        tillers, then nodes), <b>where one principal stage hands over to the next</b>, and <b>any point
+        where the identification looks ambiguous</b> &mdash; where you could imagine two people
+        disagreeing. Those three observations are exactly the content of the "rules that catch people
+        out" slide shortly afterwards, so the video is doing the setup work for you.
+        Afterwards, do not summarise the video &mdash; go straight into the scale. If you want a
+        transition line: "that is the skill; the next four slides are the language you use to record
+        what you just saw, and the reason every label in the shed is written in it."
+        <b>Practical notes for delivery.</b> The embed needs a live internet connection &mdash; check
+        it in the room before you start, because this slide is early in a long part and a dead embed
+        is an awkward place to discover the lecture theatre's network policy. If you cannot get it to
+        play, skip forward; nothing later in the deck depends on it. The iframe is loaded on arrival
+        and unloaded when you navigate away, so the audio will not follow you onto the next slide, but
+        do still pause it before you move on if you have skipped ahead.
+        GRDC also publishes the companion growth-stage guides; point students at them for revision,
+        alongside the DPIRD/GRDC <em>Wheat Book</em> chapters 2 and 3 cited throughout this part.
+      </aside>
+    </section>
+    <section>
+      <h2>The Zadoks Scale: a Common Language</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>How the code works</h3>
+          <ul class="dense-bullets">
+            <li><b>Two digits.</b> The first is the principal growth stage; the second subdivides it.</li>
+            <li><b>Z13</b> = three leaves unfolded. <b>Z24</b> = main stem plus four tillers. <b>Z30</b> = start of stem elongation. <b>Z39</b> = flag leaf ligule just visible. <b>Z65</b> = anthesis half way.</li>
+            <li><b>Field-observable.</b> Every definition is something you can see or feel on a plant you have pulled &mdash; no laboratory required.</li>
+            <li><b>Conventions matter</b> &mdash; and there are four of them that catch people out. Two slides on, we do them properly.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Why it matters</h3>
+          <ul class="dense-bullets">
+            <li>Nearly every agronomic decision is specified <b>by stage, not by date</b> &mdash; because the crop's physiological readiness, not the calendar, determines the response.</li>
+            <li>It is the <b>label language</b>: chemical registrations are written in growth stages.</li>
+            <li>It is the <b>bridge to crop models</b> &mdash; APSIM predicts phenology in Zadoks terms, and staging is how you check the model against the paddock.</li>
+          </ul>
+        </div>
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;2</span>
+      <aside class="notes">
+        Target: ~3 min. Frame Zadoks as an <em>interface</em> rather than a taxonomy: it is the agreed
+        vocabulary that lets a chemical registrant in Sydney, an agronomist at Katanning and a model
+        running in a laptop all refer to the same moment in a crop's life.
+        Do not work the conventions here &mdash; they get a slide of their own shortly, with a worked
+        scoring example. Just plant the flag that the scale has rules, and that the rules are where
+        students lose marks and agronomists lose crops.
+        Note the near-universal alternative notation students will meet in industry: GS31 and Z31 mean
+        the same thing.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Ten Principal Stages</h2>
+      <div class="layout-cols-3">
+        <div>
+          <h3>Vegetative</h3>
+          <ul class="dense-bullets">
+            <li><b>Z0x</b> Germination</li>
+            <li><b>Z1x</b> Seedling growth &mdash; count leaves on the main stem</li>
+            <li><b>Z2x</b> Tillering &mdash; count tillers on the main stem</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Reproductive</h3>
+          <ul class="dense-bullets">
+            <li><b>Z3x</b> Stem elongation &mdash; count detectable nodes</li>
+            <li><b>Z4x</b> Booting</li>
+            <li><b>Z5x</b> Ear emergence</li>
+            <li><b>Z6x</b> Anthesis (flowering)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Grain fill &amp; ripening</h3>
+          <ul class="dense-bullets">
+            <li><b>Z7x</b> Milk development</li>
+            <li><b>Z8x</b> Dough development</li>
+            <li><b>Z9x</b> Ripening</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec">
+        Second digits are not arbitrary. In <b>Z1x</b> and <b>Z2x</b> the second digit is a literal count (Z13 = 3 leaves; Z24 = 4 tillers). In <b>Z3x</b> it counts detectable nodes, with Z30 and Z39 reserved for "leaf sheath erect" and "flag leaf ligule visible". In <b>Z5x&ndash;Z9x</b> it is a fraction or a texture description.
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Do not read the list &mdash; students can. Instead teach the <em>pattern</em>,
+        because the pattern is what makes the scale memorable: the second digit means "how many"
+        during the counting stages and "how far through" during the emergence and filling stages.
+        Once students see that, they stop memorising and start reading.
+        Two practical warnings. First, leaf counting only ever happens on the main stem, and a leaf
+        counts as emerged when its <em>ligule</em> is visible &mdash; the anatomy slide from Part 2.
+        Second, the sub-stage can be fractional in the literature (Z13.4 = two emerged leaves plus a
+        third four-tenths out), which is more precision than a paddock decision usually needs but
+        appears in research papers and in the reference figures on the next slide.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Whole Sequence, and the Actions Keyed to It</h2>
+      <div class="wide-fig stacked">
+        <img src="assets/image56_rotated.png" alt="Horizontal chart of wheat development against thermal time from sowing, zero to 3100 degree-days, divided into three colour phases. Overlapping bars show root growth, leaf emergence on the main shoot numbered 1 to 14, tillering, stem elongation, stem storage, ear formation, flowering, grain filling and ripening, with growth stage markers GS00, GS10, GS21, GS30, GS31, GS39, GS59, GS61, GS87 and GS93 along the axis" />
+        <img src="assets/image57_rotated.png" alt="Chart of key management action timings on the same thermal-time axis, with horizontal bands for nitrogen, fungicides, herbicides, growth regulators and insecticides, and star markers indicating the growth stages at which each check or action is typically carried out" />
+      </div>
+      <p class="diagram-caption">Same axis, top and bottom. Development runs on <b>thermal time</b> (degree-days), not calendar days &mdash; and every management action is pinned to a <em>stage</em> on that axis, never to a date.</p>
+      <aside class="notes">
+        Target: ~3 min. Use this to make the underlying driver explicit. The x-axis is not days, it
+        is <b>accumulated degree-days</b>, and that single fact explains most of what is puzzling
+        about phenology: a warm start pulls every stage forward, a cold one pushes it back, and the
+        northern grainbelt (Geraldton) runs through these stages faster than the south (Borden)
+        because it accumulates thermal time faster.
+        Point out the two structural features worth remembering: (1) the phases <b>overlap heavily</b>
+        &mdash; tillering is still running while stem elongation begins, and stem storage is laid
+        down before flowering ready for remobilisation later; (2) roughly <b>two-thirds of the
+        thermal time is spent before flowering (GS61)</b> and only the last third fills the grain,
+        which is exactly why a truncated finish is so costly.
+        Reinforce that vernalisation and photoperiod modify this clock &mdash; but WA's spring types
+        have little vernalisation requirement and low photoperiod sensitivity, so thermal time does
+        most of the work here.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Reading the Scale: Reference Definitions</h2>
+      <div class="gs-plate">
+        <figure>
+          <img src="assets/image18.JPG" alt="Zadoks scale reference text for principal stage 1, seedling growth, listing codes 10 through 19 from first leaf through coleoptile to nine leaves emerged, with instructions to count leaves on the main stem only and to subdivide by tenths" />
+          <figcaption><b>Z1x Seedling growth.</b> Count leaves on the mainstem only; fully emerged = ligule visible.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/image22.JPG" alt="Zadoks scale reference text for principal stage 2, tillering, listing codes 20 through 29 from mainstem only to mainstem and nine or more tillers, with instructions to count visible tillers on the mainstem" />
+          <figcaption><b>Z2x Tillering.</b> Count side shoots with a leaf blade emerging between sheath and mainstem.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/image30.JPG" alt="Zadoks scale reference text for principal stage 3, stem elongation, listing codes 30 through 39 from youngest leaf sheath erect through six nodes detectable to flag leaf ligule just visible, with instructions to count swollen nodes felt on the mainstem" />
+          <figcaption><b>Z3x Stem elongation.</b> Count swollen nodes you can <em>feel</em> on the mainstem.</figcaption>
+        </figure>
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;2</span>
+      <aside class="notes">
+        Target: ~2 min. These are the three stages students will actually be asked to score in the
+        field, so put the definitions up verbatim and read the operative verb in each: <em>count
+        leaves</em>, <em>count tillers</em>, <em>feel nodes</em>. The tactile instruction for Z3x
+        surprises people &mdash; you run the stem between finger and thumb through the sheath; you do
+        not need to dissect for a routine call.
+        Mention that the full scale continues through booting (Z41&ndash;49, scored on the flag leaf
+        sheath), ear emergence (Z51&ndash;59, scored as a fraction of the ear out), anthesis
+        (Z61/65/69, scored on visible anthers), milk (Z71&ndash;77), dough (Z83&ndash;87) and
+        ripening (Z91&ndash;99, scored by how hard the grain is) &mdash; and that the practical
+        handouts carry the full table.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Reading the Scale: the Rules That Catch People Out</h2>
+      <ol class="concepts-list">
+        <li><span class="concept-num">1</span><span><b>The scale is not chronological.</b> A plant with three fully formed leaves has already begun to tiller &mdash; it is at <b>Z20</b> &mdash; before leaves 4 to 6 exist. The two digits are a code, not a timeline.</span></li>
+        <li><span class="concept-num">2</span><span><b>Once tillering starts, count tillers, not leaves.</b> The lower leaves <b>senesce</b> and the leaf count stops being recoverable, so tiller number becomes the reliable observation.</span></li>
+        <li><span class="concept-num">3</span><span><b>Different parts of one plant sit at different stages. Score the most advanced.</b> A plant with 2 nodes, 3 tillers and 7 leaves is <b>Z32</b>, <b>Z23</b> and <b>Z17</b> simultaneously &mdash; you record <b>Z32</b>.</span></li>
+        <li><span class="concept-num">4</span><span><b>From Z30 the score describes the main stem</b>, not an average of the tillers. Before Z30 you are describing a plant; after Z30 you are describing one stem on it.</span></li>
+      </ol>
+      <div class="spec">
+        <b>Field technique for Z30&ndash;Z33.</b> Node position cannot be judged from the outside. <b>Cut the stem lengthways</b> and look: the nodes are solid, the internodes hollow, and the count of nodes that have moved up from the base gives you the second digit. This is the stage that governs both nitrogen timing and the fungicide decision, so it is worth doing properly.
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;2</span>
+      <aside class="notes">
+        Target: ~3 min. This is the most examinable slide in Part 3 and the one that separates students
+        who have memorised the scale from students who can use it. Work rule 3 as a live exercise.
+        Put the numbers on the board &mdash; 2 nodes, 3 tillers, 7 leaves &mdash; and ask the room to
+        score the plant before you answer. You will get Z17 and Z23 offered confidently. The answer is
+        <b>Z32</b>, and the reason is the rule: the plant is scored by its most advanced structure,
+        because that is the structure your management decision is about to act on. A herbicide that is
+        unsafe at Z32 does not become safe because most of the plant is still at Z17.
+        Rule 1 is the conceptual one. Students assume the decimal code counts upward through time, and it
+        does not &mdash; the principal stages overlap heavily. Tillering (Z2x) is well underway while leaf
+        production (Z1x) continues. Say plainly: the scale describes <em>what is present</em>, not
+        <em>how far through the season you are</em>.
+        Rule 2 is the practical one and the reason is senescence: by mid-tillering the first leaves have
+        died and dropped, so a leaf count under-reads. Anyone who has tried to count leaves on a
+        waterlogged August crop knows this.
+        Rule 4 matters for consistency between operators. Two agronomists standing in the same paddock
+        must arrive at the same number, and after Z30 that only works if both are staging the main stem.
+        Finish on the dissection technique &mdash; hand around a stem cut lengthways if you have one.
+        Students consistently under-estimate how much of staging is a physical skill rather than a
+        knowledge test, and this is the moment to correct that.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Germination and Emergence: the Sowing-Depth Trade-off</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/image21.JPG" alt="Photograph on a black background of two wheat seedlings at growth stage 11 with the first leaf unfolded, the left one deep-sown with a long pale sub-crown internode and sparse roots, the right one correctly sown with a short stem and a much better developed root system" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Germination and emergence are driven by <b>seedbed moisture and temperature</b>; this phase sets the <b>plants per m&sup2;</b> component.</li>
+            <li><b>Too deep</b> and the coleoptile &mdash; short in modern semi-dwarf varieties &mdash; cannot reach the surface. The seedling spends reserves extending the sub-crown internode and arrives weakened, as on the left.</li>
+            <li><b>Too shallow</b> and the seed sits in a seedbed that dries out before the radicle is established.</li>
+            <li>Deep sowing also <b>delays emergence</b>, costing thermal time from an already short season.</li>
+            <li>This is why <b>seeding-bar accuracy and press-wheel setup</b> matter as much as the seed rate.</li>
+          </ul>
+        </div>
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;3</span>
+      <aside class="notes">
+        Target: ~3 min. Let the photograph do the argument &mdash; it is unusually clear. Both plants
+        are at Z11 and both will survive, but the left-hand seedling has spent a meaningful fraction
+        of its seed reserves on a sub-crown internode and shows it in the root system. Multiply that
+        across a paddock and you get slower canopy closure, more soil evaporation, less competition
+        against ryegrass, and a later crop into a fixed spring.
+        Connect to breeding: semi-dwarf varieties gave us the harvest-index gains that lifted yield,
+        but they came with shorter coleoptiles, so the sowing-depth window narrowed. That is a real
+        example of a genetic gain creating a management constraint &mdash; a G interacting with an M
+        &mdash; and it previews the G &times; E &times; M framework in Part 4.
+        Tie back to Part 1: this reliable, vigorous establishment from a wide range of conditions is
+        precisely the advantage cereals hold over canola, whose much smaller seed has almost none of
+        this latitude.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Tillering: the First Great Compensation Mechanism</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>From about the <b>three-leaf stage</b> the plant produces tillers from the crown &mdash; each one a potential head.</li>
+            <li>Tiller number responds strongly to conditions: <b>moisture, nitrogen, light (low density) and warmth promote</b> tillering; <b>stress suppresses</b> it.</li>
+            <li>The consequence is a <b>buffer</b>: a thin or stressed crop tillers harder to fill the canopy; a thick or vigorous crop makes fewer tillers per plant. Head number is stabilised across a wide range of plant densities.</li>
+            <li><b>Not all tillers survive.</b> Late tillers are aborted around stem elongation if resources tighten &mdash; a self-thinning that matches head number to the season on offer.</li>
+            <li>Agronomically: <b>early nitrogen and early weed control protect tillering</b> and canopy establishment.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/image24.JPG" alt="Photograph on a black background of a wheat plant at growth stage 24 showing the main stem labelled in the centre and four tillers arising from the crown, with an extensive fibrous root system" />
+        </div>
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;3</span>
+      <aside class="notes">
+        Target: ~3 min. This is the mechanism the whole risk argument rests on, so slow down.
+        Make the buffering concrete with numbers: at 150 plants/m&sup2; each plant might carry three
+        heads for 450 heads/m&sup2;; at 80 plants/m&sup2; the same crop may carry five or six heads
+        per plant and land at 400&ndash;480. The head count &mdash; the component that actually
+        matters &mdash; barely moves. That is why a cereal survives a patchy establishment and a
+        canola crop does not.
+        Then flag the cost, because students should not leave thinking tillering is free: a crop that
+        compensates by tillering is <em>later</em> and <em>more variable in maturity</em> than one
+        that established evenly, and the late tillers that do survive produce smaller heads and
+        smaller grain &mdash; which shows up as screenings at delivery. Compensation preserves tonnes
+        more faithfully than it preserves quality. Park that; it returns in Part 5.
+        Point at the photo caption's subtlety: the plant reads as three tillers until you look
+        closely and find a fourth. Under-counting tillers is the classic novice error.
+      </aside>
+    </section>
+
+
+    <section>
+      <h2>Counting Leaves, Counting Tillers</h2>
+      <div class="layout-scale">
+        <div class="scale-row">
+          <span class="scale-chip">3 leaf</span>
+          <span class="scale-arrow">&rarr;</span>
+          <span class="scale-chip">5 leaf</span>
+          <span class="scale-arrow">&rarr;</span>
+          <span class="scale-chip">6&ndash;7 leaf</span>
+          <span class="scale-arrow">&rarr;</span>
+          <span class="scale-chip is-active">jointing</span>
+        </div>
+      </div>
+      <div class="compact-table">
+        <table>
+          <caption>The correspondence an agronomist works from in the paddock. Leaf counts are on the <em>main stem</em>.</caption>
+          <thead>
+            <tr><th>Leaves on the main stem</th><th>Where tillering has got to</th><th>Zadoks</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>3 leaf</td><td>Tillering has not yet begun</td><td>Z13</td></tr>
+            <tr><td>5 leaf</td><td>Coincides with <b>early tillering</b></td><td>Z15 / Z21&ndash;22</td></tr>
+            <tr><td>6&ndash;7 leaf</td><td>Mid to <b>fully tillered</b></td><td>Z16&ndash;17 / Z24&ndash;25</td></tr>
+            <tr><td>Jointing &mdash; first node detectable</td><td><b>Tillering complete</b>; the reproductive phase has begun</td><td>Z30 / Z31</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="spec">
+        <b>Why this map earns its keep.</b> Labels are written in both languages. In WA, <b>2,4-D amine</b> goes on from the <b>5-leaf stage up to jointing (Z15&ndash;Z33)</b> &mdash; but after the <b>6-leaf stage (Z16)</b> for <b>Cranbrook, Jacup, Aroona</b> and <b>Spear</b> wheat and <b>Mortlock</b> oats, to avoid damage. Sprayed too early, the flag leaf emerges <b>fused, like an onion leaf</b>, and susceptible plants twist and distort.
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Short slide, high practical density. The point is that the two counting systems
+        run in parallel and an agronomist has to hold both, because the crop is described in leaves early
+        and in tillers later, and the labels are written in whichever the registrant preferred.
+        Draw the room's attention to the fourth row. <b>Jointing is the boundary</b> &mdash; it marks the
+        end of tillering and the start of the reproductive phase, and it is the cut-off on a large number
+        of labels. If students remember one row, it should be that one.
+        Then work the 2,4-D example as the payoff, because it makes the abstraction concrete and it is
+        genuinely examinable. Note what the varietal exception tells you: <b>Cranbrook, Jacup, Aroona,
+        Spear and Mortlock need an extra leaf of safety</b>. Crop safety is variety-specific, which means
+        reading the label is not optional even for a chemistry you have used for twenty years.
+        The onion-leaf symptom is the diagnostic students should carry into the field &mdash; a fused,
+        tubular flag leaf that cannot unroll, with twisted and distorted plants around it, is phenoxy
+        damage from an application made before the crop was ready. It is visible months after the
+        mistake, which makes it a very public one.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Floral Initiation: the Decision You Cannot See</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/image34.JPG" alt="Microscope plate of a cereal shoot apex at the double ridge stage, showing the paired ridges along the apex that mark the change from leaf production to spikelet production, with a half millimetre scale bar for size" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Somewhere around <b>Z29/Z30</b>, just before stem elongation, the shoot apex stops producing <b>leaves</b> and starts producing <b>spikelets</b>.</li>
+            <li>The marker is the <b>double ridge</b> &mdash; the paired ridges visible on the apex in the plate. Note the scale: it is about <b>half a millimetre</b> across.</li>
+            <li>It happens at ground level, inside the crown. <b>Nothing on the outside of the plant announces it.</b> It is found only by <b>dissection</b> under magnification.</li>
+            <li>And it is where <b>spikelet number per head is set</b> &mdash; the second term of the yield chain &mdash; weeks before there is a head to look at.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec">
+        So the crop commits to a <b>head size</b> before it commits to a stem. Stress in the run-up to Z30 costs spikelets, and <b>no later kindness recovers them</b>: the compensation available afterwards is grains per spikelet and grain weight, not spikelets. Equally, nitrogen and water in this window are buying potential grain sites.
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;3</span>
+      <aside class="notes">
+        Target: ~2 min. This slide exists to make one uncomfortable point: <b>the most consequential
+        thing happening in the paddock in early August is invisible from the ute.</b>
+        Set it up against the yield-component chain from Part 2. Students have the sequence &mdash;
+        plants, heads, grains per head, grain weight &mdash; and they know each is set at a particular
+        time. This is the moment the third term begins to be determined, and it is determined at a scale
+        of half a millimetre, underground, weeks before anything is visible.
+        The practical consequence is the one to press: an agronomist walking a crop at Z25 and seeing a
+        healthy canopy cannot see that a nitrogen or moisture deficit is at that moment costing spikelets
+        on every head the crop will ever produce. By the time the head emerges and the shortfall is
+        obvious, the decision is six weeks old. That is precisely why crop models earn their keep &mdash;
+        they track what you cannot observe.
+        Optional if you have a microscope and the time: this is the single best practical in the unit.
+        Splitting a crown and finding double ridge is a genuine <em>oh</em> moment, and students who have
+        done it never again think of Z30 as merely "when the stem starts moving".
+        Tie back to the compensation argument from earlier: cereals compensate well, but each component
+        can only be compensated by the components set <em>after</em> it. Spikelet number is set early,
+        so it has a lot of downstream compensation available &mdash; which is exactly why an early
+        setback is survivable and a flowering setback is not.
+      </aside>
+    </section>
+    <section>
+      <h2>Stem Elongation: the Growing Point Comes Up</h2>
+      <div class="wide-fig">
+        <img src="assets/image29.JPG" alt="Line diagram illustrating stem elongation in wheat as a sequence of seven plants: ear initiation, ear at one centimetre with first internode elongated and one node detectable, second internode elongating, third internode elongating, fourth internode elongating, boot stage with peduncle elongating, and the fully elongated stem" />
+      </div>
+      <p class="diagram-caption">From <b>Z30</b> the growing point, previously protected at ground level, rises up the stem. It is now exposed to <b>frost</b> and to <b>several herbicide chemistries</b> &mdash; which is why Z30/Z31 is a hard cut-off on many labels.</p>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;3</span>
+      <aside class="notes">
+        Target: ~3 min. The mechanical story first: before Z30 the developing head sits at or below
+        ground level inside the crown, insulated and protected. From Z30 the internodes extend and
+        carry it upward. Everything that follows is a consequence of that geometry.
+        Consequence one &mdash; <b>herbicide safety</b>. Phenoxy chemistry is the standard example:
+        2,4-D amine in WA is applied after about the five-leaf stage (Z15/Z16) and before jointing;
+        applied outside that window it distorts the developing head and produces the classic "onion
+        leafing" symptom. This is not a precaution, it is a yield loss.
+        Consequence two &mdash; <b>frost exposure</b>. The head is now above ground, and it stays
+        exposed for the rest of the season.
+        Consequence three &mdash; this is where <b>grain sites are being determined</b>, and where the
+        crop decides which tillers to keep. Nitrogen applied around here is being converted into
+        grains per head; nitrogen deficiency here loses tillers you had already paid for.
+        Mention the double-ridge stage (visible only under a microscope) as the true switch from
+        vegetative to reproductive &mdash; it happens well before anything is visible in the paddock,
+        which is why models and not eyeballs are needed to predict flowering date.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Staging Through Stem Elongation in the Field</h2>
+      <div class="gs-plate">
+        <figure>
+          <img src="assets/image32.JPG" alt="Photograph on a black background of a wheat plant at growth stage 30, the start of stem elongation, with multiple tillers and the leaf sheath visibly extending" />
+          <figcaption><b>Z30</b> &mdash; start of stem elongation; leaf sheath extending, no node yet detectable.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/image33.JPG" alt="Photograph on a black background of a wheat plant at growth stage 32 with a marker indicating the second node formed in the main stem" />
+          <figcaption><b>Z32</b> &mdash; second node detectable; approximately flag&minus;2, the third-last leaf.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/image31.JPG" alt="Photograph on a black background of a single wheat stem at growth stage 39 with the flag leaf fully emerged at the top of the stem" />
+          <figcaption><b>Z39</b> &mdash; flag leaf ligule just visible. The most important leaf in wheat is now fully exposed.</figcaption>
+        </figure>
+      </div>
+      <span class="source-chip">Source: DPIRD/GRDC <em>Wheat Book: Principles and Practice</em>, ch.&nbsp;2</span>
+      <aside class="notes">
+        Target: ~2 min. Run this as a rapid staging drill rather than a lecture &mdash; put each photo
+        up and ask the room to call the stage before you reveal the caption.
+        The teaching point that ties the three together: Z30 to Z39 is roughly five weeks, and it is
+        the busiest decision window of the season. Stage-critical herbicides must be finished at the
+        front of it, the main nitrogen dressing goes on inside it, plant growth regulators are applied
+        within it if lodging is a risk, and the flag-leaf fungicide decision sits at the end of it.
+        Get the staging wrong by one and you can be a fortnight out on all four.
+        Note also that Z32 approximates flag&minus;2 emergence &mdash; useful because fungicide
+        programs are often specified by leaf layer (protect flag, flag&minus;1, flag&minus;2) rather
+        than by Z code, and students need to be able to translate between the two.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Booting, Ear Emergence and Flowering</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li><b>Booting (Z41&ndash;49):</b> the head swells inside the flag-leaf sheath. Scored on the sheath &mdash; extending, swollen, splitting, first awns visible.</li>
+            <li><b>Ear emergence (Z51&ndash;59):</b> scored as the fraction of the ear out of the boot.</li>
+            <li><b>Anthesis (Z61&ndash;69):</b> scored on visible anthers &mdash; Z61 first anthers mid-ear, Z65 half way, Z69 complete.</li>
+            <li><b>This is the yield-defining event.</b> Florets are pollinated and <b>grain number is finally set</b>.</li>
+            <li>The losses here are <b>largely irreversible</b>, because the most important yield component is fixed and there is nothing left to compensate with except grain size.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/image41.png" alt="Close-up photograph of a green wheat ear at anthesis with pale yellow anthers extruded from florets along the length of the spike" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Be blunt about the stakes: everything before this slide was the crop building
+        capacity; this fortnight is where the capacity is converted into a committed grain number, and
+        after it the crop can only fill what it has set.
+        The three threats, in the order they bite in WA:
+        <b>Frost</b> sterilises florets. A frost at Z65 can empty a head completely while leaving the
+        plant looking green and healthy &mdash; the classic "white heads at harvest" that growers find
+        weeks later.
+        <b>Heat above about 35 &deg;C</b> damages pollen directly; the anthers in this photograph are
+        the vulnerable tissue.
+        <b>Water and nutrient stress</b> reduce the number of grains the crop can commit to support.
+        Hence the central strategic decision in WA cereal agronomy, which students have already met in
+        the climate lecture: <b>choose variety and sowing date so that flowering lands in the safe
+        window</b> &mdash; late enough to clear the frost risk, early enough to beat the heat and the
+        terminal drought. That window is narrow, it moves with location, and by flowering it is far
+        too late to change it. Every decision that determines it was made before sowing.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Grain Filling: the Flag Leaf Does the Work</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/image35.JPG" alt="Diagram comparing approximate yield contribution of the top three leaves in winter wheat and winter barley: in wheat the ear contributes 22 percent, flag leaf 43 percent, leaf 2 23 percent and leaf 3 7 percent; in barley the ear contributes 13 percent, flag leaf 5 to 9 percent, leaf sheath 25 percent, leaf 2 20 to 40 percent and leaf 3 10 to 15 percent" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>After flowering the grain accumulates <b>starch and protein</b> through milk (Z7x) and dough (Z8x) to maturity (Z9x).</li>
+            <li>Two sources: <b>current photosynthesis</b> from the flag leaf and upper canopy, plus <b>remobilised stem reserves</b> laid down before flowering.</li>
+            <li>In wheat the <b>flag leaf supplies about 43%</b> of grain-fill carbohydrate &mdash; which is what makes a flag-leaf fungicide such a high-value decision.</li>
+            <li>In <b>barley the picture differs</b>: the flag leaf contributes only 5&ndash;9%, and the crop leans on <b>leaf 2 (20&ndash;40%)</b> and the leaf sheaths. Protect a different layer.</li>
+            <li>Grain size is set by the <b>balance of assimilate supply against the duration of fill</b>.</li>
+          </ul>
+        </div>
+      </div>
+      <span class="source-chip">Figure based on UK/NZ winter cereal data</span>
+      <aside class="notes">
+        Target: ~3 min. The wheat-versus-barley contrast on this figure is the most immediately
+        practical thing on the slide and it is routinely got wrong in the field. If you build a barley
+        fungicide program around protecting the flag leaf on the wheat logic, you are protecting a
+        leaf that contributes under 10% and leaving the leaves that contribute 20&ndash;40% exposed.
+        Say plainly: same disease, same chemistry, different target layer, because the two crops
+        distribute their photosynthetic labour differently.
+        Caveat the figure honestly &mdash; it is derived from UK/NZ winter cereal data, and WA's
+        shorter, hotter, more stressed grain fill shifts the balance toward stem reserves. The
+        <em>ranking</em> travels; the exact percentages should not be quoted as WA values.
+        Then introduce stem reserves properly, because they are the unsung hero of WA grain fill: in a
+        season where the canopy dies early under terminal drought, pre-flowering reserves stored in
+        the stem are what keeps the grain filling at all. A crop that was stressed <em>before</em>
+        flowering has fewer of these reserves banked, which is one route by which early stress finally
+        does show up in yield.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Grain Fill in WA: Filling Into a Terminal Drought</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>In a Mediterranean environment, grain fill <b>almost always runs into rising heat and a drying profile</b>. The fill period is <b>truncated</b>.</li>
+            <li>Grain is therefore frequently <b>smaller than its genetic potential</b> &mdash; the pinched, screened grain of a dry finish.</li>
+            <li>This costs <b>both yield and quality</b>: lower grain weight, lower test weight, higher screenings.</li>
+            <li>A <b>kind finish</b> &mdash; a September or October rain &mdash; can lift grain size and test weight markedly. Growers call it a "soft finish"; it is the single biggest determinant of plumpness.</li>
+            <li><b>Maturity (Z9x)</b> is reached when grain dries to harvestable moisture. <b>Harvest promptly</b>: grain left standing is exposed to weather damage and sprouting.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/image49.JPG" alt="Photograph of two wheat ears at growth stage 87, hard dough, held against a blue sky and a green paddock: the ear on the right from a fungicide-treated crop is visibly plumper and better filled than the untreated ear on the left" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This slide is where the abstract "terminal drought" of the climate lecture
+        becomes a physical grain you can hold. The photograph is the argument: same variety, same
+        paddock, same season, at Z87 &mdash; the difference is a fungicide that kept the canopy alive
+        for the last fortnight of fill.
+        Reinforce the asymmetry that will run through Part 5: <b>grain fill sets only grain size, the
+        smallest of the four yield components, but it disproportionately sets quality</b>. A crop can
+        lose 10% of its yield in the finish and lose its milling grade entirely &mdash; and the grade
+        is worth more than the 10%.
+        On harvest timing: this is not an afterthought. Late-season rain on ripe standing grain
+        triggers pre-harvest sprouting, raises alpha-amylase and collapses the falling number, which
+        is a hard downgrade for milling and noodle wheats. Prompt harvest is a quality decision, and
+        it links directly to the logistics and storage material in L13.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Why Growth Stage Governs Management</h2>
+      <div>
+        <div>
+          <ul class="dense-bullets">
+            <li><b>Herbicides.</b> Safe and effective only inside a stage window. 2,4-D amine: after ~Z15, before jointing &mdash; outside it you get head distortion and "onion leafing".</li>
+            <li><b>Nitrogen.</b> Topdressed from tillering through stem elongation, matched to the stage at which the crop can still convert N into heads and grains &mdash; and to the seasonal outlook.</li>
+            <li><b>Fungicides.</b> Timed to protect a specific leaf layer at a defined stage &mdash; flag leaf in wheat, leaf 2 in barley.</li>
+            <li><b>Plant growth regulators.</b> Applied at stem elongation to manage lodging.</li>
+            <li><b>Frost and heat risk.</b> Assessed against flowering stage, and locked in by variety and sowing date months earlier.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the consolidation slide for Part 3 &mdash; the practical payoff of
+        everything since the break. State the principle in one line and make students write it down:
+        <b>the crop's response to an input depends on its developmental readiness, not on the date.</b>
+        Then push on the corollary that students find genuinely difficult: because the same variety
+        reaches Z31 on different dates in different seasons and at different sites, a calendar-based
+        program is wrong somewhere every year, and the error is largest in exactly the seasons where
+        the margin is thinnest.
+        Close on the field skill, which is the real learning outcome: a paddock is never at one stage.
+        There is a spread across plants, across soil types within the paddock, and between main stems
+        and late tillers. The agronomist's job is to sample properly, stage the main stems, understand
+        the distribution, and decide which part of that distribution the decision is actually
+        governed by &mdash; usually the most advanced material for a crop-safety call, and the bulk of
+        the crop for an efficacy call.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Same Stress at Different Stages Costs Different Amounts</h2>
+      <div class="wide-fig">
+        <img src="assets/image8.png" alt="Table titled Crop response to stress at various growth stages and the relative impact on yield, with rows for tillering, jointing or stem elongation, boot, pollination and grain fill, listing the predominant crop response, yield impact, relative quantity of water required to avoid stress and relative length of the growth period" />
+      </div>
+      <p class="diagram-caption">Stress at <b>pollination</b> costs the most (kernel blanks, sterility &mdash; <b>very high</b> yield impact) and is the shortest window. Stress at tillering is <b>moderate</b> and the crop has a long time to recover.</p>
+      <aside class="notes">
+        Target: ~2 min. Read the table down the "yield impact" column and let the shape speak: moderate,
+        high, moderate, <em>very high</em>, moderate-to-low. The peak is at pollination, and the window
+        is short &mdash; which is the worst possible combination, because it means a few unlucky days
+        can cost more than a month of moderate stress.
+        Draw out the fourth column too, because it is the one that surprises: the <em>quantity</em> of
+        water needed to avoid stress is low at tillering and high at pollination and grain fill. So
+        the crop's water demand and its vulnerability to water shortage peak together, in exactly the
+        part of the WA season when the profile is emptying. That is the Mediterranean squeeze in a
+        single table.
+        This slide is the hinge into Part 4: it explains simultaneously why compensation works (early
+        stress, long recovery window, low water cost) and why it fails (pollination stress, no
+        recovery window, irreversible).
+        Add the WA frost number, because it is the most violent figure in the lecture and it belongs
+        on this table: <b>frost during the milky to soft dough stages can drive screenings up to
+        70%.</b> Not a yield reduction &mdash; a grade collapse. A crop that looked finished and sound
+        can be rendered unsaleable as malt, and close to unsaleable as milling grain, by a few hours
+        on one clear night in September.
+        Two things follow that are worth saying explicitly. First, this is why the flowering-window
+        decision made back at sowing is the highest-leverage decision in cereal agronomy: it is the
+        only control anyone has over frost exposure, and it is exercised months in advance and never
+        revisited. Second, there is an uncomfortable interaction with the conservation-agriculture
+        material from L01 &mdash; <b>heavy stubble loads raise frost risk</b>, because standing residue
+        insulates the soil and reduces the heat radiated back to the canopy overnight. The practice
+        that conserves water and protects the surface also, on the wrong night, costs the grade.
+        Put that to the room as a genuine trade-off with no clean answer; it is a good test of whether
+        they have stopped looking for recipes.
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         PART 4 — YIELD FORMATION
+         =================================================================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 4</p>
+      <h2 style="color:#fff;">How Yield Is Actually Formed &mdash; and Lost</h2>
+      <p class="divider-note" style="color:#fff;">G &times; E &times; M, the compensation machinery, and water-use efficiency as the scoreboard that tells you whether any of it worked.</p>
+      <aside class="notes">
+        Target: ~17 min for this part. Preview: the organising framework (G &times; E &times; M), the
+        WA evidence on how much each term actually contributes, then the compensation mechanism and
+        its limits, then WUE as the diagnostic that closes the loop, and finally the integrated
+        season-long program that ties Parts 3 and 4 together.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Genotype &times; Environment &times; Management</h2>
+      <div class="layout-cols-3">
+        <div>
+          <h3>Genotype (G)</h3>
+          <ul class="dense-bullets">
+            <li>Phenology &mdash; maturity, photoperiod and vernalisation response</li>
+            <li>Yield potential and harvest index</li>
+            <li>Disease resistance</li>
+            <li>Grain quality class</li>
+            <li>Tolerances: frost, heat, drought, acidity, salinity</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Environment (E)</h3>
+          <ul class="dense-bullets">
+            <li>Growing-season rainfall &mdash; amount, timing, reliability</li>
+            <li>Temperature extremes at flowering and fill</li>
+            <li>Soil water-holding capacity</li>
+            <li>Subsoil constraints &mdash; acidity, compaction, salinity</li>
+            <li>Disease and weed pressure carried by the site</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Management (M)</h3>
+          <ul class="dense-bullets">
+            <li>Sowing date and seeding rate</li>
+            <li>Nutrition &mdash; rate, timing, placement</li>
+            <li>Weed, disease and pest control</li>
+            <li>Rotation and stubble</li>
+            <li>Harvest timing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec">
+        The framework's whole point is the <b>&times;</b>. The best variety depends on the environment (a quick variety for a late break, a slow one for early sowing). The best management depends on the variety <em>and</em> the season (a high-potential variety in a good season justifies high nitrogen; the same money is wasted on a drought).
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Introduce this as the organising principle that answers the question students
+        actually ask: "so what should I do?" The honest answer is that there is no single best variety
+        and no universal recipe &mdash; only the best combination of G, E and M for a given situation.
+        That is not a cop-out, it is the discipline.
+        Emphasise that the multiplication sign carries the meaning. If the terms were additive, you
+        could optimise each separately and agronomy would be a lookup table. Because they interact,
+        the value of any decision is conditional on the other two, and the conditioning is what makes
+        the job skilled.
+        Two worked examples to say aloud: (1) sowing date &times; variety &mdash; the same sowing date
+        is early for a slow variety and late for a quick one, so date and variety must be chosen as a
+        pair to land flowering in the safe window; (2) nitrogen &times; season &mdash; identical N
+        rates return very differently depending on the spring, which is exactly why tactical N
+        splitting exists and why crop models earn their keep.
+        Flag forward: this framework is the reason crop models matter. A model can explore the full
+        G &times; E &times; M factorial cheaply, over a hundred years of climate records, which no
+        field program can.
+      </aside>
+    </section>
+
+    <section>
+      <h2>How Much Does Each Term Actually Contribute?</h2>
+      <div class="compact-table">
+        <table>
+          <caption>Percentage of yield variance attributed to Genotype, Management, Environment and their interactions, in WA experiments containing multiple environments and both G and M treatments.</caption>
+          <thead>
+            <tr><th>Study</th><th>G (%)</th><th>M (%)</th><th>E (%)</th><th>Interactions (%)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Anderson et al. (2005)</td><td>3</td><td>2</td><td>26</td><td>60</td></tr>
+            <tr><td>Sharma et al. (2008)</td><td>&ndash;</td><td>10</td><td>70</td><td>7</td></tr>
+            <tr><td>Hughes (pers. comm., 2010)</td><td>2</td><td>6</td><td>89</td><td>&ndash;</td></tr>
+            <tr><td>Anderson et al. (2010)</td><td>2</td><td>4</td><td>78</td><td>15</td></tr>
+            <tr><td>Abrecht et al. (2008)</td><td>&ndash;</td><td>36</td><td>42</td><td>17</td></tr>
+            <tr><td>Koj</td><td>&ndash;</td><td>56</td><td>16</td><td>22</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="diagram-caption">Management alone accounts for anywhere from <b>2% to 56%</b> of yield variability depending on the system and the seasons sampled &mdash; and interactions are often larger than any main effect.</p>
+      <aside class="notes">
+        Target: ~3 min. This is WA data on WA questions, so treat it seriously and let students sit
+        with how uncomfortable it is.
+        Three readings to draw out.
+        (1) <b>Environment usually dominates.</b> In several of these studies E accounts for 70&ndash;89%
+        of variance. Most of what happens to a WA crop is decided by the season, and no amount of
+        agronomy changes that.
+        (2) <b>Genotype is consistently small</b> in this partition &mdash; 2&ndash;3% &mdash; which
+        surprises students who assume variety choice is the big lever. It is small <em>within these
+        experiments</em> because all the varieties tested were already adapted; the enormous
+        historical contribution of breeding is invisible in a comparison of modern varieties.
+        Be precise about this; it is a classic misreading.
+        (3) <b>Management ranges enormously and interactions are often the largest single term.</b>
+        Anderson 2005 attributes 60% to interactions. That is the G &times; E &times; M framework
+        arriving as a measurement, not a slogan: the effect of management depends on the season, so
+        the "main effect" of management is not a stable quantity.
+        The practical conclusion for an agronomist: you cannot control E, you can barely move G, but
+        you own the interactions &mdash; your job is to match management to the season and the site
+        as it unfolds. That is tactical agronomy, and it is the subject of the next few slides.
+      </aside>
+    </section>
+
+    <section>
+      <h2>How Cereals Compensate for Stress</h2>
+      <ol class="concepts-list">
+        <li><span class="concept-num">1</span><span><b>Thinned at establishment?</b> The crop tillers harder and restores head number. Plants per m&sup2; is the most compensable component of all.</span></li>
+        <li><span class="concept-num">2</span><span><b>Stressed during tillering?</b> If conditions ease by flowering, the surviving heads can still set an adequate number of grains each.</span></li>
+        <li><span class="concept-num">3</span><span><b>Short of grain number?</b> A kind finish lets the crop put more weight into each grain it did set.</span></li>
+        <li><span class="concept-num">4</span><span><b>The mechanism:</b> because the components are set <em>sequentially</em>, a component reduced early can be partly offset by components set later &mdash; provided resources return. It is the same source&ndash;sink logic a crop model represents as stress factors.</span></li>
+      </ol>
+      <div class="spec">
+        This is why <b>early stress is rarely fatal to a cereal</b>, and why cereals recover from setbacks that would ruin a canola or pulse crop. It is the physiological basis of the risk argument in Part 1.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Return explicitly to the yield-component diagram from before the break &mdash;
+        this slide is that diagram read as a strategy. The crop is running a continuous negotiation
+        with the season: it sets an ambitious target early, then revises it as information arrives.
+        The clean way to express it: each yield component is an option the crop can exercise later, so
+        a loss early is a reduction in one term of a product that still has three terms left to be
+        determined. A canola crop has far fewer downstream options.
+        Ask the room to reason through a case rather than telling them: "a crop establishes at 60
+        plants per square metre instead of 140 because the break was marginal. Walk me through what
+        happens." Steer toward: more tillers per plant, head number partly restored, canopy closes
+        later so more soil evaporation and more weed competition, maturity more variable, and grain
+        possibly smaller. Tonnes largely defended; quality and timeliness quietly eroded. That
+        distinction &mdash; compensation protects yield better than it protects quality &mdash; is
+        the bridge to Part 5.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Where Compensation Runs Out</h2>
+      <div class="context-card">
+        <p class="context-q">Compensation has hard limits, and both of them matter enormously in WA:</p>
+        <ul>
+          <li><b>Losses at flowering are irreversible.</b> Frost-sterilised florets and heat-damaged pollen destroy grain number &mdash; the largest component &mdash; at the one moment when only grain size remains to compensate with. There is not enough room left in the equation.</li>
+          <li><b>Terminal drought removes the later components' capacity to compensate.</b> Compensation requires resources to return. If the profile is empty and the finish is hot, the crop cannot put extra weight into grain even though it "should".</li>
+          <li>So <b>the timing of stress relative to development</b>, not just its severity, determines whether the crop recovers.</li>
+          <li>And in a Mediterranean season these two limits <b>coincide</b>: flowering and grain fill both sit in the drying, warming end of the season.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Do not let students leave Part 4 believing cereals are indestructible &mdash;
+        the compensation story is seductive and needs this counterweight.
+        The sharpest framing: compensation is a mechanism for converting <em>early</em> adversity into
+        a smaller but viable crop. It offers nothing against <em>late</em> adversity, and WA's
+        adversity is structurally late. That is precisely why the flowering-window decision &mdash;
+        made at sowing, months in advance, and unchangeable thereafter &mdash; is the highest-leverage
+        decision in cereal agronomy, and why so much breeding effort goes into phenology.
+        Connect to the stress-timing table two slides back: the "very high" impact row was pollination,
+        the one stage with no downstream compensation available.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Water-Use Efficiency: the Scoreboard</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li><b>French&ndash;Schultz:</b> water-limited potential yield rises with growing-season water use above an evaporation threshold of roughly <b>110 mm</b>, at a slope representing transpiration efficiency.</li>
+            <li>Benchmark slopes: <b>wheat ~20 kg/ha/mm</b> (breeding target 25), <b>barley and oats ~25</b>, <b>canola ~12</b>.</li>
+            <li>Actual WA performance often falls well short &mdash; measured slopes of <b>4.9 kg/ha/mm at Morawa</b> and <b>7.7 at Merredin</b>. Some operations achieve 60&ndash;80% of potential; others reach 30%.</li>
+            <li>The gap is the <b>diagnostic</b>: a crop near the line was well managed for that season; a crop well below it has a <b>correctable constraint</b>.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="figure-placeholder">
+            <span class="fp-tag">FIGURE</span><br />French&ndash;Schultz plot: growing-season water use (100&ndash;450 mm) against yield (0&ndash;6 t/ha), with the water-limited boundary from an x-intercept near 110 mm, one paddock on the line and one well below it, the gap annotated with candidate causes. <em>(Fig-L06-WUE &mdash; to be sourced or drawn.)</em>
+          </div>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Students met French&ndash;Schultz in L01; today it stops being a formula and
+        becomes a diagnostic instrument. The move to make explicit: the equation does not tell you
+        what your yield <em>will</em> be, it tells you what it <em>could</em> have been given the water
+        you actually got &mdash; and the residual is the part you are responsible for.
+        Note the honest figure placeholder &mdash; the drawn plot is still to be sourced; talk over the
+        bullet points and sketch the line on the chalkboard if it helps (the chalkboard plugin is
+        available with the button bottom-left).
+        Then run the diagnosis, which is the real content: a paddock well below the line has a
+        constraint, and the candidates are finite &mdash; <b>weeds</b> competing for the same water,
+        <b>disease or nutrient deficiency</b> limiting canopy function, <b>subsoil acidity or
+        compaction</b> restricting root access to stored water (straight back to L03), or
+        <b>poorly matched phenology</b> wasting the good part of the season. Each is testable.
+        Close on the historical point, which reframes the whole unit: roughly <b>70% of historical
+        yield gain in WA is attributed to management improvement rather than genetics</b> &mdash;
+        summer weed control, no-till and stubble retention keeping more rainfall available, earlier
+        sowing aligning growth with the efficient part of the season, better nutrition and disease
+        control keeping the canopy working. WUE is the metric that registers all of it.
+        Two quantitative points that make the diagnosis sharper. First, <b>where the missing water
+        goes</b>: roughly <b>100&ndash;110 mm of growing-season rainfall &mdash; about a third &mdash;
+        is lost to non-productive soil evaporation</b>. That is what the x-intercept in the equation
+        actually represents, and it is why stubble retention and rapid canopy closure are WUE
+        interventions rather than merely soil-conservation ones.
+        Second, the counter-intuitive geography: <b>the yield gap is narrower in low-rainfall areas
+        (&lt;250 mm) and wider in high-rainfall areas.</b> Students assume the marginal country is the
+        badly-run country; the data says the opposite. A dry-season crop uses a high proportion of the
+        little water it gets, so there is not much left on the table. A high-rainfall crop has far more
+        water to mismanage &mdash; more evaporation, more leaching, more disease, more scope for the
+        canopy to be under-fed &mdash; so the <em>opportunity</em> is largest where conditions are
+        best. Put it to the room as a business question: if you had one agronomist to deploy across a
+        Merredin farm and a Kojonup farm, where does the hour earn more?
+        That also lands the economics for L10: rainfall zone raises yield potential <em>and</em>
+        variable costs together, so high-rainfall farming carries greater financial exposure per
+        hectare, and the low-input strategy in marginal country is a rational risk position, not
+        under-management.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Managing the Crop Across the Season</h2>
+      <ul class="journey-list">
+        <li><b>1</b><span><strong>Pre-sowing &amp; sowing.</strong> Choose variety and sowing date so flowering lands in the safe window. Set target density. Place seed and starter fertiliser accurately. Pre-emergent weed control.</span></li>
+        <li><b>2</b><span><strong>Emergence &ndash; tillering (Z1x&ndash;Z2x).</strong> Protect establishment and tillering: timely post-emergent weed control, early nitrogen matched to the emerging outlook and stored moisture.</span></li>
+        <li><b>3</b><span><strong>Stem elongation (Z30&ndash;Z39).</strong> Finish stage-critical herbicides <em>before</em> the growing point rises. Main nitrogen dressing to build grains-per-head in a promising season. Manage lodging risk.</span></li>
+        <li><b>4</b><span><strong>Flowering (Z6x).</strong> The crop is committed. Protect the yield-forming canopy with fungicide if disease threatens. Frost and heat exposure are now fixed by decisions made at sowing.</span></li>
+        <li><b>5</b><span><strong>Grain fill &ndash; harvest (Z7x&ndash;Z9x).</strong> Monitor late disease and insects &mdash; aphids during grain fill are a real threat. Harvest promptly at maturity to preserve quality.</span></li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. This is the synthesis of Parts 3 and 4 &mdash; the program an agronomist
+        actually runs. Walk it once briskly; the detail is all on earlier slides.
+        The point that must land is that this is <b>not a recipe</b>. It is a decision sequence that is
+        continuously revised as the season reveals itself. At step 2 you commit modest nitrogen
+        because you do not yet know what season you are in. By step 3 you know a great deal more
+        &mdash; how much rain has fallen, how the profile looks, what the crop's biomass is telling
+        you &mdash; and you invest accordingly. That is what "tactical agronomy under a variable
+        climate" means in practice, and it is why nitrogen is split rather than applied all at
+        seeding.
+        Note the asymmetry in reversibility: steps 1&ndash;3 are decisions with options; from step 4
+        the crop is committed and you are only protecting what exists. Good agronomists spend their
+        attention where the options are.
+        Put numbers on the nitrogen sequence, because "split your N" is meaningless without them.
+        The standard WA shape is a <b>baseline 10&ndash;20 kg N/ha at seeding</b> &mdash; enough to
+        establish and start tillering, deliberately not enough to commit to a yield you cannot yet
+        forecast &mdash; with the substantial decision deferred to <b>Z30&ndash;Z31</b>, once the
+        break, the stored profile and the crop's own biomass have told you what season you are in.
+        Map that onto the demand curve from Part 5: about <b>30% of uptake happens before first node
+        and 40% between first node and flag leaf</b>, so the deferred dressing is landing immediately
+        ahead of peak demand rather than late.
+        The framing worth giving them: <b>splitting nitrogen is buying an option.</b> Applying it all
+        up-front is cheaper per pass but commits capital to a yield forecast made in April, when the
+        forecast is worst. The extra pass is the premium you pay to decide in July instead. That is
+        the same logic as the malt-versus-feed bet in Part 5 and the same logic L10 formalises as
+        risk management &mdash; and it is why APSIM-type models earn their keep here specifically,
+        at the point where a real decision is still open.
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         PART 5 — GRAIN QUALITY AND PRICE
+         =================================================================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 5</p>
+      <h2 style="color:#fff;">Grain Quality and What It Is Worth</h2>
+      <p class="divider-note" style="color:#fff;">A grower does not sell tonnes; they sell tonnes of a specified grade. Quality is often the difference between a good year and an average one.</p>
+      <aside class="notes">
+        Target: ~25 min for this part. Preview: why grade matters at all, the measured parameters,
+        then wheat (classification and protein, including the dilution effect and the nitrogen economy
+        behind it), then barley (the malting premium, the protein window, screenings and brightness),
+        and finally the practice checklist that turns all of it into a program.
+        Tell students this section is where agronomy meets the market and that it is the direct
+        handoff to L10 (farm financial analysis) and L13 (logistics).
+      </aside>
+    </section>
+
+    <section>
+      <h2>Why Grain Quality Determines Price</h2>
+      <div class="context-card">
+        <p class="context-q">Grain is bought against strict published specifications, not by appearance or goodwill:</p>
+        <ul>
+          <li>Grain meeting a <b>higher-value classification earns a substantial premium</b>; grain failing a specification is <b>downgraded</b> &mdash; sometimes from milling wheat straight to feed &mdash; with a large price penalty.</li>
+          <li>Standards are public and administered through <b>Grain Trade Australia</b> and the receival networks (CBH in WA, GrainCorp, Viterra).</li>
+          <li>Grade is assessed <b>at the weighbridge, on the day</b>, on a sample. The decision is fast, mechanical and final.</li>
+          <li>Because quality is shaped by <b>variety, nutrition and the season</b>, and can be won or lost in the final weeks, managing for quality runs through variety choice, nitrogen strategy and harvest timing &mdash; not just the last fortnight.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Reframe the grower's product deliberately: not "wheat" but "a delivered load
+        that satisfies a specification". Students who have spent the last ninety minutes optimising
+        tonnes need to feel the shift.
+        The number that makes it concrete: a downgrade from a milling grade to feed can cost on the
+        order of $50&ndash;80 per tonne on prices in the $300s. On a 3 t/ha crop over 1000 ha that is a
+        six-figure difference produced by a specification, not by a yield.
+        Emphasise the finality &mdash; there is no appeal to how good the season was or how well the
+        crop was managed. The sample either meets the spec or it does not. That asymmetry is why
+        quality risk is managed defensively, months in advance, and it is exactly the mindset the
+        gross-margin and risk material in L10 formalises.
+        Ground the whole part in the export fact from Part 1: <b>about 90% of WA grain leaves the
+        country.</b> The specification is not a local convention a grower might argue with &mdash; it
+        is the interface to a buyer in Japan, Indonesia or the Middle East who is purchasing a
+        functional input for a factory, sight unseen, against a written standard. That is why the
+        standards are administered centrally through Grain Trade Australia and the receival networks
+        rather than negotiated paddock by paddock, and why WA has specialised into narrow classes such
+        as the noodle wheats: the market is specific, distant, and unforgiving.
+        The forward connection to make explicitly: this is the point where L06 hands over to
+        <b>L13 (logistics)</b> &mdash; segregation at the bin, and the fact that once your load is
+        tipped into a stack it takes that stack's identity &mdash; and to <b>L14 (global markets)</b>,
+        which explains who is buying and why the classes exist at all.
+      </aside>
+    </section>
+
+    <section>
+      <h2>What Actually Gets Measured</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Chemical &amp; functional</h3>
+          <ul class="dense-bullets">
+            <li><b>Protein content</b> &mdash; central for wheat; determines suitability for bread, noodles or feed. Directly priced.</li>
+            <li><b>Falling number</b> &mdash; sprouting damage from untimely rain. Low values mean high alpha-amylase and degraded dough; critical for milling and noodle wheats.</li>
+            <li><b>Moisture</b> &mdash; must be below threshold (max 12.5%) for safe storage.</li>
+            <li><b>Germination</b> and <b>variety purity</b> &mdash; malting barley only, and non-negotiable.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Physical</h3>
+          <ul class="dense-bullets">
+            <li><b>Test weight</b> (hectolitre weight, kg/hL) &mdash; soundness and packing density.</li>
+            <li><b>Screenings</b> &mdash; the fraction passing a slotted sieve. The direct measure of a pinched, drought-affected finish.</li>
+            <li><b>Grain colour / brightness</b> &mdash; weather staining; a real issue near the coast.</li>
+            <li><b>Hardness</b>, and for barley <b>skinning</b> (husk loss, which causes uneven malting).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec">
+        <b>Falling number, explained:</b> starch heated in water makes a thick paste, so the plunger takes many seconds to fall. Sprouted grain has broken that starch down to sugars, the paste is watery, and the plunger drops quickly. <b>A low falling number literally means the starch has already been digested.</b>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Do not just list &mdash; group them by what they are actually detecting, which
+        is what makes them memorable.
+        <b>Protein</b> detects the nitrogen economy of the crop. <b>Screenings and test weight</b>
+        detect the finish &mdash; they are the fingerprint of terminal drought, and everything in Part
+        3 about truncated grain fill shows up here. <b>Falling number</b> detects untimely rain after
+        maturity. <b>Brightness</b> detects humidity and weathering. Each parameter is a sensor
+        pointed at a different part of the season.
+        Spend the extra thirty seconds on the falling number mechanism &mdash; students remember it
+        once they understand it is a viscosity test and that a low number means the grain has begun
+        digesting itself. It is also a genuinely cruel parameter agronomically: a crop can be perfect
+        all season and be downgraded by a single November rain event on ripe standing grain, which is
+        why prompt harvest is a quality decision.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Australian Wheat Classification</h2>
+      <div class="compact-table">
+        <table>
+          <caption>Indicative Australian wheat classes and protein specifications. Prices shown are illustrative of a recent season only &mdash; the <em>relativities</em> are the durable lesson, not the absolute values.</caption>
+          <thead>
+            <tr><th>Class</th><th>Protein spec</th><th>Indicative price</th><th>Typical end use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Australian Premium Hard (APH)</td><td>min 13%</td><td>premium</td><td>High-volume European breads, ramen noodles</td></tr>
+            <tr><td>Australian Hard (AH)</td><td>min 11.5&ndash;14%</td><td>~$370/t</td><td>European pan and Middle-Eastern flat breads, steamed products</td></tr>
+            <tr><td>Australian Premium White (APW)</td><td>min 10&ndash;10.5%</td><td>~$365/t</td><td>Noodles, some continental flat breads</td></tr>
+            <tr><td>Australian Standard White (ASW)</td><td>no minimum</td><td>~$340/t</td><td>Straight milling or blending; European breads and rolls</td></tr>
+            <tr><td>Australian Noodle Wheat (ANW / APWN)</td><td>min 9.5%, max 11.5%</td><td>premium, WA specialty</td><td>Japanese udon; white salted and instant noodles</td></tr>
+            <tr><td>Australian Soft (ASFT)</td><td>max 9.5&ndash;10.5%</td><td>&mdash;</td><td>Biscuits, cakes</td></tr>
+            <tr><td>Australian Durum (DR / ADR)</td><td>min 11.5&ndash;13%</td><td>&mdash;</td><td>Pasta, couscous, flat breads</td></tr>
+            <tr><td>Feed wheat</td><td>no limits</td><td>large discount</td><td>Stockfeed</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="spec">
+        <b>What the classes are actually sorting on.</b> <b>Hard</b> wheats have a <b>vitreous</b>, glassy endosperm and mill to a coarse, strong flour &mdash; bread. <b>Soft</b> wheats have a softer, <b>opaque</b>, less compact endosperm &mdash; biscuits and cakes. Bread wheat (<i>Triticum aestivum</i>) runs about <b>9&ndash;12%</b> protein; durum (<i>T. turgidum</i> ssp. <i>durum</i>), a different species used for pasta and couscous, runs <b>13&ndash;14%</b> and is denser and lower in gluten quality for leavened bread.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Three things to teach off this table.
+        (1) <b>Varieties are classified by an independent authority</b> on genetic and functional
+        characteristics &mdash; a grower cannot decide to grow APH; they can only grow an
+        APH-classified variety and then try to meet the delivered specification.
+        (2) <b>A delivered load is graded on both</b> the variety's class <em>and</em> its measured
+        attributes on the day. A high-class variety that comes in at 10.8% protein does not deliver
+        APH. This catches students out: the class is a ceiling, not a guarantee.
+        (3) <b>Note the Noodle wheats.</b> APWN is a WA-only export classification with a protein
+        <em>band</em> (9.5&ndash;11.5%) rather than a minimum &mdash; too much protein is as
+        disqualifying as too little. That is a genuinely different nitrogen problem: you are aiming at
+        a window, not maximising. It previews exactly the malting barley problem later in this part,
+        and it is a nice illustration of WA's specialisation into particular Asian markets, which is
+        the L14 material.
+        Caveat the prices explicitly &mdash; they are from a recent season and will be wrong by the
+        time students are in the field. What persists is the shape: a $25&ndash;30/t step between
+        adjacent milling grades and a much bigger cliff down to feed.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Protein and the Dilution Effect</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/image52.JPG" alt="Two side-by-side photographs looking down into a cereal canopy: the thinner canopy on the left is labelled yield 6.18 tonnes per hectare and 12.0 percent protein, the thicker canopy on the right is labelled yield 6.20 tonnes per hectare and 10.6 percent protein" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Protein concentration is a <b>ratio</b>: nitrogen accumulated in the grain, divided by the mass of grain produced.</li>
+            <li>So a <b>big yield can dilute protein below the milling threshold</b> even when total nitrogen uptake is unchanged. Moisture during grain fill drives starch accumulation, which is the denominator.</li>
+            <li>The photographs show it directly: <b>essentially identical yield, 1.4 percentage points of protein apart</b> &mdash; the thicker canopy diluted the same nitrogen into the same tonnage of grain differently.</li>
+            <li>The agronomist's problem: <b>hit a yield target and a protein target simultaneously</b>, under a season you cannot see yet.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the subtlest idea in Part 5 and worth the time.
+        Start by killing the intuition students arrive with: "more nitrogen means more protein" is
+        only true holding yield constant, and yield is never constant. Protein is a ratio, and
+        nitrogen moves both the numerator and (via yield) the denominator.
+        Then use the photographs, which are the cleanest illustration you will get: two canopies,
+        6.18 versus 6.20 t/ha &mdash; a rounding error in yield &mdash; and 12.0% versus 10.6%
+        protein. On the wheat classification table, that difference is the difference between clearing
+        an AH minimum and not.
+        The cruel corollary for growers: a <b>good season can cost you your grade</b>. A generous
+        spring lifts yield, dilutes protein, and drops a crop from a premium milling grade into a
+        lower one &mdash; more tonnes, less money per tonne, and sometimes less money in total. This
+        is why "grow for yield" and "grow for quality" are genuinely different strategies rather than
+        the same strategy described twice.
+        Ask the room: "your crop is looking exceptional in early September. Does that make you more or
+        less likely to topdress nitrogen?" (More &mdash; both because the yield potential justifies it
+        and because you now need more nitrogen just to hold protein.)
+        Widen it into the canopy-management trade-off, because the photographs are really about canopy
+        density and it is worth naming both sides. A <b>thicker canopy</b> generally yields more and
+        competes better with weeds through shading &mdash; but it also carries <b>more disease risk</b>
+        and <b>greater exposure to frost damage</b>, and, as the photographs show, it dilutes protein.
+        So the question is never "is a thick canopy good?" but "is the extra yield worth the protein I
+        give up, the disease and frost risk I take on, and the cost of the product and the pass?"
+        That is a gross-margin question, and it is exactly the shape of the decisions in L10.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Nitrogen Economy Behind the Protein</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Cereal N uptake has <b>two phases</b>: accumulation that drives growth and yield potential, then <b>remobilisation to the grain</b> that sets protein.</li>
+            <li>Phased across the season: <b>~30% before first node</b>, <b>40% first node &rarr; flag leaf</b>, <b>20% flag leaf &rarr; flowering</b>, <b>10% after</b>.</li>
+            <li>By flowering, <b>80&ndash;90% of crop N has accumulated</b>; peak demand is at stem elongation. At maturity <b>~75% of shoot N has been remobilised into the grain</b> (60&ndash;80%).</li>
+            <li>Under high N rates the <b>proportion remobilised falls</b>; late uptake during grain fill keeps leaves green, favours starch, and can <em>lower</em> protein.</li>
+            <li><b>The tactic:</b> N at <b>flag leaf emergence</b> is too late to build yield but can still lift protein. <b>APSIM</b> estimates the rate that lands protein in a target band, not just maximum tonnes.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/image54.png" alt="Line chart of crop nitrogen uptake in kilograms per hectare against time, rising steeply between growth stages 30 and 39 through the construction phase and levelling off after growth stage 61 in the production phase, with the season divided into foundation, construction and production phases" />
+          <p class="diagram-caption">N uptake against growth stage: most of the crop's nitrogen is taken up in the <b>construction</b> phase, Z30&ndash;Z61. <em>(Northern-hemisphere calendar; read the growth stages, not the months.)</em></p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. This slide explains <em>why</em> the topdressing windows in Part 3 are where
+        they are &mdash; the demand curve is the reason, not convention.
+        Warn about the figure honestly: the x-axis months are northern hemisphere. Tell students to
+        read the GS labels and ignore the calendar. The shape is what transfers.
+        Two implications worth stating plainly. First, <b>nitrogen applied after flowering is mostly
+        too late to build yield</b> &mdash; only about 10% of uptake happens then &mdash; but it can
+        still lift protein, which is why a late flag-leaf-emergence application is a recognised
+        protein tactic rather than a yield tactic. Second, the remobilisation figure means that
+        <b>most of the protein in the grain was in the leaves first</b>. Anything that kills the
+        canopy prematurely &mdash; disease, drought, frost &mdash; interrupts a transfer that was
+        already scheduled.
+        The counter-intuitive last bullet is worth dwelling on: at high N rates a crop stays green,
+        keeps taking up soil N during fill, keeps photosynthesising and lays down starch &mdash; and
+        the protein <em>percentage</em> can end up lower than expected. Yet another face of the
+        dilution effect.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Barley: the Malt-versus-Feed Decision</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Malt (Malt 1 / Malt 2)</h3>
+          <ul class="dense-bullets">
+            <li><b>Accredited varieties only</b> &mdash; 95% varietal purity.</li>
+            <li><b>Protein</b> min 9&ndash;9.5%, max ~12.5&ndash;12.8%.</li>
+            <li><b>Screenings</b> (2.5 mm) Malt 1 &le; 20%, Malt 2 &le; 35%; premium malt grades target <b>&lt;7% through 2.2 mm</b>.</li>
+            <li><b>Test weight</b> &ge; 64 kg/hL. <b>Moisture</b> &le; 12.5%.</li>
+            <li>Must <b>germinate uniformly and vigorously</b> &mdash; sprouting or weathering disqualifies.</li>
+            <li><b>Premium price.</b></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Feed</h3>
+          <ul class="dense-bullets">
+            <li><b>Any variety.</b></li>
+            <li><b>No protein limits.</b></li>
+            <li><b>No screenings limit.</b></li>
+            <li><b>Test weight</b> &ge; 56 kg/hL. <b>Moisture</b> &le; 12.5%.</li>
+            <li>Lower price &mdash; but a genuine, reliable floor.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="spec">
+        Whether to <em>grow</em> for malt depends on four things: the <b>premium</b> on offer; the <b>relative yield</b> of malting versus feed varieties; the <b>agronomic and disease constraints</b> of the malting varieties; and the <b>likelihood</b> that the grain will actually make the grade.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. The structural insight: barley is the only crop in this unit where the grower
+        makes a <em>market</em> decision at sowing and then spends the season trying to validate it,
+        with a known and acceptable fallback if they fail.
+        Work the four factors in the box as a genuine decision problem. A large premium justifies
+        accepting a malting variety's yield penalty and tighter agronomy; a small premium does not.
+        And the fourth factor &mdash; the probability of actually making grade &mdash; is a
+        <em>seasonal</em> probability the grower cannot control, which makes this an expected-value
+        calculation, not a plan. That framing is exactly what L10's risk-management material
+        formalises, so signpost it.
+        Note that the feed floor is what makes the bet reasonable: unlike a canola crop that fails,
+        barley that misses malt is still a saleable commodity at a known price. That is the risk
+        argument from Part 1 reappearing in a market rather than an agronomic form.
+        Two asides worth thirty seconds each if the room is with you. <b>Where the premium goes:</b>
+        beer is the number one quality focus for the WA malting market, but the same grain also
+        supplies <em>shochu</em>, whisky and other distilled spirits &mdash; which is part of why the
+        specification is written for a processor's convenience rather than a nutritionist's.
+        <b>Where the crop came from:</b> domesticated barley (<i>Hordeum vulgare</i>) descends from wild
+        barley (<i>H. spontaneum</i>), one of some 31 <i>Hordeum</i> species &mdash; and two of the
+        others, <i>H. leporinum</i> and <i>H. glaucum</i>, are the barley grasses students will meet as
+        weeds. Selective control inside a barley crop is correspondingly awkward, which is a neat
+        illustration of why crop and weed taxonomy is an agronomic problem and not a botanical
+        curiosity. Push that one step further, because it closes a loop students enjoy:
+        <b><i>Hordeum glaucum</i> is a green-bridge host for net blotch</b>, which is stubble-borne
+        and one of the diseases that drives screenings up. So the weedy relative is not merely hard to
+        spray out &mdash; it is maintaining the inoculum that costs you the malting grade. Weed
+        control, disease control and quality are one problem, not three.
+        Two more things worth having ready. First, the accreditation is not a single number: malt
+        grade turns on <b>seven criteria</b> &mdash; germination, variety purity, hectolitre weight,
+        protein, screenings, colour and skinning &mdash; and <em>all</em> of them must pass. Students
+        who have been optimising protein need to hear that a load can be perfect on protein and still
+        fail on skinning. Seven independent gates is a low joint probability, which is the real reason
+        the malt premium exists.
+        Second, the yield penalty is real and quantifiable in the variety tables: <b>feed varieties
+        such as Leebrook generally out-yield the malt-accredited varieties.</b> So the malt decision
+        is not "free upside" &mdash; a grower gives up tonnes at sowing for a chance at a premium they
+        may not collect. Ask the room to state the break-even in words: how large must the premium be,
+        and how confident must you be of making grade, to justify the yield you are surrendering?
+        That is an expected-value calculation and it is exactly the L10 material.
+      </aside>
+    </section>
+
+    <section>
+      <h2>The Malting Protein Window: Aim at a Band, Not a Ceiling</h2>
+      <div class="layout-stats">
+        <div class="stat-card"><span class="stat-num">&lt;9.5%</span><span class="stat-label"><b>Too low.</b> Weak yeast fermentation, reduced beer head duration and stability, poor clinical performance in the brewery.</span></div>
+        <div class="stat-card"><span class="stat-num">9.5&ndash;12.5%</span><span class="stat-label"><b>The window.</b> The target for accredited malting barley &mdash; and the reason barley nitrogen management is fundamentally different from wheat's.</span></div>
+        <div class="stat-card"><span class="stat-num">&gt;12.5%</span><span class="stat-label"><b>Too high.</b> Less alcohol per tonne, longer brewery filtration times, beer haze risk, shorter shelf life.</span></div>
+      </div>
+      <div class="spec">
+        <b>The trap that catches WA growers:</b> a legume-rich rotation raises background soil nitrogen. In a dry, low-yielding season there is not enough grain to dilute it, and protein overshoots 12.5% &mdash; losing the malting premium <em>because the rotation was good</em>. Hence the standard advice: <b>put barley after a non-legume</b> (canola or wheat) when chasing malt.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Make the contrast with wheat explicit and let it land, because it inverts
+        everything students just learned: in wheat, protein is a <em>minimum</em> to be cleared and
+        more is generally better. In malting barley it is a <em>band</em>, and overshooting is as
+        costly as undershooting. Same nutrient, same crop family, opposite objective function.
+        Explain the two failure modes physically, not just as rules &mdash; the brewer's problems are
+        real chemistry. High protein means proportionally less starch, so less fermentable extract per
+        tonne, plus haze-forming proteins and slower filtration. Low protein means too little
+        free amino nitrogen for the yeast and insufficient protein to stabilise the head.
+        Then the rotation trap, which is the best example in the unit of an interaction with a
+        counter-intuitive sign: the lupin phase that improved the system's nitrogen, water use and
+        disease status is the same phase that costs the barley crop its premium in a dry year.
+        Ask students to reconcile that with the pro-legume argument from Part 1 &mdash; the answer is
+        sequencing, not avoidance: legume, then wheat to draw the nitrogen down, then barley.
+        Give the trap its timescale, because that is what makes it a <em>rotation</em> problem rather
+        than a fertiliser one: <b>legume nitrogen persists in a comparatively stable form for up to
+        about two years</b>, while synthetic N is far more readily leached from these sandy profiles.
+        So a grower cannot solve an overshoot by simply not applying N &mdash; the nitrogen is already
+        in the system, mineralising on the season's terms rather than theirs. The only real controls
+        are how many years of separation you leave and what you grow in between.
+        Then close the loop with the dilution effect two slides back, because together they explain
+        the cruellest version of the trap: <b>overshoot is a dry-season failure.</b> In a good year the
+        yield dilutes the background N and protein lands in the window; in a dry year the same soil
+        nitrogen concentrates into a small crop and pushes past 12.5%. So the grower loses the premium
+        in precisely the year they most needed it, and the mechanism was set in motion two rotations
+        earlier. Ask the room what that implies for how far ahead a malting-barley decision is really
+        made &mdash; the answer is years, not seasons, which is the strongest argument in the lecture
+        for planning rotations as sequences rather than one paddock at a time.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Screenings: the Signature of a Hard Finish</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Screenings measure <b>grain plumpness</b> &mdash; the fraction passing a 2.0&ndash;2.2 mm sieve. Target <b>&lt;10%</b>; <b>&lt;7%</b> for Malt 1.</li>
+            <li>Plumpness sets how much grain is <b>maltable</b> and how evenly it takes up water. Going 10% &rarr; 20% screenings costs about <b>3% less maltable grain</b>.</li>
+            <li>Driven primarily by <b>moisture stress during grain fill</b> &mdash; the "soft finish" is the biggest lever, and it is the season's to give. Also <b>disease</b> (powdery mildew, net blotch, scald), <b>frost</b> at milk&ndash;soft dough (up to 70%), and early <b>ryegrass competition</b>.</li>
+            <li>The N &times; water interaction: <b>nitrogen is the gas pedal, water is the fuel tank.</b> N without spring moisture builds a canopy that cannot be filled &mdash; and <em>increases</em> screenings.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/screening.jpg" alt="Close-up of several stainless steel grading sieves, each pan perforated with rows of narrow elongated slots and holding a sample of cereal grain: plump wheat on one, barley on another, slender oat grains on a third, and maize kernels on a round-holed screen at the edge. The grains rest on the slots; any grain narrower than the slot width would fall through and be counted as screenings" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Screenings is the parameter that connects Part 5 back most directly to Part 3
+        &mdash; it is the delivered, priced measurement of the truncated grain fill we described.
+        The gas-pedal-and-fuel-tank metaphor is from the industry material and it works well, so use
+        it: nitrogen is the accelerator that sets how much canopy and how many grain sites the crop
+        commits to; water is the fuel that has to fill them. Flooring the accelerator with an empty
+        tank does not go faster &mdash; it strands the crop with more grain sites than it can fill,
+        and every one of those under-filled sites is a screening. This is why the same nitrogen rate
+        that is correct in a wet spring is damaging in a dry one, and it is measurable: in dry springs
+        high-N treatments show clearly increased screenings at some WA sites, while in average springs
+        the effect largely vanishes.
+        On disease: fungicide trials show the effect on screenings is often <em>larger and more
+        reliable</em> than the effect on yield. That is worth saying explicitly, because a fungicide
+        decision evaluated only on expected yield response will be under-valued in malting barley.
+        Note also the counter-intuitive negatives from the WA data: seed rate and row spacing turn out
+        to be much weaker drivers of screenings than water stress, disease and early weed competition.
+        Start on the photograph, because it makes an abstract percentage physical. Those are
+        <b>slotted grading sieves</b> &mdash; note the apertures are <em>slots</em>, not round holes,
+        so what is being measured is grain <b>width</b>, not length or volume. A grain that is long but
+        pinched still falls through. Point out that the same sample of grain grades differently on a
+        2.0 and a 2.2 mm slot, which is exactly why the standard names the slot width. The screenings
+        figure is not a judgement about the crop; it is a mechanical sort, done in about a minute, on
+        a sample taken at the weighbridge.
+        Give them the size arithmetic so the threshold means something: individual grain weight in a
+        decent WA finish runs about <b>30&ndash;40 mg</b>. Terminal drought moves grain down that range
+        and across the slot. So the difference between making Malt&nbsp;1 at &lt;7% screenings and
+        missing it is a few milligrams per grain &mdash; a quantity no one can see in a paddock, which
+        is why growers cannot reliably predict their own grade before delivery.
+        Then make the N &times; water interaction site-specific, because "it depends on the season" is
+        unsatisfying without evidence. The WA trial work shows genuinely divergent site behaviour:
+        under high N in a <b>dry spring</b>, screenings rose clearly at some sites (<b>Kalingari</b>)
+        while others (<b>Beverley</b>) stayed below the critical threshold. Same nitrogen decision,
+        opposite quality outcome, decided by the site's capacity to carry moisture into spring. That
+        is precisely why item 2 on the malting checklist &mdash; choose paddocks that hold moisture
+        into spring &mdash; is a <em>quality</em> decision, and it is a concrete instance of the
+        G&nbsp;&times;&nbsp;E&nbsp;&times;&nbsp;M interaction term dominating the main effects, exactly
+        as the variance table in Part 4 predicted.
+        Row spacing is worth a sentence as a regional contrast even though it is a weak lever:
+        coastal WA tends to <b>22 cm</b>, the drier eastern belt <b>30 cm</b>, the wider rows being a
+        moisture-conservation choice. Use it to reinforce the ranking &mdash; growers adjust the weak
+        levers because they are the ones they control, while the strong lever (spring moisture) is the
+        season's to give.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Grain Brightness: the One You Cannot Manage Your Way Out Of</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/image45.png" alt="Three barley grains side by side showing a progression of colour from pale green through pale yellow to a bright golden brown, illustrating differences in grain brightness" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li><b>Yellowing</b> &mdash; discolouration from light showers or high afternoon humidity. No fungi involved. Measured as brightness; target <b>&gt;59 L</b>.</li>
+            <li><b>Greying</b> &mdash; discolouration from heavy showers, associated with moulds and fungi. Target <b>&lt;5%</b> mould-affected grains per 400.</li>
+            <li>Little direct effect on malting, but the grain is <b>less suited to the pale-beer market</b>, and mould can induce dormancy and lengthen storage.</li>
+            <li>Driven by <b>variety, sowing date, 3 pm relative humidity, and rain during maturity and harvest</b>.</li>
+            <li><b>Being near the coast is a structural disadvantage.</b> Best agronomy delivers only minor improvement &mdash; <b>the real solution is a brighter variety.</b></li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Include this precisely because it is the counter-example to the empowering
+        message of the rest of the lecture. Almost everything today has been "here is a lever the
+        grower can pull". Brightness is largely <b>E and G, with very little M</b> &mdash; it is set
+        by afternoon humidity and rain at maturity, which is to say by where the farm is. South-coast
+        growers carry this risk permanently and best-practice agronomy shifts it only marginally.
+        The honest conclusion &mdash; choose a brighter variety &mdash; is a genuinely useful lesson
+        about the structure of agronomic problems: when M is weak, the answer is G, and that is what
+        breeding programs are <em>for</em>. It also demonstrates that "manage it better" is not always
+        the right recommendation, which is a piece of professional judgement worth modelling
+        explicitly for third-years.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Growing Malting Barley: the Practice Checklist</h2>
+      <ul class="journey-list">
+        <li><b>1</b><span><strong>Rotation.</strong> Follow a <em>non-legume</em> &mdash; canola or wheat. A legume phase leaves background nitrogen that overshoots the protein ceiling in a dry year.</span></li>
+        <li><b>2</b><span><strong>Soil type.</strong> Paddocks that <em>hold moisture into spring</em>. The most critical site decision for malting barley: plumpness is made or lost in the finish.</span></li>
+        <li><b>3</b><span><strong>Time of sowing.</strong> As early as the variety safely allows &mdash; it lengthens grain fill and moves it off the hot end of the season.</span></li>
+        <li><b>4</b><span><strong>Nitrogen.</strong> Match rate to the yield <em>and</em> the protein target. Site and rate are primary; variety and split timing secondary.</span></li>
+        <li><b>5</b><span><strong>Seeding rate.</strong> Target <em>120&ndash;150 plants/m&sup2;</em>. Only really a lever with late sowing.</span></li>
+        <li><b>6</b><span><strong>Disease.</strong> Seed dressing, then monitor foliar disease &mdash; net type and spot type net blotch, scald, powdery mildew. The effect on <em>screenings</em> is often larger and more reliable than the effect on yield.</span></li>
+        <li><b>7</b><span><strong>Aphids.</strong> Control feeding <em>during grain fill</em>; that is the critical window.</span></li>
+        <li><b>8</b><span><strong>Weeds.</strong> Take them out early, within an integrated weed management program.</span></li>
+      </ul>
+      <div class="spec">
+        <b>Choose the variety, then choose the management</b> &mdash; accredited malting varieties in WA include Baudin, Buloke, Bass, Flinders, Maximus&nbsp;CL and Spartacus, and the program is built around the one you picked. <b>APSIM</b> can estimate the N rate that lands protein in the <b>10&ndash;11%</b> band.
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Part 5 has spent twenty minutes on parameters and penalties; this slide is where
+        students get told what to actually <em>do</em>. Walk it briskly &mdash; every item has already
+        been argued for somewhere in the lecture, so this is consolidation, not new content.
+        The framing sentence is the one in the box: <b>choose the variety, then choose the
+        management</b>. Students want a universal recipe and this is the closest the unit comes to
+        refusing them one. The management program is conditional on the genotype, which is the
+        G&nbsp;&times;&nbsp;M interaction arriving as a practical instruction.
+        Two items deserve a beat each. <b>Item 1</b> is the counter-intuitive one &mdash; the rotation
+        advice for malting barley runs against the pro-legume argument from Part 1, and the resolution is
+        sequencing rather than avoidance: legume, then wheat to draw the nitrogen down, then barley.
+        <b>Item 6</b> is the one that changes a spending decision: if a fungicide is evaluated only on
+        expected yield response it will be systematically under-valued in malting barley, because the
+        quality response is the bigger part of the return.
+        Note what is <em>not</em> on this list. There is no lever for grain brightness, because as the
+        previous slide argued there essentially isn't one. Point that out &mdash; an honest checklist
+        that admits its own gap is more useful than a complete-looking one.
+        Make "choose the variety" concrete by naming what a variety is chosen <em>for</em>, not just
+        which ones exist: <b>Vlaming</b> has been used where low screenings are the binding constraint,
+        <b>Bass</b> where the site tends to run protein higher, and the <b>Clearfield (CL)</b> types
+        such as Maximus CL are chosen for Group&nbsp;B tolerance where the weed burden, not the malt
+        spec, is the limiting problem. So the variety decision resolves whichever constraint that
+        particular paddock actually has &mdash; which is why it must come first, and why a state-wide
+        "best variety" question has no answer.
+        Two connections back into the unit. On <b>item 1</b>, the rotation effect has a duration worth
+        stating: <b>legume nitrogen carries over and is comparatively stable, persisting up to about
+        two years</b>, whereas synthetic N is far more leachable on these sandy profiles. That is why
+        the fix is sequencing &mdash; you cannot simply skip a year and expect the background N to
+        have gone. On <b>item 2</b>, tie it to the Kalingari-versus-Beverley evidence from the
+        screenings slide: the paddock that holds moisture into spring is the paddock where a given N
+        rate does not cost you plumpness.
+        Finally, place it geographically: this is a program written for <b>Agzones 2 and 3</b>, where
+        WA barley concentrates. In drier country further east the same checklist runs, but the
+        probability of making grade falls, and at some point the rational answer is to grow feed
+        barley deliberately rather than chase malt and miss.
+        Close the part here and hand to the synthesis slide.
+      </aside>
+    </section>
+
+    <!-- ===================================================================
+         SYNTHESIS AND CLOSE
+         =================================================================== -->
+    <section>
+      <h2>How Agronomy, Soils and Climate Shape Yield and Quality</h2>
+      <div class="layout-cols-3">
+        <div>
+          <h3>Climate sets the envelope</h3>
+          <ul class="dense-bullets">
+            <li>Growing-season rainfall and its reliability cap yield through water supply.</li>
+            <li>Frost at flowering and heat at fill impose hard penalties on grain number and size.</li>
+            <li>The terminal drought that ends most WA seasons is the dominant influence on plumpness and screenings.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Soils modulate it</h3>
+          <ul class="dense-bullets">
+            <li>Water-holding capacity determines how much rainfall is stored for the dry finish.</li>
+            <li>Subsoil constraints &mdash; acidity, compaction, salinity &mdash; restrict root access to that stored water.</li>
+            <li>Nutrient status governs canopy function and grain protein.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Agronomy is the lever</h3>
+          <ul class="dense-bullets">
+            <li>Variety and sowing date to land flowering in the safe window.</li>
+            <li>Nutrition to build yield and hit a protein target.</li>
+            <li>Weed, disease and pest control to protect the canopy and the water it uses.</li>
+            <li>Timely harvest to preserve quality.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This answers the last learning outcome directly &mdash; say so. The structure
+        to emphasise is the <em>nesting</em>: climate sets an envelope, soil determines how much of
+        that envelope is actually accessible to roots, and agronomy operates inside what is left.
+        A grower cannot expand the envelope, can slowly improve the soil's access to it over years
+        (liming, compaction management &mdash; the L03 material), and can adjust agronomy every
+        season.
+        Reconcile this with the variance table from Part 4: E dominated the variance, which is exactly
+        what "climate sets the envelope" means quantitatively. But the interactions were often the
+        largest single term, which is exactly what "agronomy is the lever inside the envelope" means.
+        The two slides are the same claim in different languages.
+        Give the three columns their WA numbers so the nesting is not just a diagram.
+        <b>Climate:</b> about <b>100&ndash;110 mm</b> of growing-season rainfall never reaches the crop
+        at all, lost to soil evaporation &mdash; that is the envelope shrinking before agronomy gets a
+        turn. <b>Soil:</b> the water-limited potential is roughly <b>20 kg/ha/mm</b> for wheat and
+        <b>25</b> for barley, but measured WA performance has run as low as <b>4.9 kg/ha/mm at Morawa
+        and 7.7 at Merredin</b> &mdash; and the gap between those numbers is very largely a story about
+        roots reaching stored water, which is the L03 subsoil material. <b>Agronomy:</b> roughly
+        <b>70% of historical yield gain in WA is attributed to management rather than genetics</b>.
+        Those three figures, read together, are the whole lecture in one line: the envelope is small,
+        much of it is inaccessible, and almost all the improvement we have ever made came from the
+        third column.
+        Then take it to the business, which is where L10 picks up: rainfall zone lifts yield potential
+        and variable costs <em>together</em>, so a high-rainfall farm has more upside and more exposure
+        per hectare, while the low-input strategy in marginal country is a deliberate risk position
+        rather than under-management. Ask the room which farm can afford to be wrong about nitrogen.
+        Finish by naming the through-line for the unit: every lecture from here is either widening
+        access to the envelope (L03 soils, L11 precision ag), protecting what is inside it (L07&ndash;L09
+        agronomy, weeds and disease), or pricing what comes out of it (L10, L13, L14).
+      </aside>
+    </section>
+
+    <section class="close-slide" data-background-color="#27348B">
+      <h2 style="color:#fff;">Bringing it together</h2>
+      <div class="synthesis-prompt">
+        <ul class="synthesis-list">
+          <li><strong>Development is the clock</strong>Every input is timed by growth stage, not date, because the crop's readiness &mdash; not the calendar &mdash; determines the response. Learn to stage a paddock and you can time anything.</li>
+          <li><strong>Compensation is the safety net</strong>Sequentially-set yield components let cereals absorb early stress. That machinery is the physiological reason cereals are lower-risk than break crops &mdash; and it fails exactly at flowering and in a terminal drought.</li>
+          <li><strong>Quality is the price tag</strong>Yield and quality are the joint outcome of a genotype expressing itself through a season under a grower's management. Skilled agronomy converts scarce water into the greatest value of grain that meets a specification.</li>
+        </ul>
+      </div>
+      <p class="closing-rule">Next lecture &rarr; L07 Agronomy of Canola &mdash; the break crop that does <em>not</em> compensate</p>
+      <aside class="notes">
+        Target: ~2 min. Close on the three themes, then make the bridge to L07 deliberately, because
+        the contrast is the most efficient possible teaching device: canola has no tillering safety
+        net, its establishment is far more fragile, its flowering window is different, and its quality
+        is judged on oil rather than protein. Every one of those differences will make more sense
+        because students now know what cereals do.
+        Final line to leave them with: "you now have the two questions to ask of any crop for the rest
+        of this unit &mdash; when is each yield component set, and what can the crop still do about it
+        afterwards?"
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/plugin.js"></script>
+<!-- Multiplex intentionally NOT included -- see _shared/_boilerplate_template.html for why
+     (reveal.js removed its own multiplex plugin; real live sync needs a separately-hosted
+     Socket.io server, not a CDN script). -->
+
+<!-- Mermaid is loaded by L01/L03/L04 for their systems diagrams. This deck's figures are all
+     raster images from the source lecture material, so mermaid is not loaded here. If a mermaid
+     diagram is added later, copy the two-line init block from L01/index.html. -->
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.08,
+    chalkboard: {
+      theme: 'chalkboard',
+      background: [ 'rgba(0,0,0,0)', 'rgba(255,255,255,0.05)' ],
+      toggleChalkboardButton: { left: '30px', bottom: '30px' },
+      toggleNotesButton: { left: '110px', bottom: '30px' }
+    },
+    plugins: [ RevealNotes, RevealMarkdown, RevealZoom, RevealHighlight, RevealChalkboard ]
+  });
+</script>
+</body>
+</html>

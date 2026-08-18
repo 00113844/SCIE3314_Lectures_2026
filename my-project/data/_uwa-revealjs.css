@@ -1,0 +1,186 @@
+/* UWA RevealJS Theme - Compiled CSS */
+
+:root {
+  --r-heading-color: #27348B;
+  --r-main-color: #333333;
+  --r-main-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --r-heading-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --r-background-color: #ffffff;
+}
+
+.reveal section[data-background-color="#002147"],
+.reveal section[data-background-color="#002147"] {
+  color: white !important;
+}
+
+.reveal section[data-background-color="#002147"] h1,
+.reveal section[data-background-color="#002147"] h2,
+.reveal section[data-background-color="#002147"] h3,
+.reveal section[data-background-color="#002147"] p {
+  color: white !important;
+}
+
+.reveal section[data-background-color="#27348B"] h1,
+.reveal section[data-background-color="#27348B"] h2,
+.reveal section[data-background-color="#27348B"] .title {
+  color: #E2B600 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.reveal section[data-background-color="#27348B"] h3 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.reveal section[data-background-color="#27348B"] p,
+.reveal section[data-background-color="#27348B"] .subtitle,
+.reveal section[data-background-color="#27348B"] li {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.reveal section[data-background-color="#27348B"] .author,
+.reveal section[data-background-color="#27348B"] .date,
+.reveal section[data-background-color="#27348B"] .institute,
+.reveal section[data-background-color="#27348B"] .quarto-title-author-name,
+.reveal section[data-background-color="#27348B"] .quarto-title-affiliation {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.learning-objectives-slide .learning-objectives {
+  background: linear-gradient(135deg, #F5F5F5 0%, #ffffff 100%);
+  border-left: 5px solid #27348B;
+  padding: 1.5em;
+  margin: 1em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-objectives strong {
+  color: #27348B;
+  font-size: 1.1em;
+}
+
+.reveal .columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  flex: 1;
+}
+
+.emphasis {
+  color: #27348B;
+  font-weight: 600;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(39, 52, 139, 0.08) 0%, rgba(85, 119, 187, 0.08) 100%);
+  border: 2px solid #5577BB;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+  margin: 0.5em 0;
+}
+
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.85em;
+}
+
+.reveal table th {
+  background: #27348B;
+  color: white;
+  padding: 0.75em 1em;
+  text-align: left;
+  font-weight: 600;
+}
+
+.reveal table td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.reveal table tr:nth-child(even) {
+  background: #F5F5F5;
+}
+
+.reveal .incremental li {
+  margin-bottom: 0.5em;
+}
+
+.callout-info {
+  background: linear-gradient(135deg, rgba(85, 119, 187, 0.1) 0%, rgba(85, 119, 187, 0.05) 100%);
+  border-left: 5px solid #5577BB;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+.reveal .mermaid {
+  background: transparent;
+  margin: 1em auto;
+  max-width: 92%;
+  max-height: 65vh;
+  overflow: auto;
+}
+
+.reveal pre.mermaid {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.reveal .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.reveal .slides section {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.reveal .slides section ul,
+.reveal .slides section ol {
+  margin-bottom: 1em;
+}
+
+.reveal .slides section li {
+  margin-bottom: 0.5em;
+}
+
+.reveal .slides section code {
+  background: #F5F5F5;
+  color: #002147;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Additional styling for images and media */
+.reveal img {
+  max-height: 90vh;
+  max-width: 90%;
+}
+
+/* Reveal.js default color variables */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  color: #27348B;
+  text-shadow: none;
+}
+
+.reveal a {
+  color: #27348B;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.reveal a:hover {
+  color: #5577BB;
+  text-shadow: none;
+  text-decoration: underline;
+}

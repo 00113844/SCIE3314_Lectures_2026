@@ -1,0 +1,121 @@
+topic: "Global Food Markets and Food Security"
+auto_figures: true
+subtopics:
+
+  - title: "The Grand Challenge: Feeding a Growing World"
+    description: >
+      Open the unit's final lecture by zooming out from the WA paddock to the global challenge that gives all of agriculture its ultimate purpose: producing enough nutritious food, sustainably, for a world population heading toward roughly ten billion people by mid-century, with rising incomes driving greater demand for grain, meat, and oilseeds. Frame the scale of the task: global food demand is projected to rise substantially over coming decades, driven by population growth and by dietary change as developing economies grow and consume more animal protein (which multiplies grain demand through feed) and more vegetable oil. Establish the central tension the lecture explores: this rising demand must be met even as the resource base is constrained — limited new arable land, competition for water, soil degradation, and a changing climate that threatens production in many regions — so the world must produce much more food from essentially the same or a shrinking resource base, largely by raising productivity (yield per hectare and per unit of water and input) sustainably. Position WA and Australian grain production within this: a small but efficient, export-oriented producer whose surplus feeds food-importing nations, and whose continual productivity improvement (the theme of the whole unit) is part of the global response to the food-security challenge.
+    key_concepts:
+      - "World population heading toward ~10 billion by mid-century"
+      - "Rising incomes multiply grain demand via animal protein"
+      - "Resource base is constrained: land, water, soil, climate"
+      - "Productivity growth, not new land, must meet the gap"
+    wiki_query: "global food demand population growth productivity yield"
+
+  - title: "How the World Is Fed: Production and the Staple Crops"
+    description: >
+      Give students a picture of how the world's food is actually produced and which crops matter most, providing the factual foundation for the market discussion. Explain that a small number of staple crops supply the majority of human calories: the cereals — wheat, rice, and maize above all — dominate direct human food and animal feed, with wheat the most important internationally traded food grain, rice the staple of Asia (but largely consumed where it is grown), and maize the great feed and industrial crop. Oilseeds (soybean, oil palm, canola/rapeseed, sunflower) supply vegetable oil and protein meal, with soybean central to the global feed-protein trade. Explain the geography of production: food is produced across very different systems, from intensive, high-input, high-yield agriculture in developed regions to smallholder, lower-input systems that feed much of the developing world, and from irrigated to rainfed. Explain the key distinction between production and trade: most food is consumed in the country where it is grown, and only a fraction of global grain production is traded internationally — but that traded fraction is what feeds the food-importing nations and is what WA participates in. Emphasise where WA fits: a specialist producer of wheat, barley, canola, and pulses for the international trade, particularly serving the food-deficit and rising-demand markets of Asia, the Middle East, and North Africa across the Indian Ocean.
+    key_concepts:
+      - "Wheat, rice and maize dominate global caloric supply"
+      - "Soybean anchors global protein-meal and oil trade"
+      - "Most food is consumed where it is grown; only a fraction trades"
+      - "WA specialises in the internationally traded fraction"
+    wiki_query: "global staple crop production wheat rice maize trade"
+
+  - title: "The Structure of World Grain Trade"
+    description: >
+      Explain how the world grain trade is structured — who exports, who imports, and why — since this structure determines the markets and prices WA growers face. Describe the exporters: a relatively small group of major grain-exporting regions with large surpluses supplies the world's traded grain — for wheat, the major exporters include Russia and the Black Sea region (now the largest), the European Union, the United States, Canada, Argentina, Ukraine, and Australia; for coarse grains and oilseeds the cast differs. Describe the importers: food-deficit regions that cannot produce enough for their own needs — much of the Middle East, North and sub-Saharan Africa, and parts of Asia — depend on imported grain for food security, making them the customers for exporters like WA. Explain Australia's and WA's particular position: a consistent, quality-focused exporter well placed geographically to supply the growing Asian and Indian Ocean markets, acting as an important "swing" supplier whose exportable surplus, though modest globally, matters to its customers and to world balance. Explain the strategic significance of trade concentration: because so much of world grain export comes from a few regions, a production shock in a major exporter (drought, war, export restriction) can sharply move world prices and threaten importing nations' food security — the vulnerability that makes reliable exporters valuable and that drives the price volatility explored next.
+    figure_id: "Fig-L14-GrainTrade"
+    image_prompt: >
+      World map showing the major grain exporting regions (Black Sea/Russia, EU, North America, Argentina, Australia) as sources with outgoing arrows, and the major importing regions (Middle East, North and sub-Saharan Africa, parts of Asia) as destinations with incoming arrows. Australia/WA's export arrows directed toward Asia and the Indian Ocean rim highlighted. UWA blue (#27348B) exporters, gold (#E2B600) trade-flow arrows, clean academic map, --ar 16:9, --no text.
+    key_concepts:
+      - "Few major exporters supply most of the traded surplus"
+      - "Food-deficit importers depend on that surplus for security"
+      - "Australia/WA: a consistent, quality-focused swing supplier"
+      - "Export concentration means shocks move world prices sharply"
+    wiki_query: "world grain export import structure trade concentration"
+    figure_source: "literature"
+
+  - title: "Food Security: More Than Just Production"
+    description: >
+      Deepen the concept of food security beyond simply producing enough food, giving students a proper understanding of a term used loosely in public debate. Define food security, in the widely-used framing, as all people at all times having physical, social, and economic access to sufficient, safe, and nutritious food for an active and healthy life, and explain its dimensions: availability (is enough food produced and present?), access (can people afford and physically obtain it?), utilisation (is it nutritious, safe, and properly used?), and stability (is the supply reliable over time, or subject to shocks?). Emphasise the crucial insight that food insecurity is often not primarily a production problem but an access and distribution problem — the world produces enough calories in aggregate, yet hunger persists because of poverty, conflict, poor infrastructure, and unstable supply, so producing more is necessary but not sufficient. Explain how international grain trade contributes to food security: it moves food from surplus to deficit regions, buffers local production shortfalls, and stabilises supply — which is why reliable exporters and open, functioning trade are important to global food security, and why export restrictions during crises (which several countries imposed during recent price spikes) can worsen insecurity in importing nations. Position efficient, sustainable exporters like WA as contributors to global food security, while acknowledging that the challenge is as much about equity, access, and stability as about total output.
+    key_concepts:
+      - "Four dimensions: availability, access, utilisation, stability"
+      - "Insecurity is often an access/distribution problem, not output"
+      - "Trade moves food from surplus to deficit regions"
+      - "Export restrictions in a crisis can worsen insecurity"
+    wiki_query: "food security availability access stability trade"
+
+  - title: "How Grain Prices Are Set: Supply, Demand and Global Markets"
+    description: >
+      Explain how the prices WA growers receive are determined, building on the price-taker theme from earlier lectures. Establish that grain is a globally traded commodity whose price is set by the balance of world supply and demand, discovered through international commodity markets and reference exchanges (such as the major wheat futures markets), and transmitted to the WA farm gate through the export chain, adjusted for freight, quality, and the exchange rate. Explain the supply side: total production across the major exporters, carry-over stocks from previous years (the buffer that dampens or amplifies price moves — low global stocks make prices volatile and sensitive to any shock), and the timing of Northern and Southern Hemisphere harvests. Explain the demand side: population and income growth, the derived demand for feed grain from expanding livestock industries, industrial and biofuel demand, and importing-country purchasing and stockholding policy. Emphasise the stocks-to-use ratio as a key indicator: when global stocks relative to consumption are ample, prices are stable and low; when stocks are tight, small supply shocks produce large price spikes. Reinforce the grower's position as a price-taker within this global system — an individual WA farm's output is negligible in the world balance, so growers receive a world-determined price they cannot influence, and their task is to manage their exposure to it (the marketing and risk tools of the financial lecture) rather than to set it.
+    key_concepts:
+      - "World price transmits to farm gate via freight, quality, FX"
+      - "Carry-over stocks buffer or amplify price movements"
+      - "Stocks-to-use ratio signals price stability or fragility"
+      - "Individual growers are price-takers in the world balance"
+    wiki_query: "grain price supply demand stocks-to-use ratio world market"
+
+  - title: "Price Volatility and Its Drivers"
+    description: >
+      Examine the volatility of grain prices — their tendency to swing sharply and unpredictably — since this volatility is a defining feature of the environment WA growers operate in and a threat to global food security. Explain why grain prices are inherently volatile: demand for food staples is relatively inelastic (people must eat regardless of price, so demand changes little as price moves), and supply is inelastic in the short term (it takes a season to grow more) and subject to large weather-driven swings, so when a supply shock hits an inelastic market, price must move a great deal to clear it. Survey the drivers of volatility: weather and climate shocks in major producing regions (droughts, floods, heat); geopolitical events and conflict (dramatically illustrated by the disruption to Black Sea exports and its effect on world wheat and food prices); trade policy shocks (export bans and restrictions, tariffs, and trade disputes, such as the disruption and later restoration of market access for Australian barley); energy prices (which affect fertiliser and fuel costs and biofuel demand); currency movements; and financial and speculative flows in commodity markets. Explain the consequences: for growers, unpredictable returns that make planning and investment difficult and that motivate the risk-management and marketing strategies of the financial lecture; for importing nations, the risk that price spikes cause hunger and political instability, as seen when food-price spikes have contributed to unrest. Emphasise that this volatility, overlaid on the seasonal production volatility of the Mediterranean climate, is the fundamental uncertainty within which WA agriculture operates.
+    figure_id: "Fig-L14-Volatility"
+    image_prompt: >
+      Line chart of world wheat price over roughly two decades showing high volatility — sharp spikes and troughs — with major spikes annotated to generic drivers (drought in a major exporter, an export ban, a geopolitical supply disruption, a demand surge). A shaded band shows a "normal" range that the price repeatedly breaks out of. UWA blue (#27348B) price line, gold (#E2B600) event annotations, clean academic chart, --ar 16:9, --no text.
+    key_concepts:
+      - "Inelastic food demand and short-run supply amplify shocks"
+      - "Weather, geopolitics, trade policy and energy prices as drivers"
+      - "Black Sea disruption and China barley as recent examples"
+      - "Overlays on WA's own seasonal volatility"
+    wiki_query: "grain price volatility inelastic demand supply shock geopolitics"
+    figure_source: "literature"
+
+  - title: "The Deregulated Market and the Grower's Marketing Task"
+    description: >
+      Explain the market environment Australian growers sell into and how it has changed, connecting the global market to the individual grower's decisions. Describe the historical shift: Australian grain marketing was once managed through statutory single-desk arrangements (notably the Australian Wheat Board's export monopoly), which pooled and sold the national crop on growers' behalf; the deregulation of these arrangements in the 2000s opened the market to competition among many grain traders and exporters and transferred marketing decisions and risk to individual growers. Explain the consequences for growers: they now actively choose how and when to sell — to whom, at what time, through what mechanism (spot sales, forward contracts, pools, derivatives) — bearing both the opportunity and the risk of those decisions, as developed in the price-risk section of the financial lecture. Explain the role of the players in the deregulated chain: domestic and multinational grain traders and exporters who buy from growers and sell to international customers, the bulk handler (CBH) that provides the storage and export infrastructure, and the end customers (flour millers, feed compounders, oilseed crushers, maltsters). Emphasise the implication for the grower's skill set: in a deregulated, globally-priced market, marketing grain well is a distinct and important competency alongside growing it well, and understanding the global market forces of this lecture is what allows a grower to make sense of the prices they see and to manage their exposure intelligently.
+    key_concepts:
+      - "Single-desk marketing gave way to deregulation in the 2000s"
+      - "Growers now bear the marketing decision and its risk"
+      - "Traders, CBH, and end customers form the deregulated chain"
+      - "Marketing skill matters alongside growing skill"
+    wiki_query: "deregulated grain marketing single desk Australia growers"
+
+  - title: "Quality, Differentiation and Capturing Value"
+    description: >
+      Explain how WA growers and the industry capture value in global markets through quality and differentiation, rather than competing on volume alone — connecting the agronomy and grain-quality content to the market. Establish that grain is not a single undifferentiated commodity but a range of qualities commanding different prices for different uses: high-protein milling wheats for bread, specific wheats for Asian noodles, malting versus feed barley, high-oil canola, and food-grade versus feed pulses, each with its own specification and premium. Explain how WA competes: not as the cheapest bulk supplier but by reliably supplying specific, quality-assured grades that particular customers value — leveraging its clean phytosanitary reputation, consistent quality, effective segregation through the bulk handling system, and proximity to Asian customers to earn premiums for meeting exacting specifications. Give examples of value differentiation: noodle wheat bred and grown for specific Asian markets, malting barley for particular brewing customers, canola meeting EU sustainability certification for biodiesel, and emerging identity-preserved and traceable supply chains and specialty products (including human-consumption pulses and specialty oils). Emphasise the strategic lesson: because WA cannot compete on scale or cost with the largest exporters, its competitiveness rests on productivity, reliability, quality, and market differentiation — which is precisely why the agronomy of quality (variety, nutrition, disease control, harvest and segregation) developed through the unit translates directly into market value, and why understanding the customer and the market is part of good agronomy.
+    key_concepts:
+      - "Grain is differentiated, not a single undifferentiated commodity"
+      - "WA competes on reliability and specification, not lowest cost"
+      - "Noodle wheat, malting barley, certified canola as examples"
+      - "Agronomy for quality translates directly into market value"
+    wiki_query: "grain quality differentiation premium market WA specification"
+
+  - title: "Sustainability, Trade and the Changing Market"
+    description: >
+      Examine the emerging forces reshaping global food markets that will define the environment WA growers sell into over their careers. Sustainability and climate credentials: markets and governments increasingly demand evidence of the environmental credentials of food — carbon footprint, sustainable land management, deforestation-free supply, and certification (as already required for canola into EU biodiesel) — creating both a compliance burden and an opportunity for producers who can demonstrate sustainable, low-emissions production, and opening emerging markets in carbon and environmental services. Traceability and provenance: growing customer demand to know where and how food was produced, enabled by digital supply-chain technology, rewarding traceable, identity-preserved supply. Changing diets and demand: rising plant-protein consumption (an opportunity for pulses), continued growth in Asian food and feed demand, and shifting consumer preferences. Geopolitics and trade security: the lesson of recent disruptions that market access and trade relationships are strategic assets requiring diversification, since dependence on a single large market (as with barley to China) carries risk. Climate change as a market force: reshaping where and how much can be produced globally, shifting comparative advantage, and raising volatility. Emphasise that these forces mean the market is not static — the successful WA producer must anticipate and adapt to changing customer requirements, sustainability expectations, and geopolitical realities, just as they adapt to the changing climate and evolving weeds and diseases.
+    key_concepts:
+      - "Sustainability certification is now a market requirement"
+      - "Traceability and provenance increasingly demanded by customers"
+      - "Diversifying markets guards against single-customer risk"
+      - "Climate change reshapes global comparative advantage"
+    wiki_query: "sustainability certification traceability grain market trade risk"
+
+  - title: "WA's Place in the World: The Unit's Central Question Revisited"
+    description: >
+      Return to the framing question posed at the start of the unit — the place of Australian and WA crop production in relation to world production and exports — and answer it fully now that the whole picture has been built. Synthesise: WA is a small producer but a significant and reliable exporter, feeding food-importing nations across Asia, the Middle East, and Africa from an efficient, innovative, low-support, export-oriented system farmed on ancient, infertile soils under a variable and drying Mediterranean climate. Its place in world markets rests not on natural abundance or scale but on productivity, efficiency, quality, reliability, biosecurity reputation, and geographic proximity to growing markets — competitiveness built through the research, breeding, agronomy, and management covered across the unit. Its vulnerabilities are equally clear: as a price-taker exposed to volatile world prices, currency, and geopolitics; dependent on a concentrated set of export markets; farming an inherently variable and changing climate; and needing continually to maintain a degrading natural resource base and to manage evolving weeds, pests, and diseases. Emphasise that WA's continued place in world production depends on exactly the disciplined, sustainable, systems-based, innovation-driven approach the unit has taught — because in a competitive global market with thin margins, only producers who keep improving productivity while sustaining their resource base will remain viable.
+    key_concepts:
+      - "Small producer, reliable and significant exporter"
+      - "Competitiveness rests on productivity, quality, reliability"
+      - "Vulnerabilities: price, climate, market concentration, resource decline"
+      - "Continued place in world markets depends on sustained productivity"
+    wiki_query: "WA grain production world markets competitiveness vulnerability"
+
+  - title: "The Whole System: Bringing SCIE3314 Together"
+    description: >
+      Close the unit by drawing every thread together into a single integrated picture, reinforcing the systems thinking that has been its central aim. Trace the complete arc the unit has covered: the global challenge of feeding a growing world sustainably sets the purpose; WA's Mediterranean climate and ancient soils set the biophysical constraints; the crops (cereals, canola, pulses) and their agronomy, matched by variety and management to climate and soil, produce the yield and quality; the management of water, nutrition, acidity, weeds, pests, and diseases protects and realises that potential; conservation agriculture, rotation, and precision agriculture sustain the resource and lift efficiency; models and data inform decisions under uncertainty; the economics and risk management match investment to potential and protect the business through variable seasons; the operations, harvest, and logistics turn the crop into delivered, specification-grade grain; and the global market sets the price and the requirements at the end of the chain. Emphasise the unit's enduring lessons: that a cropping system is an integrated whole in which every decision cascades through the others, so decisions must be reasoned across the whole system and the whole rotation, not optimised in isolation; that water is the first constraint and timing is everything in a Mediterranean environment; that good agronomy and long-term sustainability are the same thing; that resistance, degradation, and climate change demand integrated, biology-based, resistance-aware, adaptive management; and that measurement, records, and models inform but never replace skilled judgement. Conclude that the graduate who can think across the whole system — from the physiology of the plant to the economics of the farm to the dynamics of the world market, under a variable and changing climate — is exactly the agronomist and manager that a sustainable, productive, competitive WA grain industry needs, and that this integrated, critical, systems-scale thinking is what SCIE3314 has set out to develop.
+    key_concepts:
+      - "Traces the full arc: global purpose to farm to world market"
+      - "Every decision cascades through the rotation and the system"
+      - "Good agronomy and long-term sustainability are the same thing"
+      - "Systems-scale thinking is the unit's central, enduring lesson"
+    wiki_query: "cropping systems thinking sustainability integration WA agronomy"

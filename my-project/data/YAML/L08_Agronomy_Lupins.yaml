@@ -1,0 +1,145 @@
+topic: "Agronomy of Lupins and Grain Legumes (Pulses)"
+auto_figures: true
+subtopics:
+
+  - title: "What Are Pulses, and Why Do They Matter?"
+    description: >
+      Open by defining pulses (grain legumes) as leguminous crops grown for their protein-rich edible seed — lupins, field peas, chickpeas, lentils, faba beans, and others — and establishing their dual importance to human nutrition and to the farming system. For human health: pulses are among the richest plant sources of protein, dietary fibre, and micronutrients, low in fat, and central to healthy and sustainable diets worldwide, with demand rising as populations grow and plant-protein consumption increases. For the farming system: pulses fix atmospheric nitrogen through symbiosis with rhizobia bacteria, reducing the fertiliser nitrogen requirement of the following crop and building system nitrogen; they provide a disease and grass-weed break that lifts subsequent cereal yields; and they diversify the crop mix and income. Emphasise the systems accounting theme from earlier lectures: much of a pulse crop's value is delivered to the following cereal through nitrogen and disease benefits, so pulses must be valued across the rotation, not on their own gross margin alone. Preview the lecture: the special role and agronomy of lupins as WA's flagship pulse, the range of other pulses and their constraints, and the biological nitrogen fixation that underpins the legume advantage.
+    key_concepts:
+      - "Pulses as protein-rich, fibre-rich, nutrient-dense human food"
+      - "Nitrogen fixation, disease and weed break for the following cereal"
+      - "Value realised across the rotation, not the single-year margin"
+    wiki_query: "pulses grain legumes nitrogen fixation rotation value WA"
+
+  - title: "Biological Nitrogen Fixation: The Legume Advantage"
+    description: >
+      Explain the symbiosis that gives legumes their unique place in the system, since it is the biological foundation of the pulse rotation. Legumes form a symbiotic partnership with soil bacteria (rhizobia) housed in root nodules: the bacteria fix atmospheric nitrogen gas into ammonia the plant can use, and the plant supplies the bacteria with carbohydrate. This lets a legume meet much of its own nitrogen need from the air and leave a nitrogen legacy — in residues, roots, and reduced soil nitrogen depletion — that benefits the next crop; in WA trials this "legume effect" has lifted following wheat yields by anywhere from roughly 86% to over 200%, partly through the nitrogen credit and partly through disease suppression, with take-all infection in a following cereal falling from around 54% after a cereal-on-cereal sequence to around 15% after a lupin break. Explain the practical requirements for effective fixation: lupins require the specific Group G rhizobial strain, so seed is inoculated with the appropriate rhizobia (each legume needs its own strain), and inoculation is essential the first time a legume is grown in a paddock and again roughly every five to seven years afterward, since indigenous soil rhizobia can genetically drift toward less effective strains over time; molybdenum is required for the nitrogen-fixing enzyme itself and phosphorus for nodule development, while adequate soil pH and moisture are needed for nodulation; and high available soil nitrogen suppresses fixation, so legumes fix most when soil nitrogen is low and applied nitrogen fertiliser is best avoided. Emphasise the sustainability significance: biological nitrogen fixation reduces reliance on energy-intensive synthetic nitrogen — cutting the system's carbon footprint by a substantial margin — and its associated acidification and emissions, making pulses a key tool for more sustainable production, a theme that connects to the acidity, rotation, and climate content of the unit.
+    figure_id: "Fig-L08-NFixation"
+    image_prompt: >
+      Diagram of a legume root system with nodules. A cutaway of one nodule shows rhizobia bacteria fixing atmospheric N2 into ammonia for the plant, with the plant supplying carbohydrate in return (two-way arrows). Above ground, N2 from the atmosphere entering; below, an arrow showing the nitrogen legacy left for the following cereal crop. Inset shows inoculated seed. UWA blue (#27348B) roots and soil, gold (#E2B600) nodules and nitrogen arrows, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Rhizobia symbiosis: Group G strain for lupins, re-inoculate every 5-7 years"
+      - "Legume effect lifts following wheat yield and cuts take-all infection"
+      - "Molybdenum and phosphorus support nodulation and fixation"
+      - "High soil nitrogen suppresses fixation; avoid applied N"
+    wiki_query: "rhizobia inoculation nitrogen fixation lupin wheat yield take-all WA"
+    figure_source: "manual"
+
+  - title: "The Australian and WA Pulse Portfolio"
+    description: >
+      Survey the main pulses grown in Australia and Western Australia so students can place lupins in context and understand why different pulses suit different environments. Lupins (narrow-leafed lupin especially) are WA's dominant pulse, adapted to the acid sandplain soils that dominate the grainbelt and long the classic legume partner for wheat. Field peas are widely adapted, relatively robust, and grown across southern Australia, though prone to lodging and disease. Chickpeas (desi and kabuli) are important in the warmer, higher-pH cropping zones, more so in eastern Australia, with strong export demand but disease (ascochyta) and cold-sensitivity constraints. Lentils have expanded rapidly in South Australia and Victoria on suitable alkaline soils as a very high-value export pulse, with more limited WA adaptation. Faba beans suit heavier, well-structured, higher-rainfall soils and fix large amounts of nitrogen. Emphasise the central agronomic principle: pulse adaptation is strongly soil- and climate-specific — each pulse has a relatively narrow envelope of soil type, pH, and rainfall in which it performs — which, combined with their generally higher risk, explains why pulses occupy a smaller and more targeted share of the WA rotation than cereals, and why lupins, matched to WA's acid sands, became the state's pulse of choice.
+    key_concepts:
+      - "Lupins dominate WA's acid sandplain"
+      - "Field peas: widely adapted but lodging/disease-prone"
+      - "Chickpeas and lentils: warmer, higher-pH eastern zones"
+      - "Pulse adaptation is strongly soil- and climate-specific"
+    wiki_query: "lupin field pea chickpea lentil faba bean soil adaptation WA"
+
+  - title: "Why Pulses Are Harder to Grow: The Constraints"
+    description: >
+      Address directly the major constraints to growing pulses in WA, explaining why — despite their clear rotational value — they remain a minority of the cropped area and their adoption is uneven. Establishment and early vigour: many pulses establish less reliably than cereals and compete poorly with weeds when young. Weed control: as broadleaf crops, pulses (except through specific tolerance systems) have limited selective herbicide options for broadleaf weeds, making weed management difficult and expensive. Disease: pulses are susceptible to a range of fungal diseases (ascochyta blights, botrytis, rusts, root rots) that can devastate a crop in a wet season and demand fungicide programs and careful rotation. Harvest difficulty: many pulses set pods low on the plant, lodge, or shatter, causing harvest losses and requiring careful technique; their seed is also more easily damaged. Market thinness and price volatility: pulse markets are smaller and more volatile than cereal markets, and quality specifications (seed size, colour, defect tolerances for human-consumption markets) are demanding. Sensitivity to season: pulses are generally less able than cereals to compensate for stress, so a poor season hurts them more. Emphasise that these constraints make pulses a higher-risk, higher-management proposition, and that successfully including them requires matching the right pulse to the right soil and season, disciplined disease and weed programs, and valuing their rotational benefit explicitly against their production risk.
+    key_concepts:
+      - "Poor early vigour and weak weed competition"
+      - "Limited selective broadleaf herbicide options"
+      - "Fungal disease pressure in wet seasons"
+      - "Lower stress compensation than cereals; thinner, volatile markets"
+    wiki_query: "pulse establishment weed disease harvest constraints WA"
+
+  - title: "The Lupin Species Grown in WA"
+    description: >
+      Introduce the lupin species relevant to WA and their differing roles. Narrow-leafed lupin (Lupinus angustifolius) is by far the most important — the species that built the WA lupin industry — because it is uniquely adapted to the acid, infertile, sandy soils of the grainbelt that suit few other pulses, and modern varieties are sweet (low-alkaloid), non-shattering, and reasonably early. Albus lupin (Lupinus albus), the broad-leafed or white lupin, has larger seed and higher value for human consumption and suits heavier, higher-rainfall soils, but is more disease-susceptible (especially to anthracnose) and less widely grown. Yellow lupin (Lupinus luteus) tolerates the most acidic, infertile deep sands and is more tolerant of some diseases, filling a niche on the poorest country. Mention that all cultivated lupins have been bred from bitter, alkaloid-rich wild types to "sweet" low-alkaloid forms fit for feed and food — another breeding transformation, paralleling canola. Emphasise why narrow-leafed lupin dominates: its match to WA's characteristic acid sandplain, where it thrives and fixes nitrogen where cereals struggle and other pulses fail, made it the natural legume partner in the wheat-lupin rotation that defined WA sandplain farming for decades.
+    key_concepts:
+      - "Narrow-leafed lupin: WA's dominant species on acid sands"
+      - "Albus lupin: higher value, heavier soils, disease-susceptible"
+      - "Yellow lupin: most acid-tolerant niche species"
+      - "All bred from bitter wild types to sweet, low-alkaloid forms"
+    wiki_query: "narrow-leafed albus yellow lupin species acid sandplain WA"
+
+  - title: "The Advantages of Lupins"
+    description: >
+      Set out the advantages that made lupins central to WA farming, developing the learning outcome on the pros and cons of the crop. Adaptation to poor acid sands: lupins grow and fix nitrogen on the deep, acidic, infertile sandplain soils where alternatives fail — a decisive advantage in the WA context. Nitrogen fixation: lupins are prolific nitrogen fixers, leaving a large nitrogen credit that markedly lifts the yield and protein of the following wheat and reduces its fertiliser cost. Disease and weed break: as a non-cereal, lupins break cereal root-disease cycles and allow grass-selective herbicides to control ryegrass, delivering the classic break-crop benefits. Deep rooting and water use: lupins root deeply, using subsoil water and contributing to the water balance. Feed and food value: lupin grain is a high-protein stockfeed (valuable for the sheep and intensive livestock industries) and an increasingly recognised high-protein, high-fibre human food ingredient, opening premium markets. Residue benefits: lupin stubble and the nitrogen it carries improve the following crop's start. Emphasise that, like all break crops, much of the lupin's value is realised in the subsequent cereal, and that its unique fit to WA's dominant soil type is what distinguished it from every other pulse and made the wheat-lupin rotation the backbone of sandplain cropping.
+    key_concepts:
+      - "Adapted to acid sandplain soils where alternatives fail"
+      - "Prolific nitrogen fixer, large credit to following wheat"
+      - "Disease and grass-weed break; deep-rooted water use"
+      - "High-protein feed and rising human-food value"
+    wiki_query: "lupin advantages nitrogen credit break crop acid sand WA"
+
+  - title: "The Disadvantages and Decline of Lupins"
+    description: >
+      Balance the picture with the disadvantages and the reasons the lupin area has declined from its peak, an important lesson in how crop fortunes shift. Yield and income variability: lupin yields are lower and more variable than cereals, and lupin prices, tied to feed markets, have often been modest, making the single-year economics unattractive relative to cereals or canola in many seasons. Disease: anthracnose (a serious seed-borne fungal disease, especially in albus lupins) and brown spot and root diseases threaten crops and demand clean seed and careful management. Establishment and weed competition: lupins compete poorly with weeds early and can be difficult to establish. Harvest losses and lodging: though modern varieties resist shattering better, harvest can still be lossy. Competition from canola: the rise of canola provided an alternative, often more profitable break crop with strong weed-control systems and better markets, displacing lupins on much country. Aphid and virus problems and sensitivity to some residual herbicides add further difficulty. Explain the consequence: the WA lupin area contracted substantially as canola expanded and as the single-year returns favoured other options — yet lupins retain their unique niche on the poorest acid sands and their rotational nitrogen value, and there is renewed interest as human-consumption lupin markets and the value of biological nitrogen and disease breaks are re-appreciated in a high-input, resistance-pressured system. This rise-and-partial-decline is a case study in how agronomic, economic, and technological change reshape a rotation.
+    key_concepts:
+      - "Lower, more variable yield and modest feed-market prices"
+      - "Anthracnose and other seed-borne/root diseases"
+      - "Canola's rise displaced lupins on much country"
+      - "Renewed interest via human-consumption markets"
+    wiki_query: "lupin decline anthracnose canola competition area WA"
+
+  - title: "Domestication and Future Breeding of Lupins"
+    description: >
+      Answer the decline just described with the breeding response, since genetics is how many of these constraints are being worked on. Trace the extraordinary domestication of the narrow-leafed lupin, a monumental achievement largely driven by WA agricultural scientists such as Dr John Gladstones from the 1960s onward. Discuss how a bitter, shattering wild plant was transformed into a viable crop through systematic breeding out of toxic alkaloids (the sweet-lupin transformation), pod shattering, and hard seededness — the same kind of breeding transformation that created canola from rapeseed. Transition into modern breeding goals: improving yield stability, enhancing resistance to critical diseases such as anthracnose and Phomopsis, and tailoring flowering time to shifting sowing windows and climate. Mention the application of contemporary genomic tools and marker-assisted selection to accelerate development of varieties suited not only to the traditional acid sandplain but to a wider range of soils. Emphasise how targeted genetics is one of the key levers for overcoming the constraints and decline just outlined, and sets up the detailed agronomy that follows.
+    key_concepts:
+      - "Sweet-lupin transformation: breeding out alkaloids, shattering, hard seed"
+      - "Gladstones and the WA narrow-leafed lupin breeding program"
+      - "Modern goals: yield stability, anthracnose/Phomopsis resistance"
+      - "Genomic tools and marker-assisted selection"
+    wiki_query: "lupin domestication breeding alkaloid Gladstones narrow-leafed genetics WA"
+
+  - title: "Lupin Agronomy: Establishment, Nutrition and Inoculation"
+    description: >
+      Detail the agronomy of growing a lupin crop, beginning with establishment and nutrition. Establishment: lupins are sown early (they benefit from a long season and early sowing lifts yield), epigeal in habit, commonly at seeding rates of roughly 80-120 kg/ha to reach a target density around 45 plants/m² for canopy closure and weed competition, typically on 25 cm row spacing to suit standard cereal seeding equipment. Inoculation: because effective nitrogen fixation depends on the right rhizobia, lupin seed is inoculated with the specific Group G lupin rhizobial strain, essential the first time a paddock grows lupins and again roughly every five to seven years afterward as indigenous strains drift toward lower effectiveness — a critical, cheap step that determines whether the crop fixes nitrogen and yields well. Nutrition: as a nitrogen fixer, lupins need little or no fertiliser nitrogen (and high soil nitrogen suppresses fixation), but they do require phosphorus for nodule development and are notably sensitive to trace-element deficiencies on the poor sands they grow on — molybdenum for the fixation enzyme itself, and manganese, whose deficiency causes seed splitting and discolouration and can be worsened by liming. Soil and pH: lupins tolerate acidity better than most crops but still respond to correcting extreme constraints, and they are sensitive to some soil conditions and residual herbicides from the previous crop, so plant-back and paddock selection matter. Emphasise that matching lupins to the right paddock (deep acid sand, low nitrogen, suitable herbicide history) and ensuring effective inoculation and trace-element nutrition are the foundations of a successful crop, and that these requirements are part of why lupins demand attentive management.
+    key_concepts:
+      - "Target density ~45 plants/m2 at 80-120 kg/ha seeding rate"
+      - "Group G rhizobial inoculation, renewed every 5-7 years"
+      - "Molybdenum and manganese sensitivity on sandplain soils"
+      - "Little or no fertiliser nitrogen needed; avoid over-application"
+    wiki_query: "lupin sowing rate density inoculation phosphorus trace element WA"
+
+  - title: "Managing Abiotic Stresses: Frost, Heat, and Waterlogging"
+    description: >
+      Extend the establishment and sowing-time discussion just covered to the environmental stresses that dictate it. Waterlogging: lupins are highly sensitive to waterlogged soils, especially yellow and narrow-leafed types, which restricts oxygen to roots, halts nodulation, and can cause plant death — reinforcing their confinement to well-drained sandplain country. Frost and heat: frost during flowering and early pod set can cause severe flower abortion and pod drop, while terminal heat stress and moisture deficit at the end of the season prematurely truncate grain fill, echoing the terminal-drought risk already introduced for the Mediterranean environment generally. Emphasise that matching variety phenology (flowering time) to the local environment and adhering to optimum sowing dates, discussed as the primary establishment lever, is also the primary tool for threading the needle between early frost risk and late-season heat or drought stress.
+    key_concepts:
+      - "Waterlogging halts nodulation, confines lupins to well-drained sands"
+      - "Frost at flowering causes flower/pod abortion"
+      - "Terminal heat and drought truncate grain fill"
+      - "Phenology and sowing date as the primary stress-avoidance lever"
+    wiki_query: "lupin waterlogging frost heat stress phenology sowing date WA"
+
+  - title: "Lupin Crop Protection: Weeds, Diseases and Pests"
+    description: >
+      Cover the in-crop protection program that lupins require. Weed control: because lupins compete poorly early and offer limited selective broadleaf options, weed management leans on pre-emergent triazine herbicides (simazine, metribuzin) on triazine-tolerant cultivars, post-emergent Group A grass-selective chemistry that also runs down ryegrass for the following cereal, and late-season crop-topping with glyphosate or paraquat to stop weed seed set; weedy lupin crops yield poorly and set weed seed, so clean establishment is vital. Disease: manage anthracnose through clean, tested, disease-free seed and resistant varieties (the primary control, since it is seed-borne), and manage Pleiochaeta root rot, brown spot, grey leaf spot and other root rots through rotation, stubble management, and fungicides where warranted; sclerotinia can affect lupins in wet springs. Viruses: aphid-transmitted viruses (such as cucumber mosaic virus, which is also seed-borne) can reduce yield, managed through clean seed, monitoring aphids, and minimising aphid landing. Pests: establishment pests (mites, lucerne flea, aphids) and, later, aphids and native budworm attacking pods require monitoring and threshold-based control. Emphasise the integrated, preventive nature of lupin protection — clean seed, resistant varieties, rotation, and monitoring rather than routine spraying — and how it connects to the broader integrated weed, disease, and pest management philosophy of the unit.
+    key_concepts:
+      - "Triazine-tolerant cultivars enable simazine/metribuzin pre-emergent control"
+      - "Crop-topping to prevent weed seed set"
+      - "Anthracnose control via clean seed and resistant varieties"
+      - "Pleiochaeta root rot managed through rotation and stubble"
+    wiki_query: "lupin weed control triazine tolerant anthracnose Pleiochaeta root rot WA"
+
+  - title: "Precision Agriculture and Technological Advancements"
+    description: >
+      Show how modern precision agriculture is being applied to lift lupins past the traditional constraints just covered. Variable rate technology (VRT) allows precise application of phosphorus and the trace elements lupins are notably sensitive to, across the highly variable sandplain soils they grow on, targeting inputs where they return the most. Harvest Weed Seed Control (HWSC) systems — seed destructors and chaff carts — are an increasingly important mechanical weed tool, particularly valuable given how limited in-crop selective herbicide options are for a broadleaf pulse. Remote sensing via drones and satellite imagery is emerging for early detection of patchy establishment, disease outbreaks such as anthracnose hotspots, and variable nodulation, steering the crop toward more precise, resilient management.
+    key_concepts:
+      - "VRT for phosphorus and trace elements on variable sandplain"
+      - "Harvest Weed Seed Control as a mechanical weed tool"
+      - "Remote sensing for establishment, disease and nodulation monitoring"
+    wiki_query: "precision agriculture lupin variable rate trace elements HWSC remote sensing"
+
+  - title: "Farming Systems Integration and the Lupinosis Risk"
+    description: >
+      Close out the crop-specific content by returning lupins to the whole-farm, mixed crop-livestock system, before the final synthesis. Lupin stubbles provide valuable high-protein summer grazing for sheep, helping bridge the autumn feed gap that Mediterranean-climate mixed farms face. This must be balanced against lupinosis, a potentially fatal liver disease in sheep caused by toxins from the fungus Phomopsis leptostromiformis growing on lupin stubble, with risk rising sharply after summer rain triggers fungal growth on the dead stubble. Discuss the integrated management response: Phomopsis-tolerant lupin varieties, vigilant monitoring of grazing livestock and stubble condition, and grazing stubbles early, before summer rain spikes toxicity. This is a concrete example of the recurring theme that a crop's value and risk are only fully visible at the whole-system, mixed-enterprise level.
+    key_concepts:
+      - "Lupin stubble bridges the autumn feed gap for sheep"
+      - "Lupinosis: Phomopsis leptostromiformis toxin risk after summer rain"
+      - "Management: tolerant varieties, monitoring, early grazing"
+    wiki_query: "lupinosis Phomopsis leptostromiformis stubble grazing sheep toxicity"
+
+  - title: "Harvest, Quality and Markets for Lupins"
+    description: >
+      Complete the lupin story with harvest, quality, and markets. Harvest: modern narrow-leafed lupin varieties have been bred for reduced pod shattering and to hold their pods, improving harvestability, but timely harvest is still needed to minimise loss, and the large, relatively soft seed must be handled to avoid cracking. Quality and markets: lupin grain is valued principally as a high-protein stockfeed for sheep, cattle, pigs, and poultry, and for the aquaculture and intensive-livestock feed industries, with quality judged on protein, cleanliness, and freedom from defect and admixture; a growing and higher-value market is human consumption, where lupin's high protein and fibre and low starch make it a sought-after ingredient in health foods and plant-protein products, demanding higher grain quality and food-grade handling. Emphasise the export dimension and WA's position as a major lupin producer supplying feed and, increasingly, food markets. Conclude by synthesising the lecture's themes: pulses, and lupins in particular, deliver biological nitrogen, disease and weed breaks, and dietary protein that make them valuable to both the farming system and human nutrition, but their higher production risk, narrower adaptation, and thinner markets mean they must be matched carefully to soil and season, managed attentively, and valued across the whole rotation. Reinforce the systems lesson that a pulse's true worth — like a lime application or a rotation choice — is only visible when the farming system is viewed across years, not in a single season's return.
+    key_concepts:
+      - "Modern varieties bred for reduced shattering, easier harvest"
+      - "Primary market: high-protein stockfeed for livestock/aquaculture"
+      - "Growing human-consumption, food-grade market"
+      - "Rotational value only visible viewed across the whole system"
+    wiki_query: "lupin harvest quality stockfeed human consumption market WA"
+

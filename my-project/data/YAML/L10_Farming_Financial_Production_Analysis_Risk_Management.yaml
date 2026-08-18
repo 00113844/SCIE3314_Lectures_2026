@@ -1,0 +1,194 @@
+topic: "Farm Financial and Production Analysis and Risk Management"
+auto_figures: true
+subtopics:
+
+  - title: "Agronomy Meets Economics: Why Profit, Not Yield, Is the Goal"
+    description: >
+      Open by reframing the objective of everything covered in the unit: the goal of a farm business is not to maximise yield but to generate sustainable profit and manage risk over the long term. Emphasise that many agronomically "correct" decisions — the highest nitrogen rate, the most expensive fungicide program, the yield-maximising seeding rate — are not the most profitable, because inputs cost money and returns diminish. The role of financial and production analysis is to translate agronomic decisions into their economic consequences so that growers invest where the expected return justifies the cost and the risk. Establish the WA context that makes this especially demanding: growers are price-takers on volatile world markets, face highly variable seasons, and carry high fixed costs in land and machinery, so profitability swings widely year to year and financial discipline is as important as agronomic skill. Preview the lecture: the tools for analysing the economics of a single crop (gross margins), of the whole farm (whole-farm budgets and key financial measures), of a specific decision (partial and marginal analysis), and — above all — of production under uncertainty (risk management), the defining challenge of Mediterranean farming.
+    key_concepts:
+      - "Profit and manageable risk are the goal, not maximum yield"
+      - "Inputs cost money; returns diminish past the optimum"
+      - "WA context: price-taker, variable seasons, high fixed costs"
+    wiki_query: "farm profit versus yield economics risk WA grain"
+
+  - title: "The Farm System Audit: Establishing the Baseline"
+    description: >
+      Before any of the analytical tools that follow can be applied, insist that every financial evaluation starts with a rigorous physical and biological audit of the farm being analysed — the discipline this unit has built through record-keeping and benchmarking. A farm is a complex system bounded by its resources: total arable area, soil types, climate zone (historical rainfall and growing season length), existing infrastructure, machinery capacity, and available labour. Map the current farming system: the historical crop rotation, any livestock integration, and historical yield performance relative to water-limited potential (the French-Schultz benchmark from earlier in the unit). Emphasise that this baseline data collection is the foundation of any real farm analysis or consultancy exercise: you cannot evaluate a financial trajectory or propose a strategic change without first understanding the physical constraints, agronomic history, and resource base of the specific business — the same "know your paddock" logic introduced at the very start of the unit, now applied at the whole-business scale.
+    key_concepts:
+      - "Audit resources: land, soil, climate, infrastructure, labour"
+      - "Map rotation, livestock integration, yield-vs-potential history"
+      - "Baseline data precedes any financial evaluation"
+    wiki_query: "farm resource audit rotation history yield potential WA baseline"
+
+  - title: "Costs: Variable, Fixed and the Structure of a Farm Budget"
+    description: >
+      Build the vocabulary of farm costs, which underpins all the analysis that follows. Distinguish variable (operating) costs — those that vary directly with the area and intensity of production, such as seed, fertiliser, chemicals, fuel, crop insurance, and freight — from fixed (overhead) costs — those incurred regardless of what or how much is produced, such as depreciation, rates and insurance, permanent labour, administration, and finance costs on land and machinery. Explain why this distinction matters: variable costs are the ones directly weighed against the extra return from an agronomic decision (the gross-margin level), while fixed costs must be covered by the whole enterprise across the year and drive the need for scale and capital efficiency. Introduce the structure of a farm budget: enterprise gross margins (income minus variable costs for each crop) summed across the farm, less fixed and finance costs, giving the farm operating profit; and the distinction between profit (an accrual measure of business performance) and cash flow (the timing of actual money in and out), both of which must be managed — a profitable farm can still face a cash-flow crisis when large seeding costs precede harvest income by many months. This cost framework is the foundation for the gross-margin and whole-farm analysis that follows.
+    key_concepts:
+      - "Variable costs scale with area/intensity; fixed costs do not"
+      - "Variable costs feed gross margins; fixed costs need scale"
+      - "Profit (accrual) vs cash flow (timing) are both managed"
+    wiki_query: "variable fixed costs farm budget profit cash flow"
+
+  - title: "Production Economics: The Law of Diminishing Returns"
+    description: >
+      Introduce the core economic principle governing input decisions — diminishing returns — since it explains why the profit-maximising rate of any input is below the yield-maximising rate. Explain the input–output (production) relationship: as more of an input (say nitrogen) is applied, yield rises, but each successive increment adds less yield than the one before, until yield plateaus and eventually declines. Because the input costs a constant amount per unit but each unit returns less yield, there is an economically optimal rate at which the value of the extra yield from one more unit of input just equals its cost — the point of maximum profit, well short of maximum yield. Introduce marginal analysis as the tool: compare the marginal return (extra yield times price) of the next unit of input against its marginal cost, and apply inputs up to the point where they are equal. Explain how this optimum shifts with prices (a higher grain price or lower input cost pushes the optimum rate up) and — crucially in a variable climate — with the season (the optimum nitrogen rate is far higher in a season with high yield potential than in a drought), which is why input decisions must be made with reference to both price and the seasonal outlook, and why the flexible, in-season, risk-aware management developed later is so valuable. This principle connects directly to the fertiliser-recommendation and modelling lectures.
+    figure_id: "Fig-L10-DiminishingReturns"
+    image_prompt: >
+      Two-panel graph. Left "Production function": input (e.g. nitrogen rate) on x-axis, yield on y-axis, a curve rising steeply then plateauing. Right "Profit": the same input on x-axis, profit (gross margin) on y-axis, a curve that rises to a peak (the economic optimum) then declines, with the economic optimum marked well below the yield-maximising rate. Show two profit curves for a high and low grain price, illustrating how the optimum shifts. UWA blue (#27348B) yield curve, gold (#E2B600) profit curves and optimum markers, academic chart, --ar 16:9, --no text.
+    key_concepts:
+      - "Each extra input unit returns less yield than the last"
+      - "Economic optimum: marginal return equals marginal cost"
+      - "Optimum shifts with price and with the seasonal outlook"
+    wiki_query: "diminishing returns marginal analysis input rate economic optimum nitrogen"
+    figure_source: "literature"
+
+  - title: "Gross Margins: Comparing Crops and Decisions"
+    description: >
+      Develop the gross margin as the workhorse tool of farm production analysis. Define an enterprise gross margin as gross income (expected yield multiplied by expected farm-gate price) minus variable costs — seed, fertiliser, chemical, contracting, freight, levies, and crop insurance — expressed per hectare, a measure of the contribution each crop makes toward covering fixed costs and profit. Building realistic variable cost assumptions means grounding them in the crop's actual agronomic needs: fertiliser cost derived from nutrient removal rates and soil test results, chemical cost derived from the weed and disease management program the crop actually requires. From the gross margin, two simple but powerful break-even figures follow: break-even yield (variable costs divided by expected price) and break-even price (variable costs divided by expected yield), both useful checks on how much buffer a plan has against a poor season or price. Explain its uses: comparing the relative profitability of different crops (wheat versus canola versus lupins, for example) to inform rotation and area decisions; assessing the effect of a change in agronomy, price, or yield; and building up the whole-farm budget. Explain its important limitations, which students must understand to use it correctly. First, gross margins ignore fixed costs, so a crop with the highest gross margin is not necessarily the best choice once its machinery, timing, and overhead demands are considered. Second, and central to this unit, a single-year gross margin ignores rotational value — a break crop with a modest gross margin may be the most profitable choice once the nitrogen, disease, and weed benefits it delivers to the following cereal are counted, so gross margins must be assessed across the rotation, not crop by crop. Third, they are estimates built on assumed yields and prices that are uncertain. Emphasise that the gross margin is a powerful comparative tool precisely because it isolates the variable-cost economics of a decision, but that its results must always be interpreted within the whole-farm and whole-rotation context and under the uncertainty of season and price — and that, given this uncertainty, the working philosophy of practising WA agronomists is that being roughly right beats being precisely wrong: a well-reasoned estimate built on realistic assumptions is more useful than a spuriously precise figure that hides how uncertain yield and price really are.
+    figure_id: "Fig-L10-GrossMargin"
+    image_prompt: >
+      A stacked bar chart comparing the gross margins of three crops (wheat, canola, lupins). Each bar shows gross income at the top, with a breakdown of variable costs (fertiliser, chemical, seed, operations) subtracted below it, leaving the gross margin as the net positive block. UWA blue (#27348B) and gold (#E2B600) colour scheme, academic financial chart, --ar 16:9, --no text.
+    key_concepts:
+      - "Gross margin = gross income minus variable costs"
+      - "Break-even yield and break-even price"
+      - "Compares crops but ignores fixed costs and rotational value"
+      - "Must be assessed across the rotation, not crop by crop"
+    wiki_query: "gross margin variable costs break-even yield price crop comparison"
+    figure_source: "manual"
+
+  - title: "Whole-Farm Analysis and Key Financial Measures"
+    description: >
+      Scale up from the individual crop to the whole farm business, introducing the measures used to judge overall performance and financial health. Explain the aggregation: the whole-farm budget sums the gross margins of every enterprise across the farm's planned rotation, then subtracts all fixed (overhead) costs — permanent labour, administration, insurance, rates, and, critically, machinery depreciation, the often-underestimated cost of capital wear and tear — to arrive at operating profit (earnings before interest and tax, or EBIT). This step matters because it can overturn the crop-by-crop picture: a farm with excellent gross margins can still be unprofitable if it carries excessive overheads or is over-capitalised in machinery. From operating profit, key measures are derived. Profitability measures: operating profit, return on capital (profit relative to the capital invested, a measure of how hard the business's assets are working), and profit per hectare. Efficiency measures: the ratio of costs to income and benchmarks of input use per unit of output. Financial-position and risk measures: equity (the owner's share of the business after debt), the debt-to-equity ratio and gearing (how much the business relies on borrowed money, which magnifies both gains and losses) — developed further in the balance sheet that follows. Explain how these measures are used: to benchmark a farm against peers and against its own history, to assess the capacity to withstand poor seasons and to invest, and to inform decisions about expansion, machinery, and debt. Emphasise the interplay with risk: a highly geared, low-equity business has less capacity to absorb the inevitable poor seasons of a variable climate, so financial structure and risk exposure must be managed together — the theme that dominates the second half of the lecture.
+    key_concepts:
+      - "Whole-farm budget: sum gross margins, subtract overheads, get EBIT"
+      - "Strong gross margins can still mean an unprofitable farm"
+      - "Profitability, efficiency, and financial-position measures"
+      - "Return on capital and gearing as risk-capacity indicators"
+    wiki_query: "whole farm budget operating profit EBIT overhead costs return on capital"
+
+  - title: "Cash Flow Budgeting: Managing Liquidity and Peak Debt"
+    description: >
+      Shift from profitability, an accrual concept, to liquidity, the timing of actual cash — addressing a common and entirely preventable cause of farm business failure, and the practical expression of the profit-versus-cash-flow distinction introduced with the cost framework earlier. Explain that grain farming is intensely seasonal: large cash outflows for seeding inputs and fuel occur from roughly March to July, while the major cash inflow from harvest does not arrive until December or January. Walk through building a monthly cash flow budget to map this trajectory across the year, and introduce peak debt: the maximum negative cash balance reached just before harvest income arrives, which determines the working capital or overdraft facility the farm actually needs from its bank. Emphasise the distinction that trips up even experienced managers: a farm can project a strong annual profit on paper yet fail if it cannot fund its peak debt in spring — profitability and liquidity are both necessary, and managing the cash flow trough is as important as managing the bottom line.
+    key_concepts:
+      - "Profit (accrual) vs cash flow (timing of money) distinction"
+      - "Seasonal outflow (autumn/winter) vs inflow (harvest) mismatch"
+      - "Peak debt sets the required working capital/overdraft"
+      - "A profitable farm can still fail on liquidity"
+    wiki_query: "farm cash flow budget seasonal peak debt working capital overdraft"
+
+  - title: "The Balance Sheet: Solvency, Equity, and Return on Capital"
+    description: >
+      Turn from the income statement (gross margins, operating profit) to the balance sheet, the other essential financial statement, which measures the wealth of the business at a point in time rather than its performance over a year. Define the components: assets (land, machinery, stored grain, cash) and liabilities (term debt, overdrafts, equipment finance), with equity as the difference between them — the owner's actual net worth. Set out the key metrics banks and analysts use to judge farm viability: equity percentage (net worth divided by total assets), which measures solvency and the buffer available to absorb bad years; return on capital, which measures how efficiently the total asset base is generating profit and allows comparison against alternative uses of that capital; and gearing (the debt-to-equity ratio), which quantifies how much the business relies on borrowed money and therefore how much debt will magnify both gains in good years and losses in bad ones. Emphasise that the ultimate goal of the farm business is not just this year's operating profit but long-term growth in net worth, so any proposed strategic change should be assessed by whether it strengthens or weakens the balance sheet, not only whether it improves this year's budget.
+    key_concepts:
+      - "Balance sheet: assets minus liabilities equals equity"
+      - "Equity percentage measures solvency and buffer capacity"
+      - "Return on capital measures asset-use efficiency"
+      - "Gearing magnifies both gains and losses"
+    wiki_query: "farm balance sheet equity gearing return on capital solvency"
+
+  - title: "Partial Budgeting: Analysing a Change"
+    description: >
+      Introduce partial budgeting as the practical tool for evaluating a specific proposed change — the kind of decision agronomists and growers face constantly, such as adopting a new practice, changing an input, or buying a piece of equipment. Explain the method: rather than rebuilding the whole budget, a partial budget considers only what changes, listing the added costs and forgone income on one side and the added income and saved costs on the other, and comparing the two to find the net effect of the change. Give illustrative applications relevant to the unit: is it worth adopting harvest weed seed control (added cost and any yield or capital implications versus the value of reduced weed seedbank and herbicide savings over time)? Is a strategic deep-ripping or liming investment justified (upfront cost versus the yield gains spread over subsequent seasons)? Does an extra fungicide pass pay (cost versus the protected yield in a disease-risk season)? Emphasise the strengths of partial budgeting — it focuses attention on exactly what changes, is quick, and forces the decision-maker to quantify the trade-off — and its requirements: honest estimates of the yield and price effects, and, for investments whose benefits span years (lime, ripping, seedbank reduction), a multi-year view that recognises the timing and uncertainty of the returns. Link this to the long-term investment logic of liming and rotation developed earlier: many of the most valuable decisions in a cropping system are ones whose partial budget only turns positive when assessed over the whole rotation.
+    key_concepts:
+      - "Considers only what changes: added/saved costs vs income"
+      - "Applications: HWSC adoption, liming, an extra fungicide pass"
+      - "Multi-year view needed when benefits span seasons"
+    wiki_query: "partial budget farm decision cost benefit change analysis"
+
+  - title: "Capital Budgeting: Evaluating Long-Term Investments"
+    description: >
+      Extend partial budgeting to the larger, multi-year investments a farm business faces: buying additional land, upgrading the header fleet, or undertaking major soil amelioration such as deep ripping or a strategic liming program. Because these investments carry a large upfront cost but deliver benefits spread over many future years, a simple gross margin or even a partial budget is not enough — the timing of costs and benefits itself matters. Introduce the principle of the time value of money (a dollar today is worth more than a dollar received in five years) and the tools built on it: net present value (NPV), which discounts the projected stream of future annual benefits back to today's dollars at a chosen discount rate (the cost of capital) and nets off the initial outlay, and internal rate of return (IRR), the discount rate at which a project's NPV is exactly zero. Walk through the inputs a discounted cash flow analysis needs: the initial capital outlay, the projected annual cash flow benefit, any salvage value, and the discount rate. Emphasise the strategic framing this unlocks: a farm business with limited capital is often choosing between expansion (more land) and intensification (better agronomy or machinery on existing land), and NPV gives an objective, comparable basis for that choice — the long-horizon counterpart to the partial budget just introduced.
+    key_concepts:
+      - "Time value of money: a dollar today beats a dollar later"
+      - "NPV discounts future benefits against the upfront outlay"
+      - "IRR: the discount rate at which NPV is zero"
+      - "Objective basis for choosing expansion vs intensification"
+    wiki_query: "capital budgeting net present value internal rate of return farm investment"
+
+  - title: "Machinery Economics and the Cost of Timeliness"
+    description: >
+      Examine machinery, the largest capital commitment on a WA grain farm, and the distinctive economics of timeliness that govern it. Explain that machinery cost has two components: the ownership costs (depreciation, interest, and insurance on the capital, which fall per hectare as more area is covered) and the operating costs (fuel, repairs, labour). Because ownership costs are largely fixed, spreading them over more hectares lowers the cost per hectare, which drives the pressure toward larger machinery and larger farms — economies of scale that shape the WA enterprise structure. Introduce the critical concept of timeliness cost: because Mediterranean operations must be done within narrow agronomic windows (sowing after the break, spraying at the right growth stage, harvesting before weather damage), a farm's machinery capacity determines whether it can complete each operation on time across the whole area, and delays impose real yield and quality penalties (the sowing-date penalty from earlier lectures, weather-damaged grain at harvest). Explain the trade-off this creates: larger, faster machinery costs more to own but reduces timeliness losses by completing operations within the optimal window, so the economically right machinery size balances the ownership cost of extra capacity against the yield value of timeliness. Discuss options that adjust this balance — contracting, sharing, and leasing — and connect timeliness to the logistics and process-management content later in the unit. Emphasise that machinery decisions are among the largest and most consequential a grain business makes, blending capital economics with the agronomic value of doing things on time.
+    key_concepts:
+      - "Ownership costs fall per hectare as area covered rises"
+      - "Timeliness cost: narrow windows make capacity matter"
+      - "Right-sizing balances ownership cost against timeliness loss"
+      - "Contracting, sharing and leasing adjust the balance"
+    wiki_query: "machinery cost timeliness ownership operating farm scale WA"
+
+  - title: "Benchmarking and Continuous Improvement"
+    description: >
+      Complete the analysis toolkit with benchmarking — comparing a farm's performance against relevant standards to identify where to improve. Explain that benchmarking compares a business's physical and financial measures (yield relative to water-limited potential, cost of production per tonne, gross margins, return on capital, machinery cost per hectare) against its own history, against comparable farms, and against the achievable potential. Connect the physical benchmark directly to earlier lectures: the yield gap between actual and water-limited (French-Schultz) potential is a benchmark that points to correctable agronomic constraints, and the cost of production per tonne is the benchmark that reveals whether a farm is a low-cost, resilient producer able to remain profitable through low-price years. Explain the purpose: benchmarking turns record-keeping (the "memory of the system" from the introductory lecture) into a diagnostic that identifies the biggest opportunities — whether in agronomy, input efficiency, machinery cost, or financial structure — and drives a cycle of measurement, comparison, action, and re-measurement. Emphasise that good data and records are the prerequisite, and that the same measurement discipline that underpins precision agriculture and crop modelling underpins good farm business management: you cannot manage, or improve, what you do not measure.
+    key_concepts:
+      - "Compare against own history, peers, and achievable potential"
+      - "Yield gap and cost of production per tonne as key benchmarks"
+      - "Records turn measurement into a diagnostic for improvement"
+    wiki_query: "farm benchmarking yield gap cost of production records WA"
+
+  - title: "The Sources of Risk in WA Farming"
+    description: >
+      Turn to risk, the defining feature of Mediterranean grain farming, and map its sources so they can be managed. Production (yield) risk: the dominant risk, driven by the highly variable climate — the timing of the break, the amount and distribution of growing-season rainfall, frost, heat, terminal drought, and the biotic risks of weeds, pests, and disease — which makes yield genuinely uncertain until the crop is in the bin. Price (market) risk: as price-takers on volatile world markets, growers face large, unpredictable swings in the price of both their grain and their inputs, plus exchange-rate risk. Financial risk: the exposure created by debt and gearing, which magnifies the impact of poor seasons and can threaten the survival of a highly leveraged business. Institutional and other risks: changes in policy, trade access, biosecurity, and regulation. Emphasise the compounding nature of these risks — a poor season (low yield) can coincide with low prices and high input costs, and a highly geared business has least capacity to absorb the blow — and the fundamental asymmetry that a run of poor years can end a business while good years merely build reserves. Establish the goal of risk management: not to eliminate risk (impossible and unprofitable) but to keep the business's exposure within its capacity to absorb bad outcomes while still capturing the returns that come from bearing manageable risk.
+    key_concepts:
+      - "Production risk: climate, frost, drought, weeds/pests/disease"
+      - "Price risk: volatile world markets and exchange rate"
+      - "Financial risk: debt and gearing amplify poor seasons"
+      - "Goal: keep exposure within the business's capacity to absorb it"
+    wiki_query: "production price financial risk WA grain farming volatility"
+
+  - title: "Thinking About Yield as a Distribution"
+    description: >
+      Develop the crucial conceptual shift, foreshadowed in earlier lectures, from thinking about yield as a single expected number to thinking about it as a probability distribution — the foundation of rational decision-making under uncertainty. Explain that in a variable climate any management strategy produces not one yield but a range of possible yields with different probabilities, best represented by the distribution of outcomes across many possible seasons. Introduce the exceedance-probability curve (from the crop-modelling lectures): using long historical weather records in a crop model, a strategy's outcomes can be simulated across decades to show the yield exceeded in, say, 90%, 50%, and 20% of years — telling a grower not just the average but how often a strategy performs poorly and how often it performs well. Explain why this matters for decisions: two strategies with the same average yield can have very different risk profiles, and a grower's choice between them depends on their financial capacity and attitude to risk — a highly geared business may rationally choose a lower-average, more reliable strategy over a higher-average, more variable one. Emphasise that this probabilistic thinking is what allows agronomic decisions (nitrogen rate, crop choice, input investment) to be matched to both the season's outlook and the business's risk capacity, and that it is the conceptual bridge between the crop-modelling and financial-management content of the unit.
+    figure_id: "Fig-L10-Exceedance"
+    image_prompt: >
+      Exceedance-probability chart: x-axis "probability of exceeding" (0-100%), y-axis yield or gross margin. Two curves for two nitrogen strategies — a high-input strategy with higher upside but lower worst-case, and a conservative strategy with lower average but a better floor — crossing over, illustrating the risk trade-off. The 90th, 50th, and 20th percentile points marked. UWA blue (#27348B) and gold (#E2B600) curves, academic chart, --ar 16:9, --no text.
+    key_concepts:
+      - "Yield as a probability distribution, not a single number"
+      - "Exceedance-probability curves from crop modelling"
+      - "Same average yield can carry very different risk profiles"
+      - "Matches strategy to the business's risk capacity"
+    wiki_query: "yield distribution exceedance probability crop model risk WA"
+    figure_source: "literature"
+
+  - title: "Sensitivity and Scenario Analysis: Stress-Testing the Plan"
+    description: >
+      Turn the probabilistic thinking just introduced into a concrete planning technique. Every budget is built on assumptions — an expected yield, an expected price — that are inherently uncertain in a Mediterranean climate and a volatile world market, so a serious farm plan must be stress-tested rather than taken at face value. Sensitivity analysis does this systematically: construct a data table or matrix that recalculates whole-farm profit across a grid of two key variables at once, such as grain price against growing-season rainfall, to see how profit responds as each assumption moves away from its expected value. Scenario analysis complements this by testing specific, named "what-if" events rather than a continuous grid — a severe frost at flowering, a large spike in urea price, or a Decile 2 drought year — to see whether the plan survives a plausible bad year, not just an average one. Emphasise the point this reveals: a robust farm plan is not the one that maximises profit in an average year, but the one that avoids catastrophic failure in a genuinely poor year, which is the practical test of whether a plan's exposure has actually been matched to the business's risk capacity.
+    figure_id: "Fig-L10-Sensitivity"
+    image_prompt: >
+      A two-way data table (heatmap) representing sensitivity analysis. The x-axis represents varying grain prices, the y-axis represents varying crop yields. The internal cells show whole-farm profit, coloured from deep red (losses) in the low-yield/low-price corner, through yellow, to deep green (high profit) in the high-yield/high-price corner. UWA blue (#27348B) axes, academic financial heatmap, --ar 16:9, --no text.
+    key_concepts:
+      - "Sensitivity analysis: profit across a grid of two variables"
+      - "Scenario analysis: named what-if events (frost, price spike, drought)"
+      - "Tests whether the plan survives a bad year, not just the average"
+    wiki_query: "sensitivity analysis scenario planning farm budget drought price"
+    figure_source: "manual"
+
+  - title: "Managing Production Risk On-Farm"
+    description: >
+      Survey the agronomic and structural strategies growers use to manage production risk, tying together practices from across the unit under the risk lens. Diversification: spreading risk across multiple crops, markets, soil types, and (on mixed farms) livestock, so that a failure in one is buffered by others — the risk rationale for diverse rotations. Conservative and flexible input strategies: rather than committing to a high input program at seeding, applying inputs (especially nitrogen) responsively as the season reveals itself — a modest base at sowing with top-ups if the season develops well — so that money is not spent building a yield the season cannot deliver. Building resilience into the system: conservation agriculture and stored soil moisture, matched phenology to escape frost and heat, disease and weed control to protect the crop, and choosing reliable crops (cereals) in the highest-risk zones. Maintaining financial reserves and flexibility: keeping equity and liquidity to absorb poor years. Explain that these on-farm strategies work by reducing the probability or the consequence of bad outcomes, and that the flexible, in-season, model-informed decision-making the unit teaches is fundamentally a risk-management approach — it lets the grower adapt to the season rather than committing irrevocably to assumptions about it. Emphasise that good agronomy and good risk management are, once again, largely the same thing.
+    key_concepts:
+      - "Diversification across crops, markets, soils, livestock"
+      - "Conservative, responsive input strategy through the season"
+      - "Building resilience: moisture, phenology, disease/weed control"
+      - "Financial reserves and flexibility as a risk buffer"
+    wiki_query: "on-farm risk management diversification input strategy resilience WA"
+
+  - title: "Managing Price Risk: Marketing and Hedging"
+    description: >
+      Address the management of price risk through grain marketing, since selling grain well is as important to profit as growing it. Explain that in the deregulated Australian grain market growers must actively make marketing decisions rather than delivering to a single desk, and survey the tools. Timing and spreading of sales: rather than selling all grain at one price, spreading sales across the year and across seasons to average out price volatility. Forward contracts: agreeing to deliver a quantity of grain at a set price before or during the season, locking in a price but creating production risk (the obligation to deliver grain that a poor season may not produce). Pools: delivering to a managed pool that spreads sales and price across many growers and the marketing period. Derivatives and hedging: futures and options that allow price to be managed separately from physical delivery. Explain the key trade-offs: locking in a price removes upside as well as downside, forward selling grain not yet grown adds production risk to price certainty, and managing exchange-rate exposure matters because grain is priced in US dollars. Emphasise the principle that price-risk management, like production-risk management, is about matching exposure to the business's capacity and objectives, not about predicting the market, and that combining sensible marketing with sound production and financial management is what delivers resilient profitability in a volatile, price-taking, climate-exposed industry.
+    key_concepts:
+      - "Deregulated market requires active marketing decisions"
+      - "Spreading sales, forward contracts, and pools"
+      - "Derivatives/hedging separate price from physical delivery"
+      - "Forward selling adds production risk to price certainty"
+    wiki_query: "grain marketing forward contract hedging price risk Australia"
+
+  - title: "Putting It Together: Integrated Whole-Farm Decision-Making"
+    description: >
+      Conclude by integrating the lecture into the reality of whole-farm decision-making under uncertainty — the culmination of the systems thinking the unit teaches, and a demonstration of what a genuine farm analysis looks like in practice. Explain that a grower's decisions — crop and rotation choice, input levels, machinery investment, debt, and marketing — are not independent but form a single, interacting system that must deliver profit over the long term while surviving the inevitable poor years. Show how the threads connect, and that good analysis moves between them rather than treating them in isolation: if a soil audit reveals an acidity constraint, the financial analysis should evaluate the NPV of a liming program rather than judging it on a single-year gross margin; if the gross margins favour a risky, canola-heavy rotation, the sensitivity analysis and cash flow budget must confirm the business actually has the equity and liquidity to survive a drought year on that rotation. Agronomic decisions determine the yield distribution; production analysis (gross margins, marginal analysis, partial and capital budgets) determines which decisions are profitable in expectation; the whole-farm budget and balance sheet determine the business's capacity to bear risk; and marketing and cash flow management determine how price risk and liquidity are handled day to day — all under a variable climate that makes every outcome a distribution rather than a certainty. A genuinely useful analysis ends in actionable, evidence-based recommendations: naming the specific weaknesses a business carries — over-capitalised machinery, poor rotational diversity, thin liquidity against price shocks — and proposing changes that trade off long-term wealth creation against an acceptable risk profile. Emphasise the mature framing the unit aims to instil: the skilled agronomist and farm manager reasons across agronomy, economics, and risk together, matches input investment to both the season's potential and the business's capacity to absorb a bad outcome, uses records, benchmarks, and models to inform rather than replace judgement, and sustains the natural and financial capital of the business over decades.
+    key_concepts:
+      - "Agronomy, financial capacity, and risk analysis move together"
+      - "Diagnose specific weaknesses, not generic advice"
+      - "Recommendations trade off wealth creation against risk profile"
+      - "Records, benchmarks and models inform judgement, not replace it"
+    wiki_query: "integrated farm decision making agronomy economics risk WA"
+
+

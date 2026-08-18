@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Soil Sampling, Soil Acidity and Fertiliser Recommendation — SCIE3314, Lecture 03</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme" />
+<link rel="stylesheet" href="../_shared/uwa-revealjs.css" />
+<link rel="stylesheet" href="../_shared/layouts.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/style.css" />
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ===================== TITLE ===================== -->
+    <section class="title-slide" data-background-color="#27348B">
+      <p class="eyebrow" style="color:#E2B600;">SCIE3314 &middot; Crops and Cropping Systems</p>
+      <h1 style="color:#fff;">Soil Sampling, Soil Acidity and Fertiliser Recommendation</h1>
+      <p class="title-subtitle" style="color:#fff;">Turning invisible soil chemistry into a management decision</p>
+      <p class="title-meta" style="color:#fff;">Lecture 03 &middot; University of Western Australia<br />Presented by Gustavo Alckmin</p>
+      <aside class="notes">
+        Target: ~2 min. Housekeeping first, then open with the hook: "Fertiliser and lime are among
+        the largest variable costs on a WA grain farm — often $150-250/ha/year between the two."
+        Ground it with a question to the room: "How would you know if you're over- or under-applying?"
+        — let the silence sit a second before answering "a soil test, if you trust the number."
+        Callback explicitly to L01: the paddock systems diagram had a box for soil nutrient status
+        feeding into the yield-gap discussion — today's entire lecture is what's inside that one box.
+        Preview the four-part arc so students have a map: Part 1 is about trusting the number
+        (sampling and reading a test), Part 2 is about turning the number into a rate (critical
+        values and three competing philosophies), Part 3 is the single biggest constraint in WA
+        cropping (acidity, roughly a quarter of the lecture), and Part 4 pivots to two establishment
+        decisions (density and sowing time) that matter just as much as the chemistry. Note there's a
+        worked real-soil-report example later in the lecture where a real report becomes an actual
+        recommendation.
+      </aside>
+    </section>
+
+    <!-- ===================== OBJECTIVES ===================== -->
+    <section class="layout-takeaway">
+      <div>
+        <h2>What you'll be able to do by the end</h2>
+        <ul class="dense-bullets">
+          <li>Explain why sampling technique, not lab accuracy, is usually the biggest source of error in a soil test.</li>
+          <li>Read a standard WA soil test and turn a critical value into a fertiliser rate.</li>
+          <li>Explain why cropping acidifies soil, why aluminium (not pH itself) damages roots, and how liming corrects it.</li>
+          <li>Calculate a seeding rate and choose a sowing window that balances frost against heat and terminal drought.</li>
+        </ul>
+      </div>
+      <div class="takeaway-card">
+        <span>Why it matters</span>
+        <p>Every recommendation in this lecture is a real decision an agronomist makes before every season, with real dollars attached.</p>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Read each objective aloud and pair it with where it lands: objective 1
+        (sampling error) is Part 1; objective 2 (critical value → rate) is Part 2; objective 3
+        (acidity/aluminium/liming) is Part 3; objective 4 (density and sowing) is Part 4. Flag
+        objective 3 explicitly as the single largest section today — roughly a quarter of the lecture
+        — because soil acidity is arguably the most economically damaging (an estimated $500M-$1.5B
+        in lost yield income across WA every year) and least visible constraint in WA cropping;
+        students shouldn't be surprised when Part 3 runs long. Land the "why it matters" card
+        concretely: every one of today's four objectives is a decision a working agronomist makes
+        every single season, with real dollars attached — this isn't abstract soil chemistry, it's
+        the reasoning behind an actual fertiliser and lime invoice.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 1 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 1</p>
+      <h2 style="color:#fff;">Testing and Reading the Soil</h2>
+      <p class="divider-note" style="color:#fff;">Why we test, how to take a sample that means something, and what each number on the page actually measures.</p>
+      <aside class="notes">
+        Target: ~18 min for this section. Preview the six-slide arc inside Part 1: how to take a
+        sample that means something (slide 2), the glossary of core numbers on a report (3a), the
+        physical property — texture — that sets the context for all of it (3a-i), the different lab
+        methods that produce those numbers and why they're not interchangeable (3a-ii), why no single
+        number is trustworthy in isolation (3b), and the plant-side complement to soil testing —
+        tissue testing and the extracted-vs-exported distinction (3c-3d). This section is the
+        foundation the rest of the lecture stands on: the acidity story in Part 3 only makes sense
+        once students trust that the pHCa number in front of them came from a representative sample
+        and a test method they understand, and Part 2's critical values are meaningless without
+        knowing which extraction method produced the number being compared against the table.
+      </aside>
+    </section>
+
+    <!-- 1. Why Soil Test -->
+    <section>
+      <h2>Why Soil Test? Turning Guesswork into Management</h2>
+      <div class="context-card">
+        <p class="context-q">A soil test converts invisible chemistry into a decision:</p>
+        <ul>
+          <li>Diagnosing deficiencies and toxicities — N, P, K, S, trace elements, aluminium.</li>
+          <li>Monitoring trends — is the nutrient bank being run down or built up? Is acidification progressing?</li>
+          <li>Defining spatial zones for variable-rate management.</li>
+        </ul>
+        <span class="source-chip">Fertiliser and lime are among the largest variable costs on a WA grain farm</span>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Land the framing line explicitly: "the value of a soil test is not the raw
+        number, it's the decision it lets you make." Ground it with a concrete example: a grower
+        spending, say, $200/ha on fertiliser and lime across a 2,000 ha program is committing
+        $400,000 a season on the strength of a handful of soil-test numbers — get the sample or the
+        interpretation wrong and that money is either wasted (over-application, leaching, no yield
+        response) or costs yield (under-application, a crop that never reaches its French-Schultz
+        potential from L01). Diagnosing deficiencies/toxicities, monitoring trends (is the nutrient
+        bank being run down or built up, is acidification progressing year on year) and defining
+        variable-rate zones are the three jobs a test does — all three resurface later (deficiency/
+        toxicity in Part 2's critical values, trend-monitoring in the acidity workflow of Part 3,
+        zones in the precision-ag callback on the next slide). Everything else today is really about
+        making that one number trustworthy: a good sample (next slide), a well-understood test (the
+        two slides after), and a properly calibrated interpretation (Part 2).
+      </aside>
+    </section>
+
+    <!-- 2. Sampling Well -->
+    <section>
+      <h2>Sampling Well: Getting a Representative Sample</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li><b>Depth:</b> nutrients and pH stratify strongly under no-till — sample a consistent 0–10 cm, and for acidity, also 10–20 and 20–30 cm to catch subsurface acidity a surface sample would miss.</li>
+            <li><b>Number and pattern:</b> 15–30 cores bulked into one composite, walked in a Z or W pattern across the paddock to average out small-scale variability.</li>
+            <li><b>Avoiding artefacts:</b> in no-till, avoid old fertiliser bands (a common protocol is 6 inter-row cores to every 1 in-row core) and stay clear of gateways, stubble heaps and old fence lines.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <svg viewBox="0 0 650 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;" font-family="Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif">
+            <!-- Title -->
+            <text x="230" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#27348B">Sampling Walk: Z / W Pattern</text>
+            <text x="230" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="#B58900">15–30 bulked cores per composite</text>
+
+            <!-- Paddock boundary -->
+            <rect x="20" y="55" width="420" height="300" rx="6" fill="#F5F7FF" stroke="#27348B" stroke-width="5" />
+
+            <!-- Furrow rows (subtle) -->
+            <g stroke="#D7DEF2" stroke-width="1.2">
+              <line x1="30" y1="75" x2="430" y2="75" /><line x1="30" y1="95" x2="430" y2="95" />
+              <line x1="30" y1="115" x2="430" y2="115" /><line x1="30" y1="135" x2="430" y2="135" />
+              <line x1="30" y1="155" x2="430" y2="155" /><line x1="30" y1="175" x2="430" y2="175" />
+              <line x1="30" y1="195" x2="430" y2="195" /><line x1="30" y1="215" x2="430" y2="215" />
+              <line x1="30" y1="235" x2="430" y2="235" /><line x1="30" y1="255" x2="430" y2="255" />
+              <line x1="30" y1="275" x2="430" y2="275" /><line x1="30" y1="295" x2="430" y2="295" />
+              <line x1="30" y1="315" x2="430" y2="315" /><line x1="30" y1="335" x2="430" y2="335" />
+            </g>
+
+            <!-- Exclusion zone: gateway (left edge) -->
+            <rect x="12" y="185" width="9" height="18" fill="#27348B" />
+            <rect x="12" y="207" width="9" height="18" fill="#27348B" />
+            <circle cx="17" cy="196" r="10" fill="#E2B600" />
+            <text x="17" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="#27348B">×</text>
+            <text x="34" y="200" font-size="11" fill="#27348B">Gateway — avoid</text>
+
+            <!-- Exclusion zone: stubble heap (top-right of paddock) -->
+            <g>
+              <ellipse cx="392" cy="88" rx="16" ry="9" fill="#B98A4A" />
+              <ellipse cx="378" cy="92" rx="13" ry="8" fill="#C89A5E" />
+              <ellipse cx="404" cy="93" rx="13" ry="8" fill="#C89A5E" />
+              <circle cx="392" cy="70" r="10" fill="#E2B600" />
+              <text x="392" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#27348B">×</text>
+            </g>
+            <text x="330" y="112" font-size="11" fill="#27348B">Stubble heap — avoid</text>
+
+            <!-- Exclusion zone: old fence line -->
+            <line x1="40" y1="326" x2="230" y2="326" stroke="#8892B0" stroke-width="3" stroke-dasharray="8 6" />
+            <circle cx="40" cy="326" r="9" fill="#E2B600" />
+            <text x="40" y="330" text-anchor="middle" font-size="10" font-weight="700" fill="#27348B">×</text>
+            <text x="55" y="345" font-size="11" fill="#27348B">Old fence line — avoid</text>
+
+            <!-- Z/W sampling walk -->
+            <polyline points="60,85 108,300 158,85 208,300 258,85 308,300 358,85 405,300"
+                      fill="none" stroke="#E2B600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            <g fill="#27348B" stroke="#fff" stroke-width="2">
+              <circle cx="60" cy="85" r="7" /><circle cx="108" cy="300" r="7" />
+              <circle cx="158" cy="85" r="7" /><circle cx="208" cy="300" r="7" />
+              <circle cx="258" cy="85" r="7" /><circle cx="308" cy="300" r="7" />
+              <circle cx="358" cy="85" r="7" /><circle cx="405" cy="300" r="7" />
+            </g>
+            <text x="60" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#27348B">Start</text>
+            <text x="405" y="322" text-anchor="middle" font-size="11" font-weight="700" fill="#27348B">Finish</text>
+
+            <!-- Inset: core split by depth -->
+            <text x="550" y="42" text-anchor="middle" font-size="14" font-weight="700" fill="#27348B">Core Split by Depth</text>
+            <rect x="535" y="55" width="10" height="26" fill="#8C5B1E" stroke="#27348B" stroke-width="1.5" />
+            <line x1="540" y1="81" x2="540" y2="92" stroke="#27348B" stroke-width="2" marker-end="url(#arrowhead)" />
+            <defs>
+              <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="#27348B" />
+              </marker>
+            </defs>
+
+            <rect x="502" y="94" width="96" height="88" fill="#FBE7A1" />
+            <rect x="502" y="182" width="96" height="88" fill="#E2B600" />
+            <rect x="502" y="270" width="96" height="90" fill="#8C5B1E" />
+            <rect x="500" y="92" width="100" height="270" rx="4" fill="none" stroke="#27348B" stroke-width="3" />
+
+            <g font-size="12" fill="#27348B">
+              <line x1="600" y1="138" x2="608" y2="138" stroke="#27348B" />
+              <text x="612" y="142">0–10 cm</text>
+              <line x1="600" y1="226" x2="608" y2="226" stroke="#27348B" />
+              <text x="612" y="230">10–20 cm</text>
+              <line x1="600" y1="315" x2="608" y2="315" stroke="#27348B" />
+              <text x="612" y="319">20–30 cm</text>
+            </g>
+          </svg>
+          <p class="diagram-caption">Fig-L03-Sampling &mdash; a Z/W walk bulks 15&ndash;30 cores into one composite while steering clear of gateways, stubble heaps and old fence lines; the inset shows the same core split into 0&ndash;10 / 10&ndash;20 / 20&ndash;30&nbsp;cm depth increments.</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Lead with the real punchline, stated as a ratio: a composite sample sent to
+        the lab might weigh a few hundred grams, representing a paddock of 50-100+ ha — an
+        extraordinary extrapolation, and why sampling error, not laboratory error, is the biggest
+        source of noise in a soil-test result. Depth stratification deserves a concrete scenario:
+        surface pH can read a comfortable 5.8 while the 10-20cm layer has already dropped to 4.6 — a
+        single 0-10cm sample would completely miss the aluminium problem building underneath (exactly
+        the scenario Part 3's "interpreting acidity" workflow slide later asks students to diagnose).
+        The inter-row/in-row ratio detail (6 inter-row cores to every 1 in-row core in no-till) is a
+        genuinely practical, slightly surprising fact worth dwelling on: hitting an old fertiliser
+        band with your corer can make a paddock look far more fertile than it is, inflating P and K
+        readings and leading to under-application. Connect forward explicitly to precision ag (L11):
+        instead of one composite per paddock, sampling zones defined by yield maps or EM/EC survey
+        layers is what feeds variable-rate lime and fertiliser — today's single-composite approach is
+        the baseline that precision ag zone-refines.
+      </aside>
+    </section>
+
+    <!-- 3a. Reading a soil test — the core numbers -->
+    <section>
+      <h2>Reading a Soil Test: The Core Numbers</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Fertility &amp; chemistry</h3>
+          <ul class="dense-bullets">
+            <li><b>pHCa</b> — measured in calcium chloride, the WA standard; master variable for nutrient availability and aluminium.</li>
+            <li><b>Colwell P + PBI</b> — plant-available P and the soil's tendency to "lock it up."</li>
+            <li><b>Colwell/exchangeable K</b> — increasingly limiting on long-cropped sandplain.</li>
+            <li><b>Sulphur (KCl-40)</b> — often deficient on sandy soils.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Biology &amp; risk</h3>
+          <ul class="dense-bullets">
+            <li><b>Nitrate/ammonium N</b> — highly time-variable; best paired with a mineralisation estimate.</li>
+            <li><b>Organic carbon</b> — soil structure, N-supplying capacity, water-holding.</li>
+            <li><b>Exchangeable aluminium + CEC</b> — central to the acidity story next.</li>
+            <li><b>Trace elements, EC</b> — occasional deficiency; salinity screening.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Move briskly through this as a reference/glossary slide students will flip
+        back to — depth and method come on the next two slides, and every one of these numbers gets
+        used for real in Parts 2-3. Worth naming the Colwell bicarbonate test explicitly since it's
+        the industry-standard P method students will see on every WA soil-test report, always
+        reported alongside PBI (the two are a package, not two independent numbers — properly
+        explained two slides from now). DGT (diffusion gradient in thin films) is emerging as a more
+        versatile alternative across a broader pH range and is worth a one-line mention as the
+        "next generation" test some labs now offer. On the biology/risk side, flag that exchangeable
+        aluminium and CEC are "central to the acidity story next" quite literally — CEC reappears as
+        the denominator in the base-saturation formula in Part 2, and exchangeable Al is the single
+        number the whole of Part 3 revolves around.
+      </aside>
+    </section>
+
+    <!-- 3a-i. Soil texture and the texture triangle -->
+    <section>
+      <h2>Soil Texture: The Property Behind the Chemistry</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Texture — the relative proportions of sand, silt and clay — governs water-holding capacity, drainage, CEC and how fast a nutrient or amendment moves through the profile.</li>
+            <li>The texture triangle reads three axes (%sand, %silt, %clay) to name a class: sand, sandy loam, loam, clay loam, clay, and so on.</li>
+            <li>It explains why the same Colwell P or lime rate behaves so differently on WA's sandplain versus a duplex or clay soil — texture, not chemistry, sets the starting conditions.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/Texture_Triangle.jpg" alt="Soil texture triangle showing sand/silt/clay percentage axes and texture class names" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Position this as the missing "physical" layer underneath everything in the
+        chemistry glossary just covered — pH, P and K numbers are always read in the context of the
+        texture they came from. Ground with a concrete WA contrast: loams typically offer the highest
+        plant-available water and buffer nutrients well, while deep sandplain gives quicker
+        early-season water availability but is prone to nutrient leaching in a wet year — the same
+        rainfall can be a very different growing season depending on where it lands on the triangle.
+        Texture even drives crop and variety choice directly: narrow-leaf lupins are matched to
+        neutral-to-acidic, non-clay (sandy) soils, while Albus lupins are chosen for higher-pH clay
+        soils — the same nutrient-removal table coming up in a few slides lists Albus lupin
+        specifically because it's a real WA sandplain-vs-clay agronomic choice, not an arbitrary
+        example. This slide directly explains the PBI contrast two slides ago (high-PBI clay vs
+        low-PBI sand needing very different critical P) and previews why lime moves down a sandy
+        profile faster than through a clay (Part 3).
+      </aside>
+    </section>
+
+    <!-- 3a-ii. Soil extraction methods -->
+    <section>
+      <h2>Extraction Methods: Colwell, Mehlich and Bray Aren't Interchangeable</h2>
+      <div class="context-card">
+        <p class="context-q">Each method uses a different chemical extractant, so each measures a different "available" pool:</p>
+        <ul>
+          <li><b>Colwell (bicarbonate)</b> — the WA/Australian standard for P and K; well calibrated against decades of local response trials and always read alongside PBI.</li>
+          <li><b>Mehlich (acid extractant)</b> — widely used in the Americas; tends to extract more P from acidic, low-buffering soils than Colwell would, and is not directly interchangeable with it.</li>
+          <li><b>Bray (dilute acid-fluoride)</b> — developed for and best suited to acidic soils; performs poorly and can under- or over-read on calcareous/alkaline soils.</li>
+        </ul>
+        <span class="source-chip">A critical value is only valid for the exact soil-test method it was calibrated against</span>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the concrete mechanism behind the Part 2 warning that critical values
+        are "region- and method-specific" — different extractants pull different chemical fractions
+        out of the same soil, so a Bray-calibrated critical value applied to a Colwell result (or
+        vice versa) is comparing two different measurements, the same way a person's weight in
+        kilograms and pounds look like different facts if you forget which unit is on the page.
+        Concrete WA framing: virtually every commercial soil-test report a student will see in this
+        state reports Colwell P, calibrated over decades of local response trials and always read
+        alongside PBI (recall the ~43 mg/kg high-PBI-clay vs ~10 mg/kg low-PBI-sand critical-P
+        contrast from two slides ago) — DGT is the emerging next-generation alternative mentioned
+        earlier, offering more consistent readings across a wider pH range than Colwell. Mehlich
+        dominates US extension literature and Bray was developed for acidic soils, so a student
+        reading an overseas paper or an imported agronomy text needs to actively translate, not
+        directly import, any critical value found there. One-line practical takeaway: always check
+        which method a lab report used before comparing it to a critical-value table.
+      </aside>
+    </section>
+
+    <!-- 3b. Reading a soil test — no number stands alone -->
+    <section>
+      <h2>No Number Stands Alone</h2>
+      <div class="context-card">
+        <p class="context-q">Every number is read against another:</p>
+        <ul>
+          <li>P against PBI — a high-PBI clay soil can need a critical Colwell P as high as ~43 mg/kg, where a low-PBI sand may only need ~10 mg/kg for the same crop response.</li>
+          <li>N against organic carbon and season — mineral N today says little without knowing how much more will mineralise.</li>
+          <li>pH against depth — a healthy surface reading can sit directly above a badly acidic subsurface.</li>
+          <li>K against a rough deficiency threshold — below ~50 mg/kg is commonly considered deficient for cereals.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. The PBI contrast (43 vs 10 mg/kg critical P) is the single most concrete
+        number to slow down on here — roughly a 4x range for the same crop and the same nutrient, and
+        it directly explains why a P recommendation can't be read off a chart without knowing PBI
+        first. Walk a mini worked example: a Colwell P reading of 20 mg/kg looks "adequate" at first
+        glance, but on a high-PBI clay (critical value ~43 mg/kg) that same 20 mg/kg is clearly
+        deficient, while on a low-PBI sand (critical value ~10 mg/kg) it's comfortably above target —
+        same lab number, opposite recommendation. The K threshold (below ~50 mg/kg commonly deficient
+        for cereals) is a genuine, increasingly common WA finding on long-cropped sandplain, worth
+        flagging as a live regional trend rather than a textbook curiosity. Mention in passing that
+        plant tissue testing (Reuter &amp; Robinson's manual is the industry benchmark) is the
+        complementary check when a soil result and visible crop symptoms don't agree — cereal tissue
+        N below ~3.4% (adequate 3.5-6.9%), P below ~0.24% (adequate 0.3-0.5%), K below ~1.5%, or S
+        at/below ~0.15% all signal deficiency, and the next two slides go into exactly how and when to
+        take that tissue sample.
+      </aside>
+    </section>
+
+    <!-- 3c. Plant tissue testing and the YEB -->
+    <section>
+      <h2>Plant Tissue Testing: Sampling the Right Leaf</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Tissue testing complements soil testing — it measures what the plant actually took up, not what's theoretically available in the soil.</li>
+            <li><b>YEB</b> (youngest emerged blade) — the youngest, uppermost fully emerged leaf blade.</li>
+            <li>In cereals: the YEB is not "fully emerged" until its <b>auricles</b> (the small ear-like flaps at the leaf-blade/sheath junction) are visible — a still-unfurling leaf whose auricles haven't appeared yet is the wrong leaf to sample.</li>
+            <li>Sampling the wrong leaf position is a common, avoidable source of error — comparable in scale to the soil-sampling errors from the start of the lecture.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/yeb_diagram.png" alt="Diagram of cereal tillers showing the YEB, YEB+1 and basal stem sampling positions" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Callback to the sampling-error framing from slide 2: the same principle — a
+        badly chosen sample can't be rescued by good lab chemistry — applies to plant tissue just as
+        much as soil. Timing matters as much as leaf position: for wheat and barley the sampling
+        window is mid-tillering to stem elongation, targeting the YEB because it best reflects
+        current, real-time nutrient status for immobile trace elements that don't move once deposited
+        (contrast with mobile nutrients like nitrogen, which show deficiency symptoms in the older,
+        lower leaves as the plant robs them to feed new growth — a genuinely useful diagnostic clue in
+        its own right). Point out the auricle detail explicitly since it's the single most practical,
+        checkable-in-the-field diagnostic students can use to confirm they've picked the right leaf —
+        a still-unfurling leaf without visible auricles will systematically read differently to a
+        properly matured YEB. Canola is sampled differently again (rosette-stage, youngest fully
+        developed leaf from the middle-to-upper canopy) — worth a one-line note that the "right leaf"
+        rule is always crop- and stage-specific, not a single fixed recipe. If a soil test and the
+        crop's visible symptoms disagree, tissue testing (and sometimes a root dig, checking for
+        spear-tipped Rhizoctonia damage or spade-tipped trifluralin damage) is how an agronomist
+        resolves the disagreement.
+      </aside>
+    </section>
+
+    <!-- 3d. Extracted vs exported nutrients -->
+    <section>
+      <h2>Nutrients Extracted vs Nutrients Exported</h2>
+      <div class="context-card">
+        <p class="context-q">Two different numbers that are often confused:</p>
+        <ul>
+          <li><b>Extracted</b> — the total nutrient taken up by the growing crop (roots, stubble, straw and grain combined).</li>
+          <li><b>Exported</b> — only the nutrient that actually leaves the paddock in the harvested product (typically the grain, or hay/straw if baled and removed).</li>
+          <li>Stubble retained and not exported returns most of its nutrient content to the soil as it breaks down — so export is usually far smaller than total extraction.</li>
+          <li>Build-up/maintenance fertiliser philosophy (Part 2) should be balanced against <b>export</b>, not total extraction, or it will over-apply nutrients.</li>
+        </ul>
+        <span class="source-chip">The removal tables on the next slides report export, not total extraction</span>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This distinction is easy to get wrong and worth slowing down on with a
+        concrete number: a crop might extract on the order of 25-30 kg N/t of total biomass over the
+        season, but if stubble is retained (the WA standard practice — recall L01's ~98% no-till
+        adoption figure, which usually goes hand in hand with stubble retention) only the roughly
+        19.5 kg N/t that leaves in the grain (the wheat figure on the very next slide) is actually
+        exported off the paddock; the rest returns to the soil as the stubble breaks down over the
+        following season. Flag explicitly that the nutrient-removal tables coming up next (5.28, 5.29,
+        5.30) are export figures — grain or product actually leaving the paddock — which is exactly
+        what a maintenance-philosophy fertiliser program (first of the three philosophies in Part 2)
+        should be replacing, not the larger extraction total. Good moment for a check-in question: "if
+        a grower bales and removes cereal hay instead of harvesting grain and retaining stubble, does
+        their export number go up or down?" (up, substantially — the hay figures in the Table 5.30
+        slide are visibly higher than the equivalent grain crop for exactly this reason).
+      </aside>
+    </section>
+
+    <!-- ===================== PART 2 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 2</p>
+      <h2 style="color:#fff;">From Numbers to Recommendations</h2>
+      <p class="divider-note" style="color:#fff;">How a soil-test number becomes a fertiliser rate, and why agronomists don't all agree on the logic for getting there.</p>
+      <aside class="notes">
+        Target: ~16 min for this section. Preview the arc: critical values and where they come from
+        (4a), the same idea generalised beyond soil tests to any nutrient-status measurement (4a-i),
+        the shape of the yield-response curve and why the economic optimum sits below the
+        yield-maximising rate (4b), three concrete nutrient-removal reference tables that quantify
+        what a crop actually takes off the paddock (4c-4e), and finally three competing philosophies
+        for turning all of this into an actual rate (5a-5c), including base saturation as the metric
+        one of those philosophies is built on. This section is where Part 1's trustworthy number
+        becomes an actual decision — the whole framing line from slide 1 ("the value of a soil test
+        is the decision it lets you make") gets cashed out here.
+      </aside>
+    </section>
+
+    <!-- 4a. Critical values definition + calibration -->
+    <section>
+      <h2>Critical Values: Where Calibration Comes From</h2>
+      <ul class="dense-bullets">
+        <li>A <b>critical value</b> is the soil-test level above which a crop is very unlikely to respond economically to more of that nutrient.</li>
+        <li>Established by running many nutrient-rate response trials across seasons and soils, plotting relative yield against soil-test level, and finding where yield reaches roughly <b>90–95% of maximum</b>.</li>
+        <li>Critical values are <b>region- and method-specific</b> — a value calibrated for one soil type or test method must not be applied blindly to another.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~3 min. This is where the P-vs-PBI numbers from a few slides ago actually come from —
+        decades of field response trials, not a single formula. Walk the process concretely:
+        researchers run the same nutrient at multiple rates across many soils and seasons, plot
+        relative yield (as % of the maximum achieved in that trial) against the soil-test level
+        measured before sowing, and the critical value is read off where that curve reaches roughly
+        90-95% of maximum — deliberately not 100%, because pushing for the last 5-10% of yield
+        response usually costs far more in extra nutrient than it returns in grain value (a direct
+        preview of the economic-optimum idea two slides from now). Emphasise the warning explicitly:
+        this is why a Colwell P critical value from a high-rainfall clay district can't be reused on a
+        sandplain paddock without re-checking against local PBI-adjusted tables — the trial has to
+        have been run on comparable soil, using the comparable test method (extraction methods slide,
+        Part 1), for the number to mean anything.
+      </aside>
+    </section>
+
+    <!-- 4a-i. Generalised critical value curve -->
+    <section>
+      <h2>The Critical Value, Generalised</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/critical_value_curve_fig4_3.png" alt="Diagram showing relative growth vs nutrient concentration, with deficient, marginal, adequate, high and toxic zones and critical values for deficiency and toxicity marked" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>The same critical-value logic from the last slide applies to <b>any</b> nutrient status measurement — soil test or plant tissue — not just Colwell P.</li>
+            <li><b>Deficient → marginal → adequate → high → toxic</b>: relative growth rises steeply while deficient, plateaus once adequate, then can fall again at toxic concentrations.</li>
+            <li>Two critical values bound the adequate plateau: one for deficiency (below which growth is limited) and one for toxicity (above which it declines again).</li>
+            <li>Both are defined experimentally or from field observations — usually as the concentration associated with a specified yield reduction (often 5%, 10% or 20%).</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the general shape behind every specific critical value used today —
+        Colwell P thresholds, the cereal tissue N/P/K/S thresholds from a few slides ago, and the
+        exchangeable-aluminium toxicity threshold coming up in Part 3 (pHCa ~4.5-4.8) — all sit
+        somewhere on this same deficient-marginal-adequate-high-toxic curve. Worth naming the
+        asymmetry explicitly with two contrasting examples: boron has a narrow adequate band with
+        toxicity close behind (a classic "more is not better, and definitely not much more" nutrient),
+        while potassium has a wide, forgiving plateau — part of why K deficiency (below ~50 mg/kg) is
+        treated as a soft, gradually worsening trend on WA sandplain rather than a hard cliff-edge the
+        way aluminium toxicity is. The asterisked note on the figure — deficiency and toxicity
+        critical values are each defined against a specified yield reduction, often 5%, 10% or 20% —
+        is worth flagging as evidence that even a "critical value" embeds a judgement call about
+        acceptable risk, not a hard physiological cutoff; that judgement call reappears explicitly in
+        the percent-sufficiency philosophy later in this section.
+      </aside>
+    </section>
+
+    <!-- 4b. Diminishing returns / economic optimum -->
+    <section>
+      <h2>The Yield-Response Curve and the Economic Optimum</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>The first units of a limiting nutrient produce large yield gains; the response flattens as the deficiency is removed — a classic diminishing-returns curve.</li>
+            <li>The <b>economically optimal rate sits below the yield-maximising rate</b>, and shifts with the ratio of grain price to fertiliser cost.</li>
+            <li>The recommendation is not "the rate that maximises yield" — it's the rate that maximises expected profit given price, cost and seasonal risk.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/yield_cost_analysis.png" alt="Graph of yield and cost/return versus input, marking maximum yield (a), economic optimum yield (b) where the gap between the yield and cost curves is greatest, and equilibrium yield (c) where the curves cross and profit reaches zero" />
+          <p class="diagram-caption">a = maximum yield; b = economic optimum yield (biggest gap between yield and cost); c = equilibrium yield, where cost catches yield and profit hits zero; d = yield with no input at all.</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Walk the figure by its own labels: point <b>a</b> is the maximum yield the
+        curve ever reaches; point <b>b</b>, sitting to the left of it, is the economic optimum — the
+        input level where the vertical gap between the yield curve and the cost line is greatest, i.e.
+        where profit peaks, not yield. Point <b>c</b>, further right again, is the equilibrium yield
+        where the cost line has caught up to the yield curve entirely — beyond this point every extra
+        dollar of input costs more than the grain it buys, and a grower operating here is taking on
+        real risk for no expected return. Point <b>d</b> is simply what the paddock yields with zero
+        input, the baseline every one of today's fertiliser and lime decisions is trying to improve
+        on. This is exactly where agronomy meets the economics developed in the farm financial lecture
+        (L10) — say that explicitly, and if useful sketch a rough number: if the last 20 kg/ha of
+        nitrogen only lifts yield by, say, 0.1 t/ha, that unit is only worth applying while grain price
+        divided by fertiliser price makes 0.1 t/ha of grain worth more than 20 kg/ha of fertiliser — a
+        ratio that shifts season to season and moves point b left or right along the curve. Worth a
+        quick check-in question: "if fertiliser price doubles overnight, does the economic optimum
+        rate go up or down?" (down — the underlying biological response curve doesn't move, but the
+        price ratio that decides where on it to stop does, sliding b back toward d). This reframing —
+        "the rate that maximises profit, not yield" — is the conceptual bridge into the three
+        competing philosophies later in Part 2, each of which answers "how much to apply" with a
+        different logic built on top of this same response curve.
+      </aside>
+    </section>
+
+    <!-- 4c. Nutrient removal — wheat reference table -->
+    <section>
+      <h2>How Much Does a Crop Actually Export? A Wheat Reference</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/table_5_28_wheat_removal.png" alt="Table 5.28: nutrients removed by wheat per tonne of grain harvested, assuming adequate N and P in the soil" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Wheat grain removes roughly <b>19.5 kg N, 3.1 kg P and 4.3 kg K per tonne</b> harvested — the figures a maintenance-philosophy program would replace.</li>
+            <li>Trace-element export (Zn, Cu, Mn, Mo) is tiny per tonne, but on continuously cropped sandplain these small annual exports compound over decades.</li>
+            <li>These are <b>export</b> figures (grain leaving the paddock) — not total extraction, per the distinction just introduced.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Anchor this table concretely: 19.5 kg N/t means a 3 t/ha wheat crop exports
+        roughly 58.5 kg N/ha in grain alone (19.5 × 3) — worth writing that multiplication out loud so
+        students see how a per-tonne table becomes the per-hectare removal figure they'd actually use
+        in a maintenance-philosophy calculation. Put that N figure next to the N-uptake staging
+        figures from cereal phenology (30% tillering / 40% first-node-to-flag / 20% flowering / 10%
+        post-flowering) to make the export/uptake distinction from two slides ago concrete: the plant
+        draws down roughly that much N across its whole growth cycle, and the export table tells you
+        how much of it actually leaves in the truck. Trace-element export (Zn, Cu, Mn, Mo) is tiny per
+        tonne — hundredths or thousandths of a kilogram — but on continuously cropped sandplain these
+        small annual exports compound over decades, one reason occasional trace-element deficiencies
+        show up on paddocks cropped hard for 20+ years with no obvious single cause. This wheat-only
+        table is the reference case; the next two slides broaden the same idea across the other crops
+        relevant to this unit.
+      </aside>
+    </section>
+
+    <!-- 4d. Phosphorus removed per product (Table 5.29, filtered) -->
+    <section>
+      <h2>Phosphorus Exported per Tonne of Product</h2>
+      <div class="compact-table">
+        <table>
+          <thead>
+            <tr><th>Product</th><th>P removed in 1&nbsp;t of product (kg/t)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cereal grain (wheat, barley)</td><td>2–4.5</td></tr>
+            <tr><td>Canola</td><td>7</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.42em; opacity:.75; margin-top:.6em;">Filtered from Table 5.29 (adapted from GRDC 2012a) to the crops relevant to this unit.</p>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Keep this brief — the point is simply that canola exports roughly double the
+        P per tonne that cereal grain does (7 kg/t vs 2-4.5 kg/t), which matters directly for the
+        build-up/maintenance philosophy when canola sits in the rotation: a grower rotating
+        wheat-canola-wheat needs to budget noticeably more P replacement in the canola year than
+        either cereal year, even before accounting for canola's typically lower tonnes/ha. This
+        complements, rather than duplicates, the broader multi-nutrient table on the next slide — this
+        one isolates P specifically because P immobility (the nutrient-mobility point on the
+        core-numbers glossary slide, Part 1) makes it the nutrient growers most often manage on a
+        strict build-up/maintenance budget rather than reactively.
+      </aside>
+    </section>
+
+    <!-- 4e. Nutrients removed by crop type (Table 5.30, filtered) -->
+    <section>
+      <h2>Nutrients Removed by Crop and Product</h2>
+      <div class="compact-table">
+        <table>
+          <thead>
+            <tr><th>Crop type</th><th>N (kg)</th><th>P (kg)</th><th>K (kg)</th><th>S (kg)</th><th>Ca (kg)</th><th>Mg (kg)</th><th>Cu (g)</th><th>Zn (g)</th><th>Mn (g)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Wheat – Aust standard hard</td><td>21.8</td><td>2.26</td><td>3.33</td><td>1.40</td><td>0.33</td><td>0.93</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Wheat – Aust standard white</td><td>17.7</td><td>2.41</td><td>3.40</td><td>1.35</td><td>0.31</td><td>1.02</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Wheat soft</td><td>16.6</td><td>2.51</td><td>3.43</td><td>1.19</td><td>0.32</td><td>0.95</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Wheat – prime hard</td><td>24.5</td><td>2.43</td><td>3.10</td><td>1.64</td><td>0.36</td><td>1.64</td><td>5</td><td>29</td><td>40</td></tr>
+            <tr><td>Barley</td><td>19.2</td><td>2.88</td><td>4.39</td><td>1.10</td><td>0.35</td><td>1.08</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Oats</td><td>16.5</td><td>3.0</td><td>3.9</td><td>1.5</td><td>0.5</td><td>1.0</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Albus lupin</td><td>57.3</td><td>3.6</td><td>8.8</td><td>2.5</td><td>2.0</td><td>1.3</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Canola</td><td>40</td><td>6.2</td><td>9.2</td><td>9.8</td><td>4.1</td><td>4.0</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Cereal hay</td><td>20.0</td><td>2.0</td><td>12.0</td><td>1.5</td><td>12.0</td><td>3.0</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Lucerne hay</td><td>34.5</td><td>2.7</td><td>19.6</td><td>3.2</td><td>9.1</td><td>4.6</td><td>–</td><td>–</td><td>–</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.42em; opacity:.75; margin-top:.6em;">Filtered from Table 5.30 (adapted from Price 2006) to wheat, barley, oats, albus lupin, canola, cereal hay and lucerne hay. Figures are nutrients removed per tonne of product.</p>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Don't read every cell aloud — point to the pattern instead: legumes (albus
+        lupin, lucerne hay) export far more N per tonne than cereals, reflecting their own biological
+        N-fixation (via Group G rhizobia, which need molybdenum to function efficiently) rather than
+        drawing down soil N; canola stands out for S and Ca export, consistent with its high sulphur
+        demand generally met by gypsum or ammonium sulfate; hay products (cereal hay, lucerne hay)
+        export much more K, Ca and Mg than the equivalent grain crop because the whole above-ground
+        plant is removed, not just grain — the same extracted-vs-exported logic from earlier, just
+        made very visible by comparing a hay row to a grain row of the same crop. The Ca column is
+        worth a forward flag: this is the same calcium that liming (Part 3) and base saturation (next
+        section) are both about supplying and retaining on exchange sites, so a hay-heavy rotation is
+        quietly also a bigger long-term lime/Ca demand than a grain-only rotation. This is the
+        concrete evidence base a maintenance-philosophy fertiliser program — the very next slide —
+        would be built on.
+      </aside>
+    </section>
+
+    <!-- 5a. Philosophy: build-up and maintenance -->
+    <section>
+      <h2>Three Philosophies — Build-Up and Maintenance</h2>
+      <div class="context-card">
+        <p class="context-q">Lift the soil test to a target index, then replace what the crop removes:</p>
+        <ul>
+          <li>Leans heavily on accurate crop-removal figures.</li>
+          <li>Produces steady annual applications once the target is reached.</li>
+          <li>Poor fit for rented land, erosion-prone soils, and raises real questions about fertilising well past the point of any yield response.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. First of three matched slides (same rhythm: what it does, then its weakness)
+        so students can compare all three like a checklist by the end — flag that structure
+        explicitly so the comparison lands. This philosophy leans directly on the removal tables just
+        covered: lift the soil test to a target index once (the "build-up" phase), then replace only
+        what the crop exports each year (the "maintenance" phase) using exactly the kind of per-tonne
+        figures from Tables 5.28-5.30. Its weakness is really a data-quality and land-tenure problem:
+        it requires accurate removal figures (not always available for every crop/variety combination)
+        and breaks down on rented land, where the tenant has little incentive to build up a soil
+        resource they may not farm again next season, or on erosion-prone soils where the built-up
+        nutrient bank can simply wash or blow away.
+      </aside>
+    </section>
+
+    <!-- 5b. Philosophy: percent sufficiency -->
+    <section>
+      <h2>Three Philosophies — Percent Sufficiency</h2>
+      <div class="context-card">
+        <p class="context-q">Add nutrient only when the soil test falls below a critical threshold:</p>
+        <ul>
+          <li>This is the philosophy underlying the critical-value method just covered.</li>
+          <li>Relies entirely on well-calibrated soil tests.</li>
+          <li>The more conservative, environmentally cautious approach — favoured in most university and government extension recommendations.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Make the link back explicit: everything since the Part 2 divider (critical
+        values, the response curve, the removal tables) was building the toolkit that percent
+        sufficiency uses directly — this philosophy is simply "apply only when the test falls below
+        the critical value," full stop. It relies entirely on well-calibrated soil tests, which is
+        exactly why Part 1 spent so long on sampling technique and extraction methods — a
+        percent-sufficiency recommendation is only as good as the number feeding it. Flag why it's the
+        conservative, environmentally cautious default in most university and government extension
+        advice: it avoids the over-application risk baked into build-up/maintenance on soils where the
+        crop-removal estimate might be wrong, at the cost of never deliberately building a nutrient
+        buffer for a future season.
+      </aside>
+    </section>
+
+    <!-- 5b-i. Base saturation -->
+    <section>
+      <h2>Base Saturation: What Fraction of the Exchange Sites Are Base Cations?</h2>
+      <div class="context-card">
+        <p class="context-q" style="font-size:1em; text-align:center;">BS&nbsp;=&nbsp;(K&nbsp;+&nbsp;Ca&nbsp;+&nbsp;Mg&nbsp;+&nbsp;Na)&nbsp;×&nbsp;100&nbsp;/&nbsp;CEC</p>
+        <ul>
+          <li>Expresses the four base cations as a percentage of total cation exchange capacity (CEC) — the rest of the exchange sites are typically held by acidic cations (H⁺, Al³⁺).</li>
+          <li>A low base saturation is another lens on the same acidity story: as pH falls and Al³⁺ is released (Part 3), it displaces Ca, Mg and K from exchange sites, lowering BS.</li>
+          <li>Directly underpins the cation-saturation-ratio philosophy on the next slide, which targets an "ideal" split of Ca:Mg:K <b>within</b> the base-saturated fraction.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Walk the formula once with real numbers: a CEC of 6 cmol(+)/kg with
+        K+Ca+Mg+Na summing to 4.8 cmol(+)/kg gives BS = 4.8×100/6 = 80%, meaning the remaining 20% of
+        exchange sites are held by acidic cations (H⁺, Al³⁺) — tie that residual 20% directly back to
+        the exchangeable-aluminium number on a soil report from Part 1's glossary slide. The key
+        conceptual link to make explicit: base saturation and the acidity/aluminium story from Part 3
+        are two views of the same underlying exchange-site chemistry — this is why liming (which adds
+        Ca²⁺, seen explicitly in the neutralisation-reaction equation later in Part 3) both raises pH
+        and raises base saturation in the same single action, not as two separate benefits. This sets
+        up the very next slide directly: the cation-saturation-ratio philosophy doesn't just care
+        about the BS percentage, it cares about the specific split of Ca:Mg:K:Na within that
+        base-saturated fraction.
+      </aside>
+    </section>
+
+    <!-- 5c. Philosophy: cation saturation ratio + synthesis -->
+    <section>
+      <h2>Three Philosophies — Cation Saturation Ratios, and Which One Wins</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Basic cation saturation ratio</h3>
+          <ul class="dense-bullets">
+            <li>Targets an "ideal" ratio of calcium, magnesium and potassium on the exchange sites, not absolute levels.</li>
+            <li>Difficult to manage on the sandy, low-CEC soils typical of much of the WA grainbelt.</li>
+          </ul>
+          <div class="compact-table" style="margin-top:.6em;">
+            <table>
+              <thead><tr><th>Cation</th><th>Target % of CEC</th></tr></thead>
+              <tbody>
+                <tr><td>Ca²⁺</td><td>60–70%</td></tr>
+                <tr><td>Mg²⁺</td><td>10–20%</td></tr>
+                <tr><td>K⁺</td><td>3–5%</td></tr>
+                <tr><td>Na⁺</td><td>1–2%</td></tr>
+                <tr><td>H⁺ (exch. acidity)</td><td>10–15%</td></tr>
+                <tr><td>Other/trace cations</td><td>2–4%</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:.4em; opacity:.75; margin-top:.4em;">Reference ranges from the Albrecht basic cation saturation ratio (BCSR) system — one specific version of the "ideal ratio" idea at left, not a WA-calibrated recommendation.</p>
+          </div>
+        </div>
+        <div>
+          <h3>The practical conclusion</h3>
+          <ul class="dense-bullets">
+            <li>Controlled studies find <b>no consistent yield difference</b> between the three philosophies.</li>
+            <li>They differ meaningfully in fertiliser cost — rising prices and environmental scrutiny have shifted mainstream practice toward percent sufficiency.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. The Albrecht BCSR numbers on screen (Ca 60-70%, Mg 10-20%, K 3-5%, Na 1-2%,
+        exchangeable H 10-15%, other/trace 2-4%) are the specific target ranges most commonly cited
+        for this philosophy — the H% target implies a slightly acidic pH goal of roughly 6.3-6.5,
+        which is itself a design choice of the system, not a universal soil-chemistry law. The
+        takeaway to land hard: soil testing is only the first step — the assumptions behind how a
+        test becomes a rate matter just as much as the test itself, and the "practical conclusion"
+        column is deliberately skeptical of BCSR's added value over percent sufficiency. Callback to
+        base saturation on the previous slide: BCSR is really base saturation's percentages sliced
+        further into a target Ca:Mg:K:Na split, which is exactly why it's hardest to manage on the
+        sandy, low-CEC WA grainbelt soils — low CEC means small absolute swings in Ca or Mg shift the
+        ratio percentages a lot, making the target ranges genuinely difficult to hold. This closes
+        Part 2's arc (numbers → critical value → philosophy) before Part 3 turns to the one
+        constraint that dominates WA fertiliser and lime decisions: acidity.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 3 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 3</p>
+      <h2 style="color:#fff;">The Silent Cost: Soil Acidity</h2>
+      <p class="divider-note" style="color:#fff;">Why acidification happens, what actually damages the crop, and how the correction is a multi-decade program, not a single fix.</p>
+      <aside class="notes">
+        Target: ~24 min for this section — the largest single block in the lecture, roughly a
+        quarter of the total time; say that explicitly so students aren't surprised by the pacing.
+        Preview the seven-slide arc: how cropping itself causes acidification, a systems feedback loop
+        worth building on the chalkboard (6); the aluminium-toxicity mechanism that actually damages
+        the crop (7); the lime chemistry and the specific neutralisation and gypsum reactions that
+        correct it (8a, 8a-i, 8a-ii); why lime's slow movement dictates the whole management strategy
+        (8b); the genuine economics and trade-offs, including the iLime decision-support tool
+        (9a-9b); and finally a worked interpretation workflow that pulls every earlier number together
+        (10), immediately before the natural landing spot for a real worked soil-analysis example. It's
+        the most economically significant ($500M-$1.5B/year across WA) and least visible constraint
+        covered today — surface symptoms are often absent even as subsurface roots are already being
+        pruned by aluminium, exactly why it needs this much lecture time relative to how little a
+        grower might notice it in-season.
+      </aside>
+    </section>
+
+    <!-- 6. How cropping acidifies soil (mermaid) -->
+    <section>
+      <h2>How Cropping Acidifies Soil</h2>
+      <pre class="mermaid">
+flowchart LR
+  NFERT["N fertiliser &amp; legume&lt;br/&gt;N fixation"] --> NIT["Nitrification&lt;br/&gt;releases H+"]
+  NIT --> LEACH["Nitrate leaching removes&lt;br/&gt;base cations"]
+  REMOVAL["Grain / hay removal&lt;br/&gt;exports alkalinity"] --> PHDROP
+  LEACH --> PHDROP["Soil pH falls"]
+  PHDROP --> ALREL["Aluminium released&lt;br/&gt;(below pHCa ~4.5-4.8)"]
+  ALREL --> ROOT["Root tips poisoned,&lt;br/&gt;roots stunted"]
+  ROOT --> YIELD["Reduced water/nutrient&lt;br/&gt;access, yield loss"]
+  YIELD -.->|"invisible from the surface"| LIME["Correction: lime, but moves slowly"]
+  LIME -.-> PHDROP
+  classDef bad fill:#FFF7D7,stroke:#E2B600,color:#333
+  class ALREL,ROOT,YIELD bad
+      </pre>
+      <p class="diagram-caption">The dominant driver in WA's high-input, legume-inclusive, freely-draining sandy systems is nitrate leaching — worth roughly $500M-$1.5B in lost yield income across WA each year.</p>
+      <aside class="notes">
+        Target: ~4 min. Build this cascade on the chalkboard alongside the slide, one arrow at a
+        time, rather than revealing the whole diagram at once — the sequential build is what makes the
+        feedback loop land. The key word is "insidious": this develops slowly, mostly out of sight
+        below the surface, and the dashed feedback arrow (lime correcting pH) is deliberately
+        slow-moving — that's the whole crux of the next few slides (8b in particular). Concrete
+        framing for the two acidifying inputs at the top: nitrification of applied N fertiliser and of
+        N fixed by legumes both release H⁺ as a normal part of the nitrogen cycle, and grain/hay
+        removal exports alkalinity in the same way the removal tables just covered quantify nutrient
+        export generally — acidification is, in a sense, an unavoidable by-product of successful,
+        high-input cropping, not a sign of doing something wrong. This is the same systems-thinking
+        pattern from L01 (a feedback loop, just now with real chemistry and a real dollar figure
+        attached) — if a student diagrammed L01's paddock system, this cascade is literally what's
+        inside the "soil chemistry" box of that earlier diagram, closing the loop opened on the title
+        slide.
+      </aside>
+    </section>
+
+    <!-- 7. Aluminium toxicity -->
+    <section>
+      <h2>Aluminium Toxicity: The Yield-Limiting Consequence</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Aluminium is locked in harmless mineral forms at neutral pH; below <b>pHCa ~4.5–4.8</b> it dissolves into toxic Al³⁺ in the soil solution.</li>
+            <li>Al³⁺ poisons root tips — roots stunt and thicken, drastically reducing their ability to explore for water and nutrients.</li>
+            <li>In WA's terminal-drought environment, an aluminium-pruned root system can't reach subsoil moisture when it matters most.</li>
+            <li>Species/variety differ sharply: barley is highly sensitive; some wheat, triticale and lupins tolerate more.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="assets/Al_Toxicity.png" alt="Two-panel comparison of a healthy wheat root tip with normal cell structure versus an aluminium-treated root tip showing gross malformation and collapsed cells" />
+          <p class="diagram-caption">Fig-L03-AlToxicity &mdash; a healthy root tip (left) versus an aluminium-stunted root tip (right): thickened, collapsed cell clusters replace the normal elongating cap, drastically reducing the root's ability to explore for water and nutrients.</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. The single diagnostic point to land: <b>it's the aluminium, not the pH
+        number itself, that damages the crop</b> — pH and exchangeable aluminium are always read
+        together, and a pH reading alone can't tell you how much active Al³⁺ is actually in solution.
+        Ground the pHCa ~4.5-4.8 threshold with the mechanism from the mermaid diagram: it's exactly
+        the point where the acidification cascade's dashed "invisible from the surface" consequence
+        becomes biologically real. Describe the root symptom vividly since students won't see it in
+        the room: instead of a normal branching root system exploring a large soil volume, Al-affected
+        roots stunt and thicken into stubby, coral-like clusters near the surface — in WA's
+        terminal-drought environment (the same water-balance logic from L01), that pruned root system
+        simply can't reach the subsoil moisture a crop needs to finish grain fill in a dry spring.
+        Species/variety tolerance is a genuine, immediately actionable management lever: on a paddock
+        still awaiting lime amelioration, choosing a tolerant variety (lupins, some wheat/triticale
+        lines) buys time while lime works down the profile — a concrete example of variety choice
+        substituting for a soil-chemistry fix that hasn't taken effect yet.
+      </aside>
+    </section>
+
+    <!-- 8a. Lime chemistry, neutralising value, fineness -->
+    <section>
+      <h2>Lime: The Amendment and How It Works</h2>
+      <ul class="dense-bullets">
+        <li>Agricultural lime (calcium carbonate) is the only economic long-term treatment: carbonate neutralises H⁺, raising pH and returning aluminium to its insoluble mineral form.</li>
+        <li><b>Neutralising value</b> — the chemical purity/strength of the lime source.</li>
+        <li><b>Particle size and fineness</b> — only fine particles react quickly; coarse lime reacts over many years, so fineness governs the speed of response.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~3 min. Keep this brisk and mechanistic — the real punchline is two slides away
+        (movement/speed), this one just establishes the chemistry so that punchline makes sense.
+        Neutralising value is worth a concrete framing: it's usually expressed relative to pure
+        calcium carbonate (100% NV), so a lime source rated at, say, 85% NV needs proportionally more
+        tonnes per hectare to deliver the same acid-neutralising capacity as a purer source — a
+        genuine cost-comparison factor growers weigh alongside cartage distance. Particle size and
+        fineness is the more consequential variable in practice: only fine particles (sub-0.5mm,
+        roughly) react within a season or two, while coarse particles can take many years to fully
+        dissolve, so two lime products with identical neutralising value can behave completely
+        differently in year one depending on how finely they were crushed. This slide is the
+        qualitative setup for the actual balanced equation on the next slide — students should leave
+        here knowing what lime does, then see exactly how on the following slide.
+      </aside>
+    </section>
+
+    <!-- 8a-i. The neutralisation reaction -->
+    <section>
+      <h2>The Neutralisation Reaction, Written Out</h2>
+      <div class="context-card">
+        <p class="context-q" style="font-size:.9em; text-align:center;">CaCO&#8323; + 2H&#8314; &rarr; Ca&#178;&#8314; + CO&#8322;&uarr; + H&#8322;O</p>
+        <ul>
+          <li>Lime (calcium carbonate) dissolves in the acidic soil solution, consuming two H⁺ ions for every carbonate — this is literally what "raising pH" means at the ion level.</li>
+          <li>The Ca²⁺ released replaces acidic cations (H⁺, Al³⁺) on exchange sites, which is why liming raises both pH <b>and</b> base saturation together (previous section).</li>
+          <li>CO₂ is released as gas — one reason finely ground, well-mixed lime reacts faster: more surface area in contact with soil solution, faster gas escape, faster reaction.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the mechanistic "why" behind the qualitative lime chemistry on the
+        previous slide — worth writing the equation on the chalkboard and narrating each term as you
+        go: one carbonate ion neutralises two acid protons, releasing one calcium ion and one
+        molecule each of CO₂ and water. Walk it as a balance-sheet: two H⁺ consumed is literally what
+        a pH rise means at the ion level (recall pH is a log scale of H⁺ concentration, so even a
+        small reduction in free H⁺ can move the pH reading meaningfully). The Ca²⁺ released doesn't
+        just disappear into solution — it goes on to occupy exchange sites, displacing the acidic
+        cations (H⁺, Al³⁺) that were sitting there, exactly the mechanism behind the base-saturation
+        slide from Part 2: liming raises pH and raises base saturation in the very same reaction, not
+        as two separate benefits. The CO₂ release explains a genuinely useful practical fact: finely
+        ground, well-mixed lime reacts faster partly because more surface area means the gas can
+        escape more readily, keeping the reaction driving forward rather than stalling.
+      </aside>
+    </section>
+
+    <!-- 8a-ii. Gypsum -->
+    <section>
+      <h2>Gypsum: A Different Amendment for a Different Job</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Dissolution (no pH change)</h3>
+          <p style="font-size:.62em; text-align:center; margin:.6em 0;">CaSO&#8324;&middot;2H&#8322;O &#8652; Ca&#178;&#8314; + SO&#8324;&#178;&#8315; + 2H&#8322;O</p>
+          <ul class="dense-bullets">
+            <li>Gypsum is the dihydrate — dissolving releases its two waters of crystallisation, not neutralising any acidity.</li>
+            <li>Supplies Ca²⁺ (and S) to displace sodium from sodic clay exchange sites and improve structure — a different job to lime's acidity correction.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Aluminium–sulfate complexation</h3>
+          <p style="font-size:.62em; text-align:center; margin:.6em 0;">Al&#179;&#8314; + SO&#8324;&#178;&#8315; &#8652; AlSO&#8324;&#8314;</p>
+          <ul class="dense-bullets">
+            <li>The sulfate gypsum supplies can complex with toxic Al³⁺ in soil solution, forming a less-toxic AlSO₄⁺ species.</li>
+            <li>This is a genuine subsoil-acidity benefit of gypsum, but it does <b>not</b> raise pH the way lime's carbonate does — the two amendments solve overlapping but distinct problems.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. The exam-relevant distinction to land hard: lime corrects acidity (raises pH,
+        consumes H⁺, seen in the previous slide's equation); gypsum corrects sodicity and structure
+        and can partially detoxify Al³⁺ via complexation, but does not neutralise soil acidity itself —
+        a grower who applies gypsum expecting a pH lift, or lime expecting a sodicity fix, has picked
+        the wrong tool for the job. Walk the dissolution equation concretely: gypsum is technically
+        the dihydrate (CaSO₄·2H₂O), so dissolving it releases two waters of crystallisation along with
+        the Ca²⁺ and SO₄²⁻ ions — those ions then do two separate jobs: the Ca²⁺ displaces sodium from
+        sodic clay exchange sites (directly improving structure and workability), while the SO₄²⁻ can
+        complex with toxic Al³⁺ in solution to form the less-toxic AlSO₄⁺ species shown in the second
+        equation, a genuine subsoil Al-detox mechanism distinct from lime's pH-driven fix. In WA, the
+        two amendments are sometimes used together on the same paddock — lime for pH, gypsum for a
+        sodic subsoil or as a supplementary Al-detox measure — and knowing which problem each is
+        actually solving prevents buying and spreading the wrong one.
+      </aside>
+    </section>
+
+    <!-- 8b. Lime movement + incorporation strategy -->
+    <section>
+      <h2>Lime Moves Slowly — Which Sets the Whole Strategy</h2>
+      <div class="context-card">
+        <p class="context-q">Lime is only sparingly soluble and moves down the profile at roughly centimetres per year:</p>
+        <ul>
+          <li>Surface-applied lime can take a decade or more to ameliorate acidity at 20–30 cm.</li>
+          <li>Strategy 1: apply lime early and regularly to stay ahead of acidification.</li>
+          <li>Strategy 2: where subsurface acidity is already severe, mechanically incorporate lime to depth — deep ripping with inclusion plates, spading, or one-off inversion tillage.</li>
+        </ul>
+        <span class="source-chip">Links back to L01's strategic-tillage discussion — the same tools, a different constraint</span>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the crux of the whole subsurface-acidity problem and the reason the
+        mermaid diagram's feedback arrow was drawn slow and dashed — say that connection explicitly.
+        Ground "centimetres per year" with a worked timeline: if lime moves down the profile at
+        roughly 1-2 cm/year, correcting acidity at 20-30cm depth from a purely surface application
+        could genuinely take a decade or more — long enough that a student starting this degree today
+        could graduate, get a job, and still be waiting on a lime application made in their first year
+        of study to finish working. That timeline is exactly why Strategy 1 (apply early and
+        regularly, staying ahead of the acidification curve) is the preferred default wherever
+        practical — reactive liming is always chasing a moving target. Directly reference L01's
+        deep-ripping and strategic-tillage content for Strategy 2: mechanical incorporation (deep
+        ripping with inclusion plates, spading, one-off inversion tillage) is the same "no-till as the
+        rule, mechanical intervention as the deliberate strategic exception" framing already
+        established for compaction in L01, now applied to a chemistry problem instead of a physical
+        one.
+      </aside>
+    </section>
+
+    <!-- 9a. Economics of lime — payback -->
+    <section>
+      <h2>The Economics of Lime: A Long-Term Investment</h2>
+      <ul class="dense-bullets">
+        <li>Lime is cheap per tonne but bulky and costly to cart/spread; its benefit accrues slowly as pH rises and moves down the profile.</li>
+        <li>This long payback period tempts growers to defer liming when cash is tight — precisely the wrong response, since acidification continues and the recovery cost grows.</li>
+        <li>Long-term trials show maintaining pH above critical thresholds delivers a strongly positive net present value over a 10–20 year horizon.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~3 min. Frame lime explicitly as capital investment in the soil resource, not an
+        annual input — that reframing is the point of this slide, worth contrasting directly with the
+        nitrogen or P&amp;K decisions from Parts 1-2, which are essentially annual operating costs.
+        The "defer when cash is tight" trap is worth a real pause: ask students why a cash-strapped
+        year is exactly the wrong time to skip liming (because the underlying acidification clock,
+        driven by nitrification and nitrate leaching from the mermaid diagram, doesn't pause with the
+        farm budget — a skipped year doesn't just delay the benefit, it compounds against a moving
+        baseline). Long-term trials showing a strongly positive net present value over 10-20 years is
+        a useful number to have ready if a student pushes back with "why would anyone spend money that
+        takes that long to pay off" — the answer is the same logic behind any other multi-decade
+        capital improvement (fencing, water infrastructure, land purchase), just applied to soil
+        chemistry instead of physical assets.
+      </aside>
+    </section>
+
+    <!-- 9b. Economics of lime — trade-offs + iLime -->
+    <section>
+      <h2>Lime Isn't Risk-Free, and Precision Tools Now Help</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Genuine trade-offs</h3>
+          <ul class="dense-bullets">
+            <li>Can induce manganese deficiency (needs foliar correction).</li>
+            <li>Associated with increased take-all disease and snail populations in some systems.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Decision support</h3>
+          <ul class="dense-bullets">
+            <li>The <b>iLime app</b> (built on the Oplime engine) simulates 20-year pH and profitability trajectories with strong accuracy (R² ≈ 0.8 against long-term trials).</li>
+            <li>Regional monitoring shows it working at scale: topsoil below pH 5.5 in the Avon River Basin has fallen from ~72% to ~46%.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Liming is a genuine amelioration decision, not a costless fix — say that
+        explicitly, and don't let the trade-offs feel like a footnote: manganese deficiency requiring
+        foliar correction is a real added input cost that partially offsets lime's benefit, and the
+        take-all and snail associations are genuine agronomic downsides some growers weigh directly
+        against the acidity benefit on marginal paddocks. The iLime app (built on the Oplime engine,
+        developed out of the "Time to Lime" research project) is worth describing functionally: a
+        grower enters their soil-test results and it simulates pH and profitability trajectories 20
+        years into the future with strong validated accuracy (R² ≈ 0.8 against long-term trial data) —
+        this is precision agriculture applied to a slow-moving chemical process rather than the faster
+        spatial variability usually associated with the term (a useful contrast to flag ahead of L11).
+        The Avon River Basin trend (topsoil below pH 5.5 falling from ~72% to ~46%, based on a project
+        spanning 139 farms and roughly 22,500 soil samples) is a nice piece of evidence that decades of
+        extension and precision tools are measurably working at a genuine regional scale, not just in
+        isolated trial plots — worth noting some of the most ambitious interventions now go further
+        still, incorporating lime and organic matter to 70-90cm depth in experimental deep soil
+        re-engineering trials that have shown the potential to double yields on severely constrained
+        paddocks.
+      </aside>
+    </section>
+
+    <!-- 10. Interpreting acidity workflow -->
+    <section>
+      <h2>Interpreting Acidity: Putting the Numbers Together</h2>
+      <div class="context-card">
+        <p class="context-q">A practical workflow:</p>
+        <ul>
+          <li>Read pHCa at each depth — surface above ~5.5 but subsurface below ~4.8 signals the classic hidden subsurface-acidity problem.</li>
+          <li>Cross-check with exchangeable aluminium — rising Al confirms the acidity is biologically active.</li>
+          <li>Targets: surface pHCa &gt;5.5 (a downward-moving front of alkalinity), subsurface pHCa &gt;4.8 (keeps aluminium insoluble in the rooting zone).</li>
+          <li>Calculate the lime rate from the soil's buffering capacity, choose surface application vs incorporation, and schedule regular monitoring.</li>
+        </ul>
+        <span class="source-chip">A continuous, multi-decade program integrated into the rotation and the farm budget — not a one-off fix</span>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This slide is the answer key for Part 3 as a whole — walk it as the worked
+        decision sequence a real agronomist follows, since the next slide (Gustavo's own worked
+        example) asks students to apply exactly this workflow to a real soil test. Narrate it as an
+        if-then sequence rather than a flat bullet list: read pHCa at each depth first — if the
+        surface reads above ~5.5 but the 10-20 or 20-30cm layer reads below ~4.8, that's the classic
+        hidden subsurface-acidity pattern the depth-sampling protocol from Part 1 was specifically
+        designed to catch. Cross-check with exchangeable aluminium next — a rising Al reading
+        alongside falling pH confirms the acidity is biologically active and not just a benign low
+        number; this is the same "no number stands alone" principle from Part 1's core-numbers slide,
+        now applied specifically to acidity. Only once both checks are done does the workflow move to
+        calculating an actual lime rate from the soil's buffering capacity, choosing surface
+        application versus mechanical incorporation (Strategy 1 vs Strategy 2 from the lime-movement
+        slide) based on how deep the problem sits, and scheduling regular re-monitoring — acidity
+        management is a continuous, multi-decade program integrated into the rotation and the farm
+        budget, not a one-off fix, which is the whole thesis of Part 3 landing in one final sentence.
+      </aside>
+    </section>
+
+    <!-- ===================== INSERTION POINT for Gustavo's worked example ===================== -->
+    <!--
+      INSERT HERE: Gustavo's own soil-analysis worked example + recommendation slide(s).
+      This is the natural landing spot -- right after students have just been walked through the
+      pHCa / exchangeable-Al / lime-rate interpretation workflow on the previous slide, and before
+      the lecture moves on to the unrelated establishment-decisions section (Part 4).
+      Suggested layout to match the deck's visual language (see ../_shared/layouts.css):
+        - a real soil test table (pHCa by depth, Colwell P, PBI, K, exchangeable Al, CEC), and
+        - a <div class="context-card"> "Recommendation" block with the lime rate / fertiliser
+          rate you'd derive from it, using the same source-chip / bullet pattern as the slide above.
+      Keep this HTML comment (or delete it) once the real slide is added.
+    -->
+
+    <!-- ===================== PART 4 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 4</p>
+      <h2 style="color:#fff;">Establishment: Density, Timing and the Frost Trade-Off</h2>
+      <p class="divider-note" style="color:#fff;">Two decisions made at seeding that rival soil chemistry in how much yield they control.</p>
+      <aside class="notes">
+        Target: ~16 min for this section, then ~4 min for the close. This is a deliberate shift
+        from soil chemistry to two establishment decisions — flag the pivot explicitly so students
+        don't expect Part 4 to connect directly to acidity (it connects instead back to L01's
+        Mediterranean rhythm and French-Schultz content, and forward to L06's cereal phenology).
+        Preview the three-slide arc: plant density and the seeding-rate calculation (11), time of
+        sowing as arguably the single highest-leverage decision in the whole unit (12), and the
+        practical trade-off between frost risk and heat/terminal-drought risk that actually sets the
+        sowing window (13) — followed by a synthesis slide tying every decision across all four parts
+        of today's lecture into one pre-season sequence. Worth noting explicitly why density and
+        sowing time earn a full quarter of the lecture despite not being "soil" topics: they interact
+        directly with everything in Parts 1-3 — a paddock with an acidity constraint or a P deficiency
+        will often need its variety and sowing plan adjusted around that constraint, not treated as a
+        separate decision.
+      </aside>
+    </section>
+
+    <!-- 11. Plant density -->
+    <section>
+      <h2>Plant Density: How Many Plants per Square Metre?</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Cereals compensate for density over a wide range through tillering (canola/lupins via branching) — yield is remarkably flat across a broad density range.</li>
+            <li>The goal isn't maximum plants, it's the density that reliably achieves canopy closure and competitive ability without wasting seed.</li>
+            <li>Push higher for weed competition, short seasons, poor tillering conditions; push lower on moisture-limited sites to avoid "haying off."</li>
+            <li>Seeding rate is calculated from target density, seed size (thousand-grain weight), germination and expected establishment % — not a fixed kg/ha by habit.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="context-card">
+            <p class="context-q" style="font-size:.62em; text-align:center; line-height:1.5;">Seeding Rate (kg/ha) =<br />(Target Population (plants/m&sup2;) &times; TGW (g) &times; 100)<br />&divide; (% Germination &times; % Emergence)</p>
+            <ul>
+              <li><b>Target plant population</b> — the desired established plants per square metre (plants/m²) for that crop and paddock.</li>
+              <li><b>TGW (thousand-grain weight)</b> — the weight in grams of 1,000 seeds; bigger seed means more kg needed for the same plant count.</li>
+              <li><b>% Germination</b> — the share of seeds that sprout, printed on the seed tag.</li>
+              <li><b>% Emergence (survival)</b> — the share of germinated seedlings that actually establish under field conditions; frost, crusting and sowing depth all pull this below the germination %.</li>
+            </ul>
+            <span class="source-chip">Minimises seed waste while reliably hitting the target plant population</span>
+          </div>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Walk the seeding-rate calculation live as a worked formula — this is a
+        standard practical skill students will be examined on: rate (kg/ha) = (target plants/m² × TGW
+        in g × 100) ÷ (%Germination × %Emergence). Run a concrete wheat example on the board: target
+        150 plants/m², TGW 40 g, 95% germination, 85% emergence gives (150 × 40 × 100) ÷ (95 × 85) ≈
+        74 kg/ha — a realistic WA wheat seeding rate, and a good check that the formula "feels right"
+        to students before they use it unsupervised. Ground the target-density side of that formula
+        with real WA figures: wheat is typically targeted around 120-200 plants/m², narrow-leaf lupins
+        much lower at 35-40 plants/m² (reflecting their strong branching compensation), and canola
+        lower again at 10-35 plants/m² (canola's branching habit is even more plastic than lupins') —
+        worth contrasting these three numbers directly since they illustrate "compensates via
+        tillering/branching" concretely rather than abstractly. Emphasise that % emergence is not the
+        same number as % germination on the seed tag — it's always equal or lower, since field
+        conditions add their own losses on top of any non-viable seed — a common student error is to
+        divide by germination twice and under-estimate the true rate needed. "Haying off" is worth a
+        one-line definition tied directly back to L01's water-balance content: too many plants exhaust
+        soil water before grain fill, cutting yield in a dry finish — the same terminal-drought
+        mechanism that made the aluminium-pruned root system in Part 3 so damaging is exactly why
+        over-thick stands are a real risk on moisture-limited WA sites, not just a theoretical
+        downside.
+      </aside>
+    </section>
+
+    <!-- 12. Time of sowing -->
+    <section class="layout-quote">
+      <h2>Time of Sowing: The Single Most Important Yield Decision</h2>
+      <blockquote>Early sowing lengthens the season and captures more light and water — but risks flowering into frost. Late sowing pushes flowering and grain fill into heat and terminal drought.</blockquote>
+      <p style="font-size:.55em; margin-top:1em; max-width:75%;">Every location has an <b>optimal flowering window</b> — late enough that frost risk has fallen, early enough that heat-and-drought risk hasn't yet risen. Variety phenology and sowing date are chosen together so flowering lands inside it.</p>
+      <aside class="notes">
+        Target: ~4 min. This is arguably the single highest-leverage agronomic decision covered in the
+        whole unit — say that directly, and contrast it with everything covered so far: soil
+        chemistry (Parts 1-3) sets the ceiling on what's possible, but sowing date decides how much of
+        that ceiling the crop actually reaches in a given season. Connect explicitly to cereal
+        phenology (L06): the flag leaf (GS3.9) drives roughly 43% of final grain fill in wheat, so
+        protecting the grain-fill period from heat and terminal drought via correct sowing timing is,
+        very concretely, protecting that single leaf's productive window — students can picture one
+        leaf's photosynthetic output as almost half the season's grain yield riding on getting this
+        one date right. Frame the trade-off as a genuine two-sided risk, not a "sooner is always
+        better" story: early sowing lengthens the season and captures more of the May-October
+        growing-season rainfall the French-Schultz equation from L01 is built on, but risks flowering
+        into a late frost; late sowing avoids frost but pushes flowering and grain fill into rising
+        heat and the terminal drought WA's Mediterranean climate guarantees most seasons.
+      </aside>
+    </section>
+
+    <!-- 13. Sowing window / frost trade-off -->
+    <section>
+      <h2>The Sowing Window, Frost, and the Trade-Off</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Matching variety to sowing date</h3>
+          <ul class="dense-bullets">
+            <li>Slower-developing (winter/long-season) varieties: sown early, since they delay flowering into the safe window.</li>
+            <li>Quick (spring) varieties: reserved for later sowing.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The modern trend</h3>
+          <ul class="dense-bullets">
+            <li>Longer-season varieties, dry sowing (into dry soil ahead of the break), and better seeding technology are collectively enabling earlier whole-farm starts.</li>
+            <li>Establishment is a systems decision — soil condition, variety, frost/heat risk, weeds and machinery capacity all interlocking in one narrow autumn window.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This is a direct callback to L01's "the window" concept (Mediterranean
+        rhythm, Part 2) — the exact same idea (a short optimal period, and the logistics needed to act
+        across the whole farm within it) reapplied to sowing specifically, so make that link out loud
+        rather than assuming students will spot it themselves. Walk the variety-matching logic as
+        cause and effect: slower-developing (winter/long-season) varieties are sown early precisely
+        because their own slower development delays flowering into the safe window even with an early
+        start, while quick (spring) varieties are reserved for later sowing because they'd flower
+        dangerously early — variety and sowing date are two levers tuned together to hit the same
+        flowering target, not independent choices. Dry sowing (into dry soil ahead of the seasonal
+        break) is worth a one-line technical note connecting two lectures at once: it's part of what's
+        enabling the earlier whole-farm starts described here, but it also changes herbicide strategy
+        since there's no reliable pre-emergent activation until the break actually arrives — a preview
+        of L09 that turns this establishment slide into a genuine three-lecture thread (L01 water
+        balance, today's sowing window, L09 herbicide timing).
+      </aside>
+    </section>
+
+    <!-- ===================== SYNTHESIS / CLOSE ===================== -->
+    <section class="close-slide" data-background-color="#27348B">
+      <h2 style="color:#fff;">Bringing It Together: A Pre-Season Plan</h2>
+      <div class="synthesis-prompt">
+        <ul class="synthesis-list">
+          <li><strong>Test, then decide</strong>A trustworthy sample and a calibrated critical value turn a number into a rate — the number alone decides nothing.</li>
+          <li><strong>Acidity is a long game</strong>It develops unseen, corrects slowly, and pays back over a decade — manage it as a program, not a one-off fix.</li>
+          <li><strong>Establishment is systemic</strong>Density, sowing date, variety and frost/heat risk are chosen together, not one at a time.</li>
+        </ul>
+      </div>
+      <p class="closing-rule">Next lecture → L04 WA Climate</p>
+      <aside class="notes">
+        Target: ~4 min. Walk the full pre-season sequence once, end to end, as a single connected
+        story rather than a recap list: soil test (Part 1, trustworthy because of sampling technique
+        and method-aware interpretation) → constraints identified (acidity/Al, P/K status against
+        PBI-adjusted critical values, N supply) → amelioration decided (lime rate and whether to
+        incorporate, informed by the neutralisation chemistry and iLime modelling) → nutrition program
+        set (P, K, S, trace elements, N matched to seasonal outlook and export-based removal figures,
+        using whichever of the three philosophies from Part 2 the operation favours) → crop, variety
+        and density chosen partly in response to any remaining acidity or nutrient constraint → sowing
+        window chosen so flowering lands safely between frost and terminal drought → seeding rate
+        back-calculated from that density target. Emphasise every decision is made under seasonal
+        uncertainty and that they interact — a legume in rotation changes the N plan (recall Group G
+        rhizobia and N-fixation from the removal-table discussion), an acidity constraint changes
+        variety choice (aluminium-tolerant lupins or wheat lines), a wetter-than-expected break changes
+        the sowing-window calculus entirely — this is systems thinking from L01, now fully
+        instantiated as a real pre-season plan rather than an abstract diagram. Bridge to L04
+        explicitly: today's soil and establishment constraints operate inside the climate envelope
+        (rainfall timing, frost risk, the break itself) covered next, so L04 is in one sense "zooming
+        out" from today's paddock-level decisions to the regional climate drivers that set the
+        boundaries on all of them.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/plugin.js"></script>
+<!-- Multiplex intentionally NOT included -- see _shared/_boilerplate_template.html and the
+     project_revealjs_uwa_boilerplate memory for why (reveal.js removed its own multiplex plugin;
+     real live sync needs a separately-hosted Socket.io server, not a CDN script). -->
+
+<!-- Mermaid: loaded directly (no official reveal.js plugin ships this) -- see the L01 deck and
+     project_revealjs_uwa_boilerplate memory for why. A single mermaid.run() renders every diagram
+     regardless of which slide is showing, since all sections exist in the DOM from page load. -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.08,
+    chalkboard: {
+      theme: 'chalkboard',
+      background: [ 'rgba(0,0,0,0)', 'rgba(255,255,255,0.05)' ],
+      toggleChalkboardButton: { left: '30px', bottom: '30px' },
+      toggleNotesButton: { left: '110px', bottom: '30px' }
+    },
+    plugins: [ RevealNotes, RevealMarkdown, RevealZoom, RevealHighlight, RevealChalkboard ]
+  });
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#F5F7FF',
+      primaryBorderColor: '#27348B',
+      primaryTextColor: '#27348B',
+      lineColor: '#27348B',
+      secondaryColor: '#E2B600',
+      fontFamily: 'Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif'
+    }
+  });
+  mermaid.run({ querySelector: '.mermaid' });
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+topic: "Introduction to Cropping Systems"
+auto_figures: true
+subtopics:
+
+  - title: "Systems Thinking and System"
+    description: >
+      Introduce the idea of a system: a group of interacting or interrelated elements that act according to a set of rules or constraints to form a unified whole. Explain that this framework — used to model everything from population dynamics to ecology and engineering — is equally applicable to farm management and soil dynamics, and is why modelling is a central skill in this unit. Establish the core vocabulary used throughout SCIE3314: system states and boundaries (inputs, throughputs, outputs); dynamics and time-based behaviour (delays, path dependency, transient versus steady state); and resilience and thresholds (tipping points). Stress that "everything affects everything" is not systems thinking — the skill this unit builds is identifying which connections matter most for a given agronomic decision, and which can be safely ignored.
+    key_concepts:
+      - "System definition: interacting elements, unified whole"
+      - "System boundaries: inputs, throughputs, outputs"
+      - "Feedback loops and equilibrium"
+      - "Resilience and tipping points (bifurcation)"
+
+  - title: "One Farming System, Broken Into Its Technical Components"
+    description: >
+      Move from the abstract definition of a system to one concrete example: a single WA paddock, treated as a holistic project in agronomic decision-making. Break that paddock down into the distinct technical components that structure the rest of this unit. The soil sub-system has three interacting dimensions: chemistry (pH, nutrient availability, salinity, cation exchange capacity), physics (texture, structure, subsoil compaction, water-holding capacity), and biology (organic matter, the soil microbiome, mycorrhizal associations, and soilborne pathogens). The crop production sub-system layers on top: seed and variety choice; nutrition, principally fertiliser type, rate and timing; and crop protection — herbicides for weeds, fungicides for disease, and insecticides for pests — each with its own mode of action and resistance-management logic. Two further components complete the checklist: machinery and operations (tillage or no-tillage, the seeding system, spraying, harvest and grain handling), and the overarching management layer of record-keeping, financial planning and risk management. Emphasise that these components are not independent — a decision in one (retaining stubble, a soil-physics and soil-biology choice) has direct consequences for another (nitrogen tie-up, a soil-chemistry consequence; disease carryover, a crop-protection consequence). This is the holistic project every agronomist manages: not a checklist ticked off in isolation, but a set of interacting technical components.
+    key_concepts:
+      - "Soil sub-system: chemistry, physics, biology"
+      - "Crop production sub-system: seed, nutrition, crop protection"
+      - "Herbicides, fungicides, insecticides as distinct crop-protection tools"
+      - "Machinery, operations and management complete the checklist"
+      - "Components are interdependent, not independent"
+    wiki_query: "soil chemistry physics biology texture structure compaction water holding organic matter microbiome pH nutrients seed variety fertiliser herbicide fungicide crop protection"
+
+  - title: "From Paddock to System: Defining a Cropping System"
+    description: >
+      Open the unit's technical content by re-framing how students think about a crop. A crop is not an isolated event — a variety sown, sprayed, and harvested — but one phase in a continuous, managed biological system operating across years and decades. Define a cropping system as the integrated set of crops, soils, climate, machinery, inputs, and management decisions that together determine what is produced, how sustainably, and at what profit. The central intellectual skill this unit builds is systems thinking: recognising that a decision made for one reason — say, retaining stubble to conserve moisture — cascades into weed seedbanks, disease carryover, nitrogen tie-up, seeding equipment choice, and frost risk. No single component can be optimised in isolation. This systems perspective is the thread connecting every subsequent lecture, from crop modelling to global food markets.
+    key_concepts:
+      - "Cropping system definition: crops, soils, climate, machinery, management"
+      - "Systems thinking as the unit's core skill"
+      - "Decisions cascade across the system (stubble example)"
+    wiki_query: "cropping system paddock farm scale mediterranean climate soil water stubble decisions"
+
+  - title: "Nested Scales: From Soil to Global Market"
+    description: >
+      Zoom out from the paddock-scale technical components just introduced to show that a cropping system nests inside larger systems, and contains smaller systems within it. Below the paddock: the soil itself is a system, with its chemistry, physics and biology interacting at the scale of centimetres to metres, largely invisible but underpinning everything built above it. At the paddock: the technical components just described — soil, crop, inputs, machinery — operate together across a single season. Above the paddock: the whole farm is a business system, integrating multiple paddocks, rotations, machinery capacity, labour, cash flow and risk across years — a logistical and financial enterprise, not only an agronomic one. Beyond the farm: the market system of prices, export demand, government policy and global food security shapes which crops are worth growing, and at what scale. Stress that these scales are nested, not separate: a soil-chemistry constraint such as subsoil acidity becomes a paddock-scale yield-potential problem, which becomes a farm-scale financial decision about whether to invest in lime, which is itself shaped by market-scale grain prices. Reasoning well in this unit means being explicit about which scale a question is being asked at.
+    key_concepts:
+      - "Soil scale: chemistry, physics, biology below the paddock"
+      - "Paddock scale: the technical components as one season's system"
+      - "Farm scale: a business system (machinery, labour, cash flow, risk)"
+      - "Market scale: prices, exports, policy, food security"
+      - "Scales are nested: a soil constraint becomes a farm-scale financial decision"
+    wiki_query: "soil scale paddock scale farm business machinery labour cash flow market export prices global food security nested system"
+
+  - title: "The Western Australian Grainbelt: Scale and Significance"
+    description: >
+      Situate the unit geographically and economically in the Western Australian grainbelt — the crescent of country stretching from Geraldton in the north, east to Southern Cross, and south to Esperance, covering roughly 18 million hectares of arable land. WA produces on the order of 15–20 million tonnes of grain in an average season, of which the great majority (around 80–90%) is exported, making WA one of the most export-exposed grain economies in the world and a critical supplier to Asian and Middle Eastern markets. Contrast the WA grainbelt with eastern Australian and international cropping regions: WA farms are large (average broadacre farm well over 3 000 ha, many exceeding 10 000 ha), highly mechanised, run by very few people per hectare, and operate on ancient, weathered, infertile soils under a winter-dominant Mediterranean rainfall pattern with no reliable irrigation. These structural features — large scale, export orientation, poor soils, variable rainfall, low labour — shape every agronomic and economic decision covered in this unit and explain why WA growers were among the earliest global adopters of no-tillage, controlled traffic, and precision agriculture.
+    figure_id: "Fig-L01-Grainbelt"
+    image_prompt: >
+      Map of the south-west of Western Australia showing the grainbelt as a crescent from Geraldton south to Esperance and inland to Southern Cross. Overlay average annual rainfall isohyets (600 mm coastal decreasing to 300 mm inland), with the low, medium and high rainfall zones shaded in graduated UWA blue (#27348B). Key towns (Geraldton, Merredin, Katanning, Esperance, Perth) marked with gold (#E2B600) dots. Clean academic cartographic style, --ar 16:9, --no text.
+    key_concepts:
+      - "WA grainbelt geography (Geraldton to Esperance, ~18M ha)"
+      - "Export orientation (80-90% of 15-20 Mt grain)"
+      - "Large, mechanised, low-labour farms"
+      - "Poor ancient soils, winter rainfall, no irrigation"
+    wiki_query: "western australian grainbelt export broadacre farm size mediterranean rainfall"
+    figure_source: "literature"
+
+  - title: "Roadmap: How This Unit Unpacks Each Component"
+    description: >
+      Close the framing section by mapping the technical components and nested scales just introduced onto the semester ahead, so later lectures read as a planned descent into each piece rather than a disconnected list of topics. Soil chemistry and nutrition is developed in the soil sampling, acidity and fertiliser recommendation lecture; soil biology and soilborne disease is picked up later in the nematodes and soilborne disease lecture. Crop production is unpacked species by species in the cereal, canola, and lupin and grain legume agronomy lectures. Crop protection continues in the weed management, herbicides and spraying technology lecture. The environmental driver behind all of this — the Mediterranean climate — gets its own dedicated lecture, alongside a lecture placing WA and Australian agriculture in its wider world-food-production context. Quantitative modelling, introduced conceptually today, becomes hands-on in the crop modelling lecture and the computer laboratory sessions that follow. At the farm-business scale, financial and production risk analysis gets a dedicated lecture, process management and grain logistics covers the farm-as-enterprise operations layer, and precision agriculture develops the data and technology tools that operate across every scale. The unit closes by zooming out to the market scale with a lecture on global food markets and food security. Every subsequent lecture, in other words, is this lecture's systems map, examined one component at a time.
+    key_concepts:
+      - "Soil chemistry/nutrition and soil biology each get a dedicated lecture"
+      - "Crop production unpacked species by species (cereals, canola, lupins/pulses)"
+      - "Crop protection, climate and modelling each get dedicated lectures"
+      - "Farm-business scale: financial analysis, logistics, precision agriculture"
+      - "Unit closes by zooming out to the global market scale"
+
+  - title: "The Mediterranean Rhythm: Matching Operations to the Season"
+    description: >
+      Introduce the defining feature of WA broadacre cropping — a Mediterranean-type climate with cool, wet winters and hot, dry summers — and the seasonal rhythm it imposes. Rainfall arrives predominantly from May to October, so crops are sown into the autumn "break" (the first substantial rains, typically late April to June) and grow through winter on stored and in-season rainfall, flower in early spring, and fill grain as the soil dries toward a near-inevitable terminal drought in October–November. Every management input is timed against this rhythm: summer weed control and stubble management before the break; seeding and pre-emergent herbicides at the break; in-crop nitrogen and weed control through winter; fungicides and flowering-time management in early spring; and harvest through the dry summer. Emphasise the concept of the "window" — each operation has an agronomically optimal period, and the art of farming a large area is completing each operation across the whole farm within that window despite weather, machinery, and labour constraints. This timing logic is developed quantitatively in the Climate lecture and underpins the risk management lecture.
+    key_concepts:
+      - "Mediterranean climate: cool wet winters, hot dry summers"
+      - "The autumn break and growing-season rainfall"
+      - "Terminal drought and spring grain fill"
+      - "Operation timing windows across the season"
+    wiki_query: "mediterranean climate seasonal rhythm autumn break growing season terminal drought"
+
+  - title: "Water as the First Limiting Resource"
+    description: >
+      Establish water as the dominant constraint on WA dryland grain yield and introduce the framework that quantifies it. In a rainfed Mediterranean system with no irrigation, the water available to a crop — growing-season rainfall plus any moisture stored in the soil profile over summer — sets the ceiling on what can be produced. Introduce the crop water balance conceptually: of the total rainfall a paddock receives, only a fraction is transpired productively by the crop; the remainder is lost to soil evaporation, runoff, deep drainage below the root zone, and weeds. The central management goal in a water-limited system is to maximise the proportion of scarce water that passes productively through the crop — the rationale behind summer weed control (conserving stored moisture), early sowing (aligning canopy growth with the cooler, lower-evaporation part of the season), and stubble retention (reducing evaporation and runoff). This water-centric view of agronomy is the conceptual foundation for water-use efficiency, developed next.
+    key_concepts:
+      - "Water as the yield-ceiling resource in dryland systems"
+      - "Crop water balance: transpiration vs evaporation, runoff, drainage"
+      - "Maximising productive water use (summer weeds, early sowing, stubble)"
+    wiki_query: "water limiting resource dryland rainfed crop water balance evaporation"
+
+  - title: "Water-Use Efficiency: The French-Schultz Benchmark"
+    description: >
+      Introduce water-use efficiency (WUE) as the single most useful benchmark for comparing crop performance in Mediterranean-type environments. Define WUE as grain yield produced per millimetre of water used (kg grain per hectare per mm), and present the French and Schultz (1984) framework developed in South Australia and universally applied across southern Australia. Their model expresses potential yield as a function of growing-season water use, where water use is estimated as growing-season rainfall (April–October) minus a soil evaporation loss of approximately 110 mm before the crop can transpire. The slope of the relationship — the transpiration efficiency — represents the biological potential, historically around 20 kg/ha/mm for wheat and now revised upward toward 22–25 kg/ha/mm with modern varieties and agronomy. Explain the power of the framework: a grower can compare a paddock's actual yield against the water-limited potential for that season's rainfall, and a gap between actual and potential reveals a management or constraint problem (weeds, disease, nutrition, subsoil constraints, poor variety) worth diagnosing. The yield-gap concept this produces is central to the economics and precision agriculture lectures.
+    figure_id: "Fig-L01-FrenchSchultz"
+    image_prompt: >
+      Scatter plot in the classic French-Schultz style. X-axis: growing-season water use (mm), from 100 to 500 mm. Y-axis: wheat grain yield (t/ha), 0 to 6. A boundary line rising from an x-intercept near 110 mm with a slope representing ~22 kg/ha/mm marks the water-limited yield potential. Scattered data points below the line represent real paddocks, with the vertical distance to the line annotated as the "yield gap". UWA blue (#27348B) boundary line, gold (#E2B600) data points, academic style, --ar 16:9, --no text.
+    key_concepts:
+      - "WUE definition: kg grain per hectare per mm"
+      - "French and Schultz (1984) framework"
+      - "~110mm soil evaporation constant"
+      - "Transpiration efficiency slope (20 to 22-25 kg/ha/mm)"
+      - "Yield gap diagnosis"
+    wiki_query: "water use efficiency french schultz transpiration efficiency yield potential"
+    figure_source: "literature"
+
+  - title: "Closing the Yield Gap: Agronomy, Genetics and the Exceedance Idea"
+    description: >
+      Develop how the water-limited yield potential is approached in practice and why most paddocks fall short. The gap between water-limited potential and actual yield is closed from two directions. Genetic improvement: plant breeding has lifted transpiration efficiency, harvest index, and tolerance to frost, heat, and disease, steadily raising the achievable slope of the WUE line over decades. Agronomic improvement: earlier and more reliable sowing, better nutrition, effective weed and disease control, and controlled traffic to reduce compaction all move actual yield closer to potential. Introduce the important idea that yield in a variable climate is not a single number but a distribution — in a good year a paddock may approach its potential, while in a drought year potential itself collapses. This motivates thinking about yield probabilistically (the exceedance curves developed with crop models) and about matching input investment to seasonal outlook — spending on nitrogen in proportion to the water the season is likely to deliver. This sets up the risk-management theme that recurs throughout the unit.
+    key_concepts:
+      - "Genetic vs agronomic routes to closing the yield gap"
+      - "Yield as a probability distribution, not a single number"
+      - "Exceedance curves and seasonal-outlook-based investment"
+      - "Sets up the risk-management theme"
+    wiki_query: "yield gap agronomy genetics water limited potential yield probability"
+
+  - title: "Why Rotate? The Case Against Continuous Wheat"
+    description: >
+      Explain why crop sequence — rotation — is one of the most powerful and cheapest management levers available, and why continuous monoculture, though tempting when wheat is profitable, degrades a system over time. Enumerate the mechanisms by which rotation benefits the following crop. Disease break: many important pathogens (take-all, crown rot, blackleg, rhizoctonia to a degree) are host-specific and survive on residue or in soil between seasons; a non-host break crop starves the pathogen and collapses its inoculum. Weed control: rotating crops allows rotation of herbicide modes of action and of the timing and type of weed control (for example, a break crop permits grass-selective chemistry that cannot be used in a cereal), slowing herbicide resistance and running down grass weed seedbanks. Nitrogen supply: grain legumes (lupin, field pea, faba bean) fix atmospheric nitrogen and leave a nitrogen credit for the following cereal, reducing fertiliser requirement. Soil structure and water: different rooting depths and residue types diversify the biological and physical benefits to the soil. Emphasise that the value of a break crop is often realised not in its own gross margin but in the yield lift and cost saving it delivers to the subsequent cereal — a systems-level accounting that continuous wheat obscures.
+    key_concepts:
+      - "Disease break: host-specific pathogens lose their host"
+      - "Herbicide mode-of-action rotation and resistance management"
+      - "Nitrogen credit from grain legumes"
+      - "Rotational value shows up in the following crop"
+    wiki_query: "crop rotation disease break herbicide resistance nitrogen fixation continuous wheat"
+
+  - title: "The Classic WA Rotations and Their Logic"
+    description: >
+      Survey the rotations that structure WA farming systems and the logic behind each. The traditional cereal-legume rotation — wheat-lupin on the sandplain, or wheat-field pea and wheat-faba bean on heavier soils — pairs a nitrogen-fixing pulse with a cereal that exploits the nitrogen and disease break. The cereal-canola rotation — wheat-canola or barley-canola — uses canola as a broadleaf disease and grass-weed break with the advantage of a valuable oilseed cash crop, and has expanded enormously since the 1990s. Longer sequences — for example canola-wheat-barley-lupin — spread risk across markets and diversify weed and disease pressure. On mixed farms, a pasture phase (annual or perennial legume-based pasture grazed by sheep) historically provided the nitrogen and weed break, a role now partly displaced by pulses and chemical fallow. Discuss how commodity prices, herbicide resistance pressure, and seasonal outlook shift the balance between these options each year, and why the "ideal" rotation on paper is constantly traded off against short-term cash flow and the risk of a break crop failing in a dry start.
+    key_concepts:
+      - "Cereal-legume rotation (wheat-lupin, wheat-pea/faba bean)"
+      - "Cereal-canola rotation"
+      - "Longer diversified sequences"
+      - "Pasture phase on mixed farms"
+      - "Rotation choice shifts with prices and season"
+    wiki_query: "crop rotation sequence wheat lupin canola pulse pasture wa"
+
+  - title: "The Wheat-Dominance Problem and Diversifying Rotations"
+    description: >
+      Address a central tension in contemporary WA farming: despite the clear agronomic case for diverse rotations, systems remain heavily wheat-dominated because wheat is lower-risk, has deep and liquid markets, established agronomy, and reliable establishment in dry starts. Break crops — particularly pulses — are riskier: more sensitive to seasonal conditions, prone to disease and harvest difficulties, and subject to thinner, more volatile markets. Discuss how growers might successfully implement more diverse rotations: matching the break crop to soil type (lupins on deep sands, pulses on heavier well-structured soils, canola widely); using the break crop strategically ahead of the highest-value or most weed- or disease-threatened cereal; managing the agronomic risk through variety choice, sowing time, and integrated weed and disease programs; and valuing the rotational benefit explicitly in the whole-farm gross margin rather than judging each crop in isolation. Connect this to the accelerating driver of diversification — herbicide resistance in annual ryegrass — which increasingly forces growers into break crops and non-chemical tactics whether or not the single-year economics favour them.
+    key_concepts:
+      - "Wheat's low-risk, liquid-market advantage"
+      - "Break-crop (pulse) risk: seasonal sensitivity, disease, thin markets"
+      - "Matching break crop to soil type"
+      - "Herbicide resistance as a diversification driver"
+    wiki_query: "wheat dominance break crop diversification herbicide resistance ryegrass rotation risk"
+
+  - title: "Records: The Memory of the System"
+    description: >
+      Make the case that accurate, paddock-level record-keeping is not administrative overhead but the essential memory that makes a cropping system manageable over time. Because the benefits and costs of rotation, lime, herbicide use, and nutrition play out over multiple years, decisions cannot be made rationally without a reliable history: what was grown and yielded in each paddock; the herbicides applied (and therefore the resistance and residual-carryover risk); soil test results and lime history; fertiliser inputs and the resulting nutrient balance; and disease and weed observations. Modern farm management increasingly captures this digitally — from machine-logged operations, yield maps, and soil and tissue tests — feeding the precision agriculture and farm financial analysis covered later in the unit. Emphasise the practical consequences of poor records: herbicide plant-back and resistance problems, mis-timed or mis-placed inputs, and an inability to diagnose why a paddock under-performs. Records turn a sequence of isolated seasons into a managed, improving system.
+    key_concepts:
+      - "Paddock-level history: yield, herbicide, soil test, fertiliser"
+      - "Multi-year decisions require reliable records"
+      - "Digital capture: yield maps, soil and tissue tests"
+      - "Consequences of poor records"
+    wiki_query: "farm records soil testing yield mapping precision agriculture decision support"
+
+  - title: "The Tillage Revolution: Why WA Abandoned the Plough"
+    description: >
+      Tell the story of one of the most complete and rapid agronomic transitions in world agriculture: the shift from intensive cultivation to no-tillage (zero-till, direct drilling) across the WA grainbelt from the late 1980s through the 2000s, to the point where the great majority of the WA crop is now sown with minimal soil disturbance. Explain the problem that traditional multi-pass cultivation created on WA's fragile, sandy, low-organic-matter soils: severe wind and water erosion, loss of soil structure and organic carbon, moisture loss from the seedbed at exactly the time moisture was most precious, and enormous fuel, labour, and time costs across huge areas in narrow seeding windows. Introduce conservation agriculture as the response — a system built on three principles: minimum mechanical soil disturbance, permanent soil cover (retained stubble/residue), and diverse crop rotation. WA growers, facing the world's poorest soils and most timing-constrained seasons, adopted these principles faster and more completely than almost anywhere on earth, aided by the coincident arrival of effective knockdown herbicides (glyphosate) that made weed control without cultivation possible.
+    key_concepts:
+      - "Shift from cultivation to no-till (late 1980s-2000s)"
+      - "Erosion and moisture loss under traditional cultivation"
+      - "Three principles of conservation agriculture (preview)"
+      - "Glyphosate's role in enabling no-till"
+    wiki_query: "no till zero till conservation agriculture erosion history western australia"
+
+  - title: "Principles of Conservation Agriculture"
+    description: >
+      Develop the three principles of conservation agriculture and why each matters in the WA context. Minimum soil disturbance: reducing tillage preserves soil structure, protects soil biota and mycorrhizal networks, keeps organic matter and its associated nutrients and water-holding capacity intact, and — critically in a Mediterranean climate — conserves seedbed moisture that a cultivation pass would evaporate away. Permanent soil cover: retained stubble and crop residue shield the soil surface from raindrop impact and wind, dramatically reducing erosion; moderate soil temperature; slow evaporation; and feed the soil biology that builds structure and cycles nutrients. Crop rotation and diversity: as developed earlier, diverse sequences break disease and weed cycles and diversify the biological benefits to the soil. Stress that these principles reinforce each other — no-tillage without stubble retention leaves soil exposed; stubble retention without rotation concentrates disease and weeds — so conservation agriculture is a system, not a single practice, and its full benefit emerges only when all three are applied together over time.
+    key_concepts:
+      - "Minimum soil disturbance"
+      - "Permanent soil cover (stubble retention)"
+      - "Crop rotation and diversity"
+      - "Principles reinforce each other as a system"
+    wiki_query: "conservation agriculture minimum disturbance soil cover crop rotation principles"
+
+  - title: "The Case for Some Tillage: Strategic Intervention"
+    description: >
+      Complicate the no-tillage story by examining why and when strategic tillage is deliberately reintroduced into otherwise no-till systems — demonstrating the critical-thinking point that no single practice is universally optimal. Persistent no-tillage can accumulate its own problems: hard-setting or water-repellent surface soils, stratification of nutrients and lime in the top few centimetres, subsoil compaction, herbicide-resistant weed seedbanks concentrated near the surface, and build-up of stubble-borne disease. Strategic (occasional, targeted) tillage tools address these: one-off deep ripping to shatter subsoil compaction and open sandplain hardpans (with large but variable yield responses); mouldboard ploughing, spading, or inversion to bury water-repellent topsoil and non-wetting sands, incorporate lime to depth, and bury weed seed; and rotary spading to mix ameliorants through the profile. The key is that these are infrequent, purposeful interventions within a predominantly no-till system — chosen for a specific constraint and paid off over several subsequent seasons — not a return to routine cultivation. This nuanced "no-till plus strategic tillage" is the current mainstream position in WA.
+    key_concepts:
+      - "Problems from persistent no-till: compaction, water repellence"
+      - "Deep ripping for subsoil compaction and hardpans"
+      - "Mouldboard ploughing for water repellence and lime incorporation"
+      - "Strategic, infrequent tillage within a no-till system"
+    wiki_query: "strategic tillage deep ripping soil compaction water repellence non wetting sands"
+
+  - title: "Seeding Machinery: Tines versus Discs"
+    description: >
+      Introduce the seeding machine as the single most important — and expensive — operational decision in a no-till system, since it must place seed and fertiliser accurately into undisturbed, stubble-covered soil in one pass. Describe the key components of a modern seeding system: the opener (tine or disc) that cuts a furrow and creates the seed slot; the seed and fertiliser delivery (often with separation of seed from concentrated fertiliser to avoid toxicity); press wheels for seed-soil contact and depth control; and the air seeder cart metering and distributing product. Contrast the two dominant opener types. Tine (knife-point / press-wheel) systems: robust, lower cost, effective at breaking through hard-setting soils and placing fertiliser deeply, good in low-residue situations, and dominant across much of the WA grainbelt; but they disturb more soil (bringing up weed seed and losing some moisture) and can block in very heavy stubble. Disc systems: cut cleanly through high residue with minimal disturbance, ideal for full-stubble-retention systems and controlled traffic, and faster; but they are more expensive, demand higher stubble and moisture management skill, struggle to penetrate hard dry soils, and can cause hair-pinning of residue into the seed slot. Frame the choice as a system decision tied to soil type, stubble load, rainfall zone, and the grower's residue-management philosophy.
+    figure_id: "Fig-L01-TineDisc"
+    image_prompt: >
+      Two side-by-side cross-section diagrams of soil at seeding. Left panel "Tine (knife-point) opener": a narrow tine creating a furrow with some soil throw, seed placed at depth with fertiliser banded below, press wheel firming the slot, moderate residue disturbance shown. Right panel "Disc opener": a vertical coulter disc slicing cleanly through heavy standing stubble with minimal soil movement, seed placed in a narrow slot, closing wheels. Label seed, fertiliser band, press/closing wheel, and residue in each. UWA blue (#27348B) soil, gold (#E2B600) seed and labels, academic cross-section style, --ar 16:9, --no text.
+    key_concepts:
+      - "Seeding system components: opener, delivery, press wheels, cart"
+      - "Tine openers: robust, more soil disturbance"
+      - "Disc openers: low disturbance, higher cost"
+      - "Choice driven by soil type, stubble load, rainfall zone"
+    wiki_query: "seeding machinery tine disc opener precision seeding no till"
+    figure_source: "manual"
+
+  - title: "Stubble: To Retain or To Burn?"
+    description: >
+      Close the lecture by examining stubble management as a concrete example of systems trade-offs, since the decision to retain, reduce, or burn crop residue touches almost every component of the system. The benefits of retaining stubble: erosion protection, reduced evaporation and improved moisture conservation, cooler soil, organic-matter return, and improved water infiltration and biological activity — all central to conservation agriculture. The reasons growers nonetheless reduce or burn stubble: very heavy residue loads can physically impede seeding equipment (particularly tines), tie up nitrogen as microbes decompose high-carbon straw, harbour stubble-borne diseases (crown rot, yellow spot, blackleg) and slugs and other pests, intercept and bind pre-emergent herbicides so they never reach the soil, and shelter weed seed. Burning is also sometimes used tactically as a weed-seed and disease-inoculum destruction tool, especially where herbicide resistance is severe. Frame the modern position: retention is the default for soil and moisture reasons, but growers manage residue load actively (harvest height, chaff and residue handling, occasional strategic burning or grazing) to keep the agronomic downsides manageable. Use this final trade-off to reinforce the unit's core message — in a cropping system, every decision is a balance across competing biological, operational, and economic objectives, and the skilled agronomist reasons across the whole system rather than optimising any single part.
+    key_concepts:
+      - "Retention benefits: erosion control, moisture, organic matter"
+      - "Reasons to reduce or burn: nitrogen tie-up, disease, herbicide interception"
+      - "Burning as a targeted disease/weed-seed tool"
+      - "Trade-off framing as the unit's core message"
+    wiki_query: "stubble retention burning residue management disease nitrogen tie up erosion"

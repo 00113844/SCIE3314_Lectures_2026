@@ -1,0 +1,149 @@
+topic: "Soil Sampling, Soil Acidity and Fertiliser Recommendation"
+auto_figures: true
+subtopics:
+
+  - title: "Why Soil Test? Turning Guesswork into Management"
+    description: >
+      Open by framing soil testing as the foundation of rational nutrient and amelioration management. Fertiliser and lime are among the largest variable costs on a WA grain farm, and applying them without measurement is either wasteful (over-application, leaching, and lost profit) or yield-limiting (under-application). A soil test converts the invisible chemical status of the soil into numbers that, interpreted against calibrated critical values, guide how much of which input to apply, where, and whether amelioration is needed at all. Introduce the core purposes: diagnosing deficiencies and toxicities (nitrogen, phosphorus, potassium, sulphur, trace elements, aluminium); monitoring trends over time (whether the nutrient bank is being run down or built up, whether acidification is progressing); and defining spatial zones for variable-rate management. Stress that a soil test is only as good as the sample it is based on and the calibration behind its interpretation — themes developed through this lecture — and that its value lies not in the raw number but in the decision it informs.
+    key_concepts:
+      - "Converts invisible soil chemistry into a management decision"
+      - "Diagnoses deficiency/toxicity, monitors trends, defines zones"
+      - "Value lies in the decision, not the raw number"
+    wiki_query: "soil test purpose deficiency monitoring variable rate WA"
+
+  - title: "Sampling Well: Getting a Representative Sample"
+    description: >
+      Explain that the largest source of error in soil testing is not the laboratory analysis but the sampling. A soil test measures a few hundred grams of soil taken to represent tens of hectares, so how those cores are taken determines whether the result means anything. Cover the principles of good sampling. Depth: nutrients and pH stratify strongly, especially under no-tillage where lime and phosphorus concentrate near the surface, so sampling must be to a defined, consistent depth (commonly 0–10 cm) and, critically for acidity, also at depth (10–20 and 20–30 cm) to detect subsurface acidity that a surface sample alone would miss. Number and pattern of cores: many cores (15–30) bulked into a composite sample average out small-scale variability. Consistency and timing: sample the same zones at the same time of year to make results comparable between years. Avoiding artefacts: keep clear of fertiliser bands, stubble heaps, gateways, and old fence lines. Connect to precision agriculture: rather than one composite per paddock, targeted sampling of zones defined by yield maps or soil-survey layers produces the data needed for variable-rate lime and fertiliser.
+    figure_id: "Fig-L03-Sampling"
+    image_prompt: >
+      Diagram of a paddock from above with a zig-zag sampling transect, showing 15-20 core points bulked into one composite bag. Inset cross-section shows a soil core split into three depth increments (0-10, 10-20, 20-30 cm) with the deeper increments highlighted for acidity testing. A separate small panel shows zone-based sampling overlaid on a yield map with different zones sampled separately. UWA blue (#27348B) soil, gold (#E2B600) core points and labels, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Sampling Well: Getting a Representative Sample"
+    wiki_query: "sampling well getting representative well:"
+    figure_source: "manual"
+
+  - title: "Reading a Soil Test: The Key Analyses"
+    description: >
+      Walk through the analyses on a standard WA broadacre soil test and what each measures. pH (measured in calcium chloride, pHCa, the WA standard): the master variable controlling nutrient availability and aluminium toxicity, interpreted separately at each depth. Colwell phosphorus and the phosphorus buffering index (PBI): plant-available P and the soil's tendency to fix it, interpreted together to set P requirement. Colwell or exchangeable potassium: available K, increasingly limiting on long-cropped sandplain. Sulphur (KCl-40): often deficient on sandy soils. Nitrate and ammonium nitrogen: the mineral N present, though highly time-variable and best combined with a mineralisation estimate. Organic carbon: an index of soil health, nitrogen-supplying capacity, and water-holding. Exchangeable aluminium and cation exchange capacity: central to the acidity story developed next. Trace elements (copper, zinc, molybdenum, manganese, boron): occasionally limiting. Electrical conductivity: salinity screening. Emphasise that no number is interpreted in isolation — P must be read against PBI, N against organic carbon and season, and pH against depth — and that interpretation depends on regional critical-value calibrations derived from field response trials.
+    key_concepts:
+      - "pHCa, Colwell P and PBI, K, sulphur, mineral N, organic carbon"
+      - "Exchangeable aluminium and CEC underpin the acidity story"
+      - "No number stands alone: P against PBI, N against season"
+    wiki_query: "soil test pH phosphorus PBI potassium sulphur organic carbon WA"
+
+  - title: "Critical Values and the Calibration Behind Recommendations"
+    description: >
+      Explain how a soil-test number becomes a fertiliser recommendation, and why this rests on decades of field calibration. A critical value is the soil-test level above which a crop is very unlikely to respond economically to added nutrient — for example, a Colwell P critical value that varies with PBI. These critical values are established by conducting many nutrient-rate response trials across seasons and soils, plotting relative yield against soil-test level, and identifying the level at which yield reaches ~90–95% of maximum. Introduce the diminishing-returns shape of the yield-response curve: the first units of a limiting nutrient produce large yield gains, but response flattens as the deficiency is removed, so the economically optimal rate is well below the yield-maximising rate and depends on the ratio of grain price to fertiliser cost. This is where the agronomy meets the economics developed in the farm financial lecture: the recommendation is not "the rate that maximises yield" but "the rate that maximises expected profit given price, cost, and seasonal risk". Warn that critical values are region- and method-specific — a value calibrated for one soil type or test method must not be applied blindly to another.
+    key_concepts:
+      - "Critical value: level above which response is unlikely"
+      - "Calibrated from many field response trials, ~90-95% of max yield"
+      - "Economic optimum sits below the yield-maximising rate"
+      - "Critical values are region- and method-specific"
+    wiki_query: "critical value soil test calibration response trial economic optimum"
+
+  - title: "Three Philosophies of Fertiliser Recommendation"
+    description: >
+      Step back from the mechanics of critical values to the broader question of philosophy: even given a calibrated soil test, agronomists disagree on the underlying logic for turning that number into a fertiliser rate, and three distinct approaches recur in practice. The build-up-and-maintenance approach adds fertiliser to lift soil nutrient levels to a desired high index, then maintains that level by replacing whatever the crop removes each year; it leans heavily on accurate crop-removal figures and tends to produce steady annual applications, but is a poor fit for rented land, for soils prone to erosion, and raises real environmental and economic questions about fertilising well past the point of yield response. The percent-sufficiency (crop nutrient requirement) approach, the philosophy underlying the critical-value method just covered, adds nutrient only when the soil test falls below a critical threshold and recommends nothing above it, relying entirely on well-calibrated soil tests; it is the more conservative, environmentally cautious approach and the one favoured in most university and government extension recommendations. The basic cation saturation ratio approach instead targets an "ideal" ratio of calcium, magnesium, and potassium on the soil's exchange sites rather than absolute nutrient levels; it is difficult to manage on sandy, low-cation-exchange-capacity soils typical of much of the WA grainbelt, and comparative research finds it delivers little extra yield over the other approaches despite requiring more intervention. Emphasise the practical conclusion of this comparison: controlled studies generally find no significant yield difference between the three philosophies, but they differ meaningfully in fertiliser cost, and rising fertiliser prices and environmental scrutiny have shifted mainstream recommendation practice toward percent sufficiency — reinforcing that soil testing is only the first step, and the assumptions behind how a test is turned into a rate matter just as much as the test itself.
+    key_concepts:
+      - "Build-up and maintenance: lift then replace removal"
+      - "Percent sufficiency: fertilise only below a critical threshold"
+      - "Cation saturation ratios: target ratios, not absolute levels"
+      - "No consistent yield difference; cost and caution favour sufficiency"
+    wiki_query: "fertiliser recommendation philosophy sufficiency build-up maintenance cation ratio"
+
+  - title: "How Cropping Acidifies Soil"
+    description: >
+      Establish soil acidification as one of the most serious, insidious, and economically damaging degradation processes in the WA grainbelt — insidious because it develops slowly and largely out of sight in the subsurface, and costly at scale: acidity is estimated to cost WA grain growers somewhere between $500 million and $1.5 billion in lost yield income each year. Explain the mechanisms by which productive cropping acidifies soil. Nitrogen cycling: the nitrification of ammonium-based fertilisers and of nitrogen fixed by legumes releases hydrogen ions, and — crucially — the leaching of the resulting nitrate below the root zone carries away accompanying base cations, leaving acidity behind. Product removal: harvested grain and hay export alkalinity (base cations) off the paddock. Organic matter cycling: accumulation and breakdown of organic acids. The dominant driver in WA's high-input, legume-inclusive, freely-draining sandy systems is nitrate leaching. Emphasise the temporal insidiousness: acidity develops first and worst in the subsurface (10–30 cm), where it is invisible from the surface and where surface-applied lime is slow to reach, so a paddock can be severely constrained at depth while looking healthy on top — which is why deep soil sampling is essential.
+    key_concepts:
+      - "Nitrate leaching is the dominant WA acidification driver"
+      - "Product removal and organic matter cycling also contribute"
+      - "Estimated $500M-$1.5B annual yield-income cost to WA"
+      - "Acidity develops first and worst below the surface, unseen"
+    wiki_query: "soil acidification nitrate leaching cost WA cropping"
+
+  - title: "Aluminium Toxicity: The Yield-Limiting Consequence of Low pH"
+    description: >
+      Explain the central agronomic reason acidity matters: aluminium toxicity. In soil, aluminium is locked in harmless mineral forms at neutral pH, but as pHCa falls below approximately 4.5–4.8 it dissolves into the soil solution as toxic aluminium ions. These ions poison root tips, stunting and thickening roots and drastically reducing their capacity to explore the soil for water and nutrients. The consequence is severe in a Mediterranean environment: a crop with a restricted, aluminium-pruned root system cannot access subsoil moisture during the terminal drought, so acidity translates directly into reduced water use, poor nutrient uptake, and yield loss even when surface conditions look adequate. Note the interacting factors — manganese toxicity and molybdenum and phosphorus availability also worsen at low pH — and the strong species and variety differences in aluminium tolerance (barley is highly sensitive; some wheat and triticale, and lupins, tolerate more), which becomes a management lever. Stress the key diagnostic point: it is not the pH number itself but the aluminium it releases that damages the crop, so exchangeable aluminium and pH are read together.
+    figure_id: "Fig-L03-AlToxicity"
+    image_prompt: >
+      Two-panel root diagram. Left panel "Adequate pH (pHCa > 5.0)": a wheat plant with a deep, branched, healthy root system reaching subsoil moisture, aluminium shown locked in soil minerals. Right panel "Acidic subsoil (pHCa < 4.5)": the same plant with a stunted, thickened, shallow root system, toxic aluminium ions in solution attacking root tips, subsoil moisture shown as unreachable. A small inset graph shows exchangeable aluminium rising sharply as pHCa falls below 4.8. UWA blue (#27348B) soil, gold (#E2B600) roots and labels, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Aluminium dissolves into toxic form below pHCa ~4.5-4.8"
+      - "Poisons root tips, blocking subsoil water access"
+      - "Species/variety differ in tolerance: barley sensitive, lupins tolerant"
+      - "It is the aluminium, not the pH number, that damages the crop"
+    wiki_query: "aluminium toxicity pH root tolerance barley lupin WA"
+    figure_source: "manual"
+
+  - title: "Lime: The Amendment and How It Works"
+    description: >
+      Introduce agricultural lime (calcium carbonate) as the primary and only economic long-term treatment for soil acidity. Explain the chemistry simply: carbonate neutralises hydrogen ions, raising pH, which in turn returns aluminium to its insoluble mineral form and removes the toxicity. Cover the factors that determine how effective a given lime application is. Neutralising value: the chemical purity and strength of the lime source. Particle size and fineness: only fine particles react quickly; coarse lime reacts over many years, so fineness governs the speed of response. Solubility and movement: lime is only sparingly soluble and moves down the profile extremely slowly (centimetres per year under rainfall), which is the crux of the subsurface-acidity problem — surface-applied lime can take a decade or more to ameliorate acidity at 20–30 cm. This slow movement motivates two strategies: applying lime early and regularly to stay ahead of acidification, and, where subsurface acidity is already severe, mechanically incorporating lime to depth by deep ripping with inclusion plates, spading, or one-off inversion tillage — linking back to the strategic-tillage discussion in the introductory lecture.
+    key_concepts:
+      - "Carbonate neutralises H+, returning aluminium to insoluble form"
+      - "Neutralising value and fineness govern reaction speed"
+      - "Lime moves down the profile only centimetres per year"
+      - "Deep constraints need mechanical incorporation, not just time"
+    wiki_query: "agricultural lime neutralising value fineness incorporation subsurface WA"
+
+  - title: "The Economics of Lime: A Long-Term Investment"
+    description: >
+      Frame liming as a capital investment in the soil resource rather than an annual input, and work through why its economics are genuinely different from those of fertiliser. Lime is relatively cheap per tonne but bulky and costly to cart and spread, and its benefit accrues slowly over many years as pH rises and — especially — as it moves and neutralises the subsurface. This creates a long payback period and a temptation to defer liming when cash is tight, which is precisely the wrong response because acidification continues in the meantime and the cost of recovery grows. Present the long-term economic case: modelling and long-term trials consistently show that maintaining pH above critical thresholds through regular liming delivers a strongly positive net present value over a 10–20 year horizon, that the cost of remediating badly acidified subsoil greatly exceeds the cost of preventing it, and that liming to prevent acidity is one of the highest-returning long-term investments available to a grower. Discuss the practical decisions this frames: maintenance liming rate to hold pH steady versus higher ameliorative rates to recover degraded paddocks, and the case for incorporation where subsurface acidity is advanced. Note that liming is not risk-free: it can induce secondary constraints such as manganese deficiency (requiring foliar correction) and has been associated with increased take-all disease and snail populations in some systems, so it is a genuine amelioration decision, not a costless fix. Mention the shift toward precision decision-support for this planning: tools such as the iLime app (built on the Oplime engine) simulate pH trajectories and profitability over 20-year horizons with good predictive accuracy, and regional monitoring shows the approach working at scale — the proportion of topsoil below pH 5.5 in the Avon River basin has fallen from about 72% to 46% over the monitored period. Reinforce that, like rotation, lime is a decision whose payoff is only visible when the system is viewed across years, not one season.
+    key_concepts:
+      - "Long payback period tempts growers to defer liming"
+      - "Deferring is the wrong call: the recovery cost grows over time"
+      - "Liming has trade-offs: manganese deficiency, take-all, snails"
+      - "Precision tools (iLime) simulate 20-year pH and profit trajectories"
+    wiki_query: "lime economics NPV iLime decision support pH trend WA"
+
+  - title: "Interpreting Acidity: Putting the Numbers Together"
+    description: >
+      Consolidate the acidity story into a practical interpretation workflow that students can apply. Read pHCa at each sampled depth: surface pH above ~5.5 but subsurface below ~4.8 signals the classic hidden subsurface-acidity problem requiring attention despite a healthy-looking surface. Cross-check with exchangeable aluminium: rising aluminium confirms the acidity is biologically active and yield-limiting. Consider the target: the management goal is generally to keep surface pHCa above about 5.5 (to provide a downward-moving front of alkalinity that will eventually treat the subsurface) and subsurface pHCa above about 4.8 (to keep aluminium insoluble in the rooting zone). Translate this into action: calculate the lime rate needed to reach and hold target pH given the soil's buffering capacity, decide between surface application plus time versus incorporation given the severity and depth of the problem, and schedule regular monitoring to track the pH trend. Emphasise that acidity management is a continuous, multi-decade program integrated into the rotation and the farm budget — not a one-off fix — and that it interacts with variety choice (using aluminium-tolerant species on paddocks awaiting amelioration).
+    key_concepts:
+      - "Surface >5.5, subsurface <4.8 signals hidden subsurface acidity"
+      - "Cross-check pH against exchangeable aluminium"
+      - "Targets: surface pHCa >5.5, subsurface pHCa >4.8"
+      - "A continuous, multi-decade program, not a one-off fix"
+    wiki_query: "soil acidity target pH lime rate monitoring interpretation WA"
+
+  - title: "Plant Density: How Many Plants per Square Metre?"
+    description: >
+      Turn from soil chemistry to two establishment decisions that strongly influence yield and are made at seeding: plant density and sowing time. Explain the biology of plant density. Crops compensate for density over a wide range through tillering (in cereals) and branching (in canola and lupins): at low density each plant produces more tillers or branches and more grain, partly offsetting the lower plant number, so cereal yield is remarkably flat across a broad density range. This means the goal is not to maximise plants but to reach the density that reliably achieves canopy closure and competitive ability without wasting seed. Discuss the factors that push the optimum up or down: higher density for weed-competitive situations, short seasons, and poor tillering conditions; lower density on moisture-limited sites where too many plants exhaust water before grain fill ("haying off"). Introduce establishment percentage — the gap between seeds sown and plants established — and the need to calculate seeding rate from target plant density, seed size (thousand-grain weight), germination, and expected establishment, rather than sowing a fixed kilograms-per-hectare by habit. This calculation is a standard practical skill.
+    figure_id: "Fig-L03-Density"
+    image_prompt: >
+      Graph with plant density (plants per square metre, 50 to 300) on the x-axis and grain yield (t/ha) on the y-axis, showing a curve that rises steeply then plateaus across a broad optimum, illustrating cereal compensation through tillering. Small plant icons below the axis show a low-density plant with many tillers versus a high-density plant with few tillers. A second dashed curve shows the weed-competition benefit continuing to rise with density. UWA blue (#27348B) yield curve, gold (#E2B600) weed-competition curve, academic style, --ar 16:9, --no text.
+    key_concepts:
+      - "Tillering/branching compensates over a wide density range"
+      - "Goal is reliable canopy closure, not maximum plant number"
+      - "Higher density for weeds/short seasons; lower on dry sites"
+      - "Seeding rate calculated from density, seed size, establishment %"
+    wiki_query: "plant density tillering compensation seeding rate establishment WA"
+    figure_source: "literature"
+
+  - title: "Time of Sowing: The Single Most Important Yield Decision"
+    description: >
+      Present sowing date as arguably the most powerful yield lever a WA grower controls, and explain the biology behind the strong, consistent yield penalty for late sowing. Sowing date sets the calendar against which the crop's development plays out relative to the season's opportunities and hazards. Early sowing lengthens the growing season, allowing a larger canopy to intercept more of the winter's light and water, and positions flowering and grain fill earlier — but too early risks flowering during the frost window. Late sowing compresses development, reduces biomass, and — most damagingly — pushes flowering and grain fill later into the hot, dry end of the season, exposing the crop to heat stress and terminal drought exactly when it is filling grain. Introduce the concept of the optimal flowering window: for each location there is a period when the frost risk has fallen sufficiently but the heat-and-drought risk has not yet risen — flowering in this window maximises yield across seasons. Variety phenology (developed in the cereals lecture) and sowing date are chosen together so that flowering lands in this window. The consistent multi-tonne penalty for delayed sowing is why growers invest heavily in seeding capacity to sow the whole farm quickly once the break arrives.
+    key_concepts:
+      - "Early sowing lengthens the season but risks frost at flowering"
+      - "Late sowing pushes fill into heat and terminal drought"
+      - "Optimal flowering window balances frost against heat/drought risk"
+      - "Variety phenology and sowing date are chosen together"
+    wiki_query: "sowing date yield penalty flowering window frost heat WA"
+
+  - title: "The Sowing Window, Frost and the Trade-Off"
+    description: >
+      Develop the central establishment trade-off that ties density, sowing time, variety, and frost together. Because yield declines with delayed sowing, growers want to sow as early as possible; but sowing early with a quick-developing variety pushes flowering into the frost window, and a single radiation frost at flowering can sterilise a cereal crop and destroy yield. The resolution is to match variety phenology to sowing date so that flowering, regardless of when sowing occurs, lands in the safe window: slower-developing (winter or long-season) varieties can be sown early because they delay flowering, while quick (spring) varieties are reserved for later sowing. Introduce the modern trend toward earlier sowing enabled by longer-season varieties, dry sowing (sowing into dry soil before the break to be ready for the first rain), and better seeding technology — collectively lifting whole-farm yield by getting more of the crop into the ground early. Note the interaction with the broader system: earlier sowing demands earlier weed control decisions, dry-sowing changes herbicide strategy, and the whole approach depends on the machinery capacity and logistics developed in later lectures. Reinforce that establishment is a systems decision, integrating soil condition, variety, frost and heat risk, weeds, and machinery into a single narrow window each autumn.
+    key_concepts:
+      - "Match variety phenology to sowing date so flowering lands safely"
+      - "Slower varieties sown early; quick varieties sown later"
+      - "Dry sowing and longer-season varieties enable earlier starts"
+      - "Establishment is a systems decision across soil, variety, machinery"
+    wiki_query: "sowing date variety phenology frost dry sowing WA establishment"
+
+  - title: "Bringing It Together: A Pre-Season Nutrition and Establishment Plan"
+    description: >
+      Synthesise the lecture into the integrated decision-making a grower and agronomist undertake before each season, showing how soil testing, amelioration, nutrition, and establishment fit into one plan. Start from the paddock history and soil tests: identify constraints (acidity and aluminium, phosphorus and potassium status, nitrogen supply from mineralisation and the previous legume, trace elements). Decide amelioration: lime rate and whether incorporation is needed, planned as a multi-year program. Set the nutrition program: phosphorus and potassium to correct deficiency and replace removal, sulphur and trace elements as needed, and a nitrogen strategy matched to the yield potential the season is expected to allow — with in-season flexibility to top up if the season develops well. Choose the crop, variety, target plant density, and intended sowing window so that flowering lands safely, and back-calculate seeding rate from seed size and expected establishment. Emphasise that every one of these decisions is made under uncertainty about the season ahead, that they interact (a legume in the rotation changes the nitrogen plan; an acidity constraint changes the variety choice), and that good records and soil monitoring make each year's plan better than the last. This integrated pre-season planning is the practical embodiment of the systems thinking the unit teaches.
+    key_concepts:
+      - "Constraints, amelioration, nutrition and establishment as one plan"
+      - "Decisions interact: rotation, acidity, and variety choice interlock"
+      - "Records and monitoring improve next year's plan"
+    wiki_query: "pre-season nutrition establishment planning integrated WA"

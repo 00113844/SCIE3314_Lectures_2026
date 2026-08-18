@@ -1,0 +1,360 @@
+/*-- scss:defaults --*/
+
+/* ==================================================================
+   Universal UWA RevealJS Theme
+   Standard for all UWA academic units
+   ================================================================== */
+
+/* ---------------------- UWA Brand Colors ---------------------- */
+$uwa-blue: #27348B;
+$uwa-gold: #E2B600;
+$uwa-light-blue: #5577BB;
+$uwa-navy: #002147;
+$uwa-light-grey: #F5F5F5;
+$uwa-medium-grey: #CCCCCC;
+$uwa-dark-grey: #333333;
+
+/* ---------------------- RevealJS Variables --------------------- */
+$body-bg: #ffffff;
+$body-color: $uwa-dark-grey;
+$main-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$heading-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$heading-color: $uwa-blue;
+$presentation-heading-color: $uwa-blue !default;
+$link-color: $uwa-blue;
+$link-color-hover: $uwa-light-blue;
+$selection-bg-color: $uwa-gold;
+$selection-color: $uwa-navy;
+
+/* ---------------------- Typography ----------------------------- */
+$presentation-font-size-root: 28px;
+$presentation-heading-font-weight: 600;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.2em;
+$presentation-h3-font-size: 1.05em;
+$presentation-line-height: 1.35;
+
+/* ---------------------- Code Blocks ---------------------------- */
+$code-color: $uwa-navy;
+$code-bg: $uwa-light-grey;
+$code-font: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+/* ---------------------- Mermaid Configuration ------------------ */
+// Initialize Mermaid with UWA colors
+// Note: This is applied via YAML frontmatter mermaid: theme config
+
+/*-- scss:rules --*/
+
+/* ==================================================================
+   UWA Theme Styles
+   ================================================================== */
+
+/* ---------------------- CSS Variable Overrides (UWA Branding) -- */
+/* Override RevealJS CSS custom properties that Quarto's default   */
+/* theme sets — SCSS variable names don't map directly to these.  */
+:root {
+  --r-heading-color: #{$uwa-blue};
+  --r-main-color: #{$uwa-dark-grey};
+  --r-main-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --r-heading-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --r-background-color: #ffffff;
+}
+
+/* ---------------------- Section Dividers ----------------------- */
+.reveal section[data-background-color="#002147"],
+.reveal section[data-background-color="#{$uwa-navy}"] {
+  h1, h2, h3, p {
+    color: white !important;
+  }
+}
+
+/* ---------------------- Title Slide & Section Break Slides ----- */
+/* Applied when title-slide-attributes: data-background-color: "#27348B" is set */
+/* and when ## Heading {background-color="#27348B"} is used for section breaks  */
+.reveal section[data-background-color="#27348B"] {
+  h1, h2, .title {
+    color: $uwa-gold !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  }
+  h3 {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  p, .subtitle, li {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .author, .date, .institute,
+  .quarto-title-author-name, .quarto-title-affiliation {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+/* ---------------------- Learning Objectives -------------------- */
+.learning-objectives-slide .learning-objectives {
+  background: linear-gradient(135deg, $uwa-light-grey 0%, #ffffff 100%);
+  border-left: 5px solid $uwa-blue;
+  padding: 1.5em;
+  margin: 1em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-objectives strong {
+  color: $uwa-blue;
+  font-size: 1.1em;
+}
+
+/* ---------------------- Two-Column Layouts --------------------- */
+.reveal .columns {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 1.4em;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.reveal .column {
+  flex: 0 1 auto;
+  min-width: 0;
+  width: auto;
+}
+
+.reveal .column ul,
+.reveal .column ol {
+  margin: 0.2em 0 0.3em 1em;
+  padding: 0;
+}
+
+.reveal .column li {
+  margin-bottom: 0.25em;
+  line-height: 1.3;
+}
+
+/* ---------------------- Emphasis & Highlights ------------------ */
+.emphasis {
+  color: $uwa-blue;
+  font-weight: 600;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(39, 52, 139, 0.08) 0%, rgba(85, 119, 187, 0.08) 100%);
+  border: 2px solid $uwa-light-blue;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+  margin: 0.5em 0;
+}
+
+/* ---------------------- Tables --------------------------------- */
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.85em;
+}
+
+.reveal table th {
+  background: $uwa-blue;
+  color: white;
+  padding: 0.75em 1em;
+  text-align: left;
+  font-weight: 600;
+}
+
+.reveal table td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid $uwa-medium-grey;
+}
+
+.reveal table tr:nth-child(even) {
+  background: $uwa-light-grey;
+}
+
+/* ---------------------- Incremental Lists --------------------- */
+.reveal .incremental li {
+  margin-bottom: 0.5em;
+}
+
+/* ---------------------- Callouts ------------------------------- */
+.callout-info {
+  background: linear-gradient(135deg, rgba(85, 119, 187, 0.1) 0%, rgba(85, 119, 187, 0.05) 100%);
+  border-left: 5px solid $uwa-light-blue;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-radius: 4px;
+}
+
+/* ---------------------- Mermaid Diagrams ----------------------- */
+.reveal .mermaid {
+  background: transparent;
+  margin: 1em auto;
+  max-width: 92%;
+  max-height: 65vh;
+  overflow: auto;
+}
+
+.reveal pre.mermaid {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Ensure mermaid containers don't overflow slides */
+.reveal .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------------- Slide Content Overflow Prevention ------ */
+/* Prevent text overflow on content slides */
+.reveal .slides section {
+  overflow: visible;
+  max-height: none;
+  padding-bottom: 0.5em;
+}
+
+.reveal .slides section ul,
+.reveal .slides section ol {
+  margin: 0.2em 0 0.4em 1.1em;
+  padding: 0;
+}
+
+/* Force visible markers and avoid clipping */
+.reveal .slides section ul {
+  list-style: disc outside;
+}
+
+.reveal .slides section ol {
+  list-style: decimal outside;
+}
+
+.reveal .slides section li {
+  margin-bottom: 0.3em;
+  font-size: 0.88em;
+  line-height: 1.3;
+  display: list-item !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.reveal .slides section li::marker {
+  color: $uwa-blue;
+}
+
+.reveal .slides section .columns {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 1.4em;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.reveal .slides section .columns .column {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Tighten heading margins for content density */
+.reveal h2 {
+  margin-top: 0.1em;
+  margin-bottom: 0.3em;
+  line-height: 1.15;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.reveal h3 {
+  margin-top: 0.1em;
+  margin-bottom: 0.25em;
+}
+
+/* Utility Classes */
+.smaller {
+  font-size: 0.85em;
+}
+
+.compact {
+  line-height: 1.4;
+}
+
+.center-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* ---------------------- Diagram Slides ------------------------- */
+.diagram-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.diagram-slide .mermaid {
+  margin: 1.5em auto;
+  max-height: 60vh;
+}
+
+/* ---------------------- Responsive Adjustments ----------------- */
+@media (max-width: 480px) {
+  .reveal .columns {
+    flex-direction: column;
+  }
+  
+  .reveal table {
+    font-size: 0.75em;
+  }
+}
+
+/* ---------------------- Print Styles --------------------------- */
+@media print {
+  .reveal section[data-background-color] {
+    background-color: white !important;
+  }
+  
+  .reveal section[data-background-color] h1,
+  .reveal section[data-background-color] h2,
+  .reveal section[data-background-color] h3 {
+    color: $uwa-blue !important;
+  }
+  
+  .highlight-box {
+    border: 2px solid $uwa-blue;
+    background: white;
+  }
+}
+
+/* ---------------------- Accessibility -------------------------- */
+.reveal a:focus,
+.reveal button:focus {
+  outline: 3px solid $uwa-gold;
+  outline-offset: 2px;
+}
+
+.reveal .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ---------------------- Content Overflow Fix ------------------- */
+.reveal .slides section {
+  overflow: visible;
+  max-height: none;
+  padding-bottom: 0.5em;
+}
+
+.reveal .slides section .slide-content {
+  max-height: none;
+  overflow: visible;
+}

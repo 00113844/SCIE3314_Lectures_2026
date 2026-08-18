@@ -1,0 +1,1147 @@
+topic: "Crop Growth Models"
+auto_figures: true
+subtopics:
+
+  # ── PART 1: WHY MODEL? ───────────────────────────────────────────────────────
+  # ~5 min | 2 slides
+
+  - title: "What Is a Crop Growth Model and Why Do We Need One?"
+    description: >
+      Open by establishing what a crop growth model actually is: a mathematical
+      system of equations that represents, in simplified form, the biological
+      and physical processes governing how a crop captures resources — light,
+      water, nitrogen — and converts them into harvestable biomass and yield,
+      day by day through the growing season. Emphasise the word "simplified":
+      a model is never a complete or literal representation of reality, but a
+      deliberate reduction that retains only the processes necessary to answer
+      the question being asked. Motivate the need for models in three practical
+      ways. First, prediction: a model allows a researcher or agronomist to ask
+      "what would happen if I changed this management decision?" without running
+      an expensive multi-season field trial. Second, understanding: writing the
+      equations that describe a process forces explicit, testable hypotheses
+      about how that process works — a far more rigorous form of understanding
+      than verbal description alone. Third, integration: soil, weather, crop
+      physiology, and management all interact simultaneously in the field; only
+      a model can track all these interactions together in a coherent, auditable
+      framework. Ground this in the WA context: for a 4 000 ha wheatbelt farm,
+      running physical trials across all combinations of variety, sowing date,
+      and nitrogen rate would take decades; a calibrated model can screen
+      thousands of scenarios in minutes.
+
+  - title: "The Simplification Paradox: All Models Are Wrong, But Some Are Useful"
+    description: >
+      Quote statistician George Box's aphorism directly — "All models are
+      wrong, but some are useful" — and use it as the conceptual foundation for
+      the rest of the lecture. Explain what "wrong" means here: every model
+      omits processes (biotic stresses, spatial heterogeneity, microclimate
+      variation), approximates others (respiration as a fixed fraction of
+      biomass, root water uptake as a single layer aggregate), and relies on
+      parameters calibrated from experiments that may not perfectly represent
+      the target environment. This is not a failure; it is a design choice.
+      The art of crop modelling is choosing which simplifications preserve the
+      model's predictive power for the specific question being asked, while
+      discarding the complexity that would not meaningfully improve the answer.
+      Introduce the concept of model fitness for purpose: a simple
+      radiation-use-efficiency model may be entirely sufficient for estimating
+      yield potential at a regional scale, but wholly inadequate for predicting
+      the response to a split nitrogen application on a waterlogging-prone
+      duplex soil. Students leaving this lecture should be able to ask — and
+      answer — the question: "Is this model fit for the purpose I am using it
+      for?", the same epistemological discipline applied to sensors throughout
+      the companion Sensors chapter.
+
+  # ── PART 2: INTELLECTUAL FOUNDATIONS ────────────────────────────────────────
+  # ~10 min | 4 slides
+
+  - title: "Engledow and Wadham (1923): Mechanistic Yield Analysis"
+    description: >
+      Introduce the first paper to systematically decompose cereal crop yield
+      into measurable, multiplicative biological components. Working at Cambridge
+      in the early 20th century, Engledow and Wadham's central insight was that
+      final yield is not an emergent, unpredictable outcome but the product of
+      a sequence of discrete, countable quantities: plants per unit area,
+      tillers per plant, ears (spikes) per tiller, grains per ear, and grain
+      weight. By separating these components and measuring each independently,
+      they could attribute a yield difference between two treatments to a
+      specific biological stage rather than treating the whole crop as a black
+      box. This yield component framework remains central to crop science today
+      — it is the conceptual ancestor of every yield-component chain covered
+      in the companion Crop Spatial Variability chapter and the grain-number
+      logic built into every modern crop growth model including APSIM.
+      Emphasise that this 1923 paper did not yet involve simulation; it was
+      statistical and observational. The leap to dynamic simulation — using
+      equations to project how each component changes through time — would
+      require the next fifty years of physiological and mathematical development.
+
+  - title: "Monteith's Equation: Yield as a Product of Light Interception and Use Efficiency"
+    description: >
+      Introduce what is arguably the most elegant and widely-used quantitative
+      framework in crop science, developed by John Monteith in the 1970s and
+      formalised in his landmark 1977 paper. Monteith's observation, drawn from
+      comparing diverse crops under non-limiting conditions, was that above-ground
+      dry matter accumulation is, to a surprisingly good approximation, a linear
+      function of the cumulative photosynthetically active radiation (PAR) that
+      the crop intercepts over the growing season. This gives the equation:
+      W = ε × Si, where W is biomass, Si is cumulative intercepted PAR, and ε
+      is the radiation use efficiency — a species- and environment-dependent
+      constant with units of g dry matter per MJ intercepted PAR. The critical
+      insight is that ε encodes all the biochemical and physiological complexity
+      of photosynthesis, respiration, and carbon allocation into one tractable
+      empirical parameter. This is the conceptual engine behind every
+      radiation-use-efficiency (RUE) based crop model, including the APSIM wheat
+      and barley modules used in AGRI4401 practicals. Explain the two sub-problems
+      Monteith's equation creates: estimating Si (how much PAR does the canopy
+      intercept?) and estimating ε (how efficiently does this crop use that
+      radiation?), both of which drive the physiological content developed in
+      Parts 5 and 6 of this lecture.
+    figure_id: "Fig-CGM-Monteith"
+    image_prompt: >
+      Two-panel academic diagram. Left panel: a simple diagram showing incoming
+      solar radiation above a crop canopy, with arrows labelled "intercepted PAR
+      (Si)" entering the canopy and "reflected / transmitted" leaving below and
+      above. Right panel: a scatter plot showing the classic Monteith linear
+      relationship between cumulative intercepted PAR (x-axis) and above-ground
+      dry matter (y-axis) for several crops (wheat, barley, maize, potato),
+      each as a separate line with similar slope (epsilon), demonstrating the
+      generality of RUE. UWA blue (#27348B) + gold (#E2B600), academic style,
+      --ar 16:9, --no text.
+
+  - title: "From Leaf to Crop: The First Dynamic Canopy Models"
+    description: >
+      Trace the intellectual step from Monteith's static empirical relationship
+      to the first dynamic, mechanistic simulations of crop growth. In the
+      1960s, researchers including C.T. de Wit in Wageningen and Duncan and
+      colleagues in the United States asked: can we derive the crop-level light
+      response from first principles, starting with the biochemistry of
+      individual leaves and scaling up through the geometry of the canopy?
+      De Wit's approach treated the crop canopy as a mathematical structure of
+      inclined, randomly distributed leaves and computed the fraction of incident
+      radiation absorbed at each canopy depth using geometric probability
+      arguments — the intellectual ancestor of the Beer-Lambert extinction
+      approach developed fully in Part 5 of this lecture. These early models
+      were deterministic, daily time-step simulations: given weather (radiation,
+      temperature) and canopy state (leaf area), compute today's growth
+      increment, update the canopy state, and step forward to tomorrow.
+      This daily-step structure — state variables updated by rate equations
+      each time step — remains the basic computational architecture of every
+      major crop model, including APSIM Next Generation, used five decades later.
+
+  - title: "The Wageningen School, DSSAT, and the Road to APSIM"
+    description: >
+      Map the genealogy of modern crop modelling platforms from their
+      Wageningen roots to the Australian APSIM framework. The Dutch Wageningen
+      group produced the SUCROS and LINTUL model families through the 1970s–80s,
+      establishing the canonical daily-step, soil-plant-atmosphere framework and
+      the modular design where soil water, soil nitrogen, crop phenology, and
+      crop growth are simulated by interacting but separable sub-models.
+      Simultaneously, the Decision Support System for Agrotechnology Transfer
+      (DSSAT) — developed in the United States through a multinational
+      collaboration — established the concept of model portability: a single
+      parameterised model that could be run for any location if given the
+      appropriate weather and soil inputs. The Agricultural Production Systems
+      sIMulator (APSIM) — developed at CSIRO and the Queensland Department of
+      Primary Industries from the late 1980s — adapted and extended these
+      traditions specifically for the challenging Australian agricultural
+      context: highly variable rainfall, acidic and infertile soils, and
+      farming systems dominated by wheat-lupin or wheat-canola rotations.
+      APSIM's distinguishing architectural contribution was making the soil
+      module (soil water, soil nitrogen, soil organic matter) the central
+      shared resource that any crop, pasture, or tree module could draw on —
+      a design decision that made it possible to simulate diverse farming system
+      rotations in a single model run, directly relevant to the mixed
+      enterprise farming systems common across the WA wheatbelt.
+
+  # ── PART 3: MAIN DRIVERS OF CROP GROWTH ─────────────────────────────────────
+  # ~10 min | 4 slides
+
+  - title: "The Five Resource Drivers of Plant Growth"
+    description: >
+      Establish the five physical and chemical inputs that limit plant growth
+      and that every crop model must represent. Carbon dioxide: the substrate
+      for photosynthesis, drawn from the atmosphere at ~420 ppm (2024 level);
+      CO2 concentration is a model input that becomes a variable under climate
+      change simulations, directly relevant to the climate-change scenarios
+      developed in Part 11. Water: the transport medium for nutrients and the
+      coolant for canopy energy balance; its availability in the root zone is
+      the dominant constraint on dryland WA wheatbelt yield in most seasons.
+      Light: the energy source driving photosynthesis; specifically the
+      photosynthetically active radiation band (400–700 nm), introduced from
+      the spectral physics angle in the companion Sensors chapter, here treated
+      as the energy input to Monteith's equation. Temperature: governing the
+      rate of every enzymatic and developmental process, through the thermal
+      time concept developed in Part 4. Nitrogen (and other nutrients): the
+      substrate for chlorophyll, rubisco, and structural proteins; modelled
+      as a dynamic soil-plant balance, developed in Part 7. Emphasise that
+      these five drivers do not operate independently — the actual growth rate
+      at any time step is limited by whichever resource is most constraining,
+      an idea formalised as Liebig's Law of the Minimum and implemented
+      in every major crop model via multiplicative or minimum-function stress
+      factors applied to the potential (unstressed) growth rate.
+
+  - title: "Photosynthetic Pathways: C3, C4, and Their Modelling Implications"
+    description: >
+      Explain the three primary photosynthetic metabolisms at the level of
+      detail needed to understand their contrasting model parameterisations.
+      C3 crops (wheat, barley, canola, lupin, rice, most temperate species):
+      fix carbon directly via the Calvin cycle using Rubisco as the primary
+      carboxylating enzyme; Rubisco also catalyses oxygenation (photorespiration),
+      which wastes up to 25–30% of fixed carbon at current atmospheric CO2 and
+      temperature conditions. This loss is why C3 crops are predicted to benefit
+      substantially from rising atmospheric CO2, since elevated CO2 suppresses
+      oxygenation. C4 crops (maize, sorghum, sugarcane, millet): concentrate
+      CO2 around Rubisco using a biochemical pump in specialised mesophyll
+      cells, essentially eliminating photorespiration; C4 crops therefore have
+      higher radiation use efficiency and water use efficiency than C3 crops at
+      high temperatures and light intensities, but their response to elevated
+      CO2 is more muted. CAM (crassulacean acid metabolism — cacti, pineapple,
+      some agaves): fix carbon at night through a temporal CO2 concentration
+      mechanism, an extreme water-use efficiency adaptation irrelevant to the
+      WA grain farming context but worth naming for completeness. All crops
+      modelled in APSIM for the WA context (wheat, barley, canola, lupin,
+      field pea, oat) are C3, meaning their photosynthetic parameters are drawn
+      from a shared C3 biochemical framework modified by genotype-specific
+      calibration coefficients.
+    figure_id: "Fig-CGM-PhotoPathways"
+    image_prompt: >
+      Side-by-side leaf cross-section diagrams. Left panel "C3 pathway": a
+      single mesophyll cell with CO2 entering directly, Rubisco enzyme icon,
+      Calvin Cycle box, and a small leak arrow labelled "photorespiration 25%".
+      Right panel "C4 pathway": two cell types (mesophyll + bundle sheath)
+      with CO2 concentrated in the bundle sheath by a biochemical pump, Rubisco
+      sheltered in bundle sheath, tiny or absent photorespiration arrow. Small
+      bar chart inset comparing RUE values (g DM / MJ) for C3 vs C4. UWA blue
+      (#27348B) + gold (#E2B600), academic diagram, --ar 16:9, --no text.
+
+  - title: "Net Primary Productivity: Gross Assimilation Minus Respiration"
+    description: >
+      Define the two sides of the plant carbon budget that every crop model
+      must close on a daily basis. Gross Primary Productivity (GPP): the total
+      carbon fixed by photosynthesis before any respiratory costs; equivalent
+      to Monteith's (ε × Si) at the canopy level. Growth respiration: the
+      metabolic cost of synthesising new plant tissue from photosynthate —
+      producing the chemical bonds and structural polymers that constitute a
+      new leaf cell, root segment, or grain endosperm cell. Growth respiration
+      cost varies by tissue composition: synthesising protein costs more
+      ATP per gram than synthesising carbohydrate, and synthesising lipid
+      (e.g., canola seed oil) more still — the reason APSIM's canola module
+      uses a different, lower radiation use efficiency than its wheat module
+      when expressed in terms of grain yield: part of the captured carbon
+      is invested in the higher-energy-content oil. Maintenance respiration:
+      the continuous metabolic cost of maintaining existing tissue integrity —
+      repairing proteins, maintaining ion gradients, and powering turnover
+      — proportional to tissue biomass and increasing strongly with temperature,
+      which is why warm nights can reduce net carbon accumulation significantly
+      in a crop that is photosynthesising well during the day. Net Primary
+      Productivity (NPP) = GPP − total respiration: the carbon actually
+      available for new growth and yield. In APSIM, this balance is enforced
+      daily, and the resulting NPP is then partitioned among organs as
+      developed in Part 8.
+
+  - title: "Limiting Factors and Stress Scaling: From Potential to Actual Growth"
+    description: >
+      Explain how crop models move from a theoretical potential growth rate
+      (calculated as if all resources are optimal) to an actual growth rate
+      reduced by whatever limiting factor is currently most constraining.
+      The standard approach uses dimensionless stress factors — values between
+      0 (complete inhibition) and 1 (no stress) — that scale the potential
+      rate down according to the magnitude of each stress. Water stress factor:
+      typically derived from the ratio of actual to potential transpiration,
+      itself a function of soil water supply and atmospheric demand; reduces
+      both stomatal conductance (hence CO2 supply and assimilation) and leaf
+      expansion (directly reducing canopy growth rate). Nitrogen stress factor:
+      derived from the ratio of actual plant nitrogen concentration to a critical
+      (optimal) concentration defined for each growth stage; reduces
+      photosynthetic capacity (since Rubisco is the largest nitrogen pool in
+      the leaf) and leaf expansion. Temperature stress factor: a non-linear
+      response function with a defined base, optimum, and maximum temperature;
+      reduces the rate of every process — germination, leaf emergence,
+      phenological progression, and grain filling — when temperature falls
+      outside the optimum range. These stress factors interact multiplicatively
+      or as minima depending on the model and process, and their collective
+      action is what produces the difference between the yield potential achievable
+      in a perfect season and the attainable yield delivered in the average WA
+      wheatbelt year.
+
+  # ── PART 4: CROP PHENOLOGY AND THERMAL TIME ──────────────────────────────────
+  # ~8 min | 3 slides
+
+  - title: "Staging the Crop: The Zadoks Scale and the Role of Development Codes"
+    description: >
+      Introduce crop growth staging systems as the developmental grammar that
+      crop models use internally and that agronomists use in the field to
+      synchronise observations with model predictions. The Zadoks decimal code
+      (0–99), developed by the Dutch plant pathologist Jan C. Zadoks in 1974,
+      provides a two-digit code where the tens digit describes the principal
+      growth stage (0 germination, 1 seedling, 2 tillering, 3 stem elongation,
+      4 booting, 5 heading/anthesis, 6 anthesis, 7–9 grain fill and maturity)
+      and the units digit subdivides each stage — a framework detailed further
+      in the companion Crop Spatial Variability chapter in the context of
+      timing agronomic interventions. In a crop model, developmental stage is
+      tracked as a continuous internal state variable that progresses from 0
+      at germination toward maturity as thermal time accumulates. The Zadoks
+      codes provide a mapping from this internal state to field-observable
+      developmental events — a critical bridge for model validation, since
+      an agronomist can visit a field, identify the Zadoks stage, and directly
+      compare against the model's prediction of that same stage on that date.
+      APSIM uses its own internal stage numbering (1 = sowing, 2 = germination,
+      ... 11 = harvest ripe) but outputs can be cross-referenced to Zadoks codes
+      for comparison with field data from WA GRDC trial datasets.
+    figure_id: "Fig-CGM-Zadoks"
+    image_prompt: >
+      Horizontal developmental timeline for wheat from sowing to harvest.
+      Divided into 10 labelled phases with representative plant drawings above
+      each phase showing the transition from seed to seedling, tillering,
+      stem elongation, booting, heading, flowering, and grain fill stages.
+      Each phase labelled with its Zadoks code range (Z00-Z09, Z10-Z29, etc.)
+      and a corresponding APSIM stage number below. UWA blue (#27348B) for
+      the timeline bar with gold (#E2B600) stage-transition markers, academic
+      infographic style, --ar 16:9, --no text.
+
+  - title: "Thermal Time: The Model's Internal Clock"
+    description: >
+      Explain why crop models track development in units of accumulated
+      heat — thermal time, also called growing-degree-days (GDD) — rather
+      than calendar days. The rate of every developmental process in a plant
+      (germination, leaf emergence, tiller initiation, anthesis, grain maturity)
+      is governed primarily by temperature rather than elapsed time: at higher
+      temperatures, the same developmental milestone is reached in fewer
+      calendar days. Thermal time accumulates as the daily sum of the average
+      temperature above a species-specific base temperature — for wheat,
+      the base temperature for vegetative development is approximately 0 °C,
+      meaning every day above 0 °C contributes to developmental progression.
+      A developmental phase (e.g., germination to emergence) has a fixed thermal
+      time requirement; once that requirement is met, the model advances the
+      crop to the next phase regardless of how many calendar days have elapsed.
+      The practical consequence: in a warm WA wheatbelt autumn, a crop sown in
+      late April may reach anthesis on the same calendar date as one sown in
+      early May if the May-sown crop experienced warmer daily temperatures,
+      because both accumulated the same total thermal time to anthesis despite
+      different sowing dates. This thermal-time logic is exactly what makes
+      APSIM's predictions transferable across different seasons and locations
+      with different temperature regimes — a necessary property for the scenario
+      analyses developed in Part 10.
+
+  - title: "Photoperiod and Vernalization: Seasonal Cues Beyond Temperature"
+    description: >
+      Extend the phenology framework beyond thermal time to the two additional
+      environmental cues that modulate developmental rate in temperate cereals.
+      Photoperiod sensitivity: many wheat and barley varieties are long-day
+      plants that will not progress from vegetative to reproductive development
+      (floral initiation) until day length exceeds a critical photoperiod
+      threshold — a mechanism that prevents premature heading during short
+      winter days. Photoperiod sensitivity is quantified in APSIM as a parameter
+      that reduces the developmental rate per hour of day length below the
+      critical threshold. WA context: the relatively mild WA winters and
+      the desire to sow early (May) and flower late enough to avoid spring
+      frost but early enough to fill grain before the terminal drought
+      mean that the photoperiod sensitivity and vernalisation requirement
+      of a variety are critical breeding targets — explaining why WA uses
+      distinct variety sets from eastern Australia. Vernalisation: the need
+      for a period of cold temperature exposure to fulfil a "cold requirement"
+      before floral initiation can occur; relevant for winter cereal varieties
+      but less commonly a dominant constraint in WA's mild wheatbelt winters
+      compared to colder cropping regions. Both sensitivity parameters are
+      variety-specific genetic coefficients in APSIM's wheat and barley
+      modules, and their calibration is what differentiates the model's
+      performance between, for example, a Mace (low sensitivity) and a
+      long-season variety such as Scepter (higher sensitivity) under the
+      same WA climate file.
+
+  # ── PART 5: CANOPY DEVELOPMENT AND LIGHT INTERCEPTION ───────────────────────
+  # ~10 min | 4 slides
+
+  - title: "Leaf Area Index: The Bridge Between Plant and Canopy"
+    description: >
+      Formally introduce Leaf Area Index (LAI) as the model's primary state
+      variable linking individual-plant physiology to canopy-level processes —
+      the same variable introduced from the biophysical measurement angle in
+      the companion Crop Spatial Variability chapter, here treated as a dynamic
+      state variable that the model predicts rather than measures. LAI is driven
+      upward by leaf emergence (governed by the phyllochron and thermal time,
+      next slide) and leaf expansion (governed by temperature, water status, and
+      nitrogen), and driven downward by leaf senescence (governed by shading of
+      lower leaves, nitrogen remobilisation, and terminal drought). At low LAI
+      (early crop), much of the incoming radiation hits bare soil and is wasted;
+      as LAI increases toward 3–5, light interception efficiency approaches a
+      practical maximum. The model's task is to predict LAI accurately at each
+      time step because it directly drives intercepted radiation (Si in Monteith's
+      equation) and therefore biomass accumulation. Error in simulated LAI
+      propagates directly into error in simulated biomass and yield, making LAI
+      calibration — against measurements from AGRI4401 field experiments —
+      the first and most important validation step when setting up an APSIM
+      simulation for a new site or variety.
+
+  - title: "The Phyllochron and Leaf Emergence Dynamics"
+    description: >
+      Define the phyllochron as the thermal time interval between the appearance
+      of successive leaves on the main stem — introduced conceptually in the
+      companion Crop Spatial Variability chapter in the context of canopy
+      closure timing, here derived from its role in driving the model's LAI
+      simulation. In APSIM's wheat module, the phyllochron is a variety-specific
+      parameter (typically 95–110 degree-days per leaf for most WA wheat
+      varieties), and a new leaf is added to the simulated canopy every time
+      this thermal time increment accumulates. Each new leaf has an initial area
+      determined by a leaf size function (leaf number on the main stem, modified
+      by environmental conditions) and expands toward a potential size over
+      the subsequent phyllochron. The total number of leaves initiated before
+      the model triggers floral initiation determines the final leaf number of
+      the main stem, which in turn constrains the total area that can ever
+      be produced — the developmental architecture that connects phenology
+      (Part 4) to canopy dynamics (this Part). Explain why this mechanistic,
+      leaf-by-leaf approach is more powerful than simply prescribing an LAI
+      trajectory: because each leaf's size and expansion rate responds to its
+      own local temperature and water status at the time it was expanding,
+      the model can reproduce the divergent canopy trajectories seen between
+      a well-watered and a drought-stressed crop from the same variety,
+      sown on the same date, without needing a different parameterisation
+      for each condition.
+
+  - title: "Light Interception: Beer-Lambert and the Extinction Coefficient"
+    description: >
+      Derive the Beer-Lambert law as it is applied to crop canopy light
+      interception, the quantitative link between LAI and the intercepted
+      PAR term Si in Monteith's equation. By analogy with the attenuation
+      of light through an absorbing medium (first described by Pierre Bouguer
+      in 1729, and later formalised by Beer and Lambert), the fraction of
+      incoming radiation that penetrates to the base of a crop canopy follows:
+      τ = exp(−k × LAI), where τ is the transmitted fraction and k is the
+      canopy extinction coefficient — a dimensionless quantity that encodes
+      the canopy architecture (leaf angle distribution, clumping, and row
+      spacing). The intercepted fraction is therefore 1 − exp(−k × LAI).
+      Extinction coefficient values for WA grain crops typically range from
+      approximately 0.4 (erect, narrow-leaved barley or wheat with high
+      row spacing) to 0.65 (more spreading canopies or faba bean with
+      horizontal leaves), directly connecting to the leaf angle distribution
+      concept introduced in the companion Crop Spatial Variability chapter.
+      Once LAI is known and k is parameterised, Si for any given day is
+      calculated as the incoming PAR that day multiplied by the intercepted
+      fraction — a single line of mathematics that encodes all the canopy
+      geometry into one tractable number.
+    figure_id: "Fig-CGM-BeerLambert"
+    image_prompt: >
+      Diagram showing incoming PAR rays entering a crop canopy from above.
+      As rays pass through successive LAI layers, progressively fewer reach
+      the next layer, illustrated as decreasing arrow density through three
+      labelled layers (LAI 1, LAI 2, LAI 3). At the base, a small bar chart
+      shows the transmitted fraction (tau) versus LAI for k = 0.45 and
+      k = 0.65, demonstrating that interception saturates at LAI ~4-5 for
+      both k values but more steeply for higher k. Formula tau = exp(-k x LAI)
+      shown as a text element. UWA blue (#27348B) canopy shading with gold
+      (#E2B600) ray arrows, academic diagram, --ar 16:9, --no text.
+
+  - title: "Canopy Expansion, Senescence, and Their Environmental Modifiers"
+    description: >
+      Examine the two processes that govern the upward and downward trajectories
+      of LAI across the growing season, and the environmental modifiers that
+      create the distinctive LAI curves seen for different seasons in WA.
+      Canopy expansion: leaf emergence rate (phyllochron, previous slide)
+      multiplied by individual leaf size, itself reduced by water stress via
+      turgor-dependent cell expansion mechanisms, by nitrogen stress via reduced
+      cell wall extensibility, and by extreme temperatures above ~32 °C or
+      below ~0 °C. APSIM implements water stress effects on leaf expansion
+      through a leaf expansion stress factor that is more sensitive than the
+      corresponding photosynthesis stress factor — meaning leaf expansion is
+      often the first visible symptom of mild drought stress, before
+      photosynthesis itself is significantly reduced. Canopy senescence: the
+      progressive death of lower, shaded leaves is driven by the internal
+      nitrogen demand of younger, upper leaves stripping nitrogen from older
+      tissue; terminal senescence of the entire canopy is triggered by
+      physiological maturity (thermal time to maturity) and accelerated by
+      terminal drought or heat stress after anthesis. The result in a typical
+      WA dryland wheat season is an LAI trajectory that rises steeply through
+      the vegetative phase, reaches a peak near anthesis (Zadoks Z5x) of
+      typically 3–5 m² m⁻², then declines over the grain-fill period as
+      the flag leaf senesces and nitrogen is remobilised into grain — a
+      trajectory whose exact shape is the primary signature that distinguishes
+      a good year from a drought-stressed year in APSIM output.
+
+  # ── PART 6: CARBON ASSIMILATION AND RESPIRATION ──────────────────────────────
+  # ~8 min | 3 slides
+
+  - title: "The RUE Approach: Simple, Robust, and Widely Used"
+    description: >
+      Present the radiation use efficiency (RUE) approach as the dominant
+      method for simulating biomass accumulation in operational crop models
+      including APSIM, explaining both its elegance and its limitations.
+      The implementation is direct: daily above-ground biomass increment =
+      RUE × daily intercepted PAR. RUE is a variety-specific parameter
+      calibrated against field biomass measurements under non-limiting
+      conditions; typical values for WA wheat are 1.0–1.3 g DM MJ⁻¹ intercepted
+      PAR. The simplicity is the strength: a single empirical parameter
+      integrates all the leaf-level biochemistry of photosynthesis, respiration,
+      and carbon allocation. The limitation, equally important to state: RUE is
+      not truly constant. It declines under water stress (as stomatal closure
+      restricts CO2 supply) and nitrogen stress (as reduced Rubisco
+      concentration limits carboxylation capacity), and these declines are
+      handled in APSIM by multiplying the potential RUE by the stress factors
+      introduced in Part 3. It also varies with temperature (affecting the
+      proportion of GPP lost to maintenance respiration, as developed in Part 3).
+      Despite these approximations, RUE-based models calibrated from field data
+      under typical WA conditions predict yield with errors comparable to more
+      mechanistic photosynthesis models in most practical scenarios, which is
+      why APSIM's wheat module uses it rather than a full rubisco-kinetics
+      implementation.
+    figure_id: "Fig-CGM-RUE"
+    image_prompt: >
+      Vertical flow diagram showing the RUE approach: a sun icon providing
+      "Incoming PAR" at the top, multiplied by "Intercepted fraction
+      (1 - exp(-k x LAI))" to give "Intercepted PAR (Si)", then multiplied
+      by "RUE (g DM / MJ)" to give "Daily biomass increment". A parallel
+      column shows stress factors (water stress, N stress, temperature stress)
+      as multipliers reducing RUE from its potential value. At the bottom
+      the biomass increment enters a "Partitioning" box distributing it among
+      root, stem, leaf, and grain icons. UWA blue (#27348B) + gold (#E2B600),
+      clean academic flow diagram, --ar 16:9, --no text.
+
+  - title: "Growth Respiration, Maintenance Respiration, and the Carbon Budget"
+    description: >
+      Explain how APSIM enforces a daily carbon balance by accounting for both
+      sources and sinks of assimilate. Growth respiration represents the
+      metabolic cost of converting photosynthate (sucrose) into structural
+      tissue — stems, leaves, roots, grain. The respiratory cost per gram of
+      tissue synthesised varies with tissue composition: protein synthesis costs
+      approximately 2.37 g glucose per gram of protein; carbohydrate (starch)
+      synthesis approximately 1.25 g glucose per gram; lipid synthesis
+      approximately 3.0 g glucose per gram. This composition dependence is
+      why APSIM uses tissue-composition-specific conversion efficiencies —
+      the canola module, with its high-lipid seed, has a substantially lower
+      yield-expressed RUE than the wheat module expressed at identical
+      intercepted-radiation levels. Maintenance respiration accounts for the
+      continuous energy cost of sustaining existing tissue — maintaining
+      membrane integrity, ion gradients, and protein turnover — and is
+      implemented in APSIM as a temperature-dependent fraction of total
+      live biomass. In a cold WA winter, maintenance respiration is low
+      and more of the assimilate is available for growth; in a warm La Niña
+      spring with high night temperatures, maintenance respiration can consume
+      a meaningful fraction of the day's assimilation, reducing net carbon
+      gain even when daytime photosynthesis is proceeding well.
+
+  - title: "Diurnal Dynamics: When Daily Averages Hide the Physiological Reality"
+    description: >
+      Address a subtle but important limitation of daily-time-step models —
+      the fact that many critical physiological responses are non-linear with
+      respect to temperature, humidity, and radiation, meaning that computing
+      a response based on the daily average input can produce a systematically
+      biased result compared to integrating the true, hour-by-hour response.
+      The most agronomically significant example is heat stress on pollen
+      viability: wheat pollen is irreversibly damaged above approximately
+      35 °C for exposures exceeding 30 minutes. A day with maximum temperature
+      38 °C and minimum 15 °C has a daily average of ~26.5 °C — well within
+      the apparent "safe" range for wheat growth — yet the hours above 35 °C
+      could be sufficient to cause partial sterility and a significant yield
+      reduction. A daily-time-step model using average temperature would miss
+      this entirely unless it explicitly estimates the diurnal temperature
+      curve from daily minimum and maximum, identifies the hours above the
+      threshold, and applies a fertility reduction accordingly. APSIM includes
+      an optional heat-stress pollen-sterility algorithm that uses a fitted
+      diurnal temperature curve (a truncated sine wave between minimum and
+      maximum) to estimate heat degree hours above 35 °C during the anthesis
+      window — directly relevant to the increasing frequency of late-October
+      heat events coinciding with WA wheat anthesis documented in climate
+      trend analyses.
+
+  # ── PART 7: WATER AND NITROGEN DYNAMICS ─────────────────────────────────────
+  # ~10 min | 4 slides
+
+  - title: "The Soil Water Balance: Infiltration, Drainage, and Transpiration"
+    description: >
+      Explain how APSIM's SoilWater module simulates the soil water balance
+      as the daily accounting of water inputs and outputs across a layered
+      soil profile — the same physical processes developed mechanically
+      in the companion Soil and Water Spatial Variability chapter, here
+      implemented as a computational simulation. The soil profile is divided
+      into layers (typically 10–15 cm thick) down to 1.5–2 m; each layer
+      has three defined water contents: saturated (SAT), field capacity (DUL
+      — Drained Upper Limit in APSIM terminology), and air-dry (the lower
+      limit below which evaporation cannot continue). Daily inputs: rainfall
+      and irrigation are partitioned between runoff (computed using a
+      runoff-curve-number approach) and infiltration. Within the profile, water
+      drains by gravity from layers above DUL toward deeper layers using a
+      cascade or flow-rate algorithm. Transpiration is the crop's demand for
+      water, computed as the minimum of atmospheric demand (reference ET scaled
+      by crop cover) and soil supply (a root water uptake function summed
+      across all rooted layers). The direct connection to precision agriculture:
+      the plant-available water capacity (PAWC = DUL − LL15, where LL15 is
+      the lower limit of extraction, equivalent to permanent wilting point) for
+      each soil layer is the single most important soil parameter governing
+      APSIM's yield predictions — and getting PAWC right for each soil type
+      in a WA paddock's zones is the primary soil-parameterisation challenge
+      when building a site-specific APSIM simulation for AGRI4401 practicals.
+    figure_id: "Fig-CGM-WaterBalance"
+    image_prompt: >
+      Soil profile diagram (vertical cross-section) with five labelled layers.
+      At the top: rain and irrigation arrows entering. Runoff arrow leaving the
+      surface. Each layer shows three horizontal lines labelled SAT, DUL, and
+      LL15, with current water content shown as a blue shaded fill between LL15
+      and DUL. Drainage arrows between layers (bypassing below DUL). Root
+      density icon decreasing with depth. Transpiration arrow leaving the canopy
+      above. UWA blue (#27348B) water fill with gold (#E2B600) threshold
+      labels, academic cross-section diagram, --ar 16:9, --no text.
+
+  - title: "How Water Stress Modifies Crop Processes in APSIM"
+    description: >
+      Explain the sequence of crop processes affected by soil water deficit,
+      in order of their sensitivity — this sequence determines which symptoms
+      appear first in a model simulation of a drying season, and whether
+      those symptoms match field observation is a key validation test.
+      Leaf expansion: the most sensitive process, reduced by even mild soil
+      water deficit; implemented in APSIM through the leaf expansion water
+      stress factor (SWdef_expan), which responds to water supply-to-demand
+      ratio. Transpiration-limited photosynthesis: as stomata close to reduce
+      transpirational water loss, CO2 supply to the mesophyll is reduced,
+      decreasing the effective RUE; implemented through the photosynthesis
+      water stress factor (SWdef_photo). Phenological acceleration: under
+      severe water stress, APSIM can accelerate senescence and maturity —
+      the "drought escape" response seen in WA crops that ripen earlier in
+      a dry spring, sacrificing final grain number and size to complete
+      reproductive development before available water is exhausted. Tillering:
+      water stress during the tillering phase can reduce tiller number below
+      the potential set by phyllochron logic, directly reducing the potential
+      spike number component of yield. Understanding this hierarchy — expansion
+      stress before photosynthesis stress before phenological acceleration —
+      is what allows an APSIM simulation to reproduce the characteristic
+      "drought profile" of a WA season: normal vegetative establishment,
+      reduced post-anthesis LAI, early maturity, and reduced grain size.
+
+  - title: "Nitrogen Dynamics: The Soil-Plant Nitrogen Balance"
+    description: >
+      Explain how APSIM's SoilNitrogen module tracks nitrogen through the
+      major soil pools and plant demand, integrating the same nitrogen cycle
+      processes developed from the agronomic angle in the companion Nutrient
+      Spatial Variability chapter. Soil organic nitrogen is partitioned among
+      three pools with different turnover rates: a labile microbial biomass
+      pool (fast), a slower humus pool, and a resistant pool (inert over
+      agronomic timescales). Mineralisation — the microbial decomposition of
+      organic matter releasing ammonium — is simulated as a temperature-
+      and moisture-dependent rate constant applied to each pool; in the WA
+      wheatbelt, warm, moist post-harvest soils in early autumn can produce
+      a pulse of mineralised nitrogen, which may leach to depth before the
+      crop establishes. Nitrification: APSIM converts ammonium to nitrate
+      as a first-order rate dependent on temperature, moisture, and pH.
+      Denitrification: anaerobic loss of nitrate as N₂ and N₂O, activated
+      only when the soil layer exceeds a threshold water content — the
+      waterlogging-denitrification interaction introduced in the companion
+      Soil and Water chapter. Plant nitrogen uptake: simulated as the minimum
+      of soil supply (active mass flow and diffusion to roots) and crop demand
+      (the nitrogen required to maintain plant tissue concentrations above
+      the critical minimum). Fertiliser inputs in the management script are
+      added directly to the ammonium or nitrate pools at the specified depth
+      and date, making nitrogen timing scenarios — the core of AGRI4401's
+      nitrogen practical — straightforward to set up and compare.
+
+  - title: "Nitrogen Stress and Its Effects on Canopy and Yield"
+    description: >
+      Connect the nitrogen balance simulation to the crop physiological
+      responses it triggers when plant nitrogen supply falls below demand.
+      The nitrogen concentration in each plant organ (leaf, stem, grain) is
+      tracked against a defined critical concentration — the minimum required
+      for full physiological function — and a structural (minimum) concentration
+      below which the organ cannot function at all. When actual concentration
+      falls between the critical and structural thresholds, a nitrogen stress
+      factor is computed and applied to both leaf expansion (reducing canopy
+      size) and photosynthesis (reducing effective RUE), exactly paralleling
+      the water stress factors from the previous slide. The agronomic implication
+      is significant: nitrogen stress at anthesis — the period of maximum nitrogen
+      demand as grain protein is being accumulated — is doubly damaging because
+      it simultaneously reduces the flag-leaf photosynthetic capacity and
+      forces premature remobilisation of nitrogen from vegetative tissue,
+      accelerating canopy senescence and truncating the grain-fill period.
+      APSIM captures this by tracking nitrogen remobilisation from senescing
+      leaves as an additional supply pathway to the grain. The practical APSIM
+      output: the "nitrogen stress" time series in a simulation output file is
+      one of the most diagnostically useful variables — a nitrogen stress
+      index persistently above 0.2 during grain fill in a model scenario
+      indicates the fertiliser rate being simulated is genuinely insufficient
+      for that soil-season combination, a quantitative signal that maps directly
+      to the fertiliser rate optimisation question in WA broadacre management.
+
+  # ── PART 8: ASSIMILATE PARTITIONING AND YIELD ────────────────────────────────
+  # ~8 min | 3 slides
+
+  - title: "Source-Sink Dynamics: Competition Between Organs"
+    description: >
+      Explain the source-sink framework that governs how daily assimilate is
+      distributed among competing plant organs — a conceptually central and
+      practically difficult aspect of crop modelling. "Source" refers to
+      the supply of photosynthate from current assimilation and from remobilisation
+      of stored reserves; "sinks" are the organs actively demanding carbohydrate
+      for growth — roots, stems, leaves, and reproductive organs. In practice,
+      the balance between sources and sinks shifts dramatically through the
+      season: during vegetative growth, demand from expanding leaves and roots
+      roughly matches or exceeds supply; from anthesis onward, the dominant
+      sink becomes the developing grain, which exerts a pull strong enough that
+      the crop accelerates mobilisation of stem carbohydrate reserves accumulated
+      during the pre-anthesis "bank-filling" phase. In APSIM, partitioning is
+      implemented as a set of priority rules: grain demand is calculated first
+      based on potential grain growth rate; if current supply (RUE × Si) is
+      insufficient to meet grain demand, the model draws down stem reserves;
+      if that buffer is exhausted, grain growth is reduced. This reserve-buffer
+      mechanism is what allows the model to simulate the "compensatory" grain
+      filling that WA farmers observe when a late-anthesis dry spell is
+      followed by a brief period of favourable conditions before final maturity.
+    figure_id: "Fig-CGM-SourceSink"
+    image_prompt: >
+      Diagram of a stylised wheat plant showing the source-sink partitioning
+      logic across two growth stages. Left panel (vegetative): arrows
+      distributing daily assimilate from a central "Source pool" to root,
+      leaf, and stem icons, with proportions shown as labelled flow widths.
+      Right panel (grain-filling): dominant arrow from source to "Grain" icon,
+      a secondary arrow from "Stem reserves" to grain (labelled "remobilisation"),
+      small residual arrows to roots and leaves. Stress-reduced source shown
+      as a narrower input arrow in the right panel. UWA blue (#27348B) + gold
+      (#E2B600), clean academic diagram, --ar 16:9, --no text.
+
+  - title: "Reproductive Growth: Setting the Yield Components in the Model"
+    description: >
+      Detail how APSIM simulates the determination of the individual yield
+      components, connecting the model's internal state directly back to the
+      Engledow-and-Wadham decomposition from Part 2. Grain number per unit
+      area: the most yield-critical component, set during the critical window
+      from roughly 30 days before to 10 days after anthesis (Zadoks Z30–Z70)
+      by the assimilation rate during that window multiplied by a grain-set
+      coefficient — the number of grains initiated per unit of accumulated
+      biomass. In APSIM this is determined by "fruiting sites per stem" and
+      the stem number surviving to anthesis. This is the stage where both
+      water stress (reducing assimilation and hence the carbohydrate available
+      per grain site) and heat stress (reducing pollination success as developed
+      in Part 6's diurnal section) exert their most irreversible damage.
+      Grain size (thousand grain weight): determined during the grain-fill
+      period by the supply rate of assimilate per grain, bounded by a genotype-specific
+      maximum grain weight. In WA's terminal drought environment, the grain-fill
+      period is often cut short by soil water exhaustion, meaning grain size
+      is frequently below the genetic potential — the model reproduces this
+      by terminating grain fill when available water falls to zero in the root
+      zone, consistent with the field-observed pattern of small, shrivelled
+      grain in dry springs.
+
+  - title: "Grain Filling Under Stress: The Terminal Drought Penalty"
+    description: >
+      Use the grain-fill phase as the climactic practical illustration of the
+      whole modelling framework developed across this lecture. In a typical
+      WA Mediterranean cropping season, available soil water is exhausted
+      sometime between mid-September and late October; from that point, the
+      crop must fill grain entirely on stem reserves and whatever assimilation
+      the senescing canopy can still provide. An APSIM simulation captures this
+      transition explicitly: the water stress factor rises sharply, the
+      photosynthesis rate collapses toward zero, the model draws down the stem
+      reserve buffer, and grain growth slows and eventually stops when reserves
+      are exhausted. The simulated grain weight at the end of this process —
+      multiplied by the previously determined grain number — is the simulated
+      yield. What a model uniquely reveals here that field observation alone
+      cannot: the relative contribution of pre-anthesis stored reserves versus
+      post-anthesis assimilation to final grain weight, and how this ratio
+      shifts between a wet year (more post-anthesis contribution, higher yield)
+      and a dry year (more reliance on reserves, lower yield, lower protein
+      concentration). This pre/post-anthesis carbon budget partition is a
+      direct, quantitative output of the APSIM simulation — not an estimate
+      a farmer or agronomist can make from visual observation — and represents
+      the core "insight beyond observation" value that crop models provide.
+
+  # ── PART 9: APSIM NEXT GENERATION — ARCHITECTURE AND OPERATION ──────────────
+  # ~10 min | 4 slides
+
+  - title: "Inside APSIM Next Generation: Modular Architecture and the Simulation Engine"
+    description: >
+      Describe the software architecture of APSIM Next Generation (APSIM NG),
+      the version used in all AGRI4401 practicals, explaining how its design
+      choices reflect the biological understanding developed in this lecture.
+      APSIM NG is structured as a collection of interacting modules, each
+      responsible for one component of the farming system: the Clock module
+      drives the simulation forward one day at a time; the Weather module reads
+      daily weather data (maximum and minimum temperature, rainfall, radiation,
+      and optionally vapour pressure deficit and wind) from a .met file;
+      the SoilWater module manages the layered water balance; the SoilNitrogen
+      module manages the nitrogen cycle; the crop module (e.g., Wheat, Barley,
+      Canola) contains all the plant physiology developed in Parts 4–8 and
+      reads water and nitrogen supply from the shared soil modules on each
+      day step. The Manager module allows the user to write management scripts
+      in C# that apply fertiliser, irrigation, tillage, and harvest events
+      conditionally on simulated crop or soil state — the mechanism that makes
+      scenario analysis possible. All modules communicate through a shared
+      data bus (the "Shared State"), so the crop module can query the current
+      soil water content or nitrogen pool at any time step without knowing
+      the internal implementation of those modules — the clean separation of
+      concerns that makes it straightforward to swap, for example, the cascading
+      water model for a more physically-based Richards-equation model without
+      changing the crop module.
+    figure_id: "Fig-CGM-APSIMArch"
+    image_prompt: >
+      Block diagram of APSIM Next Generation architecture. A central "Clock"
+      box at the top drives a daily step arrow. Five interconnected module
+      boxes arranged around a central "Shared State" bus: "Weather" (with
+      .met file icon), "SoilWater" (soil layer stack icon), "SoilNitrogen"
+      (N-cycle icon), "Wheat / Barley / Canola crop module" (plant icon),
+      "Manager script" (code icon). Bidirectional arrows between each module
+      and the shared state bus. Output files icon at the bottom collecting
+      daily simulation results. UWA blue (#27348B) module boxes with gold
+      (#E2B600) arrows, academic software architecture diagram, --ar 16:9, --no text.
+
+  - title: "The .apsimx File: Simulations, Zones, and Management Scripts"
+    description: >
+      Explain the .apsimx file as the primary deliverable and configuration
+      artifact of an APSIM NG simulation — directly relevant to students
+      debugging the AGRI4401 nitrogen practical. The .apsimx file is a
+      structured XML/JSON document (editable in the APSIM NG graphical
+      user interface or directly in any text editor) that defines a hierarchy:
+      the Simulations node contains one or more Simulation nodes, each
+      representing one scenario run; within each simulation, a Field node
+      contains a Zone, which aggregates the soil profile, the weather linkage,
+      the crop manager scripts, and all the soil and crop module parameterisations.
+      Multiple simulations sharing the same soil and weather but differing only
+      in management (e.g., different nitrogen rates and timings) can be organised
+      under a Simulations node and run in a single batch, producing one output
+      report per simulation — the standard structure for a nitrogen rate ×
+      timing factorial experiment. The Report module, also a child of the
+      Zone, specifies which variables are written to the output file and at
+      what frequency: daily (for detailed time-series analysis of LAI, soil
+      water, nitrogen), at harvest only (for yield summary tables), or at
+      user-defined events. Common student errors in practical sessions arise
+      from mismatched soil parameter units, incorrect clock start/end dates,
+      or report frequency set to "end" when daily output is needed — each
+      a straightforward fix once the file structure is understood.
+
+  - title: "Climate Files, Soil Profiles, and Crop Parameterisation"
+    description: >
+      Detail the three key data inputs that must be correctly configured
+      before an APSIM simulation can produce meaningful results, and describe
+      the WA-specific sources for each. Climate files: APSIM uses the
+      .met format — a tab-delimited plain-text file with daily values of
+      maximum temperature, minimum temperature, rainfall, and solar radiation,
+      preceded by a header specifying the latitude and longitude of the site.
+      For WA locations, historical climate data can be obtained from SILO
+      (Scientific Information for Land Owners, a Bureau of Meteorology product)
+      via the APSIM NG climate downloader or as pre-formatted .met files
+      through the APSIM online interface — covering every day from 1889 to the
+      present for any Australian 5 km grid cell. Soil profiles: APSIM requires
+      a full profile from the surface to the deepest rootable depth, specifying
+      for each layer the texture-related parameters (SAT, DUL, LL15 for water;
+      bulk density for nitrogen), organic carbon and pH for initialising the
+      nitrogen pools, and the crop lower limits (LL_wheat, LL_barley) which
+      are crop-specific and must be calibrated from local field measurements.
+      Landcare Research, DPIRD WA, and the APSIM NG SWIM database provide
+      starting-point profiles for major WA soil types but local calibration
+      against measured PAWC remains essential. Crop parameterisation: APSIM
+      ships with cultivar files for major WA varieties (Mace, Scepter, Cobra,
+      Calingiri for wheat; Hindmarsh, Bass for barley; TT varieties for canola)
+      that specify genotype-specific coefficients including phyllochron,
+      photoperiod sensitivity, vernalisation requirement, and grain-set
+      parameters, calibrated from WA GRDC trial data.
+
+  - title: "Running APSIM Outputs: Reading, Interpreting, and Validating Results"
+    description: >
+      Walk through the practical workflow of running APSIM NG and interpreting
+      the resulting output database (.db file, queryable via SQLite or directly
+      in Excel, R, or Python using the APSIM R package or apsimx Python library).
+      Key daily output variables to request in the Report module and understand
+      for the nitrogen practical: yield (g m⁻²), biomass (total above-ground
+      dry matter g m⁻²), LAI (m² m⁻²), SWC (soil water content by layer, mm),
+      NO3 (soil nitrate by layer, kg N ha⁻¹), N_stress_photo (photosynthesis
+      nitrogen stress factor, 0–1), N_stress_expan (expansion nitrogen stress
+      factor, 0–1), and WaterSat and WaterDef (water stress factors). For
+      a nitrogen rate × timing factorial scenario, the harvest output table
+      summarises yield across all simulations; a time-series plot of N_stress
+      and LAI against growing-degree-days makes the physiological mechanism
+      behind yield differences immediately interpretable. Model validation:
+      comparing simulated versus observed yield, LAI, and soil water at a
+      site requires at minimum one season of field data with known management,
+      soil profile, and weather — emphasise to students that agreeing APSIM
+      outputs with one year's observations (over-fitting) is not validation;
+      demonstrating predictive accuracy on an independent season or site not
+      used in parameterisation is.
+
+  # ── PART 10: APSIM IN WA FARMING SYSTEMS ─────────────────────────────────────
+  # ~8 min | 3 slides
+
+  - title: "APSIM in the WA Wheatbelt: Rotations, Soils, and Long-Run Simulations"
+    description: >
+      Contextualise APSIM's application specifically within WA broadacre farming
+      systems, drawing on the existing CSIRO and DPIRD APSIM library for WA.
+      APSIM is particularly well suited to WA farming because its farming-system
+      architecture allows sequential simulation of multi-year rotations —
+      wheat-lupin-wheat-canola-barley — in a single run, with soil water, soil
+      nitrogen, and soil organic matter carrying over between seasons, capturing
+      the legacy effects of a nitrogen-fixing lupin phase on subsequent wheat yield
+      or the residue-decomposition dynamics following a canola crop. Long-run
+      simulations using SILO historical weather data (1960–present) from a WA
+      wheatbelt site generate a full probability distribution of simulated yields
+      under a given management strategy, producing exceedance probability curves
+      (yield exceeded in 80%, 50%, and 20% of years) that are far more decision-
+      relevant to a farmer than a single "expected" yield value — a key output
+      from the nitrogen rate practical in AGRI4401. APSIM has also been used
+      in published WA-specific studies to evaluate the long-run nitrogen balance
+      of wheatbelt farming systems, model the productivity benefit of perennial
+      pasture phases on soil water use and recharge reduction (connecting to
+      the salinity mechanisms developed in the companion Soil and Water chapter),
+      and assess the profitability of deep tillage for compaction alleviation
+      on sandplain soils — directly relevant research outputs from the CSIRO
+      and UWA agricultural science community.
+
+  - title: "Scenario Analysis with APSIM: Nitrogen Rate and Timing Practicals"
+    description: >
+      Walk through a structured APSIM scenario analysis as practised in the
+      AGRI4401 nitrogen practical, illustrating how the biological understanding
+      developed in this lecture translates directly into model outputs.
+      The scenario: a site near Merredin, WA (deep sandy loam, 340 mm mean
+      growing-season rainfall), 2015 SILO climate file, Scepter wheat sown
+      on 25 May at 60 kg ha⁻¹ seed rate, evaluating five nitrogen rates
+      (0, 30, 60, 90, 120 kg N ha⁻¹) applied at sowing only versus split
+      50%/50% at sowing and Zadoks Z30. In the model outputs, the zero-nitrogen
+      treatment shows rapidly rising N_stress_photo from Zadoks Z30 onward,
+      LAI plateauing and declining prematurely, grain weight well below the
+      genetic maximum, and yield approximately 40% below the 90 kg ha⁻¹
+      treatment. The split application at 90 kg total outperforms the same
+      rate applied entirely at sowing in a simulated year with above-average
+      autumn rainfall because the model's SoilNitrogen module shows significant
+      nitrate leaching in the first month after sowing, reducing the residual
+      nitrate in the root zone during the critical anthesis window — a result
+      that directly demonstrates the leaching risk on free-draining sandy loam
+      soils introduced in the companion Nutrient Spatial Variability chapter.
+
+  - title: "Climate Change Scenarios: CO2, Warming, and WA Yield Risk"
+    description: >
+      Use APSIM's capacity for climate-change scenario analysis to illustrate
+      the specific risks and opportunities facing WA grain farming under projected
+      2050 and 2080 conditions. Elevated CO2 (from 420 ppm to 550–700 ppm
+      projected by 2050–2080 under high-emissions scenarios): APSIM's wheat
+      module implements elevated CO2 effects on RUE (an increase of approximately
+      0.8% per 10 ppm CO2 above baseline, reflecting reduced photorespiration
+      in C3 crops) and on transpiration efficiency (stomatal conductance reduced,
+      meaning less water is used per unit of biomass produced — partially
+      compensating for projected rainfall decline). Temperature increase
+      (1.5–3 °C by 2050 in WA climate projections): accelerates phenology
+      (crops mature earlier, potentially escaping terminal drought) but also
+      shortens the grain-fill period and increases heat-stress risk during
+      anthesis, a non-linear risk that daily-time-step models with the diurnal
+      heat-stress algorithm from Part 6 can capture but average-temperature
+      approaches cannot. Rainfall decline (projected 10–20% reduction in
+      growing-season rainfall for WA by 2050): the dominant negative driver,
+      reducing PAWC utilisation and increasing the frequency of terminal drought
+      years in the exceedance probability distribution. APSIM scenario outputs
+      published from WA sites consistently show that the CO2 fertilisation
+      benefit partially but not fully offsets the negative effects of warming
+      and rainfall decline on dryland wheat yield, with high year-to-year
+      variability in the balance — a result that makes probabilistic (not single
+      point) scenario analysis essential for farm planning.
+
+  # ── PART 11: G×E×M, CALIBRATION, AND LIMITATIONS ────────────────────────────
+  # ~8 min | 3 slides
+
+  - title: "Genotype × Environment × Management Interactions"
+    description: >
+      Explain how crop models serve as quantitative platforms for evaluating
+      the three-way interaction among genotype (G), environment (E), and
+      management (M) — an interaction that is structurally impossible to
+      disentangle with field experiments alone. In a field trial, changing
+      the variety changes G but also changes the optimal M (sowing date,
+      nitrogen rate); running the trial in one year captures one E but
+      confounds it with the management decisions made for that year's conditions.
+      In APSIM, G is encoded in cultivar-specific coefficients (phyllochron,
+      photoperiod sensitivity, maximum grain weight, intrinsic RUE);
+      E is specified by the weather file and soil profile; M is scripted
+      in the Manager module. Running the full factorial of ten cultivars,
+      thirty years of historical weather, and five nitrogen rates costs
+      no additional experimental resources — only computation time — and
+      produces a G × E × M interaction surface that shows, for example,
+      which cultivar gains most from a split nitrogen application in dry years
+      versus wet years, or which varieties are most sensitive to a two-week
+      delay in sowing date. This G × E × M analysis capability is the basis
+      for APSIM's use in the GRDC's variety evaluation pipeline and in WA
+      Department of Primary Industries and Regional Development (DPIRD) studies
+      optimising sowing windows for the Northern, Central, and Southern
+      agricultural regions of the wheatbelt.
+
+  - title: "Model Calibration, Validation, and the Risk of Overconfidence"
+    description: >
+      Present the statistical discipline of model calibration and validation
+      as the non-negotiable counterpart to model use — the equivalent of
+      the ground-truthing principle that runs through every chapter of this
+      unit. Calibration: the process of adjusting model parameters to improve
+      agreement between simulated and observed outputs for a specific site,
+      crop, and season data set. For APSIM wheat, the most commonly calibrated
+      parameters are the cultivar phenology coefficients (phyllochron, vernalisation
+      requirement), the soil PAWC (particularly LL15 which is difficult to
+      measure directly), and occasionally RUE if independent biomass measurements
+      are available. Validation: testing the calibrated model against an
+      independent data set — different years, different sites, or different
+      varieties — not used in calibration. A model that fits calibration data
+      well but predicts validation data poorly is overfitted and unreliable
+      for extrapolation. Common validation metrics: root mean square error
+      (RMSE), coefficient of variation of RMSE (CV-RMSE, ideally < 15%
+      for yield), and Willmott's index of agreement. The key caution: APSIM's
+      predictions are only as reliable as its soil and weather parameterisation.
+      A beautifully calibrated APSIM simulation run with an incorrect soil
+      PAWC — for example, using a regional soil profile that does not reflect
+      the specific duplex soil in the paddock being managed — will produce
+      confidently wrong answers, a risk directly analogous to applying a
+      spectroscopic calibration built on a different soil type, as cautioned
+      throughout the companion Sensors chapter.
+
+  - title: "Current Gaps, Future Directions, and Models in Precision Agriculture"
+    description: >
+      Close the lecture by mapping the limitations of current crop models and
+      connecting model outputs to the spatial and precision agriculture themes
+      developed throughout the unit. Current model gaps: spatial heterogeneity —
+      APSIM simulates a single homogeneous "point" soil-crop system; real
+      paddocks contain the soil zones, toposequences, and management-zone
+      variability developed in the companion chapters on soil, nutrients, and
+      crop spatial variability. Emerging approaches use APSIM in a spatially
+      explicit mode by running one simulation per soil zone (defined by ECa
+      mapping or digital soil mapping) and aggregating zone outputs weighted
+      by zone area — a direct methodological bridge between this lecture and
+      the spatial variability content. Other gaps: biotic stresses (diseases,
+      insects, weeds) are absent from standard APSIM wheat; soil-borne
+      pathogen effects on root function are not mechanistically modelled;
+      waterlogging dynamics are simplified. Future directions: machine-learning
+      hybrid models that use the mechanistic APSIM structure as a prior
+      and train neural network components on residuals from large observational
+      data sets; integration of APSIM with satellite-derived LAI time series
+      (from the Satellite Data chapter) as a real-time data assimilation
+      framework that updates simulated canopy state from observed imagery;
+      and digital-twin farm management platforms where APSIM runs continuously
+      in the background, updated daily with weather and management events via
+      telematics (from the Telematics chapter), projecting the remainder of
+      the season's yield and nitrogen status in real time to support in-season
+      variable-rate topdressing decisions.
+      # ── SUPPLEMENTARY: BUILDING AN APSIM SIMULATION STEP BY STEP ─────────────────
+  # ~12 min | 5 slides
+
+  - title: "Before You Open APSIM: Assembling Your Inputs"
+    description: >
+      Establish that a simulation is only as good as the data assembled before
+      a single line of the .apsimx file is written. Four input categories must
+      be resolved in advance. Weather file (.met): download from SILO
+      (www.longpaddock.qld.gov.au/silo) using the station or grid-point tool;
+      select "APSIM format" for direct compatibility; verify the file header
+      contains the correct latitude, longitude, and tav/amp values — APSIM
+      uses tav (mean annual temperature) and amp (annual temperature amplitude)
+      to initialise soil temperature and calculate vapour pressure deficit, so
+      incorrect header values silently bias every thermally-driven process in
+      the simulation. Soil profile: source a starting profile from the APSIM
+      Soils library (accessible within the GUI under the Soil toolbox), the
+      DPIRD WA soils database, or a published CSIRO characterisation for the
+      closest matching soil type; record which horizon has been matched to which
+      layer so that calibration adjustments can be traced. Management information:
+      the actual or planned sowing date, sowing density, variety name, fertiliser
+      product, rate, and application date — these become the Manager script inputs.
+      Calibration data (if available): any field observations of yield, anthesis
+      date, or soil water that will be used to validate the simulation outputs;
+      keep these in a separate spreadsheet rather than modifying the APSIM
+      outputs to match them post-hoc.
+
+  - title: "Creating the .apsimx File: Navigating the APSIM Next Generation GUI"
+    description: >
+      Walk through the graphical interface steps to assemble a minimal working
+      simulation from scratch in APSIM Next Generation. Launch APSIM NG;
+      create a new file (File → New); a Simulations node appears in the left-hand
+      tree panel. Right-click Simulations → Add model → Simulation; this creates
+      a child Simulation node. Within it, APSIM automatically adds a Clock and
+      a Summary; right-click the Simulation node and add: a Weather module
+      (right-click → Add model → Weather), then browse to the .met file.
+      Add a Field node (right-click Simulation → Add model → Field), and within
+      the Field add a Zone. Within the Zone, add in order: Soil (which will
+      hold SoilWater, SoilNitrogen, SoilOrganicMatter, and Physical sub-nodes
+      populated when you paste or import a soil profile), the crop module
+      (e.g., right-click Zone → Add model → Wheat), a SurfaceOrganicMatter
+      module, a MicroClimate module (required for energy balance calculations
+      used in transpiration), a Manager folder (to hold planting and fertiliser
+      scripts), and a Report module. The tree structure in the left panel is
+      the visual representation of the .apsimx XML hierarchy; every node
+      corresponds to a tagged XML element, and the right-hand Properties panel
+      allows editing node parameters without touching the raw XML directly.
+      A common beginner mistake: adding the crop module outside the Zone node
+      rather than inside it, which produces a cryptic "no soil found" runtime
+      error because the crop module cannot access the soil state.
+    figure_id: "Fig-CGM-APSIMTree"
+    image_prompt: >
+      Screenshot-style diagram of the APSIM Next Generation GUI interface.
+      Left panel shows the simulation tree with labelled nodes in hierarchical
+      order: Simulations > Simulation > [Clock, Summary, Weather, Field >
+      Zone > [Soil > (Physical, SoilWater, SoilNitrogen, SoilOrganicMatter),
+      MicroClimate, SurfaceOrganicMatter, Wheat, Manager > [Sow script,
+      Fertilise script, Harvest script], Report]]. Right panel shows
+      property fields for a selected node. Nodes colour-coded by type: soil
+      nodes in brown, crop in green, management in gold (#E2B600), outputs
+      in UWA blue (#27348B). Academic diagram style, --ar 16:9, --no text.
+
+  - title: "Parameterising the Soil Profile Layer by Layer"
+    description: >
+      Explain how to correctly populate the Soil node — the most error-prone
+      configuration step for new users. Click the Physical sub-node to set
+      layer geometry: each layer requires a depth (mm from surface), bulk
+      density (BD, g cm⁻³), AirDry, LL15 (air-dry and lower limit of
+      plant-available water, both expressed as volumetric water fraction,
+      mm mm⁻¹), DUL (drained upper limit), and SAT (saturation). For a
+      five-layer WA sandplain profile this might run: 0–150 mm (BD 1.55,
+      LL15 0.060, DUL 0.150, SAT 0.380), 150–300 mm (BD 1.60, LL15 0.058,
+      DUL 0.140, SAT 0.370), 300–600 mm, 600–900 mm, 900–1200 mm, with BD
+      and SAT increasing and DUL declining with depth as the sand becomes
+      coarser. The SoilWater sub-node requires SWCON (drainage coefficient
+      per layer, controlling flow rate from DUL toward field drainage) and
+      the SummerCona/WinterCona/U1/U2 evaporation parameters that govern
+      bare soil evaporation. The SoilNitrogen sub-node requires initial
+      conditions: NO3 and NH4 in kg N ha⁻¹ per layer (set to field-realistic
+      values, typically 5–15 kg NO3 ha⁻¹ in the surface and declining to
+      < 2 kg ha⁻¹ at depth for a WA wheatbelt site at sowing after a fallow)
+      and OC (organic carbon %) per layer. The Wheat sub-node within Soil
+      requires the crop lower limit for wheat (LL_wheat, mm mm⁻¹) per layer
+      — a crop-specific extraction limit that is often 0.01–0.02 units below
+      the soil LL15 in clay-textured layers but close to LL15 in coarse sands
+      where root extraction is water-table-limited. Verify the total
+      plant-available water capacity (PAWC = sum over layers of
+      (DUL − LL_wheat) × layer thickness in mm) against any published value
+      for the soil type; a PAWC below 60 mm for a 1.2 m profile on a sandplain
+      site is plausible; above 120 mm would warrant checking for input errors.
+
+  - title: "Writing the Manager Script: Sowing, Fertilising, and Harvesting"
+    description: >
+      Explain the Manager module's event-driven scripting system, which controls
+      all agronomic actions in the simulation. Manager scripts are written in
+      C# but follow a simple, templated structure that requires no prior
+      programming experience for standard operations; APSIM NG ships with
+      pre-built script templates for all common operations accessible via
+      right-click → Add model → Manager → then selecting from the library.
+      Sowing script: the standard wheat sowing script fires the sowing event
+      on a user-specified date (or conditionally when soil moisture exceeds a
+      threshold and date is within a sowing window) and passes parameters to
+      the Wheat module: cultivar name (e.g., "Scepter"), row spacing (mm),
+      sowing depth (mm), plant population (plants m⁻²), and bud number.
+      Verify that the cultivar name matches exactly a name in the Wheat.json
+      cultivar file — APSIM is case-sensitive and will silently use default
+      parameters if the cultivar string does not match. Fertiliser script:
+      the Fertilise on a fixed date script applies a specified mass of nitrogen
+      (kg N ha⁻¹) as a nominated fertiliser type (Urea, NO3N, or NH4N) to a
+      specified depth on a specified date; for split applications, two separate
+      Fertilise scripts are added to the Manager folder. Harvest script: the
+      standard HarvestingRule script fires automatically when the crop module
+      signals it has reached maturity (internal stage = harvest_ripe); no date
+      needs to be specified. After each season in a multi-year rotation
+      simulation, a SurfaceOrganicMatter incorporation event is typically
+      triggered to reset surface residue for the next crop — a one-line
+      addition to the harvest script that significantly affects the following
+      season's nitrogen mineralisation.
+
+  - title: "Running the Simulation and Diagnosing Common Errors"
+    description: >
+      Cover the practical steps to execute a simulation and resolve the most
+      frequently encountered errors, drawn from the AGRI4401 practical
+      experience. To run: press the green Run button (or F5); the Summary
+      node populates in real time with daily messages including any warnings
+      or error states. Inspect the Summary output first before opening
+      results — errors are reported here and the simulation stops cleanly with
+      a descriptive message rather than producing silent incorrect output.
+      Most common errors and their solutions. "Crop is not in the ground"
+      at harvest: the sowing script date falls outside the Clock start–end
+      range; extend the clock start date to at least one day before the sowing
+      date. "Soil layer depths do not match crop lower limit array length":
+      the number of layers in the Physical and in the Wheat crop LL array are
+      different; ensure both have identical layer count. "Cultivar not found":
+      the cultivar name string in the sowing script does not match the .json
+      cultivar file; check capitalisation and spelling. "Floating point
+      exception in SoilWater": a layer's DUL is set below its LL15 or above
+      its SAT, which is physically impossible; re-check the profile input
+      values. Inspecting results: the Report output appears as a SQLite .db
+      file in the same folder as the .apsimx file; open in the APSIM NG
+      DataStore viewer, or query with the apsimx R package
+      (read_apsim_output("file.db")) or apsimx Python library
+      (apsimx.read_apsimx_all_sims("file.db")) for downstream analysis in
+      R or Python, the workflow used in the AGRI4401 data analysis sessions.

@@ -1,0 +1,28 @@
+# Hooks are consumed by the Speckit agent instructions in .github/agents.
+# They express the project contract; command identifiers are the prompts passed
+# to the corresponding agent extension, not shell commands.
+hooks:
+  before_specify:
+    - extension: scie3314-context
+      command: scie3314-validate-scope
+      description: Confirm canonical lecture YAML and WA wiki retrieval locations.
+      prompt: "Use data/YAML (L01–L14 only), data/wa_wiki, and data/wa_wiki/index.md as the fixed project inputs. Figures are out of scope."
+      optional: false
+  after_specify:
+    - extension: scie3314-feature-scaffold
+      command: scie3314-scaffold-metadata
+      description: Record the fixed generator and source contract with the feature.
+      prompt: "Create or update feature metadata that names the YAML scope, WA wiki corpus, UWA theme, and presentations/ HTML output contract."
+      optional: true
+  after_plan:
+    - extension: scie3314-architecture
+      command: scie3314-pin-architecture
+      description: Pin the TypeScript CLI and RevealJS architecture in the plan.
+      prompt: "Require Node.js TypeScript, generate:lecture and generate:all, RevealJS notes/highlight/markdown/search/zoom/math/mermaid plugins, UWA CSS, and slide provenance."
+      optional: false
+  after_tasks:
+    - extension: scie3314-task-boilerplate
+      command: scie3314-check-pipeline-tasks
+      description: Ensure task lists cover parse, retrieval, synthesis, rendering, QA, and documentation.
+      prompt: "Verify explicit tasks for schema validation, canonical resolution, corpus indexing, LLM-first grounded synthesis, rendering, 14-deck QA, and quickstart documentation."
+      optional: true

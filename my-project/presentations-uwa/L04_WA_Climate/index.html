@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Climate of the Western Australian Grainbelt — SCIE3314, Lecture 04</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme" />
+<link rel="stylesheet" href="../_shared/uwa-revealjs.css" />
+<link rel="stylesheet" href="../_shared/layouts.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/style.css" />
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ===================== TITLE ===================== -->
+    <section class="title-slide" data-background-color="#27348B">
+      <p class="eyebrow" style="color:#E2B600;">SCIE3314 &middot; Crops and Cropping Systems</p>
+      <h1 style="color:#fff;">The Climate of the Western Australian Grainbelt</h1>
+      <p class="title-subtitle" style="color:#fff;">The agrometeorology toolkit, the Mediterranean growing season, and why WA rainfall is so variable</p>
+      <p class="title-meta" style="color:#fff;">Lecture 04 &middot; University of Western Australia<br />Presented by Gustavo Alckmin</p>
+      <aside class="notes">
+        Target: ~2 min. Housekeeping first, then the hook: "Every equation and every rule of thumb
+        you've used so far this unit — French-Schultz from L01, the lime economics in L03 — assumes a
+        physical climate system underneath it that we haven't actually built yet. Today we build it,
+        properly, from first principles." Preview the four-part shape: Part 1 is the foundations of
+        agrometeorology itself — rain formation, the soil water balance, plant-available water and
+        soil-moisture deficit, frost mechanics, growing-degree-days, Köppen classification and how to
+        read a climate chart. Part 2 applies that toolkit to WA's specific Mediterranean growing
+        season. Part 3, after a short break, covers the four large-scale drivers that make WA rainfall
+        so variable year to year. Part 4 closes with the observed long-term drying trend and how the
+        industry has adapted. This is a foundations-heavy session — more vocabulary and equations than
+        usual — because everything else in the unit leans on it.
+      </aside>
+    </section>
+
+    <!-- ===================== OBJECTIVES ===================== -->
+    <section class="layout-takeaway">
+      <div>
+        <h2>What you'll be able to do by the end</h2>
+        <ul class="dense-bullets">
+          <li>Explain rain formation, the soil water balance, and calculate plant-available water and soil-moisture deficit for a given soil.</li>
+          <li>Explain why frost risk depends on moisture as much as temperature, and calculate growing-degree-days for a simple example.</li>
+          <li>Classify the WA grainbelt's climate using the Köppen system and correctly read a temperature-rainfall (climate) chart.</li>
+          <li>Explain the Mediterranean growing season, the four drivers of WA rainfall variability, and the observed drying trend and its implications.</li>
+        </ul>
+      </div>
+      <div class="takeaway-card">
+        <span>Why it matters</span>
+        <p>Every later lecture's sowing date, variety choice, nitrogen rate and lime program is a decision made inside the physical system this lecture builds.</p>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Read each objective aloud and flag its Part: objectives 1&ndash;2 are Part 1's
+        quantitative agrometeorology toolkit; objective 3 is also Part 1 (classification and chart
+        reading); objective 4 spans Parts 2&ndash;4. This session is more equation-and-vocabulary heavy
+        than most of the unit — say that explicitly so students arrive calibrated for a foundations
+        lecture rather than a crop-specific one. Land the "why it matters" card concretely: L01's
+        French-Schultz equation is a simplified version of today's soil water balance; L03's lime and
+        critical-value content assumed the growing-season mechanics this lecture derives properly;
+        every future crop lecture will use "GDD," "PAW," "the break" and "terminal drought" as assumed
+        vocabulary from this point on.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 1 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 1</p>
+      <h2 style="color:#fff;">Foundations of Agrometeorology</h2>
+      <p class="divider-note" style="color:#fff;">The physical vocabulary and quantitative tools — water, heat and classification — that this whole unit depends on.</p>
+      <aside class="notes">
+        Target: ~54 min for this section — the largest single block in today's lecture, and
+        deliberately so. Preview the fourteen-slide arc: what agrometeorology is and how weather differs
+        from climate (1); the energy side — irradiance, day length and temperature (2); the water side,
+        in the order water actually moves through the system — rain formation (3), then a fuller water
+        cycle showing infiltration, groundwater and runoff (3b), the soil water balance as the overall
+        accounting framework (4), the soil's water-holding reference points (5), plant-available water
+        and soil-moisture deficit as two views of the same "tank" (6) followed immediately by two real
+        worked examples from a UWA crop-science lab — a real PAW time series (6b) and the same data as a
+        rainfall-balance chart (6c) — and frost risk as a case where moisture matters as much as
+        temperature (7); then the thermal and classification tools — growing-degree-days (8), the
+        Köppen system (9), how to read a temperature-rainfall chart (10); and a closing bridge on
+        critical periods (11) that sets up Part 2. Every one of these is a tool used for real, not just
+        defined, later today or in later lectures — the two real-data slides in particular exist to
+        prove the schematic diagrams aren't just theoretical.
+      </aside>
+    </section>
+
+    <!-- P1-1. What Is Agrometeorology? -->
+    <section>
+      <h2>What Is Agrometeorology? Weather vs Climate</h2>
+      <div class="context-card">
+        <p class="context-q">The physical science of weather and climate as it affects agriculture — the toolkit for turning atmospheric and soil measurements into agronomic decisions:</p>
+        <ul>
+          <li><b>Weather</b> — the day-to-day conditions a grower reacts to (today's forecast, this week's frost risk).</li>
+          <li><b>Climate</b> — the long-term statistical distribution of weather that shapes strategy (variety choice, rotation, capital investment).</li>
+          <li>In a rainfed system: rainfall sets the ceiling on yield, temperature governs the pace of development and frost/heat risk, and their interplay defines the growing season.</li>
+        </ul>
+        <span class="source-chip">This lecture builds the vocabulary and equations every later lecture assumes you already have</span>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Land the weather/climate distinction early and cleanly — it's easy to blur and
+        the rest of today depends on students keeping them separate. Preview the whole session's
+        structure on this slide since it's the natural place to set expectations: Part 1 (today's
+        longest) builds the physical toolkit, Part 2 applies it to WA's Mediterranean growing season,
+        Part 3 (after a break) covers why rainfall varies so much year to year, and Part 4 covers the
+        long-term drying trend. Flag explicitly that this is deliberately a "why" and "how to
+        calculate" lecture rather than a "what to do" lecture like L03 — today hands students the
+        physical mechanisms and tools; later lectures hand them the resulting agronomic decisions.
+      </aside>
+    </section>
+
+    <!-- P1-2. Irradiance, Day Length and Temperature -->
+    <section>
+      <h2>Irradiance, Day Length and Temperature</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Solar input</h3>
+          <ul class="dense-bullets">
+            <li><b>Irradiance</b> — solar radiation reaching the crop.</li>
+            <li><b>PAR</b> (photosynthetically active radiation) — the ~400&ndash;700 nm fraction that actually drives photosynthesis.</li>
+            <li>Both follow daily and seasonal patterns governed by <b>day length (photoperiod)</b> and cloud cover.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The winter trade-off</h3>
+          <ul class="dense-bullets">
+            <li>Temperature follows a predictable seasonal cycle in a Mediterranean climate — cool in the growing season, hot in summer (the chart later this Part shows this directly).</li>
+            <li>WA's winter growing season has short days and lower light than summer — crops are bred and managed around this genuine light/temperature trade-off, not just around water.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Keep this brisk — it's the "energy" leg of agrometeorology, rounding out the
+        picture before the much larger "water" leg that follows. The winter trade-off point is worth
+        landing clearly: WA's growing season exists in winter because that's when water is available
+        (next slides), not because light is optimal then — light is actually working against the crop
+        in winter (short days, lower sun angle), which is part of why variety phenology and sowing
+        timing (L03) matter so much for capturing the best available light within the water-defined
+        window. PAR will resurface implicitly whenever canopy closure or light interception is
+        discussed in later crop-specific lectures.
+      </aside>
+    </section>
+
+    <!-- P1-2b. Solar Radiation: Winter vs Summer -->
+    <section>
+      <h2>Solar Radiation: Winter vs Summer</h2>
+      <div class="layout-split">
+        <div>
+          <h3>Winter growing season</h3>
+          <ul class="dense-bullets">
+            <li>Solar radiation: <b>8&ndash;10 MJ/m²/day</b> (June&ndash;August)</li>
+            <li>Unlikely to limit crop growth, though crop and pasture leaf areas remain low</li>
+            <li>Second most important climatic element after rainfall — determines temperature and evaporation regimes</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Summer conditions</h3>
+          <ul class="dense-bullets">
+            <li>Solar energy: up to <b>30 MJ/m²/day</b></li>
+            <li>Driven by high sun elevation, clear atmosphere, cloudless skies</li>
+            <li>Among the greatest radiation loads at Earth's surface — explains productivity of irrigated summer crops in Mediterranean climates</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Quantify the winter/summer radiation difference explicitly — the threefold
+        increase from 8-10 to 30 MJ/m²/day is why summer crops under irrigation can be so productive
+        despite the heat stress, since they have both abundant light and controlled water. The
+        "unlikely to limit growth" qualifier for winter radiation is important: winter crops are
+        water-limited and cold-limited far more often than they are light-limited, even though the
+        light regime is objectively lower than summer. This connects forward to the evaporation discussion
+        (next slides) — summer's extreme radiation load drives the high evaporative demand that empties
+        the soil water tank during terminal drought.
+      </aside>
+    </section>
+
+    <!-- P1-3. Rain Formation -->
+    <section>
+      <h2>Rain Formation: The Water Cycle</h2>
+      <pre class="mermaid">
+flowchart LR
+  EVAP["Evaporation from&lt;br/&gt;ocean &amp; land"] --> VAPOUR["Water vapour rises,&lt;br/&gt;transported by wind"]
+  VAPOUR --> LIFT["Air mass lifts &amp; cools&lt;br/&gt;(fronts, orographic lift)"]
+  LIFT --> COND["Vapour condenses onto&lt;br/&gt;tiny nuclei &rarr; cloud droplets"]
+  COND --> GROW["Droplets collide &amp;&lt;br/&gt;coalesce, grow heavier"]
+  GROW --> RAIN["Droplets fall as&lt;br/&gt;precipitation"]
+  RAIN -.->|"evaporates again"| EVAP
+  classDef key fill:#FFF7D7,stroke:#E2B600,color:#333
+  class LIFT key
+      </pre>
+      <p class="diagram-caption">In WA the "lift and cool" step is delivered mainly by cold fronts, and less often by cut-off lows and northwest cloudbands (Part 3).</p>
+      <aside class="notes">
+        Target: ~4 min. Build this cycle on the chalkboard alongside the slide. The physics in one
+        sentence: warm air can hold more water vapour than cool air, so cooling an air mass reduces its
+        capacity to hold vapour, forcing condensation once the dew point is reached — that's the whole
+        mechanism behind every rain event WA gets. Condensation itself needs tiny particles to form
+        around (condensation nuclei — dust, sea salt, pollution), which is why even saturated air
+        sometimes needs a nucleation source before droplets actually form. The shaded "lift and cool"
+        step is highlighted deliberately: it's the step WA's specific weather systems (cold fronts,
+        cut-off lows, cloudbands) actually provide, and Part 3's four climate drivers are really just
+        asking "how often does the lift-and-cool step happen, and how much moisture is available when
+        it does" — this diagram is the mechanism underneath that entire later discussion.
+      </aside>
+    </section>
+
+    <!-- P1-3b. Beyond Rain Formation: Where the Water Goes -->
+    <section>
+      <h2>Beyond Rain Formation: Where the Water Goes Next</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/rain_formation_process.png" alt="Diagram of the rain formation and local runoff process: evaporation, atmospheric cooling, cloud formation, condensation, precipitation, infiltration, groundwater flow, aquifer storage, baseflow and surface runoff" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Once rain lands, it splits three ways: <b>infiltration</b> into the soil (feeding the soil water "tank" of the next few slides), <b>surface runoff</b> across the paddock, or <b>deep drainage</b> past the root zone toward groundwater.</li>
+            <li><b>Baseflow</b> — groundwater slowly discharging back to streams — is why some rivers keep flowing long after the last rain.</li>
+            <li>The ice/snow/mountain elements of this classic diagram aren't WA-relevant — no snowmelt feeds the grainbelt — but the infiltration &rarr; soil storage &rarr; drainage/runoff chain is exactly what the soil water balance equation (next slide) is accounting for.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- <p class="diagram-caption">Conceptual diagram based on USGS models, redrawn by John M. Evans &mdash; a generic reference diagram; adapt mentally by dropping the snow/mountain elements for a WA dryland paddock.</p> -->
+      <aside class="notes">
+        Target: ~3 min. Use this figure to extend the previous slide's atmospheric story into the
+        ground: the previous mermaid diagram ended at "precipitation falls" — this diagram picks up
+        exactly there and asks "then what?" Walk the three-way split explicitly, since it's the direct
+        physical basis for every term in the soil water balance equation on the next slide: infiltration
+        is the "input" term becoming stored soil water; deep drainage and surface runoff are two of the
+        three "output" terms (the third, evapotranspiration, isn't pictured here since it returns water
+        to the atmosphere rather than moving it through the landscape). Flag the non-WA elements openly
+        rather than silently ignoring them — students should be able to critically read a generic
+        diagram and identify which parts transfer to a WA dryland context and which don't; this is a
+        useful transferable skill, not just a WA fact. Baseflow is worth a one-line real-world anchor:
+        it's why a stream in the WA wheatbelt can still show a trickle weeks after the last rain, fed by
+        groundwater discharge rather than direct runoff.
+      </aside>
+    </section>
+
+    <!-- P1-4. The Soil Water Balance -->
+    <section>
+      <h2>The Soil Water Balance: The Accounting Framework</h2>
+      <div class="context-card">
+        <p class="context-q" style="font-size:.72em; text-align:center;">&Delta;Storage&nbsp;=&nbsp;(Rainfall&nbsp;+&nbsp;Stored&nbsp;soil&nbsp;water)&nbsp;&minus;&nbsp;(Evapotranspiration&nbsp;+&nbsp;Drainage&nbsp;+&nbsp;Runoff)</p>
+        <ul>
+          <li><b>Inputs</b> — rainfall (and irrigation where used) plus whatever moisture is already stored in the profile.</li>
+          <li><b>Outputs</b> — evapotranspiration (evaporation + transpiration), drainage below the root zone, and surface runoff.</li>
+          <li>What's left after outputs is what the crop actually has available to grow on.</li>
+        </ul>
+        <span class="source-chip">L01's French-Schultz equation is a simplified version of this: rainfall minus one lumped evaporative-loss term</span>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This is the master accounting framework the rest of Part 1 fills in piece by
+        piece — every following slide (rain formation supplies the input term, PAW/SMD describe the
+        storage term, frost relates to how the stored-energy side of the balance behaves) is really
+        elaborating one part of this one equation. Draw the explicit connection to L01: French-Schultz
+        (Yield = (GSR &minus; 110 mm) &times; WUE) folds evapotranspiration, drainage and runoff into a
+        single empirical "110 mm non-productive loss" constant — today's equation is the same idea,
+        just unpacked into its real physical components rather than one lumped number. This is also the
+        same accounting framework a soil-moisture probe or a model like APSIM/Yield Prophet runs in the
+        background, just updated daily instead of summarised for a season.
+      </aside>
+    </section>
+
+    <!-- P1-5. Soil Water-Holding Capacity -->
+    <section>
+      <h2>Soil Water-Holding Capacity: Three Reference Points</h2>
+      <svg viewBox="0 0 820 440" xmlns="http://www.w3.org/2000/svg" style="display:block; width:1040px; height:558px; max-width:100%; margin:0 auto;" font-family="Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif">
+        <defs>
+          <marker id="arr-in"    markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#27348B"/></marker>
+          <marker id="arr-drain" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8892B0"/></marker>
+          <marker id="arr-et"    markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#E2B600"/></marker>
+        </defs>
+        <text x="390" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#27348B">A Soil Profile as a Water "Tank"</text>
+        <!-- tank outline; height=330 maps 100%(sat)→60%(FC)→20%(WP)→0%(dry) -->
+        <rect x="280" y="46" width="160" height="330" fill="#FFFFFF" stroke="#27348B" stroke-width="3" rx="2"/>
+        <!-- zone fills: drainage sat→FC (40%), PAW FC→WP (40%), unavailable WP→0 (20%) -->
+        <rect x="281" y="47"  width="158" height="131" fill="#E8F0FE"/>
+        <rect x="281" y="178" width="158" height="133" fill="#FFF7D7"/>
+        <rect x="281" y="311" width="158" height="64"  fill="#F2EDE8"/>
+        <!-- reference lines: saturation dashed; FC and WP solid -->
+        <line x1="280" y1="46"  x2="440" y2="46"  stroke="#27348B" stroke-width="2"   stroke-dasharray="6 4"/>
+        <line x1="280" y1="178" x2="440" y2="178" stroke="#27348B" stroke-width="2.5"/>
+        <line x1="280" y1="311" x2="440" y2="311" stroke="#27348B" stroke-width="2.5"/>
+        <line x1="280" y1="376" x2="440" y2="376" stroke="#27348B" stroke-width="1.5"/>
+        <!-- zone labels inside tank -->
+        <text x="360" y="118" text-anchor="middle" font-size="12"   fill="#2C5FA8" font-style="italic">drains by gravity</text>
+        <text x="360" y="249" text-anchor="middle" font-size="13"   font-weight="600" fill="#8a6400">plant-available</text>
+        <text x="360" y="346" text-anchor="middle" font-size="11.5" fill="#7A6A5A" font-style="italic">unavailable to roots</text>
+        <!-- right-side labels -->
+        <text x="452" y="42"  font-size="14" fill="#27348B"><tspan font-weight="700">Saturation</tspan> &mdash; 100% of pore space filled</text>
+        <text x="452" y="174" font-size="14" fill="#27348B"><tspan font-weight="700">Field capacity</tspan> &mdash; free drainage stops</text>
+        <text x="452" y="191" font-size="12" fill="#5A6B9C">(~60%, illustrative)</text>
+        <text x="452" y="307" font-size="14" fill="#27348B"><tspan font-weight="700">Wilting point</tspan> &mdash; roots can't extract more</text>
+        <text x="452" y="324" font-size="12" fill="#5A6B9C">(~20%, illustrative)</text>
+        <text x="452" y="380" font-size="14" fill="#27348B"><tspan font-weight="700">0%</tspan> &mdash; oven-dry</text>
+        <!-- Rain / irrigation in (left, top) -->
+        <line x1="248" y1="18" x2="248" y2="44" stroke="#27348B" stroke-width="2.5" marker-end="url(#arr-in)"/>
+        <text x="248" y="12" text-anchor="middle" font-size="13" fill="#27348B">Rain / irrigation in</text>
+        <!-- Drainage annotation at FC line -->
+        <line x1="218" y1="178" x2="278" y2="186" stroke="#8892B0" stroke-width="2" marker-end="url(#arr-drain)"/>
+        <text x="120" y="170" font-size="12.5" fill="#5A6B9C">Drainage below</text>
+        <text x="120" y="186" font-size="12.5" fill="#5A6B9C">field capacity</text>
+        <!-- ET annotation in PAW zone -->
+        <line x1="212" y1="255" x2="278" y2="252" stroke="#E2B600" stroke-width="2" marker-end="url(#arr-et)"/>
+        <text x="55" y="248" font-size="12.5" fill="#8a6400">Evapotranspiration draws</text>
+        <text x="55" y="264" font-size="12.5" fill="#8a6400">water down toward wilting point</text>
+      </svg>
+      <p class="diagram-caption">Three reference points define the water any soil can offer a crop — the next slide fills the tank in.</p>
+      <aside class="notes">
+        Target: ~4 min. Introduce the three lines as a fixed property of a given soil (governed by
+        texture — recall L03's texture triangle: a clay holds far more water at field capacity than a
+        sand, but also holds more tightly near wilting point). Walk the logic of each boundary
+        concretely: above field capacity, water simply drains away under gravity faster than roots can
+        use it (so "topping up" past field capacity is wasted rain from the crop's perspective); below
+        wilting point, the soil still physically contains some water, but it's held so tightly the
+        crop's roots can no longer pull it out — the plant wilts and can't recover without more water.
+        This tank sits directly inside the soil water balance equation from the previous slide: it's
+        the physical container the "stored soil water" term describes. The next slide fills this same
+        tank in to show what's actually usable.
+      </aside>
+    </section>
+
+    <!-- P1-6. PAW and SMD -->
+    <section>
+      <h2>Plant-Available Water &amp; Soil-Moisture Deficit</h2>
+      <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="display:block; width:877px; height:476px; max-width:100%; margin:0 auto;" font-family="Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif">
+        <text x="380" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#27348B">Two Views of the Same Tank</text>
+        <!-- tank -->
+        <rect x="300" y="50" width="160" height="240" fill="#FFFFFF" stroke="#27348B" stroke-width="3" />
+        <!-- PAW zone background -->
+        <rect x="300" y="146" width="160" height="96" fill="#FFF7D7" />
+        <!-- current water fill -->
+        <rect x="300" y="194" width="160" height="96" fill="#BFD3F5" fill-opacity="0.9" />
+        <!-- reference lines -->
+        <line x1="300" y1="50" x2="460" y2="50" stroke="#27348B" stroke-width="1.5" stroke-dasharray="5 4" />
+        <line x1="300" y1="146" x2="460" y2="146" stroke="#27348B" stroke-width="2" />
+        <line x1="300" y1="194" x2="460" y2="194" stroke="#1B5FA8" stroke-width="2" stroke-dasharray="5 4" />
+        <line x1="300" y1="242" x2="460" y2="242" stroke="#27348B" stroke-width="2" />
+        <line x1="300" y1="290" x2="460" y2="290" stroke="#27348B" stroke-width="1.5" />
+        <!-- right labels -->
+        <text x="470" y="54" font-size="11" fill="#5A6B9C">Saturation</text>
+        <text x="470" y="142" font-size="12" font-weight="700" fill="#27348B">Field capacity</text>
+        <text x="470" y="198" font-size="12" font-weight="700" fill="#1B5FA8">Current soil moisture (example)</text>
+        <text x="470" y="238" font-size="12" font-weight="700" fill="#27348B">Wilting point</text>
+        <text x="470" y="294" font-size="11" fill="#5A6B9C">0%</text>
+        <!-- PAW bracket left -->
+        <line x1="270" y1="146" x2="285" y2="146" stroke="#8a6400" stroke-width="2" />
+        <line x1="270" y1="242" x2="285" y2="242" stroke="#8a6400" stroke-width="2" />
+        <line x1="270" y1="146" x2="270" y2="242" stroke="#8a6400" stroke-width="2" />
+        <text x="255" y="198" text-anchor="end" font-size="12" font-weight="700" fill="#8a6400">PAW</text>
+        <text x="255" y="212" text-anchor="end" font-size="10.5" fill="#8a6400">= FC &minus; WP</text>
+        <!-- SMD bracket right of PAW zone, inside tank right edge extension -->
+        <line x1="485" y1="146" x2="500" y2="146" stroke="#1B5FA8" stroke-width="2" />
+        <line x1="485" y1="194" x2="500" y2="194" stroke="#1B5FA8" stroke-width="2" />
+        <line x1="485" y1="146" x2="485" y2="194" stroke="#1B5FA8" stroke-width="2" />
+        <text x="510" y="176" font-size="12" font-weight="700" fill="#1B5FA8">SMD</text>
+        <text x="510" y="190" font-size="10.5" fill="#1B5FA8">= FC &minus; current</text>
+      </svg>
+      <p class="diagram-caption">PAW is the tank's capacity (fixed by soil texture); SMD is how empty it is right now (changes daily).</p>
+      <aside class="notes">
+        Target: ~5 min. Present these as a matched pair, not two separate topics — that's the whole
+        point of the "two views of the same tank" framing. Walk both equations with the illustrative
+        numbers on the diagram: PAW = field capacity &minus; wilting point (here, 60% &minus; 20% = 40
+        percentage points of profile depth — the maximum water this soil could ever offer a crop).
+        SMD = field capacity &minus; current soil moisture (here, 60% &minus; 40% = 20 percentage
+        points — how much rain is needed to fully refill the profile back to field capacity right now).
+        Land the key distinction hard: PAW is a fixed soil property (bigger for clay, smaller for sand
+        — recall L03's texture triangle), while SMD is a time-varying state that changes daily with
+        every rainfall and evapotranspiration event, which is exactly why SMD is the number a soil-
+        moisture probe or a model like Yield Prophet reports in-season, while PAW is closer to a
+        one-off soil-characterisation number. A common student error is treating SMD as if it were a
+        soil property too — stress it isn't, it's a snapshot in time.
+      </aside>
+    </section>
+
+    <!-- P1-6b. PAW Through a Real Growing Season -->
+    <section>
+      <h2>PAW Through a Real Growing Season</h2>
+      <img src="assets/paw_timeseries.png" alt="Line chart of plant-available water in millimetres from June 2015 to January 2016 for a wheat crop, rising and falling between wilting point (0mm) and field capacity (28mm), crashing to near zero from September to November during terminal drought, and refilled by post-harvest summer rain" />
+      <p class="diagram-caption">Real weekly data from a UWA PLNT2201 radiation-lab wheat simulation (sown 1&nbsp;June, root-zone PAW capacity 28&nbsp;mm) &mdash; the same "tank" from the previous slide, now with real numbers.</p>
+      <aside class="notes">
+        Target: ~4 min. This is the previous slide's schematic tank made real — say that connection
+        explicitly, since it's the whole point of showing this chart here rather than later. Walk the
+        shape left to right: the tank starts full at sowing, crashes hard in late June during a rain-free
+        week (a genuine within-season dry spell, not the seasonal terminal drought yet), partially
+        refills twice more in July-August as fronts come through, then from mid-September the tank never
+        recovers — rainfall drops off while the crop's water demand (ETc) keeps climbing as it grows and
+        the weather warms, and PAW is pinned near zero for the entire September-November stretch. That
+        is terminal drought, not as a definition on a slide, but as a real measured trajectory — this
+        crop finished grain fill almost entirely on whatever water was left in the profile, exactly as
+        the growing-season slide two slides from now describes in the abstract. The sharp refill at the
+        very end (late November) is <em>after</em> harvest — summer rain replenishing an empty profile
+        with no crop left to use it, a useful reminder that PAW dynamics don't stop just because the
+        season, agronomically, has.
+      </aside>
+    </section>
+
+    <!-- P1-6c. The Rainfall Balance: Recharge vs Deficit -->
+    <section>
+      <h2>The Rainfall Balance: Recharge vs Deficit</h2>
+      <img src="assets/rainfall_balance_real.png" alt="Bar and line chart of weekly rainfall versus crop water use (ETc) from June 2015 to January 2016, shaded green where rainfall exceeds ETc (surplus) and pink where ETc exceeds rainfall (deficit), total growing-season rainfall 326 millimetres" />
+      <p class="diagram-caption">Same simulation, plotted as the balance itself — generated in Python directly from the lab's weekly Rainfall and ETc columns.</p>
+      <aside class="notes">
+        Target: ~4 min. This is the same underlying data as the previous slide, plotted as a genuine
+        rainfall-balance chart — the same style used in published climatic water-balance diagrams
+        (rainfall vs potential evapotranspiration, with surplus/deficit shaded), but built here from the
+        unit's own real lab data rather than a generic textbook location. Walk the pattern: green
+        (surplus) dominates June-August while ETc is still low and fronts keep delivering rain — this is
+        the "recharge" phase filling the tank on the previous slide. Pink (deficit) takes over from
+        September as ETc's seasonal rise (more heat, longer days, a bigger canopy transpiring) outpaces
+        rainfall — this is the "utilisation" phase draining the tank. The two big rainfall spikes in
+        December and late January are off-season summer rain after the crop was harvested — they don't
+        help this crop, but they do matter for next season's opening soil-moisture starting point, a
+        genuine link between one season's summer rainfall and the next season's break. Land the
+        practical point: a grower or agronomist reading this chart in real time is doing exactly the
+        seasonal-forecasting risk management Part 3 covers, just retrospectively here rather than
+        predictively.
+      </aside>
+    </section>
+
+    <!-- P1-7. Frost Risk -->
+    <section>
+      <h2>Frost Risk: Why Moisture Matters as Much as Temperature</h2>
+      <div class="context-card">
+        <p class="context-q">Radiation frost forms on clear, calm nights when the ground loses heat to space faster than it's replaced — three ingredients:</p>
+        <ul>
+          <li><b>Clear skies</b> — no cloud blanket to reflect outgoing heat back down.</li>
+          <li><b>Still air</b> — no wind to mix warmer air down to the surface.</li>
+          <li><b>Low humidity</b> — dry air is a poor absorber of outgoing radiation (water vapour is itself a greenhouse gas), so heat escapes to space faster.</li>
+        </ul>
+        <span class="source-chip">Moist air buffers against frost twice over: it traps outgoing heat, and condensing water releases latent heat that slows further cooling</span>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Land the counterintuitive point explicitly, since it's the whole reason this
+        slide exists: it is not simply "cold equals frost." A cold but cloudy, humid, windy night often
+        produces less frost than a cold, clear, dry, calm night at the same average temperature —
+        moisture is doing as much work as raw temperature. This is also the physical basis for a real
+        practical frost-mitigation technique worth mentioning: overhead irrigation before a frost night
+        works because water releasing latent heat as it cools and partially freezes buffers the crop
+        against the full temperature drop. WA specifics: frost risk is worst in low-lying valleys
+        (cold, dense air drains downhill and pools overnight) and on bare, dry, sandy soils, which lose
+        daytime heat faster and don't re-radiate stored warmth overnight the way a moist, heavy soil
+        does — soil moisture is protective at the ground level exactly the same way atmospheric
+        moisture is protective above it. Tie forward explicitly to Part 3: the exact synoptic setup
+        that produces a frost night — a cold front passing, followed by a clear, dry, calm high-
+        pressure cell — is the same subtropical-ridge-and-cold-front system covered later today.
+      </aside>
+    </section>
+
+    <!-- P1-8. Growing Degree Days -->
+    <section>
+      <h2>Growing Degree Days: Quantifying Thermal Time</h2>
+      <div class="layout-split">
+        <div>
+          <div class="context-card">
+            <p class="context-q" style="font-size:.68em; text-align:center;">GDD&nbsp;(&deg;C-days)&nbsp;=&nbsp;<span style="display:inline-block; text-align:center; vertical-align:middle;"><span style="border-bottom:1.5px solid #27348B; padding:0 .2em;">T<sub>max</sub>&nbsp;+&nbsp;T<sub>min</sub></span><br />2</span>&nbsp;&minus;&nbsp;T<sub>base</sub></p>
+            <ul>
+              <li>Summed day by day across the season (never below zero for a single day).</li>
+              <li>T<sub>base</sub> is the threshold below which development effectively stops — commonly taken as ~0&deg;C for a simple wheat thermal-time model.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="compact-table">
+            <table>
+              <thead><tr><th>Day</th><th>Tmax</th><th>Tmin</th><th>Avg</th><th>GDD</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>22&deg;C</td><td>8&deg;C</td><td>15&deg;C</td><td>15</td></tr>
+                <tr><td>2</td><td>18&deg;C</td><td>6&deg;C</td><td>12&deg;C</td><td>12</td></tr>
+                <tr><td>3</td><td>14&deg;C</td><td>2&deg;C</td><td>8&deg;C</td><td>8</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:.44em; opacity:.75; margin-top:.6em;">Cumulative after 3 days: 15+12+8 = <b>35&deg;C-days</b> (illustrative, T<sub>base</sub>=0&deg;C).</p>
+          </div>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~5 min. Walk the worked example on the board exactly as tabulated: each day's average
+        temperature above base is that day's GDD contribution, and days simply accumulate — after
+        three days this illustrative crop has banked 35&deg;C-days of thermal time. Explain the payoff:
+        over a full season, thousands of accumulated degree-days predict when a variety reaches key
+        growth stages (emergence, tillering, flowering, maturity) far more reliably than counting
+        calendar days, because development tracks accumulated heat, not the calendar — this is exactly
+        how models like APSIM and Yield Prophet (already referenced in earlier lectures) simulate
+        phenology without needing a fixed sowing-to-flowering day count. Different base temperatures are
+        used for different crops and purposes in the wider literature; the 0&deg;C base here is a
+        simple, commonly used convention for illustration, not a single universal constant. Land the
+        connection forward: GDD is the quantitative backbone behind "critical periods" (next-but-one
+        slide) and every phenology-timed decision in later cereal and canola lectures.
+      </aside>
+    </section>
+
+    <!-- P1-9. Köppen Classification -->
+    <section>
+      <h2>K&ouml;ppen Climate Classification: A Global Framework</h2>
+      <div class="compact-table">
+        <table>
+          <thead><tr><th>Code part</th><th>Meaning</th><th>WA grainbelt</th></tr></thead>
+          <tbody>
+            <tr><td>1st letter (main group)</td><td>A tropical, B dry, C temperate, D continental, E polar</td><td><b>C</b> &mdash; temperate</td></tr>
+            <tr><td>2nd letter (precipitation)</td><td>s dry summer, w dry winter, f no dry season</td><td><b>s</b> &mdash; dry summer</td></tr>
+            <tr><td>3rd letter (summer heat)</td><td>a hot summer (&gt;22&deg;C), b warm summer (&lt;22&deg;C)</td><td><b>a</b> north / <b>b</b> south</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.44em; opacity:.75; margin-top:.6em;">WA grainbelt = <b>Csa</b> (hotter north, e.g. Geraldton) to <b>Csb</b> (milder south) &mdash; shared with California's Central Valley, central Chile, the Mediterranean basin and South Africa's Western Cape.</p>
+      </div>
+      <aside class="notes">
+        Target: ~5 min. Build the code letter by letter rather than presenting it as a finished label —
+        students should leave able to decode "Csa" themselves, not just recognise it. The main climate
+        groups (A-E) are set primarily by temperature and precipitation pattern, not vegetation
+        directly, though the system was originally designed to correlate with natural vegetation
+        boundaries, which is why "Mediterranean climate" and "Mediterranean vegetation" are often
+        discussed together. Land the practical payoff explicitly: climate type doesn't just constrain
+        which crops can be grown, it constrains which farming systems make sense — irrigated vs
+        dryland, single vs double cropping, the whole conservation-agriculture toolkit from L01. The
+        comparable-region list is worth dwelling on since it explains a genuinely useful fact: WA
+        agronomists regularly read Californian or Chilean viticulture and grain research because the
+        underlying climate constraints transfer, even though the crops or markets differ.
+      </aside>
+    </section>
+
+    <!-- P1-10. Reading a Climate Chart -->
+    <section>
+      <h2>Reading a Temperature-Rainfall (Climate) Chart</h2>
+      <svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" style="display:block; width:850px; height:500px; max-width:100%; margin:0 auto;" font-family="Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif">
+        <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="700" fill="#27348B">Seasonal Pattern — Central Wheatbelt (schematic)</text>
+        <rect x="246.8" y="40" width="280.2" height="260" fill="#FFF7D7" />
+        <text x="386.9" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#B58900">Growing season (May&ndash;Oct)</text>
+        <line x1="60" y1="40" x2="60" y2="300" stroke="#27348B" stroke-width="2" />
+        <line x1="60" y1="300" x2="620" y2="300" stroke="#27348B" stroke-width="2" />
+        <line x1="620" y1="40" x2="620" y2="300" stroke="#8892B0" stroke-width="1.5" stroke-dasharray="3 3" />
+        <text x="30" y="170" text-anchor="middle" font-size="12" fill="#27348B" transform="rotate(-90 30 170)">Rainfall (mm)</text>
+        <text x="655" y="170" text-anchor="middle" font-size="12" fill="#8a6400" transform="rotate(-90 655 170)">Temperature (&deg;C)</text>
+        <rect x="69.3" y="222.0" width="28" height="78.0" fill="#27348B" rx="2" />
+        <rect x="116.1" y="206.4" width="28" height="93.6" fill="#27348B" rx="2" />
+        <rect x="162.8" y="196.0" width="28" height="104.0" fill="#27348B" rx="2" />
+        <rect x="209.5" y="185.6" width="28" height="114.4" fill="#27348B" rx="2" />
+        <rect x="256.2" y="118.0" width="28" height="182.0" fill="#27348B" rx="2" />
+        <rect x="302.9" y="66.0" width="28" height="234.0" fill="#27348B" rx="2" />
+        <rect x="349.6" y="81.6" width="28" height="218.4" fill="#27348B" rx="2" />
+        <rect x="396.3" y="102.4" width="28" height="197.6" fill="#27348B" rx="2" />
+        <rect x="443.0" y="154.4" width="28" height="145.6" fill="#27348B" rx="2" />
+        <rect x="489.7" y="185.6" width="28" height="114.4" fill="#27348B" rx="2" />
+        <rect x="536.4" y="222.0" width="28" height="78.0" fill="#27348B" rx="2" />
+        <rect x="583.1" y="232.4" width="28" height="67.6" fill="#27348B" rx="2" />
+        <polyline points="83.3,92.0 130.1,92.0 176.8,118.0 223.5,152.7 270.2,187.3 316.9,204.7 363.6,213.3 410.3,204.7 457.0,187.3 503.7,161.3 550.4,126.7 597.1,100.7"
+                  fill="none" stroke="#E2B600" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="83.3" cy="92.0" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="130.1" cy="92.0" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="176.8" cy="118.0" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="223.5" cy="152.7" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="270.2" cy="187.3" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="316.9" cy="204.7" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="363.6" cy="213.3" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="410.3" cy="204.7" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="457.0" cy="187.3" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="503.7" cy="161.3" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="550.4" cy="126.7" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <circle cx="597.1" cy="100.7" r="4" fill="#E2B600" stroke="#8a6400" stroke-width="1.5" />
+        <text x="83.3" y="316" text-anchor="middle" font-size="12" fill="#27348B">J</text>
+        <text x="130.1" y="316" text-anchor="middle" font-size="12" fill="#27348B">F</text>
+        <text x="176.8" y="316" text-anchor="middle" font-size="12" fill="#27348B">M</text>
+        <text x="223.5" y="316" text-anchor="middle" font-size="12" fill="#27348B">A</text>
+        <text x="270.2" y="316" text-anchor="middle" font-size="12" fill="#27348B">M</text>
+        <text x="316.9" y="316" text-anchor="middle" font-size="12" fill="#27348B">J</text>
+        <text x="363.6" y="316" text-anchor="middle" font-size="12" fill="#27348B">J</text>
+        <text x="410.3" y="316" text-anchor="middle" font-size="12" fill="#27348B">A</text>
+        <text x="457.0" y="316" text-anchor="middle" font-size="12" fill="#27348B">S</text>
+        <text x="503.7" y="316" text-anchor="middle" font-size="12" fill="#27348B">O</text>
+        <text x="550.4" y="316" text-anchor="middle" font-size="12" fill="#27348B">N</text>
+        <text x="597.1" y="316" text-anchor="middle" font-size="12" fill="#27348B">D</text>
+        <rect x="70" y="335" width="16" height="12" fill="#27348B" rx="2" /><text x="92" y="345" font-size="12" fill="#27348B">Rainfall</text>
+        <line x1="180" y1="341" x2="200" y2="341" stroke="#E2B600" stroke-width="3.5" /><circle cx="190" cy="341" r="4" fill="#E2B600" /><text x="206" y="345" font-size="12" fill="#27348B">Mean temperature</text>
+        <rect x="360" y="335" width="16" height="12" fill="#FFF7D7" stroke="#E2B600" /><text x="382" y="345" font-size="12" fill="#27348B">Growing season</text>
+      </svg>
+      <p class="diagram-caption">Fig-L04-Seasonality &mdash; schematic Walter-Lieth-style pattern for a central-wheatbelt town: rainfall and cool temperature coincide May&ndash;October; illustrative, not station data.</p>
+      <aside class="notes">
+        Target: ~5 min. Teach this as a generic skill, not just a WA-specific fact — a Walter-Lieth-
+        style chart like this is the standard way climatologists summarise a location's seasonality
+        anywhere in the world, and students should be able to read one for any location, not just
+        recognise this particular shape. Walk the reading process explicitly: find where the rainfall
+        bars are tallest and note the months; find where the temperature line is lowest; where the two
+        overlap (shaded here) is the growing season — cool, wet conditions together. Where the bars are
+        short and the line is high (summer here) is the dry season. Point out this chart is the direct
+        visual evidence for the Mediterranean pattern from the Köppen "Cs" code just covered — the "s"
+        for dry summer is literally the gap between the bars and the shaded band in December-February.
+        Caption explicitly that the underlying numbers are illustrative/schematic, not sourced station
+        data — the shape and the reading technique are the teaching point, not the specific millimetre
+        figures.
+      </aside>
+    </section>
+
+    <!-- P1-11. Critical Periods -->
+    <section>
+      <h2>Critical Periods: When Timing Matters Most</h2>
+      <div class="context-card">
+        <p class="context-q">Not every day of the season matters equally — specific developmental windows have disproportionate effects on yield:</p>
+        <ul>
+          <li>Timed using GDD/thermal time rather than the calendar, since development tracks accumulated heat, not the date.</li>
+          <li>Flowering is the single most sensitive window — this is where frost (previous slides) and heat (Part 2) do the most damage.</li>
+          <li>The same GDD-based timing logic governs input decisions too — e.g. 2,4-D herbicide must wait until after a defined growth stage to avoid crop distortion.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is a short bridging slide, not a new major topic — its job is to tie
+        together everything just covered (GDD quantifies timing, frost/moisture determines risk) and
+        hand off cleanly to Part 2, where the growing season's own critical events (the break, terminal
+        drought) are defined. Land the general principle once, clearly: agronomic risk is not evenly
+        spread across the season, it concentrates at specific developmental windows, and thermal time
+        rather than the calendar is how those windows are predicted and managed. This is deliberately
+        the last slide of Part 1 — everything from here on in today's lecture uses this toolkit rather
+        than building more of it.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 2 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 2</p>
+      <h2 style="color:#fff;">The Mediterranean Growing Season</h2>
+      <p class="divider-note" style="color:#fff;">Applying Part 1's toolkit to WA's specific climate: the seasonal pattern, the growing season it defines, and the risks at its margins.</p>
+      <aside class="notes">
+        Target: ~12 min for this section. Preview the three-slide arc: the Mediterranean rainfall
+        pattern and the rainfall gradient across the grainbelt (12); the break, growing season and
+        terminal drought as the three events that bracket every timing decision (13); and frost/heat as
+        agronomic consequences at the margins of that season (14), now explained using the frost
+        mechanism from Part 1. This Part is shorter and more applied than Part 1 — the heavy lifting was
+        the toolkit, this is its first real application.
+      </aside>
+    </section>
+
+    <!-- P2-12. Mediterranean Pattern and Gradient -->
+    <section>
+      <h2>The Mediterranean Pattern: Winter Rain, Summer Drought</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="assets/isohyets_WA.jpg" alt="Map of south-west Western Australia showing average annual rainfall zones 2000-2024 compared to 1910-1999, with 275, 450 and 800mm isohyet trend lines and rainfall zones from under 275mm to over 1000mm" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Delivered by cold fronts in the westerly wind belt, which migrates north over the continent in winter; summer is hot and dry under the subtropical ridge (Part 3).</li>
+            <li>A strong spatial gradient runs across the grainbelt — from over 1000&nbsp;mm on the far south-west coast down to under 275&nbsp;mm at the eastern margin.</li>
+            <li>The <b>275, 450 and 800&nbsp;mm isohyets</b> (green lines) mark the 1910&ndash;1999 baseline — DPIRD's 2000&ndash;2024 zoning shows those same rainfall totals now occurring further west and south than they used to.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="diagram-caption">Source: DPIRD, "South-west WA average annual rainfall zones 2000&ndash;2024 compared to 1910&ndash;1999."</p>
+      <aside class="notes">
+        Target: ~4 min. Recall the seasonal chart from Part 1 for the overlap-in-time story (rain and
+        cool conditions coinciding May-October); this map adds the overlap-in-space story — the
+        gradient across the grainbelt Part 1's single-location chart couldn't show. Walk the isohyets
+        literally: they're contour lines of equal rainfall, exactly like elevation contours but for
+        millimetres of rain per year. The map's own comparison — 2000-2024 against the 1910-1999
+        baseline — is worth pausing on explicitly since it's not just a gradient snapshot, it's already
+        showing Part 4's drying trend spatially: the same isohyet that used to sit further east/north
+        now sits further west/south, meaning the rainfall zone boundaries have themselves shifted
+        toward the coast over the past century. This gradient is why agronomic recommendations are
+        always zone-specific — a Colwell P critical value or a lime rate calibrated for a 500&nbsp;mm
+        southern-margin paddock (L03) genuinely doesn't transfer to a 300&nbsp;mm eastern paddock, and
+        this map is the reason why.
+      </aside>
+    </section>
+
+    <!-- P2-13. Defining the Growing Season -->
+    <section>
+      <h2>Defining the Growing Season: Break, Length, Terminal Drought</h2>
+      <ul class="journey-list">
+        <li><b>1</b> <strong>The break</strong> — first substantial autumn rains (~25 mm over a few days) that wet soil enough to sow; timing ranges April&ndash;July.</li>
+        <li><b>2</b> <strong>The growing season</strong> — the period when rainfall exceeds evaporative demand, running through winter and early spring.</li>
+        <li><b>3</b> <strong>Terminal drought</strong> — when spring rain stops and rising temperature/evaporation exhaust soil moisture, forcing grain fill on stored water.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~4 min. These three events bracket every timing decision in the unit, and now students
+        have the tools from Part 1 to understand each mechanistically: the break is the first time the
+        soil water balance (P1-4) turns decisively positive after summer's deficit; the growing season
+        is the period when that balance stays positive; terminal drought is when it turns negative
+        again as evapotranspiration outpaces rainfall, drawing the soil tank down from field capacity
+        toward wilting point (P1-5/6) faster than it can be refilled. Growing-season length sets yield
+        potential and dictates variety maturity and sowing date — this is the direct mechanism behind
+        L03's sowing-window and plant-density content, which assumed this timeline without fully
+        deriving it. A late break doesn't just delay sowing, it compresses the season from both ends at
+        once, since terminal drought's timing doesn't move to compensate.
+      </aside>
+    </section>
+
+    <!-- P2-14. Frost and Heat: Crop Consequences -->
+    <section>
+      <h2>Frost and Heat at the Margins: Crop Consequences</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Frost</h3>
+          <ul class="dense-bullets">
+            <li>If a radiation frost (P1-7) coincides with flowering, it sterilises cereal florets and can destroy a season's yield in a single night.</li>
+            <li>Frost severity has not eased with warming — clearer skies under a drying climate promote exactly the radiative cooling P1-7 described.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Heat</h3>
+          <ul class="dense-bullets">
+            <li>High temperatures during flowering/grain fill damage pollen viability — wheat pollen is impaired above roughly 35&deg;C.</li>
+            <li>Accelerates development (more GDD accumulated per day) and shortens grain fill, shrivelling grain.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This slide is the direct payoff of Part 1's frost-mechanism slide — say that
+        explicitly: "recall the three ingredients for radiation frost; here's what happens when that
+        night lands on a flowering paddock." Land the squeeze plainly: growers want to flower late
+        enough to escape frost but early enough to avoid heat and terminal drought — the optimal
+        flowering window from L03's sowing-time content, now fully explained end to end by today's
+        mechanics. Both frost and heat are threshold, event-driven risks that seasonal averages
+        conceal — a single frost night or heatwave during flowering (a "critical period" in P1-11's
+        sense) can destroy a season's yield even in an otherwise average year, which is exactly why
+        crop models (L02) need to represent daily extremes, not just monthly means, to be useful.
+      </aside>
+    </section>
+
+    <!-- ===================== BREAK ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Short Break</p>
+      <h2 style="color:#fff;">Halfway Point</h2>
+      <p class="divider-note" style="color:#fff;">Part 3 turns from the seasonal pattern itself to why that pattern varies so much from year to year.</p>
+      <aside class="notes">
+        Target: ~5 min. A genuine short break at the natural halfway point. On return, recap the
+        one-sentence bridge: "Parts 1&ndash;2 explained the season WA has on average; Part 3 explains
+        why any given year departs from that average, and Part 4 explains how the average itself is
+        shifting." No new content on this slide — purely a pacing and attention reset.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 3 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 3</p>
+      <h2 style="color:#fff;">Why Is WA Rainfall So Variable?</h2>
+      <p class="divider-note" style="color:#fff;">Four large-scale ocean-atmosphere drivers that make or break a WA season, and how growers use them to manage risk.</p>
+      <aside class="notes">
+        Target: ~22 min for this section. Preview the six-slide arc: what motivates studying these
+        drivers at all (15); the four drivers in turn — ENSO (16), the IOD as WA's dominant driver (17),
+        SAM (18), and the subtropical ridge/cold fronts/cut-off lows that physically deliver the rain
+        (19); then how growers turn all of this into a usable seasonal forecast (20). This Part answers
+        the "why does one May-October season deliver 250mm and the next deliver 450mm" question that
+        Parts 1&ndash;2 deliberately left open.
+      </aside>
+    </section>
+
+    <!-- P3-15. Why Is WA Rainfall So Variable -->
+    <section>
+      <h2>Why Is WA Rainfall So Variable?</h2>
+      <pre class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Segoe UI'}}}%%
+flowchart TB
+  subgraph drivers["<b>Large-Scale Ocean-Atmosphere Drivers</b>"]
+    direction LR
+    ENSO["<b>ENSO</b><br/>(Pacific)<br/>weaker WA effect"]
+    IOD["<b>IOD</b><br/>(Indian Ocean)<br/><i>WA's dominant driver</i>"]
+    SAM["<b>SAM</b><br/>(Southern Ocean)<br/>weeks-scale"]
+    RIDGE["<b>Subtropical Ridge</b><br/>position & strength"]
+  end
+  
+  RAIN["<b>WA Grainbelt Winter Rainfall</b>"]
+  
+  SYS["<b>Physical Delivery Systems</b><br/>Cold fronts • Cut-off lows • NW cloudbands"]
+  
+  ENSO --> RAIN
+  IOD --> RAIN
+  SAM --> RAIN
+  RIDGE --> RAIN
+  RAIN --> SYS
+  
+  classDef dominant fill:#FFF7D7,stroke:#E2B600,stroke-width:3px,color:#333
+  classDef central fill:#E8F0FE,stroke:#27348B,stroke-width:3px,color:#27348B,font-size:20px
+  classDef delivery fill:#F2EDE8,stroke:#666,stroke-width:2px,color:#333
+  classDef driverBox fill:none,stroke:#27348B,stroke-width:2px,stroke-dasharray:5
+  
+  class IOD dominant
+  class RAIN central
+  class SYS delivery
+  class drivers driverBox
+      </pre>
+      <p class="diagram-caption">Four large-scale drivers modulate WA rainfall through the same delivery systems introduced in Part 1 — they can reinforce or cancel each other.</p>
+      <aside class="notes">
+        Target: ~4 min. Motivate the next four slides: WA's extreme year-to-year rainfall variability
+        is not random noise, it's driven by identifiable large-scale ocean-atmosphere patterns that can
+        be monitored and, to a degree, forecast — genuinely useful, since these drivers underpin the
+        seasonal outlooks growers use for pre-season decisions. Flag IOD as shaded/dominant deliberately
+        — the driver students should most associate with WA specifically, unlike ENSO which dominates
+        eastern Australia. Emphasise WA's unique position between the Indian and Southern Oceans, unlike
+        eastern Australia, which is why WA and eastern seasons often diverge. Worth mentioning a fifth,
+        shorter-term driver in passing — the Madden-Julian Oscillation, a 30-60 day tropical driver
+        adding further sub-seasonal variability on top of these four.
+      </aside>
+    </section>
+
+    <!-- P3-16. ENSO -->
+    <section>
+      <h2>El Ni&ntilde;o&ndash;Southern Oscillation (ENSO)</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li><b>El Ni&ntilde;o</b> — warming of the central/eastern tropical Pacific shifts convection away from Australia; typically drier and hotter across eastern and, more weakly, southern Australia.</li>
+            <li><b>La Ni&ntilde;a</b> — the opposite phase; typically wetter across eastern and northern Australia.</li>
+            <li>Monitored via the <b>SOI</b> (Tahiti&ndash;Darwin pressure difference) and sea-surface indices like <b>NINO3.4</b>.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dzat16LMtQk?si=BezSHZamQpfNa3VV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:8px;"></iframe>
+          <p style="font-size:0.5em; margin-top:0.5em; opacity:0.75;">BOM explainer: Understanding ENSO</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Qualify ENSO's WA influence carefully — the single most important nuance here:
+        its effect on the south-west grainbelt is real but weaker and less reliable than on eastern
+        Australia, because WA's winter rainfall is governed more by the Indian and Southern Oceans than
+        by the Pacific. That's why an El Ni&ntilde;o announcement, though a serious warning for eastern
+        growers, is a less decisive signal for WA — a distinction students need to correctly interpret
+        national media coverage of seasonal outlooks, usually written from an eastern-Australia
+        perspective. ENSO sets up the next slide directly: the IOD is the Indian Ocean driver that
+        matters more here.
+      </aside>
+    </section>
+
+    <!-- P3-17. IOD -->
+    <section>
+      <h2>The Indian Ocean Dipole (IOD): WA's Dominant Driver</h2>
+      <div class="layout-split">
+        <div>
+          <p style="font-size:0.75em; margin-bottom:0.6em; color:#27348B; font-weight:500;">Sea-surface temperature difference between the western (near Africa) and eastern (near Indonesia) tropical Indian Ocean:</p>
+          <ul class="dense-bullets">
+            <li><b>Positive IOD</b> — cooler water off Indonesia reduces moisture available to systems reaching Australia; typically suppresses winter&ndash;spring rainfall, raising drought and frost risk.</li>
+            <li><b>Negative IOD</b> — warmer eastern Indian Ocean feeds more moisture into Australian systems; typically wetter winters and springs.</li>
+            <li>ENSO and the IOD are physically linked and often coincide — El Ni&ntilde;o with a positive IOD compounds dry conditions.</li>
+          </ul>
+          <p style="font-size:0.55em; margin-top:0.8em; padding:0.5em; background:#FFF7D7; border-left:3px solid #E2B600; color:#333;">The IOD peaks in exactly WA's winter-spring growing season — a developing positive IOD is a genuine warning of a poor finish</p>
+        </div>
+        <div class="split-media">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/J6hOVatamYs?si=qB-XrKv9r95qKm48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:8px;"></iframe>
+          <p style="font-size:0.5em; margin-top:0.5em; opacity:0.75;">BOM explainer: Indian Ocean Dipole</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This is the driver students should associate most strongly with WA — say that
+        explicitly, contrasting directly with the previous slide's ENSO qualification. It matters so
+        much agronomically because of timing: it peaks in the crucial winter-spring period and directly
+        modulates the moisture supply to the systems that deliver WA's growing-season rain (the cold
+        fronts and cloudbands from Part 1's rain-formation slide, and the ridge/fronts slide next).
+        Worst-case framing worth stating plainly: the worst WA droughts occur when multiple drivers
+        align against rainfall at once — a positive IOD compounding with El Ni&ntilde;o and a positive
+        SAM (next slide) is the genuine nightmare combination, not any single driver acting alone.
+      </aside>
+    </section>
+
+    <!-- P3-18. SAM -->
+    <section>
+      <h2>The Southern Annular Mode (SAM)</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>The north&ndash;south movement of the belt of westerly winds and their embedded cold fronts circling the Southern Ocean — the systems that actually deliver most of WA's winter rain.</li>
+            <li><b>Positive SAM</b> — contracts the westerlies poleward (south); in winter this tends to push rain-bearing fronts south of the coastline, reducing rainfall.</li>
+            <li><b>Negative SAM</b> — expands the westerlies north, bringing fronts further onto the continent, generally increasing winter rainfall.</li>
+            <li>Operates on a much shorter timescale (weeks, not months) than ENSO or the IOD — harder to forecast far ahead, and drives variability within a season.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/UsWHHE_jkGE?si=xNnzKSXExOLpSvit" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:8px;"></iframe>
+          <p style="font-size:0.5em; margin-top:0.5em; opacity:0.75;">BOM explainer: Southern Annular Mode</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Use the concrete conflict example: a La Ni&ntilde;a year is typically wetter for
+        Australia overall, but a positive SAM phase can still push the westerly fronts south of WA,
+        producing a below-average season here even while the national outlook looks wet — real proof
+        these drivers can cancel as easily as reinforce. SAM's short timescale is the key distinguishing
+        feature from ENSO and the IOD — it's why a seasonal outlook can be right on the big picture (a
+        positive IOD year) but still get a particular fortnight wrong. This directly sets up the next
+        slide: SAM's mechanism is that it moves the latitude of the belt carrying the actual
+        rain-delivery systems from Part 1's rain-formation diagram.
+      </aside>
+    </section>
+
+    <!-- P3-19. Subtropical Ridge, Cut-off Lows, Cold Fronts -->
+    <section>
+      <h2>The Subtropical Ridge, Cut-Off Lows and Cold Fronts</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>What actually delivers the rain</h3>
+          <ul class="dense-bullets">
+            <li><b>Subtropical ridge</b> — the high-pressure belt dominating southern Australia in summer, retreating north in winter; its position/strength controls whether fronts can reach the grainbelt.</li>
+            <li><b>Cold fronts</b> — the workhorses of WA winter rainfall, delivering frequent, moderate falls (the "lift and cool" step from Part 1).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Secondary systems</h3>
+          <ul class="dense-bullets">
+            <li><b>Cut-off lows</b> — less frequent but can deliver heavy, widespread rain.</li>
+            <li><b>NW cloudbands</b> — draw tropical Indian Ocean moisture across the continent, sometimes producing season-making rains; their moisture supply is modulated by the IOD.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This slide is where the four abstract drivers become physically real: the IOD
+        and ENSO change how much moisture is available to these systems, and SAM changes their
+        latitude, so the indices translate into rain only through their effect on the frequency, track
+        and moisture content of fronts, cut-off lows and cloudbands — literally Part 1's rain-formation
+        diagram, now with the specific WA systems named. A trend toward a stronger, more southerly
+        subtropical ridge is implicated in the long-term drying trend in Part 4 — flag that connection
+        explicitly. This mechanistic understanding is also exactly what makes the frost-risk mechanism
+        from Part 1 make sense synoptically: a front passing through, followed by this ridge building
+        in behind it, brings the clear, dry, calm conditions radiation frost needs.
+      </aside>
+    </section>
+
+    <!-- P3-20. Seasonal Forecasting -->
+    <section>
+      <h2>Seasonal Forecasting: Using the Drivers to Manage Risk</h2>
+      <div class="context-card">
+        <p class="context-q">The Bureau of Meteorology issues probabilistic outlooks — the chance of exceeding median rainfall — from dynamical models simulating these drivers forward in time:</p>
+        <ul>
+          <li>A "65% chance of a drier-than-median spring" is a shift in the odds, not a certainty — it weights decisions, it doesn't make them.</li>
+          <li>Growers integrate outlooks into nitrogen investment, crop/variety choice and risk exposure — always alongside what the season has actually delivered so far (stored soil moisture from Part 1's water balance, and the timing of the break).</li>
+          <li>Forecast skill is modest, particularly for the autumn break, and declines with lead time.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This slide is the practical payoff of Part 3: the drivers aren't just academic
+        classification, they're the physical basis for the seasonal outlook a grower actually reads
+        before committing to a nitrogen program. Stress the probabilistic framing hard — a student
+        should leave able to correctly interpret a percentage-chance outlook rather than treating it as
+        a yes/no prediction. Note explicitly that "stored soil moisture" here is literally the tank from
+        Part 1's PAW/SMD slide — a grower reading a forecast is combining a probabilistic future outlook
+        with a known, measured current SMD, not relying on the forecast alone. Because forecast skill is
+        modest and declines with lead time, outlooks supplement rather than replace flexible, in-season,
+        tactical management — a direct link forward to the farm financial and risk-management lecture.
+      </aside>
+    </section>
+
+    <!-- P3-20b. Practical Tool: Rainfall Deciles -->
+    <section>
+      <h2>Practical Tool: Rainfall Deciles and the DPIRD Rainfall-to-Date Tool</h2>
+      <div class="context-card">
+        <p class="context-q">A decile ranks this season's rainfall-to-date against every recorded season at the same location, up to the same date:</p>
+        <ul>
+          <li><b>Decile 1</b> — among the driest 10% of years on record; <b>decile 5</b> — the median year; <b>decile 10</b> — among the wettest 10%.</li>
+          <li>Unlike a seasonal forecast (previous slide, which is probabilistic and about the future), a decile is a measured fact about the past and present — how unusual this season already is, right now.</li>
+          <li>DPIRD's free <b>Rainfall to Date tool</b> lets growers pick any WA weather station and see the current season's decile, updated daily, against the full historical record.</li>
+        </ul>
+        <span class="source-chip">dpird.wa.gov.au &rarr; Online Tools &rarr; Rainfall and Irrigation Calculators &rarr; Rainfall to Date Tool</span>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Pair this deliberately against the previous slide: a seasonal outlook says "the
+        next three months are more likely to be dry"; a decile says "the season so far, right now, is
+        already the 2nd driest on record at this station" — one is a probabilistic forward look, the
+        other is a measured backward look, and a grower uses both together, alongside their own known
+        SMD (Part 1), to make an in-season call. If time and a live internet connection allow, pull the
+        tool up and show a real WA station — the decile framing (1 = driest, 10 = wettest, 5 = median) is
+        the same language used throughout the seasonal-outlook and drought-declaration literature
+        students will encounter in industry, so it's worth them seeing the real interface at least once.
+        This is also a nice bridge to Part 4: a run of consecutive low-decile seasons at a station is
+        exactly the kind of station-level evidence that adds up to the region-wide drying trend covered
+        next.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 4 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 4</p>
+      <h2 style="color:#fff;">The Changing Climate</h2>
+      <p class="divider-note" style="color:#fff;">The observed long-term drying trend, how growers have adapted, and what the future likely holds.</p>
+      <aside class="notes">
+        Target: ~12 min for this section, then ~4 min for the close. Preview the three-slide arc: the
+        observed drying trend itself (21), the remarkable adaptation story (22), and the future
+        projections and their implications (23). This closing Part layers a multi-decade trend on top
+        of the year-to-year variability just covered in Part 3 — both operate simultaneously on any
+        given WA season.
+      </aside>
+    </section>
+
+    <!-- P4-21. The Observed Drying Trend -->
+    <section>
+      <h2>The Observed Drying Trend in South-West WA</h2>
+      <div class="layout-stats">
+        <div class="stat-card">
+          <span class="stat-num">15&ndash;20%</span>
+          <span class="stat-label">decline in May&ndash;July rainfall since the mid-20th century, accelerating from the 1970s</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">&darr; fronts</span>
+          <span class="stat-label">fewer rain-bearing fronts reaching the region each winter</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">margins hit hardest</span>
+          <span class="stat-label">decline strongest in the once-most-reliable high-rainfall western/southern margins</span>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This is one of the clearest regional climate-change signals anywhere in the
+        world, and of existential importance to the industry — say that directly, it is not
+        overstatement. The attributed mechanism ties every earlier Part together: a poleward shift and
+        strengthening of the subtropical ridge and storm tracks (linked to a trend toward more positive
+        SAM, and to broader circulation changes from greenhouse warming and, historically, ozone
+        depletion) pushes the rain-bearing westerlies and their fronts further south, away from the
+        continent — literally the same mechanism as a persistent positive-SAM winter (P3-18), just now a
+        multi-decade trend instead of a single season's anomaly. Emphasise this is a measured, sustained
+        trend already reshaping the industry, not a future forecast.
+      </aside>
+    </section>
+
+    <!-- P4-22. How Growers Have Adapted -->
+    <section>
+      <h2>How Growers Have Adapted to a Drier Climate</h2>
+      <div class="context-card">
+        <p class="context-q">Counterintuitively, total grain production and water-use efficiency have both risen despite less growing-season rainfall:</p>
+        <ul>
+          <li>Conservation agriculture (no-till, stubble retention) conserving scarce soil moisture — protecting the "tank" from Part 1.</li>
+          <li>Earlier and dry sowing to use every millimetre of a shortened season; summer weed control to bank soil moisture ahead of the break.</li>
+          <li>Improved varieties (higher transpiration efficiency, better disease resistance, matched phenology) and responsive nitrogen management.</li>
+          <li>Controlled traffic reducing compaction; shifts in crop mix and geographic distribution of cropping.</li>
+        </ul>
+        <span class="source-chip">The yield gap has closed faster than the climate has dried — but this adaptation has limits</span>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Frame this as a genuine case study in agronomic and technological resilience —
+        every item here is content already met elsewhere in the unit (no-till and conservation
+        agriculture from L01), and this slide's job is to show those weren't independent good ideas,
+        they were the industry's direct, structural response to the drying trend just described. The
+        "yield gap closed faster than the climate has dried" framing is the single sentence worth
+        writing on the board. But land the caution explicitly too: this adaptation has limits, and
+        continued drying will test them — exactly the question the next slide has to confront.
+      </aside>
+    </section>
+
+    <!-- P4-23. The Future Climate -->
+    <section>
+      <h2>The Future Climate and Its Implications for WA Grain</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Consensus projections</h3>
+          <ul class="dense-bullets">
+            <li>Continued decline in cool-season rainfall; higher temperatures; more frequent, intense heat extremes at flowering/grain-fill.</li>
+            <li>A shorter effective growing season, partially offset by rising CO&#8322; boosting water-use efficiency and yield potential for WA's C3 crops.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The net picture</h3>
+          <ul class="dense-bullets">
+            <li>CO&#8322; fertilisation partially but not fully compensates for warming/drying — the balance varies greatly year to year.</li>
+            <li>The dominant consequence is <b>more variability and risk</b>, not a simple uniform decline.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. This connects directly to the climate-change crop-model scenarios from L02 —
+        say that explicitly. The strategic responses the industry is pursuing mirror the adaptation
+        list from the previous slide, just projected forward: continued breeding for heat/drought/frost
+        tolerance and shifted phenology, further WUE gains, better seasonal forecasting, and possible
+        shifts in crop mix and the spatial extent of viable cropping. Close Part 4 on the unit's
+        throughline stated plainly: a drying, more variable, more extreme climate makes the disciplined,
+        systems-based, risk-aware agronomy taught in this unit more essential, not less, to the future
+        of WA grain production.
+      </aside>
+    </section>
+
+    <!-- ===================== SYNTHESIS / CLOSE ===================== -->
+    <section class="close-slide" data-background-color="#27348B">
+      <h2 style="color:#fff;">Bringing It Together: Climate as the System Underneath Everything</h2>
+      <div class="synthesis-prompt">
+        <ul class="synthesis-list">
+          <li><strong>The toolkit is quantitative</strong>Rain formation, the water balance, PAW/SMD, frost mechanics and GDD are calculations, not just vocabulary.</li>
+          <li><strong>The season is a known shape</strong>The break, growing season and terminal drought bracket every timing decision in the unit.</li>
+          <li><strong>Variability has physical causes</strong>ENSO, IOD, SAM and the subtropical ridge explain why seasons differ — and why the average itself is drying.</li>
+        </ul>
+      </div>
+      <!-- <p class="closing-rule">Next lecture &rarr; L05 Australian and WA Agriculture in World Context</p> -->
+      <div style="margin-top:2em; padding-top:1.5em; border-top:1px solid rgba(255,255,255,0.3);">
+        <h3 style="color:#E2B600; font-size:0.6em; margin-bottom:0.5em;">Key Reference</h3>
+        <p style="color:#fff; font-size:0.45em; line-height:1.4; text-align:left; max-width:90%; margin:0 auto;">
+          Anderson, W K, and Garlinge, J R. (2000), <em>The Wheat book: principles and practice</em>. Department of Primary Industries and Regional Development, Western Australia, Perth. Bulletin 4443.<br>
+          Chapter 1 Environment — Coordinator: Ian Foster<br>
+          Wheatbook 1 authors: J. Cramb, M.W. Perry, S. McKeague, M.J. Mulcahy<br>
+          Revised by: J. Cramb, J. Courtney and P. Tille
+        </p>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. Walk the full four-part arc once, end to end, as a single connected story: Part
+        1 built the physical toolkit (rain formation, the water balance, PAW/SMD, frost mechanics, GDD,
+        Köppen, chart reading) → Part 2 applied it to WA's specific Mediterranean season (the break,
+        growing season, terminal drought, and frost/heat consequences at its margins) → Part 3 explained
+        why any given season departs from that average pattern (the four large-scale drivers) → Part 4
+        showed the average itself is shifting (the drying trend) and how the industry has responded.
+        Emphasise this lecture is the backdrop every other lecture in the unit sits inside: L01's
+        French-Schultz equation is today's water balance in simplified form; L03's sowing-window and
+        lime-timing content assumed exactly today's break/terminal-drought mechanics; every future
+        crop-specific lecture will use "GDD," "PAW," "SMD" and "the break" as assumed vocabulary from
+        here on. Bridge to L05: having built the physical climate system, the next lecture asks a
+        different kind of question — given that climate, why does WA farm the way it does, and what is
+        WA's place in feeding the world?
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/plugin.js"></script>
+<!-- Multiplex intentionally NOT included -- see _shared/_boilerplate_template.html and the
+     project_revealjs_uwa_boilerplate memory for why (reveal.js removed its own multiplex plugin;
+     real live sync needs a separately-hosted Socket.io server, not a CDN script). -->
+
+<!-- Mermaid: loaded directly (no official reveal.js plugin ships this) -- see L01/L03/L04-L05 and
+     the project_revealjs_uwa_boilerplate memory for why. A single mermaid.run() renders every
+     diagram regardless of which slide is showing, since all sections exist in the DOM from load. -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.08,
+    chalkboard: {
+      theme: 'chalkboard',
+      background: [ 'rgba(0,0,0,0)', 'rgba(255,255,255,0.05)' ],
+      toggleChalkboardButton: { left: '30px', bottom: '30px' },
+      toggleNotesButton: { left: '110px', bottom: '30px' }
+    },
+    plugins: [ RevealNotes, RevealMarkdown, RevealZoom, RevealHighlight, RevealChalkboard ]
+  });
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#F5F7FF',
+      primaryBorderColor: '#27348B',
+      primaryTextColor: '#27348B',
+      lineColor: '#27348B',
+      secondaryColor: '#E2B600',
+      fontFamily: 'Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif'
+    }
+  });
+  mermaid.run({ querySelector: '.mermaid' });
+</script>
+</body>
+</html>

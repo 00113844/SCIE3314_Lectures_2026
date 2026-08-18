@@ -1,0 +1,404 @@
+# SAMPLE ENHANCED YAML STRUCTURE
+# This is a demonstration of the proposed schema enhancements
+# for SCIE3314 lecture content authoring
+# See: docs/YAML_Structure_Proposal.md for full specification
+
+lecture_id: "L01"
+topic: "Introduction to Cropping Systems"
+auto_figures: true
+duration_minutes: 100
+
+# Unit-wide learning outcomes this lecture addresses
+learning_outcomes:
+  - id: "LO-01"
+    text: "Understand the context of Australian agriculture in relation to world food production"
+    coverage: "partial"
+    
+  - id: "LO-04"
+    text: "Demonstrate critical thinking at a farming systems scale"
+    coverage: "full"
+    
+  - id: "LO-05"
+    text: "Discuss how models can simulate complex agricultural systems"
+    coverage: "supporting"
+
+# Prerequisites (from other lectures or assumed knowledge)
+prerequisites:
+  - "Basic understanding of agricultural terminology"
+  - "Familiarity with Western Australian geography"
+
+# Core wiki documents that provide foundation for this lecture
+wiki_context:
+  - "systems_thinking_in_agriculture"
+  - "cropping_systems_overview_wa"
+  - "mediterranean_climate_agriculture"
+
+# Teaching philosophy for this lecture
+pedagogical_approach: "systems-thinking"
+
+subtopics:
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # EXAMPLE 1: Concept slide with full enhancements
+  # ══════════════════════════════════════════════════════════════════════════
+  
+  - title: "Systems Thinking and System"
+    
+    # ── EXISTING FIELDS ────────────────────────────────────────────────────
+    description: >
+      What is a System? Definition of a System: 'A system is a group of 
+      interacting or interrelated elements that act according to a set of 
+      rules or set of constraints to form a unified whole.' 
+      Malthusian view of global population dynamics stated that the growth 
+      of population would soon reach the planet's carrying capacity and 
+      through system analysis (differential equations), it would be possible 
+      to determine its point of equilibrium. This framework is applied to a 
+      global system ("Club of Rome") from where technocrats could determine 
+      priority actions and justify budgets. However, this same framework is 
+      applicable to a broader range of situations (e.g. farm management, 
+      soil dynamics) and we use it to understand the long-term implications 
+      and model scenarios. Hence Modelling is an essential part of this unit.
+      System States and Boundaries - Inputs, Throughputs, and Outputs; 
+      Dynamics and Time-Based Behavior - Delays (Lag), Path Dependency, 
+      Transient vs. Steady State. System Boundaries; State Variables;
+      Resilience and Thresholds: Tipping Points (Bifurcation);
+      Structure and Complexity.
+    
+    # ── NEW: KEY CONCEPTS ──────────────────────────────────────────────────
+    # Explicit, human-curated learning targets
+    key_concepts:
+      - name: "System definition"
+        terms: ["system", "interacting elements", "unified whole", "emergent properties"]
+        cognitive_level: "understand"
+        assessment_prompt: "Define a cropping system in your own words"
+        
+      - name: "System boundaries"
+        terms: ["boundary", "inputs", "outputs", "throughputs", "environment"]
+        cognitive_level: "apply"
+        assessment_prompt: "Draw the boundary for a wheat paddock system"
+        
+      - name: "Feedback mechanisms"
+        terms: ["positive feedback", "negative feedback", "equilibrium", "amplification"]
+        cognitive_level: "analyze"
+        assessment_prompt: "Identify a feedback loop in stubble retention decisions"
+        
+      - name: "Emergent properties"
+        terms: ["emergence", "complexity", "non-linear", "whole greater than parts"]
+        cognitive_level: "analyze"
+        assessment_prompt: "Explain why crop yield is an emergent property"
+    
+    # ── NEW: WIKI INTEGRATION ──────────────────────────────────────────────
+    # Direct links to wa_wiki documents for grounded content
+    wiki_references:
+      - slug: "systems_thinking_in_agriculture"
+        relevance: "foundation"
+        sections: ["Definition of Systems", "Feedback Mechanisms"]
+        
+      - slug: "cropping_systems_overview_wa"
+        relevance: "example"
+        query: "system components boundaries feedback"
+        
+      # Agent-based retrieval for complex questions
+      - agent_query: "How do feedback loops operate in WA cropping systems with stubble management?"
+        agent_output_as: "discussion_context"
+    
+    # ── NEW: LEARNING OUTCOMES MAPPING ────────────────────────────────────
+    learning_outcomes:
+      - "Demonstrate critical thinking at a farming systems scale"
+      - "Discuss how models can simulate complex agricultural systems"
+    
+    # ── NEW: PEDAGOGICAL METADATA ──────────────────────────────────────────
+    estimated_time_minutes: 10
+    slide_type: "concept"           # concept | example | activity | discussion | case_study
+    interactivity: "medium"         # low | medium | high
+    
+    # ── NEW: TEACHING GUIDANCE ─────────────────────────────────────────────
+    teaching_notes: >
+      START with Malthusian population dynamics as historical hook—
+      most students have heard "exponential growth" but haven't thought 
+      about it as a differential equation system.
+      
+      BOARD WORK: Draw a simple system diagram with students calling out 
+      components. Start with "wheat crop" in center, then add: soil, water, 
+      nitrogen, weeds, machinery, decisions, markets. Draw arrows as they 
+      suggest connections.
+      
+      KEY POINT: Emphasize that "everything affects everything" is NOT 
+      systems thinking—we need to identify WHICH connections matter most 
+      and WHICH can be ignored for a given question.
+      
+      TRANSITION: "We'll spend the whole unit learning to think this way—
+      seeing crops not as recipes but as dynamic systems we can understand 
+      and steer."
+    
+    discussion_prompts:
+      - "What is the system boundary for your family farm? What's inside vs outside?"
+      - "Give an example of a positive feedback loop in a cropping system"
+      - "When does 'more complexity' help understanding vs hurt it?"
+    
+    common_misconceptions:
+      - "Students often think 'system' just means 'complicated thing'—clarify it's about RELATIONSHIPS"
+      - "Confusion between correlation and causation in system diagrams"
+      - "Thinking feedback loops are always stabilizing (negative feedback bias)"
+      - "Believing we can fully predict systems if we just measure enough"
+    
+    # ── NEW: CONTENT GENERATION STRATEGY ───────────────────────────────────
+    synthesis_mode: "wiki-grounded"    # wiki-grounded | llm-creative | hybrid | manual
+    retrieval_strategy: "hybrid"       # semantic | keyword | hybrid
+    max_wiki_sources: 3
+    
+    # ── EXISTING: FIGURE SUPPORT ───────────────────────────────────────────
+    figure_id: "Fig-L01-SystemDiagram"
+    image_prompt: >
+      Conceptual diagram showing nested systems in agriculture.
+      Center: wheat plant (cellular/physiological level).
+      Middle ring: paddock system (soil, water, nutrients, weeds).
+      Outer ring: farm system (machinery, markets, finance, risk).
+      Use UWA blue (#27348B) for plant, gradient to gold (#E2B600) for outer rings.
+      Arrows showing interactions between levels.
+      Clean, educational style, --ar 16:9, --no text labels (will be overlaid).
+
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # EXAMPLE 2: Activity slide with discussion focus
+  # ══════════════════════════════════════════════════════════════════════════
+  
+  - title: "Identifying System Boundaries in Practice"
+    
+    description: >
+      Students apply systems thinking by defining boundaries for real WA farms.
+      This activity builds recognition that boundary choice depends on the 
+      management question being asked.
+    
+    key_concepts:
+      - name: "Boundary selection depends on question"
+        terms: ["boundary", "scope", "question-driven", "pragmatic"]
+        cognitive_level: "apply"
+    
+    wiki_references:
+      - slug: "farm_management_decision_making_wa"
+        relevance: "context"
+    
+    learning_outcomes:
+      - "Demonstrate critical thinking at a farming systems scale"
+    
+    estimated_time_minutes: 8
+    slide_type: "activity"
+    interactivity: "high"
+    
+    teaching_notes: >
+      SETUP: Show satellite image of a WA broadacre farm (if available, use 
+      example from Kellerberrin or Merredin).
+      
+      TASK: "You're a consultant. Three farmers ask three questions:
+        1. Should I apply more nitrogen to this wheat paddock?
+        2. Should I add lupins to my rotation?
+        3. Should I buy the neighboring farm?
+      
+      For each question, what's the system boundary? What's in vs out?"
+      
+      THINK-PAIR-SHARE: 2 min solo, 3 min pairs, 3 min class discussion.
+      
+      DEBRIEF: Emphasize that boundary expands with question scope.
+      Nitrogen decision: paddock system (soil, crop, weather this year).
+      Rotation decision: farm system (multiple paddocks, multi-year).
+      Land purchase: regional system (land prices, labor, machinery sharing).
+    
+    discussion_prompts:
+      - "What happens if your boundary is too narrow?"
+      - "What happens if it's too broad?"
+      - "Who else's system does your farm boundary intersect?"
+    
+    synthesis_mode: "manual"  # This is a human-designed activity, not wiki-generated
+
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # EXAMPLE 3: Example slide with WA field context
+  # ══════════════════════════════════════════════════════════════════════════
+  
+  - title: "Water-Use Efficiency: The French-Schultz Benchmark"
+    
+    description: >
+      Introduce water-use efficiency (WUE) as the single most useful benchmark
+      for comparing crop performance in Mediterranean-type environments. Define
+      WUE as grain yield produced per millimetre of water used (kg grain per
+      hectare per mm), and present the French and Schultz (1984) framework
+      developed in South Australia and universally applied across southern
+      Australia. Their model expresses potential yield as a function of
+      growing-season water use, where water use is estimated as growing-season
+      rainfall (April–October) minus a soil evaporation loss of approximately
+      110 mm before the crop can transpire. The slope of the relationship — the
+      transpiration efficiency — represents the biological potential, historically
+      around 20 kg/ha/mm for wheat and now revised upward toward 22–25 kg/ha/mm
+      with modern varieties and agronomy.
+    
+    key_concepts:
+      - name: "Water-use efficiency definition"
+        terms: ["WUE", "kg/ha/mm", "transpiration efficiency", "grain yield per water"]
+        cognitive_level: "understand"
+        
+      - name: "French-Schultz calculation"
+        terms: ["growing season rainfall", "soil evaporation", "110mm constant", "20-25 kg/ha/mm slope"]
+        cognitive_level: "apply"
+        assessment_prompt: "Calculate expected yield for 350mm growing season rainfall"
+        
+      - name: "Yield gap interpretation"
+        terms: ["yield gap", "water-limited potential", "actual yield", "constraint diagnosis"]
+        cognitive_level: "analyze"
+    
+    wiki_references:
+      - slug: "water_use_efficiency_and_yield_potential_in_dryland_systems"
+        relevance: "foundation"
+        sections: ["Water Use Efficiency (WUE)", "Yield Estimation", "French and Schultz Framework"]
+        
+      - slug: "cereal_crop_development_and_yield_potential_in_western_austr"
+        relevance: "example"
+        query: "WUE transpiration efficiency wheat barley 20 kg/ha/mm"
+        
+      - slug: "mediterranean_climate_dryland_agriculture"
+        relevance: "context"
+        sections: ["Water Limitation", "Terminal Drought"]
+    
+    learning_outcomes:
+      - "Gain an understanding of WUE in rainfed cropping systems of Mediterranean-type environments"
+      - "Use WUE for comparison of wheat crop performance"
+      - "Understand the impact of agronomic practices on WUE"
+    
+    estimated_time_minutes: 12
+    slide_type: "example"
+    interactivity: "medium"
+    
+    teaching_notes: >
+      BEFORE SLIDE: Draw blank axes on board (x: water mm, y: yield t/ha).
+      Ask: "If you have 200mm, 300mm, 400mm of water, what yield would you expect?"
+      Take guesses. Plot them. THEN show the slide.
+      
+      CALCULATION DEMO: Use CURRENT SEASON rainfall from BOM.
+      Example: "Perth has had 180mm April-July. If we get average Aug-Oct (say 120mm), 
+      that's 300mm total. Minus 110mm evaporation = 190mm transpired.
+      At 22 kg/ha/mm, that's 190 × 22 = 4.2 t/ha potential for wheat this year."
+      
+      COMPARE: Show Farmanko or GRDC yield data for Merredin, Katanning (different zones).
+      
+      KEY INSIGHT: "If your paddock did 2.8 t/ha with 300mm, you're 1.4 t/ha below potential.
+      That's not 'bad farming'—it's a DIAGNOSTIC SIGNAL. Now we ask: why? Weeds? 
+      Nitrogen? Subsoil acidity? That's what the rest of this unit is about."
+    
+    discussion_prompts:
+      - "If your paddock yielded 3.2 t/ha with 380mm growing season rainfall, are you at potential?"
+      - "What factors would push a paddock below the French-Schultz line?"
+      - "Why is the evaporation constant ~110mm? Could it vary?"
+      - "How has plant breeding changed the slope over time?"
+    
+    common_misconceptions:
+      - "Students think WUE is yield/total annual rainfall (it's GROWING SEASON only, Apr-Oct)"
+      - "Confusion about whether 110mm is subtracted from x-axis or y-intercept"
+      - "Believing the line is a target to 'hit' (it's a ceiling, not a goal)"
+      - "Thinking higher WUE is always better (ignores profitability, protein, other quality)"
+    
+    synthesis_mode: "wiki-grounded"
+    retrieval_strategy: "hybrid"
+    max_wiki_sources: 4
+    
+    figure_id: "Fig-L01-FrenchSchultz"
+    image_prompt: >
+      Scatter plot in the classic French-Schultz style showing WUE benchmark.
+      X-axis: Growing season water use (mm), range 100-500mm, gridlines every 50mm.
+      Y-axis: Wheat grain yield (t/ha), range 0-6 t/ha, gridlines every 1 t/ha.
+      
+      BOUNDARY LINE: Starting at x-intercept ~110mm (soil evaporation), 
+      rising with slope 22 kg/ha/mm (= 0.022 t/ha/mm) to show water-limited potential.
+      Line in UWA blue (#27348B), width 3px, labeled "Water-limited potential (22 kg/ha/mm)".
+      
+      DATA POINTS: Scatter 30-40 semi-transparent gold circles (#E2B600, opacity 0.6) 
+      below the line representing real paddock yields from Farmanko database.
+      
+      ANNOTATION: Vertical arrow from one data point to boundary line, 
+      labeled "Yield gap" with measurement (e.g., "1.4 t/ha").
+      
+      LEGEND: Top-right corner: "• WA wheat paddocks 2015-2024 (Farmanko)"
+      
+      Clean academic style, sans-serif font, white background, 
+      no border, --ar 16:9, --no text in image (legends will be overlay).
+
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # EXAMPLE 4: Case study slide with real WA scenario
+  # ══════════════════════════════════════════════════════════════════════════
+  
+  - title: "The Stubble Dilemma: Trade-offs in Action"
+    
+    description: >
+      A case study examining stubble management decisions at a real WA farm,
+      demonstrating the cascading consequences across the system.
+    
+    key_concepts:
+      - name: "Trade-off thinking"
+        terms: ["trade-off", "no free lunch", "cascading effects", "system consequences"]
+        cognitive_level: "evaluate"
+    
+    wiki_references:
+      - slug: "stubble_management_western_australia"
+        relevance: "foundation"
+        
+      - slug: "no_till_farming_systems_in_western_australia"
+        relevance: "context"
+        sections: ["Stubble Retention Benefits", "Challenges"]
+    
+    learning_outcomes:
+      - "Demonstrate critical thinking at a farming systems scale"
+      - "Recognise the benefits and disadvantages of tillage and stubble management"
+    
+    estimated_time_minutes: 10
+    slide_type: "case_study"
+    interactivity: "high"
+    
+    teaching_notes: >
+      SCENARIO: "You manage 5000 ha near Geraldton (350mm rainfall zone).
+      Last year: 4.2 t/ha wheat harvest = heavy stubble (5 t/ha residue).
+      This year: Planning to sow canola in late April.
+      
+      Your agronomist says: 'Burn half your stubble before seeding.'
+      Your neighbor (no-till purist) says: 'Never burn! You're wasting organic matter.'
+      Your bank manager says: 'Just make a profit.'
+      
+      What do you decide? Why?"
+      
+      THINK: 3 min solo—students write down decision + 3 reasons
+      PAIR: 4 min—compare with partner, must agree on ONE decision
+      SHARE: 5 min—poll class, discuss divergence
+      
+      REVEAL TRADE-OFFS:
+      - Retain stubble → moisture conservation, OM buildup, erosion control
+                       → BUT: N tie-up, disease carryover, seeding difficulty, slug habitat
+      - Burn stubble → clean seedbed, disease break, release N
+                     → BUT: OM loss, erosion risk, smoke pollution, lost moisture
+      - Strategic burn (windrows only, or 50%) → middle path
+      
+      NO RIGHT ANSWER—depends on:
+        • Subsoil moisture going into season
+        • Disease pressure last year (blackleg in canola?)
+        • Seeding machinery type (disc vs tine)
+        • Labor/time to manage heavy stubble
+        • Local fire regulations
+        • Long-term soil health vs short-term profit
+      
+      KEY LESSON: "Systems thinking means accepting trade-offs, not optimizing one variable."
+    
+    discussion_prompts:
+      - "What evidence would change your decision?"
+      - "Which trade-off matters most in a dry season vs wet season?"
+      - "How would you experiment to learn your farm's optimal strategy?"
+    
+    common_misconceptions:
+      - "Believing there's a 'correct' answer (there isn't—context dependent)"
+      - "Ignoring the multi-year dimension (one season's decision affects next)"
+      - "Forgetting the human dimension (workload, stress, values)"
+    
+    synthesis_mode: "hybrid"  # Combine wiki facts with case study narrative
+    max_wiki_sources: 3
+
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # Additional subtopics would follow the same enhanced structure...
+  # ══════════════════════════════════════════════════════════════════════════

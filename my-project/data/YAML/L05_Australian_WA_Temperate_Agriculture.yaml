@@ -1,0 +1,155 @@
+topic: "Australian and WA Temperate Agriculture in a World Context"
+auto_figures: true
+subtopics:
+
+  - title: "A Small Producer, a Giant Exporter"
+    description: >
+      Open by situating Australian agriculture within global food production and resolving an apparent paradox: Australia produces only a small share of the world's grain (on the order of 3–4% of global wheat) yet is one of the world's most important grain exporters, typically ranking among the top few wheat exporters and dominating some markets such as malting barley and certain pulses. The explanation is the extraordinary export orientation of the system: with a small domestic population, Australia consumes little of what it grows and exports the majority — the reverse of large producers like China, India, the United States, or the EU, which grow far more but consume most of it domestically. This makes Australia a "swing supplier" whose exportable surplus matters disproportionately to world trade and to food-importing nations in Asia, the Middle East, and Africa. Establish the unit's recurring economic theme: Australian and especially WA growers are price-takers on global markets, exposed to world supply, demand, and currency movements they cannot influence, which shapes everything from variety choice to risk management.
+    figure_id: "Fig-L04-ProdVsExport"
+    image_prompt: >
+      Two paired bar charts. Left "Share of world wheat production": Australia a small bar beside large bars for China, India, EU, Russia, USA. Right "Share of world wheat exports": Australia a large bar alongside Russia, EU, USA, Canada, Ukraine, showing Australia's outsized export role relative to its production. UWA blue (#27348B) bars, Australia highlighted in gold (#E2B600), clean academic chart, --ar 16:9, --no text.
+    key_concepts:
+      - "Australia: small share of world production, outsized export share"
+      - "Low domestic consumption drives export orientation"
+      - "Australia as a swing supplier to Asia, Middle East, Africa"
+      - "Price-taker status shapes variety choice and risk management"
+    wiki_query: "Australia global wheat export share production world markets"
+    figure_source: "literature"
+    
+
+  - title: "Why Australia Exports: Structure of the Agricultural Economy"
+    description: >
+      Explain the structural features that make Australian agriculture export-oriented and internationally competitive despite marginal natural resources. A small domestic market relative to production forces reliance on exports. Very large farm sizes and high mechanisation deliver low labour-per-hectare and economies of scale unavailable in smallholder systems. A deregulated, market-driven sector (following the dismantling of single-desk marketing arrangements such as the former Australian Wheat Board monopoly in the 2000s) exposes growers directly to world prices and to competition among grain traders. Strong biosecurity, quality assurance, and a reputation for clean, reliable, segregated grain command premiums in discerning markets. And world-class research, breeding, and extension systems (GRDC, CSIRO, state departments, universities including UWA) continually lift productivity to offset poor soils and variable climate. Contrast this with subsidised, protected agricultural sectors elsewhere: Australian agriculture receives among the lowest levels of government support in the OECD, so competitiveness rests on efficiency and innovation rather than protection — a defining feature that recurs in the economics and global-markets lectures.
+    key_concepts:
+      - "Large farm scale and mechanisation drive low per-hectare labour cost"
+      - "Deregulated, market-driven grain marketing since the 2000s"
+      - "Biosecurity, quality assurance and reputation command premiums"
+      - "Low government support relative to OECD peers rewards efficiency"
+    wiki_query: "farm scale mechanisation deregulated grain marketing biosecurity Australia"
+
+  - title: "The Australian Agricultural Regions and Where Grain Fits"
+    description: >
+      Give a national overview so students can place WA within the continent. Describe the broad zonation of Australian agriculture driven by rainfall and temperature: the northern (summer-rainfall, tropical and subtropical) cropping zone of Queensland and northern New South Wales, growing summer crops such as sorghum, cotton, and mungbean alongside winter cereals; the temperate, winter-rainfall southern and western grain zones of southern NSW, Victoria, South Australia, and Western Australia, growing wheat, barley, canola, and pulses; the extensive pastoral rangelands of the arid interior running sheep and cattle; and the high-value irrigated and horticultural districts along the major river systems. Emphasise that WA sits firmly in the temperate, winter-rainfall, broadacre grain and sheep zone, and is the single largest grain-producing and grain-exporting state, benefiting from its position on the Indian Ocean rim close to Asian and Middle Eastern markets and served by an efficient bulk-handling and port system. This geographic framing sets up the detailed WA focus of the rest of the unit.
+    key_concepts:
+      - "Northern summer-rainfall zone vs southern winter-rainfall grain zone"
+      - "WA as the largest grain-producing and exporting state"
+      - "Indian Ocean rim position and bulk-handling/port access"
+    wiki_query: "Western Australia wheatbelt grain zone winter rainfall bulk handling"
+
+  - title: "Agroecological Zones: Matching Land to Crop"
+    description: >
+      Widen the lens beyond the bulk-commodity story just told. WA's remoteness from major population centres and its low labour availability push the state naturally toward transportable, low-labour bulk commodities rather than perishable, labour-intensive high-value crops — but two other features of WA's position create openings beyond that default. Proximity to high-income food-importing markets in Asia and the Middle East rewards quality and specialisation, not just volume, and a growing season the reverse of the Northern Hemisphere's lets WA supply counter-seasonal windows those markets cannot fill locally. Introduce agro-ecological zoning as the tool for identifying where such opportunities exist: mapping land by the combination of climate, soil, and terrain that determines which crops and systems it can realistically support, increasingly informed by simulation modelling (the same crop-modelling approach introduced earlier in the unit) rather than trial and error. Illustrate with diversification already occurring at the margins of WA's mainstream grain system — viticulture in the South-West, avocados and other horticulture in higher-rainfall pockets — as agro-ecological mapping identifies niches where WA's climate and counter-seasonal timing add value beyond bulk grain export. Frame this as a genuine but bounded opportunity: it does not replace the broadacre grain system that is this unit's main focus, but shows that the "commodity producer" identity is a consequence of geography and economics, not an unavoidable ceiling.
+    key_concepts:
+      - "Agro-ecological zoning: matching land to crop via climate, soil, terrain"
+      - "Simulation-based zone mapping links to crop modelling"
+      - "Counter-seasonal timing and Asian/Middle Eastern market access"
+      - "Diversification at the margins: viticulture, horticulture"
+    wiki_query: "agroecological zones climate soil suitability mapping crop diversification WA"
+
+  - title: "The Mediterranean-Type Environment for Grain Production"
+    description: >
+      Introduce the Mediterranean-type climate as the defining environmental context for southern and western Australian grain production, and one of only five such regions in the world (the Mediterranean basin, California, central Chile, the Western Cape of South Africa, and southern and south-western Australia). Define its key features: hot, dry summers and cool, wet winters, so that the rainy season and the mild-temperature growing season coincide in winter and spring, and crops must mature and be harvested before the summer drought. Explain why this suits winter cereals and cool-season legumes and oilseeds — species that germinate in autumn, grow through winter, and fill grain in spring — and why it precludes reliable summer cropping without irrigation. Highlight the recurring hazards that shape Mediterranean agronomy: an uncertain autumn "break" determining when sowing can begin, frost risk in late winter and early spring, and an almost inevitable terminal drought and heat stress at the end of the season that truncates grain fill. These features — developed quantitatively in the climate lecture — mean that timing is everything, water is the first constraint, and risk management is intrinsic to the system.
+    key_concepts:
+      - "Hot dry summers, cool wet winters: one of five Mediterranean-type regions"
+      - "Rainy season and growing season coincide in winter-spring"
+      - "Uncertain autumn break, frost risk, terminal drought and heat"
+      - "Timing and water as the first constraints on the system"
+    wiki_query: "Mediterranean climate WA rainfall winter growing season frost terminal drought"
+
+  - title: "Ancient Soils, Young Agriculture"
+    description: >
+      Establish the biophysical foundation of WA agriculture: some of the oldest, most weathered, and most infertile soils on earth, farmed for little more than a century. Explain that the south-west of WA has not been geologically rejuvenated by recent glaciation, volcanism, or mountain building, so its soils are deeply weathered, low in inherent phosphorus and trace elements, low in organic matter, often sandy and water-repellent, and frequently underlain by acidic, sodic, or compacted subsoils. Contrast this with the young, fertile soils of Europe or North America. The consequence is that WA agriculture has always depended on correcting fundamental deficiencies: the discovery in the early twentieth century that trace elements (copper, zinc, molybdenum) and phosphorus and, later, nitrogen and potassium were limiting transformed vast tracts of "useless" land into productive farmland. This history frames the modern reality that WA productivity is built on inputs and amelioration — fertiliser, lime, trace elements — applied to a naturally poor resource, and that maintaining and improving that resource (through nutrition, liming, and conservation agriculture) is central to the system's sustainability.
+    key_concepts:
+      - "Deeply weathered, low-fertility soils farmed for little over a century"
+      - "Early-1900s discovery of limiting trace elements and phosphorus"
+      - "WA productivity built on inputs and amelioration, not natural fertility"
+    wiki_query: "WA soil fertility phosphorus trace elements weathered low nutrient soils"
+
+  - title: "Domestication and the Rise of Temperate Farming Systems"
+    description: >
+      Step back from WA's specific history to explain a deeper reason its agriculture is built around a small set of temperate crops — wheat, barley, canola, lupins — rather than the vastly larger pool of plant species available worldwide. These crops were domesticated earlier and more intensively than almost any alternative, in some cases over ten thousand years ago in the Fertile Crescent and other early centres of agriculture, giving breeders millennia of accumulated selection for yield, ease of harvest, storability, and processing quality that most candidate "new" crops simply lack. Explain the consequence for WA today: entire industries, infrastructure, and food systems — bulk grain handling and global commodity markets, milling and malting, stockfeed supply chains — have been built around these domesticated temperate species over more than a century, creating strong path dependency. A new or alternative crop is not just competing agronomically on yield or fit to the environment; it is competing against a century of accumulated breeding investment, established markets, and purpose-built infrastructure that domesticated temperate crops already have. This is part of why the wheat-sheep system that follows was such a natural, durable fit for WA's Mediterranean environment, and why shifting the crop mix — as with the diversification just discussed — is a slow, structural undertaking rather than a simple choice.
+    key_concepts:
+      - "Long domestication history advantages temperate crops"
+      - "Breeding investment and infrastructure create path dependency"
+      - "New crops compete against embedded systems, not just agronomy"
+    wiki_query: "domestication temperate crops wheat barley breeding history farming systems"
+
+  - title: "The Rise of the Wheat-Sheep System"
+    description: >
+      Trace the historical development of the classic WA and southern Australian wheat-sheep mixed farming system that dominated through most of the twentieth century. Describe how the system combined cereal cropping with sheep grazing in an integrated rotation: a phase of legume-based annual pasture (subterranean clover and medics, themselves a WA and southern Australian innovation) fixed nitrogen, built soil fertility, controlled cereal diseases and grass weeds, and fed sheep producing wool and meat; this alternated with a cropping phase exploiting the accumulated fertility. Explain why this system was so successful and durable: it spread risk across wool, meat, and grain enterprises; the pasture legume phase supplied nitrogen before synthetic fertiliser was cheap and controlled weeds and disease before selective herbicides existed; and grazing used land and seasons that cropping could not. Wool, in particular, underwrote southern Australian prosperity for decades. This mixed system is the historical baseline against which the dramatic shift toward continuous cropping — the subject of the next slides — must be understood.
+    key_concepts:
+      - "Legume pasture phase fixed nitrogen and controlled disease/weeds"
+      - "Cropping phase exploited accumulated fertility"
+      - "Risk spread across wool, meat, and grain enterprises"
+    wiki_query: "wheat sheep rotation legume pasture nitrogen fixation subterranean clover"
+
+  - title: "Why Sheep Declined and Cropping Expanded"
+    description: >
+      Address directly one of the unit's explicit learning outcomes: the profound structural shift, from roughly the 1990s onward, away from sheep toward specialist cropping across the southern Australian grain zone. Lay out the interacting drivers. Economics and relative returns: the collapse of the wool market after the reserve price scheme ended in the early 1990s, combined with strengthening grain prices and expanding export demand, swung relative profitability decisively toward cropping. Technology: the arrival of effective selective herbicides removed the pasture phase's role in weed control, no-tillage and larger machinery made continuous cropping feasible across huge areas, and cheap synthetic nitrogen and grain legumes replaced the pasture legume as the nitrogen source. Labour and lifestyle: cropping is far less labour-intensive per hectare than livestock and free of the daily, year-round demands of a flock, suiting an ageing farming population and hard-to-fill rural labour. Risk and simplicity: specialising in grain simplified management and capital allocation. Explain the consequences — soil acidification and herbicide resistance accelerated once the pasture phase was removed, and the loss of enterprise diversity increased exposure to grain-market and seasonal risk — and note the partial, price-driven swings back toward sheep in some years and districts, illustrating that the balance is an ongoing economic negotiation rather than a permanent change.
+    figure_id: "Fig-L04-SheepCrop"
+    image_prompt: >
+      Line graph over time (1980 to 2025) with two lines: national sheep numbers declining from a peak around 1990, and area sown to grain crops (especially canola and pulses) rising over the same period. Annotate key events: end of the wool reserve price scheme (early 1990s), adoption of no-tillage and selective herbicides, rise of canola. UWA blue (#27348B) cropping line, gold (#E2B600) sheep line, clean academic chart, --ar 16:9, --no text.
+    key_concepts:
+      - "Wool market collapse and strengthening grain prices from the 1990s"
+      - "Selective herbicides and no-till removed the pasture phase's role"
+      - "Consequences: acidification, herbicide resistance, less diversity"
+    wiki_query: "no-till herbicide resistance soil acidification cropping intensification WA"
+    figure_source: "literature"
+
+  - title: "The Modern WA Cropping Enterprise"
+    description: >
+      Characterise the WA grain farm as it exists today, drawing together the structural threads. Describe a typical enterprise: large scale (commonly 3 000–15 000+ ha), highly capitalised in machinery (large air-seeders, self-propelled sprayers, high-capacity harvesters, GPS guidance and controlled traffic), run by a family and a small seasonal workforce, and overwhelmingly focused on winter grain crops — wheat as the backbone, with barley, canola, and lupins or pulses in rotation, and sheep retained on some farms as a complementary enterprise on pasture and stubble. Emphasise the operational intensity concentrated into narrow windows: the whole farm must be sown within a few weeks of the break, sprayed on time through winter, and harvested through summer, demanding machinery capacity, logistics, and labour management that later lectures examine. Highlight the enterprise's economic exposure — as a price-taking exporter with high fixed costs and variable seasons, profitability swings widely year to year, making risk management and financial discipline (covered in the farm financial lecture) as important as agronomy. This modern enterprise is the entity whose decisions the whole unit seeks to inform.
+    key_concepts:
+      - "Large-scale, highly capitalised, family-run grain enterprises"
+      - "Wheat-backbone rotation with barley, canola, lupins/pulses"
+      - "Operational intensity concentrated into narrow sowing/harvest windows"
+    wiki_query: "farm scale machinery capacity sowing window controlled traffic GPS guidance WA"
+
+  - title: "Yield Concepts: Genetic, Achievable, Farm and the Gap"
+    description: >
+      Formalise a precise vocabulary for talking about yield, sharpening the enterprise picture just drawn. Genetic yield potential is the ceiling set by a variety's biology under ideal, unconstrained conditions — water, nutrients, and management all non-limiting. Achievable (water-limited) yield potential is the realistic ceiling for a given site and season once climate, principally water supply, is accounted for: the French-Schultz-style benchmark obtained by subtracting a non-productive evaporative loss (roughly 110 mm of growing-season rainfall for wheat) from growing-season rainfall and multiplying by a crop water-use efficiency (around 20 kg of grain per hectare per millimetre for wheat, higher for barley, lower for canola and pulses). Farm (actual) yield is what a grower actually harvests, after every further constraint on top of water: soil chemical and physical limitations, nutrition, weeds, disease, and management decisions and their timing — in WA actual yields typically reach only 50–70% of this water-limited potential. The yield gap is the distance between achievable and actual yield, and it is this gap — not the unreachable genetic ceiling — that agronomy, extension, and the tools developed across this unit exist to close. Emphasise the common error this distinction guards against: judging a paddock's performance against genetic potential, which no real paddock reaches, rather than against its water-limited, season-specific achievable yield, which is the fair benchmark.
+    key_concepts:
+      - "Genetic yield potential: the biological ceiling"
+      - "Achievable (water-limited) yield potential: the realistic ceiling"
+      - "Farm/actual yield and the yield gap it reveals"
+      - "Benchmark performance against achievable yield, not genetic potential"
+    wiki_query: "genetic yield potential achievable water limited yield farm yield gap"
+
+  - title: "Sustainability and the Long-Term Resource"
+    description: >
+      Close Part 2 by confronting the sustainability challenge inherent in intensive cropping of a fragile, ancient landscape — a theme that recurs throughout the unit. Enumerate the major resource-degradation processes that WA farming systems must manage to remain productive: soil acidification driven by nitrogen cycling and product removal (the lime story from the soils lecture); wind and water erosion on light soils (managed by conservation agriculture); dryland salinity caused by rising water tables after the clearing of deep-rooted native vegetation; soil structural decline, compaction, and water repellence; herbicide resistance from over-reliance on chemical weed control; and declining soil organic carbon. Frame sustainable production not as a constraint opposed to profit but as the maintenance of the natural capital on which future profit depends — degrading the soil resource borrows yield from the future. Preview how the rest of the unit addresses these challenges: conservation agriculture and rotation for soil and erosion, integrated weed management for resistance, liming for acidity, precision agriculture for efficient input use, and perennial and pasture phases for water balance and salinity. Reinforce the unit's core message that good agronomy and long-term sustainability are, correctly understood, the same thing.
+    key_concepts:
+      - "Soil acidification, erosion, salinity, resistance, declining carbon"
+      - "Sustainability as maintenance of natural capital, not a constraint on profit"
+      - "Preview: conservation agriculture, IWM, liming, precision ag, pasture phases"
+    wiki_query: "soil acidification salinity erosion herbicide resistance sustainability WA cropping"
+
+  - title: "What Australia Grows and Where It Goes"
+    description: >
+      Provide a concrete picture of the Australian grain export basket and its destinations, giving students the market context that later lectures build on. Wheat is the largest export by volume and value, sold as milling wheat to Asian and Middle Eastern flour millers, with WA's Australian Premium White and noodle wheats prized in South-East and North Asian markets. Barley is a major export, split between malting barley (a premium market, historically strong into China and now diversified) and feed barley. Canola is a fast-growing export, much of it to the European Union for biodiesel (attracting sustainability certification premiums) and to Asian crushers for oil and meal. Pulses — lupins, field peas, chickpeas, lentils, faba beans — serve food and feed markets across South Asia, the Middle East, and Europe. Emphasise WA's specific advantages: proximity and low freight cost to Asian and Indian Ocean markets, a clean phytosanitary reputation, and an efficient bulk-handling system (CBH) that segregates grain by quality for export. This basket and its destinations expose growers to a diverse set of markets, each with its own quality specifications and price dynamics.
+    key_concepts:
+      - "Wheat: milling grade to Asian and Middle Eastern markets"
+      - "Barley: malting premium vs feed barley"
+      - "Canola: EU biodiesel and Asian crushers"
+      - "Pulses: food and feed across South Asia, Middle East, Europe"
+    wiki_query: "malting barley feed barley canola export markets grain quality WA"
+
+  - title: "Price-Takers in a Volatile World"
+    description: >
+      Reinforce the economic reality that Australian growers are price-takers whose returns are set by forces beyond their control, and explain the main drivers of that volatility. World supply shocks: a drought in a major exporter (Russia, the US, Argentina), or a bumper Northern Hemisphere harvest, moves world prices that flow straight through to WA farm-gate returns. Demand shifts: changes in importing-country policy, income growth driving protein and oilseed demand in Asia, and biofuel mandates for canola. Geopolitics and trade policy: export restrictions, tariffs, and trade disputes (illustrated vividly by the disruption and later restoration of the Chinese barley market) can open or close major markets abruptly. Currency: because grain is priced in US dollars on world markets, the Australian dollar exchange rate directly scales farm-gate returns — a weaker dollar lifts returns and cushions growers, a stronger one squeezes them. Emphasise that this multi-layered volatility, overlaid on the seasonal production volatility of a Mediterranean climate, is the fundamental risk environment WA growers operate in, and motivates the marketing, hedging, and risk-management tools examined later in the unit.
+    key_concepts:
+      - "World supply shocks and Northern Hemisphere harvests move prices"
+      - "Demand shifts, biofuel mandates, and Asian income growth"
+      - "Geopolitics and trade policy: China barley disruption/restoration"
+      - "Currency: AUD exchange rate scales farm-gate returns"
+    wiki_query: "grain price volatility currency exchange rate export market risk Australia"
+
+
+  - title: "The Place of WA Production: A Synthesis"
+    description: >
+      Conclude by synthesising the lecture's answer to the unit's framing question — the place of Australian and WA crop production in world food supply. WA is a small producer but a critical exporter, feeding food-importing nations from an efficient, low-support, innovation-driven, export-oriented system farmed on ancient poor soils under a variable Mediterranean climate. Its competitive position rests not on natural abundance but on scale, efficiency, research-driven productivity, quality and biosecurity reputation, and geographic proximity to growing Asian markets. Its vulnerabilities are equally clear: exposure to world price and currency volatility, dependence on a handful of export markets, an inherently variable and drying climate, and the constant need to maintain a degrading natural resource base. Frame the rest of the unit as the toolkit for sustaining and improving WA's place in world production — the agronomy of each crop, the management of climate and water, the control of weeds, pests and diseases, the precision and efficiency of operations, and the financial and market management that together determine whether individual growers, and the WA grain industry as a whole, remain productive, profitable, and sustainable in a competitive and changing world.
+    key_concepts:
+      - "Small producer, critical exporter: competitive edge from efficiency not abundance"
+      - "Vulnerabilities: price/currency volatility, market concentration, climate, resource decline"
+      - "Rest of unit as the toolkit for sustaining WA's place in world production"
+    wiki_query: "WA grain production sustainability efficiency competitive advantage world markets"

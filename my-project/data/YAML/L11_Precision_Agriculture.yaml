@@ -1,0 +1,135 @@
+topic: "Precision Agriculture"
+auto_figures: true
+subtopics:
+
+  - title: "What Is Precision Agriculture?"
+    description: >
+      Open by defining precision agriculture (PA) as the management of spatial and temporal variability within paddocks to improve the efficiency, profitability, and sustainability of production — matching inputs to the specific needs of each part of a paddock rather than treating the whole paddock uniformly. Explain the fundamental insight that motivates PA: paddocks are not uniform. Soil type, water-holding capacity, nutrient status, pH, and yield vary enormously within a single paddock — a management zone on a sandy rise may yield a fraction of a clay flat metres away — yet conventional management applies the same seed, fertiliser, and lime rate everywhere, over-servicing the poor areas and under-servicing the good. PA uses positioning technology, sensors, and data to recognise this variability and respond to it. Establish the three pillars the lecture will develop: knowing where you are and steering accurately (guidance and controlled traffic); knowing how the paddock varies (sensing and mapping soil and crop); and acting on that knowledge (variable-rate application). Emphasise WA's position as an early and enthusiastic adopter of PA — driven by large scale, poor variable soils, tight margins, and a culture of innovation — and connect PA to the crop-modelling theme: running a model per zone is the natural marriage of spatial data and process understanding.
+    key_concepts:
+      - "PA manages spatial/temporal variability within paddocks"
+      - "Paddocks are not uniform; uniform management over/under-serves"
+      - "Three pillars: guidance, sensing/mapping, variable-rate action"
+      - "WA is an early, enthusiastic PA adopter"
+    wiki_query: "precision agriculture spatial variability management zones WA"
+
+  - title: "The Positioning Revolution: GNSS and Guidance"
+    description: >
+      Explain the enabling technology behind all of precision agriculture: accurate satellite positioning. Describe how global navigation satellite systems (GNSS — GPS and its counterparts) let a machine know its position in a paddock, and how the accuracy of that position determines what PA can do. Explain the accuracy tiers and their correction methods: basic GNSS is accurate only to metres; augmentation and correction services (satellite-based and, increasingly, network RTK delivered over mobile networks) improve this to sub-metre and then to centimetre-level real-time-kinematic (RTK) accuracy — commonly around 2 cm in commercial WA systems. Explain why centimetre accuracy is transformative: it allows a machine to return to exactly the same wheel tracks and crop rows season after season, which is the prerequisite for controlled traffic and for precise inter-row operations. Describe how guidance systems work: the GNSS position feeds an autosteer system that steers the machine along precisely spaced, parallel or curved guidance lines, relieving the operator of steering and eliminating the overlaps and gaps of manual driving. Explain the immediate, universal benefits that made guidance the first and most widely adopted PA technology: reduced overlap (saving seed, fertiliser, chemical, fuel, and time), the ability to work accurately at night and in dust and poor visibility, reduced operator fatigue, and the foundation it lays for everything else. Guidance is where nearly every WA grower's PA journey began.
+    figure_id: "Fig-L11-Guidance"
+    image_prompt: >
+      Diagram of a tractor and seeder in a paddock following GNSS guidance lines. Satellites above sending signals, with an RTK base station or network correction shown improving accuracy to centimetre level. Parallel guidance lines with no overlap or gaps between adjacent passes, contrasted with a faint "manual driving" path showing wasteful overlaps. UWA blue (#27348B) machinery and lines, gold (#E2B600) satellite signals and accuracy callout, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "RTK correction lifts GNSS from metres to ~2cm accuracy"
+      - "Centimetre accuracy enables repeatable wheel tracks/rows"
+      - "Autosteer eliminates manual-driving overlaps and gaps"
+      - "Guidance was WA growers' first PA technology"
+    wiki_query: "GNSS RTK guidance autosteer accuracy WA farming"
+    figure_source: "manual"
+
+  - title: "Controlled Traffic Farming"
+    description: >
+      Develop controlled traffic farming (CTF) as one of the most valuable outcomes of accurate guidance, and explain how it works and why it pays. Describe the principle: confining all machinery wheel traffic to permanent, precisely-located tramlines season after season, so that the great majority of the paddock is never driven on, while the wheels always run on the same compacted tracks. Explain the requirements: matched or modular equipment working widths and a common wheel track (gauge) so that tractors, seeders, sprayers, and harvesters all run their wheels on the same lines, made possible by centimetre-accurate RTK guidance. Explain the benefits, which address a fundamental problem of heavy modern machinery. Compaction confinement: uncontrolled traffic can compact roughly half a paddock's area each year, and compaction restricts root growth, water infiltration, and yield; CTF confines this damage to permanent tracks covering only around 15% of the paddock, leaving the crop beds uncompacted, with better structure, infiltration, and root access to water — increasing plant-available water by as much as 75 mm in trials, a substantial gain in a water-limited system, and directly lifting yield and water-use efficiency. Operational benefits: firm tramlines improve traction and flotation, allow timelier operations in wet conditions, and can cut fuel consumption by up to around 50% and operating costs by roughly 10% through reduced overlap, and improve the accuracy of inter-row seeding and spraying. Water and erosion benefits: permanent tramlines can be managed to control water movement. Emphasise that CTF exemplifies the PA logic — using precise positioning to manage the paddock more intelligently — and that its compaction and infiltration benefits are especially valuable in WA's structurally fragile soils and drying climate.
+    key_concepts:
+      - "Wheeled area drops from ~50% (random) to ~15% (CTF)"
+      - "Confining compaction can lift plant-available water ~75mm"
+      - "Matched equipment widths/gauge, enabled by RTK guidance"
+      - "Fuel savings up to ~50%, operating costs down ~10%"
+    wiki_query: "controlled traffic farming compaction plant available water WA"
+
+  - title: "Yield Monitoring and Yield Maps"
+    description: >
+      Introduce the yield monitor as the original and still most important source of spatial data on a grain farm, and explain how yield maps are made and used. Describe how a yield monitor works: sensors on the harvester measure grain flow (typically via an impact plate or optical sensor at the top of the clean grain elevator) and grain moisture continuously, and combine these with the GNSS position and the header width and speed to calculate and log yield at each point across the paddock, building a dense map of how yield varied spatially. Explain the interpretation challenges that make yield maps require care: the data need cleaning (removing errors from fill and empty delays, overlaps, speed changes, and grain flow lag between the cutting front and the sensor), and a single year's map reflects that season's particular weather, so patterns must be interpreted across multiple years to distinguish stable, manageable variation (driven by soil type and depth) from transient, season-specific variation. Explain the uses of yield maps: identifying consistent high- and low-yielding zones that define management zones for variable-rate application; diagnosing problems (a persistently poor zone prompts investigation of its cause — soil constraint, compaction, weeds, salinity); assessing the yield response to treatments; and, combined over years, revealing the stable productivity pattern of a paddock. Emphasise that yield mapping turned the harvester into a paddock-scale measuring instrument and is the feedback that closes the loop on all other PA decisions.
+    key_concepts:
+      - "Grain flow + moisture + GNSS position builds a yield map"
+      - "Raw data needs cleaning: lag, fill/empty, overlap errors"
+      - "Multi-year maps separate stable from season-specific variation"
+      - "Yield maps define zones and diagnose persistent problems"
+    wiki_query: "yield monitor mapping harvester sensor management zone WA"
+
+  - title: "Remote and Proximal Crop Sensing: Estimating Biomass from Light"
+    description: >
+      Explain the principle behind sensing crop growth from reflected light — the basis of the vegetation indices, imagery, and biomass sensors central to modern PA. Describe the physical basis: green, actively-growing vegetation interacts distinctively with electromagnetic radiation — it strongly absorbs visible light (especially red) for photosynthesis while strongly reflecting near-infrared radiation because of leaf internal structure, so the contrast between low red reflectance and high near-infrared reflectance is a strong signal of green, healthy biomass. Explain how this contrast is captured in vegetation indices (the best known being NDVI, the normalised difference vegetation index, computed from red and near-infrared reflectance), which summarise canopy greenness, biomass, and vigour in a single value that can be mapped across a paddock. Describe the platforms that carry these sensors: satellites (providing regular, whole-farm, increasingly high-resolution and frequent imagery — now a routine, often free monitoring tool), drones (giving very high resolution on demand for detailed diagnosis), aircraft, and proximal on-ground sensors mounted on machinery (active-optical sensors that illuminate the crop and measure reflectance in real time for on-the-go variable-rate decisions). Explain the uses: mapping crop vigour and biomass to define zones, monitoring crop development and stress through the season, guiding in-season variable-rate nitrogen, and detecting problems (weeds, disease, waterlogging, nutrient deficiency) early. Emphasise the powerful convergence this enables — connecting to crop modelling, where satellite-observed canopy state can update a simulation in real time — and caution, echoing the modelling lectures, that a reflectance index is an indirect measure requiring ground-truthing and careful interpretation.
+    figure_id: "Fig-L11-Reflectance"
+    image_prompt: >
+      Diagram showing a crop canopy with incoming sunlight. Arrows show red light being absorbed by the leaves (for photosynthesis) and near-infrared light being strongly reflected. A spectral reflectance curve inset shows low red and high near-infrared reflectance for healthy vegetation versus a flatter curve for stressed/bare soil. Above, a satellite and a drone capturing the reflected signal, producing an NDVI map of the paddock with high and low vigour zones. UWA blue (#27348B), gold (#E2B600) NIR arrows, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Healthy canopy: low red, high near-infrared reflectance"
+      - "NDVI summarises greenness/biomass/vigour into one value"
+      - "Satellite, drone, and on-machine active-optical platforms"
+      - "An indirect measure: needs ground-truthing, not blind trust"
+    wiki_query: "NDVI vegetation index remote sensing biomass crop WA"
+    figure_source: "manual"
+
+  - title: "Soil Sensing: Apparent Electrical Conductivity (ECa)"
+    description: >
+      Explain soil apparent electrical conductivity (ECa) mapping as a key tool for characterising the underlying soil variability that drives yield patterns. Describe the principle: instruments (electromagnetic induction sensors such as the EM38, or direct-contact sensors) measure the bulk electrical conductivity of the soil as the machine traverses the paddock, logging a dense map of ECa. Explain what ECa responds to: soil electrical conductivity varies with clay content, moisture, salinity, and depth — so an ECa map reflects the spatial variation in soil texture (sand versus clay), depth to clay or rock, water- holding capacity, and salinity across the paddock. Explain how ECa is interpreted and used: because these soil properties strongly control yield, ECa maps reveal the stable, underlying soil zones that often explain the consistent yield patterns seen in multi-year yield maps — a light, sandy, low-water-holding zone versus a heavier, deeper, higher-capacity zone. Explain the applications: defining soil-based management zones for variable-rate inputs, guiding targeted soil sampling (sampling each ECa zone separately rather than bulking across contrasting soils, as flagged in the soil-sampling lecture), mapping salinity and non-wetting sands, and providing the soil layer needed to run crop models zone by zone. Emphasise that ECa is a proxy — it does not measure any single soil property directly and must be calibrated against actual soil samples to interpret — but that as a fast, dense, stable characterisation of soil variability it is one of the most valuable inputs to zone-based precision management.
+    key_concepts:
+      - "ECa responds to clay, moisture, salinity and depth"
+      - "Reveals stable soil zones behind multi-year yield patterns"
+      - "Guides zone-based sampling rather than bulked composites"
+      - "A proxy: must be calibrated against real soil samples"
+    wiki_query: "apparent electrical conductivity EM38 soil mapping WA"
+
+  - title: "Digital Soil Mapping and Data Layers"
+    description: >
+      Broaden the sensing picture to the range of data layers now available for characterising paddock variability, and the challenge of combining them. Describe the main layers a modern farm may assemble: multi-year yield maps, ECa (soil texture and depth), elevation and terrain (from RTK survey, giving slope, drainage lines, and landscape position that drive water movement and frost risk), gamma radiometrics (sensing surface soil mineralogy), multi-year satellite vegetation imagery, and targeted soil and tissue test results. Explain the concept of digital soil mapping — using these dense sensor layers, combined with a limited number of ground-truth soil samples and statistical or machine-learning models, to predict soil properties across the whole paddock at high resolution. Explain the purpose of assembling and combining these layers: no single layer tells the whole story (yield reflects the season, ECa reflects texture, elevation reflects water movement), so integrating them produces a robust delineation of stable management zones that reflect the true, persistent drivers of productivity. Emphasise the recurring theme of data quality and interpretation: assembling layers is easy, but turning them into correct, actionable zones requires ground-truthing, agronomic judgement, and an understanding of what each sensor actually measures — the same critical, fit-for-purpose mindset the unit applies to every model and sensor.
+    key_concepts:
+      - "Yield, ECa, elevation, radiometrics, imagery, soil tests"
+      - "Digital soil mapping predicts properties from sparse ground-truth"
+      - "No single layer tells the whole story; combine to find stable zones"
+      - "Turning layers into correct zones needs agronomic judgement"
+    wiki_query: "digital soil mapping data layer integration zone WA"
+
+  - title: "Defining Management Zones"
+    description: >
+      Bring the sensing material together into the practical output that drives action: the management zone. Explain that a management zone is a sub-area of a paddock that is sufficiently uniform in the properties that matter (soil type, water-holding capacity, yield potential, nutrient status, constraints) to be managed as a unit with its own input rates. Describe how zones are delineated: by combining the stable data layers (multi-year yield, ECa, elevation) to find areas that consistently behave similarly, then validating and interpreting them agronomically with ground-truth soil sampling to understand why each zone differs and what it needs. Explain the key principle that zones must be based on stable, persistent variation (soil-driven) rather than transient, season-specific variation, so that a zone map is worth managing to for years. Explain what zones enable: differentiated management of each zone's real needs — different lime rates for different pH zones, different phosphorus and potassium for different fertility zones, different nitrogen and even different seeding rates or varieties matched to each zone's yield potential — and zone-based soil sampling and monitoring. Emphasise that defining good zones is the analytical heart of precision agriculture: it converts the raw variability revealed by sensors into a manageable map that the variable-rate technology of the next part can act on, and it embodies the PA principle of matching inputs to the specific needs of each part of the paddock.
+    key_concepts:
+      - "Zone: sub-area uniform enough to manage as one unit"
+      - "Delineated from stable layers, validated by ground-truth sampling"
+      - "Must reflect persistent, not season-specific, variation"
+      - "Converts sensor variability into an actionable input map"
+    wiki_query: "management zone delineation soil yield precision agriculture WA"
+
+  - title: "Variable Rate Technology"
+    description: >
+      Explain variable rate technology (VRT) — the machinery capability that acts on the zone map to apply inputs differentially across the paddock. Describe how VRT works: a controller on the applicator (seeder, spreader, sprayer, or liming machine), driven by the GNSS position and a prescription map, adjusts the application rate on the go as the machine moves between zones, either from a pre-made prescription map (map-based VRT) or in real time from an on-board sensor reading the crop or soil (sensor-based VRT). Explain where VRT is most applicable and valuable in broadacre cropping — the key learning outcome. VRT pays best where variability is large, stable, and mapped, and where the input is expensive and its optimal rate genuinely differs between zones: variable-rate lime (applying more to the acidic zones and less to the adequate ones, a strong VRT application given lime's cost and spatial variability); variable-rate phosphorus and potassium matched to fertility zones; variable-rate seeding matched to zone yield potential; and variable-rate nitrogen, matched either to zone potential (map-based) or to in-season crop vigour (sensor-based, adding nitrogen where the crop is responding). Explain where VRT is less worthwhile: where variability is small, unstable, or unmapped, or where the input is cheap or its optimum does not vary — so VRT is not universally justified and its value must be assessed zone by zone and input by input. Emphasise the economic logic (VRT redistributes inputs to where they earn the most, potentially lifting profit and reducing waste and environmental loss) and the requirement that it rests on good zones, good agronomy, and honest assessment of whether the variability is worth managing — connecting VRT back through zones, sensing, and guidance to the whole PA system.
+    figure_id: "Fig-L11-VRT"
+    image_prompt: >
+      Diagram of a spreader applying variable-rate fertiliser across a paddock divided into three management zones (low, medium, high potential). A prescription map and GNSS drive the controller, which changes the application rate as the machine crosses zone boundaries — shown as different spread densities over each zone. Inset shows the data layers (yield, ECa, elevation) combining to define the zones. UWA blue (#27348B) machinery and zones, gold (#E2B600) prescription and rate callouts, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Map-based (prescription) vs sensor-based (on-the-go) VRT"
+      - "Pays best where variability is large, stable, mapped, expensive"
+      - "Strong fits: lime, P/K by fertility zone, seeding, nitrogen"
+      - "Not universal: assess variability zone by zone, input by input"
+    wiki_query: "variable rate technology lime nitrogen phosphorus zone WA"
+    figure_source: "manual"
+
+  - title: "From Data to Decisions: The Analytics Challenge"
+    description: >
+      Address the reality that the hardest part of precision agriculture is not collecting data but turning it into good decisions. Explain that modern farms generate vast amounts of spatial data — yield maps, imagery, ECa, machine logs, soil and tissue tests, weather — but that data has no value until it is cleaned, integrated, analysed, and interpreted into an agronomic decision. Describe the pipeline and its pitfalls: raw sensor data contain errors and artefacts that must be cleaned; layers from different sources and resolutions must be aligned and combined; and, critically, patterns must be interpreted agronomically to distinguish cause from correlation and stable from transient variation. Emphasise the recurring danger, familiar from the modelling and sensing content: a beautiful map or a sophisticated analysis can be confidently wrong if the underlying data are poor, the zones are unstable, or the interpretation is naive, and acting on it wastes inputs or harms the crop. Explain the role of experimentation within PA: on-farm strip trials and designed experiments embedded in paddocks (using the same guidance and yield mapping technology) let growers test whether a zone genuinely responds differently to an input, providing the ground-truth that validates a variable-rate strategy — the local experimentation-and-measurement discipline that PA shares with crop modelling. Reinforce that skilled interpretation and agronomic judgement, supported by good data and local testing, are what turn precision-agriculture technology into precision-agriculture profit.
+    key_concepts:
+      - "Data has no value until cleaned, integrated, interpreted"
+      - "A confident, sophisticated analysis can still be confidently wrong"
+      - "On-farm strip trials provide the ground-truth for VRT claims"
+      - "Judgement plus good data turn PA technology into PA profit"
+    wiki_query: "precision agriculture data analytics strip trial interpretation WA"
+
+  - title: "Automation, Robotics and Machine Vision"
+    description: >
+      Survey the rapidly-advancing frontier of automation that is extending precision agriculture from guiding human-operated machines toward autonomous and highly-targeted operations. Describe the developments reshaping the field in the mid-2020s: increasingly autonomous machinery (tractors and sprayers that operate with reduced or no operator supervision, addressing the labour constraint that defines WA farming); machine-vision spot spraying, already commercial, in which cameras and real-time image recognition detect individual weeds and spray only them — dramatically cutting herbicide use, enabling otherwise-uneconomic non-selective chemistry, and directly serving the resistance-management imperative from the weeds lecture; and emerging lightweight autonomous platforms and robots for targeted seeding, weeding, and monitoring. Explain the drivers: the labour scarcity of large, remote WA farms; the economic and environmental value of applying inputs to individual plants rather than whole paddocks (the ultimate expression of the PA principle of matching input to need, taken to the scale of the single plant); and the resistance and sustainability pressures pushing toward less, more precise chemical use. Discuss the considerations — cost, reliability, data and connectivity requirements, and safety and regulation of autonomous machines — and connect this frontier to the broader trend of the unit toward data-driven, precise, sustainable management.
+    key_concepts:
+      - "Autonomous machinery addresses WA's labour constraint"
+      - "Machine-vision spot spraying already commercial"
+      - "Ultimate PA expression: matching input to the single plant"
+      - "Cost, reliability, connectivity and safety are the open issues"
+    wiki_query: "autonomous machinery robotics spot spraying agriculture WA"
+
+  - title: "Precision Agriculture in the Whole Farming System"
+    description: >
+      Conclude by situating precision agriculture within the whole farming system and the themes of the unit, drawing the lecture's threads together. Reiterate the core logic: PA is the technological expression of a simple, powerful idea — that paddocks vary, and that matching management to that variation is more efficient, profitable, and sustainable than uniform management. Show how PA integrates with the rest of the unit: it rests on the soil and climate variability that drives yield; it serves the input-efficiency and profit-maximisation goals of the economics lecture (redistributing scarce fertiliser and lime to where they earn most); it advances the sustainability agenda by reducing over-application, leaching, and off-target loss; it supports resistance management through precise, targeted spraying; and it converges with crop modelling, where spatial data and process models combine to run predictions and prescriptions zone by zone, and where the emerging digital-twin vision has a model running continuously on live farm data. Emphasise the enduring cautions the unit stresses: technology and data do not replace agronomic understanding and judgement — they amplify it, for better or worse — and their value depends entirely on the quality of the data, the stability of the variability being managed, and the skill of interpretation. Close on the message that precision agriculture, used well, is one of the most powerful tools available for meeting the central challenge of WA farming: producing more, more efficiently and sustainably, from variable soils under a variable and changing climate.
+    key_concepts:
+      - "PA: match management to real, mapped paddock variation"
+      - "Serves economics, sustainability, and resistance management"
+      - "Converges with crop modelling toward zone-by-zone prescriptions"
+      - "Technology amplifies agronomic judgement, does not replace it"
+    wiki_query: "precision agriculture whole farm system sustainability WA"

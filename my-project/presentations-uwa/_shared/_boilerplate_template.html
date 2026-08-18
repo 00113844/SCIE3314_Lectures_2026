@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{LECTURE_TITLE}} — SCIE3314</title>
+
+<!-- reveal.js core (CDN, pinned to match src/render.ts convention) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme" />
+
+<!-- UWA brand layer: compiled once from the Quarto-format _uwa-revealjs.scss via
+     `npx sass uwa-revealjs.scss uwa-revealjs.css`. Re-run that compile step only if
+     the brand SCSS changes — do not hand-edit the compiled CSS. -->
+<link rel="stylesheet" href="uwa-revealjs.css" />
+<!-- Structural layout utilities (split-screen, columns, stat cards, etc.) — see
+     layouts.css for the full class catalogue and how to combine them. -->
+<link rel="stylesheet" href="layouts.css" />
+
+<!-- Chalkboard plugin CSS (client-side annotation, no server needed) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/style.css" />
+
+<style>
+  /* Per-deck overrides go here if a specific lecture needs a one-off tweak. */
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ===================================================================
+         SLIDE-TYPE COOKBOOK — delete this comment block once real content
+         replaces it. Each <section> below is a working example of one
+         layout pattern. Copy the pattern that fits each subtopic; do not
+         invent new markup structures per-slide, reuse these classes so the
+         whole deck stays visually consistent.
+         =================================================================== -->
+
+    <!-- 1) TITLE SLIDE -->
+    <section class="title-slide" data-background-color="#27348B">
+      <p class="eyebrow" style="color:#E2B600;">SCIE3314 · Cropping Systems</p>
+      <h1 style="color:#fff;">{{LECTURE_TITLE}}</h1>
+      <p class="title-subtitle" style="color:#fff;">{{ONE_LINE_HOOK}}</p>
+      <p class="title-meta" style="color:#fff;">Lecture {{NN}} · {{DURATION}} min · University of Western Australia</p>
+    </section>
+
+    <!-- 2) LEARNING OBJECTIVES (dense bullets + takeaway card) -->
+    <section class="layout-takeaway">
+      <div>
+        <h2>What you'll be able to do by the end</h2>
+        <ul class="dense-bullets">
+          <li>{{objective 1}}</li>
+          <li>{{objective 2}}</li>
+          <li>{{objective 3}}</li>
+        </ul>
+      </div>
+      <div class="takeaway-card">
+        <span>Why it matters</span>
+        <p>{{one-sentence WA field relevance}}</p>
+      </div>
+    </section>
+
+    <!-- 3) SECTION DIVIDER (between major groups of subtopics) -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 1</p>
+      <h2 style="color:#fff;">{{SECTION_TITLE}}</h2>
+      <p class="divider-note" style="color:#fff;">{{what this section covers and why it's next}}</p>
+    </section>
+
+    <!-- 4) SPLIT-SCREEN: text | image (use image-left variant to flip) -->
+    <section>
+      <h2>{{Subtopic title}}</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>{{point 1}}</li>
+            <li>{{point 2}}</li>
+            <li>{{point 3}}</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <!-- Replace with <img src="assets/figure.jpg" alt="..."> when a real
+               image is available; figure-placeholder is the honest fallback. -->
+          <div class="figure-placeholder">
+            <span class="fp-tag">FIGURE</span><br />{{figure caption / what it should show}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) TWO-COLUMN COMPARISON -->
+    <section>
+      <h2>{{Subtopic title}}</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>{{Column A label}}</h3>
+          <ul class="dense-bullets">
+            <li>{{point}}</li>
+          </ul>
+        </div>
+        <div>
+          <h3>{{Column B label}}</h3>
+          <ul class="dense-bullets">
+            <li>{{point}}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) KEY CONCEPTS SLIDE (numbered list, ties to YAML key_concepts) -->
+    <section>
+      <h2>Key concepts</h2>
+      <ol class="concepts-list">
+        <li><span class="concept-num">1</span><span>{{key_concept}}</span></li>
+        <li><span class="concept-num">2</span><span>{{key_concept}}</span></li>
+      </ol>
+    </section>
+
+    <!-- 7) WA FIELD-CONTEXT CARD (grounded wa_wiki fact/case) -->
+    <section>
+      <h2>{{Subtopic title}}</h2>
+      <div class="context-card">
+        <p class="context-q">In the WA grainbelt:</p>
+        <ul>
+          <li>{{grounded fact 1}}</li>
+          <li>{{grounded fact 2}}</li>
+        </ul>
+        <span class="source-chip">Source: wa_wiki / {{doc name}}</span>
+      </div>
+    </section>
+
+    <!-- 8) STAT CALLOUTS (three-up numbers) -->
+    <section>
+      <h2>{{Subtopic title}}</h2>
+      <div class="layout-stats">
+        <div class="stat-card"><span class="stat-num">{{n}}</span><span class="stat-label">{{label}}</span></div>
+        <div class="stat-card"><span class="stat-num">{{n}}</span><span class="stat-label">{{label}}</span></div>
+        <div class="stat-card"><span class="stat-num">{{n}}</span><span class="stat-label">{{label}}</span></div>
+      </div>
+    </section>
+
+    <!-- 9) DISCUSSION / QUOTE PROMPT -->
+    <section class="layout-quote">
+      <blockquote>{{discussion prompt or field quote}}</blockquote>
+    </section>
+
+    <!-- 10) SYNTHESIS / CLOSE -->
+    <section class="close-slide" data-background-color="#27348B">
+      <h2 style="color:#fff;">Bringing it together</h2>
+      <div class="synthesis-prompt">
+        <ul class="synthesis-list">
+          <li><strong>{{theme 1}}</strong>{{takeaway}}</li>
+          <li><strong>{{theme 2}}</strong>{{takeaway}}</li>
+          <li><strong>{{theme 3}}</strong>{{takeaway}}</li>
+        </ul>
+      </div>
+      <p class="closing-rule">Next lecture → {{L(n+1) title}}</p>
+    </section>
+
+  </div>
+</div>
+
+<!-- ===================== reveal.js core + plugins ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+
+<!-- Chalkboard: community reveal.js-plugins package (rajgoel), pinned to 4.6.0 — the latest
+     published version (4.5.0 does not exist on npm/jsdelivr and will 404). Client-side only,
+     no server required — draws directly on the slide/canvas. -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/plugin.js"></script>
+
+<!-- Multiplex intentionally NOT included, and do not re-add
+     `reveal.js@5.1.0/plugin/multiplex/multiplex.js` — that path was removed from reveal.js's own
+     package years ago and 404s (confirmed via the jsdelivr package file listing). A script tag
+     that 404s leaves `RevealMultiplex` undefined, and referencing it in the `plugins: [...]`
+     array below throws a ReferenceError that aborts Reveal.initialize entirely — the whole deck
+     renders as a blank page (this exact bug shipped in the first L01 draft and had to be fixed).
+     Real master/audience sync now requires either (a) the community `reveal-multiplex` npm
+     package run as a live Socket.io server, or (b) the `reveal.js-plugins` "seminar" plugin,
+     which also needs a hosted seminar server — neither is a static-file CDN drop-in. If a live
+     lecture genuinely needs this, that is a deliberate follow-up task, not something to silently
+     wire in as if it already works. -->
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.08,
+
+    // ---- Chalkboard config ----
+    chalkboard: {
+      theme: 'chalkboard',
+      background: [ 'rgba(0,0,0,0)', 'rgba(255,255,255,0.05)' ],
+      pen: [ 'crosshair', 'crosshair' ],
+      readOnly: false,
+      toggleChalkboardButton: { left: '30px', bottom: '30px' },
+      toggleNotesButton: { left: '110px', bottom: '30px' }
+    },
+
+    plugins: [ RevealNotes, RevealMarkdown, RevealZoom, RevealHighlight, RevealChalkboard ]
+  });
+</script>
+</body>
+</html>

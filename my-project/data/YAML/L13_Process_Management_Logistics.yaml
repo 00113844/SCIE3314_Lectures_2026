@@ -1,0 +1,126 @@
+topic: "Process Management and Grain Logistics"
+auto_figures: true
+subtopics:
+
+  - title: "From Agronomy to Operations: Managing the Whole Process"
+    description: >
+      Open by shifting the lens from what to grow and how to grow it (the agronomy of the preceding lectures) to how the work actually gets done — the operational and logistical management that turns agronomic plans into delivered grain. Emphasise a reality that distinguishes broadacre farming from many businesses: a WA grain farm must complete a sequence of large, interdependent, time-critical operations (summer spraying, seeding, in-crop spraying and topdressing, harvest, and grain movement) across thousands of hectares within narrow weather-defined windows, using expensive machinery and scarce labour, where a delay or bottleneck at any stage cascades into yield loss, quality loss, or cost. Introduce process management as the discipline of organising these operations efficiently — planning the sequence and timing of work, deploying machinery and labour to avoid bottlenecks, managing the flow of inputs in and product out, and coordinating with the supply chain beyond the farm gate. Establish the lecture's structure: the on-farm challenge of executing operations within tight windows (with harvest as the culminating example), and the off-farm logistics of moving grain from the header to the port and the world market — the physical supply chain that connects the WA paddock to the global markets of the final lecture.
+    key_concepts:
+      - "Interdependent operations within narrow weather windows"
+      - "A delay at any stage cascades into yield, quality or cost loss"
+      - "On-farm execution and off-farm logistics as the two halves"
+    wiki_query: "farm operations timeliness sequencing machinery labour WA"
+
+  - title: "Timeliness, Bottlenecks and Capacity"
+    description: >
+      Develop the central operational concept introduced in the economics lecture: timeliness, and the management of capacity to achieve it. Explain that because each field operation has an agronomically optimal window (sowing soon after the break, spraying at the right growth stage, harvesting before weather damage), the farm's capacity to complete each operation across its whole area within that window directly determines yield, quality, and cost — the timeliness principle. Introduce the idea of the bottleneck: in any sequence of operations, the stage with the least capacity relative to demand limits the throughput of the whole system, so a farm's effective capacity is set by its tightest constraint (for example, if grain cannot be carted away from the harvester fast enough, the header sits idle regardless of how fast it can thresh). Explain the management responses: sizing and balancing machinery and labour across the sequence so no single stage throttles the rest, providing buffers (field bins, chaser bins, on-farm storage) that decouple stages so a brief interruption at one does not stop another, and building in the capacity to work long hours in the narrow windows (night operation enabled by guidance). Emphasise that managing capacity and bottlenecks to achieve timeliness — not simply owning big machines — is the essence of efficient farm operations, and that it blends the machinery economics of the financial lecture with the logistics developed here.
+    key_concepts:
+      - "Capacity at the tightest stage sets whole-system throughput"
+      - "Buffers (field/chaser bins, storage) decouple stages"
+      - "Guidance-enabled night work extends the working window"
+      - "Managing bottlenecks matters more than owning big machines"
+    wiki_query: "farm bottleneck capacity machinery timeliness harvest WA"
+
+  - title: "Planning, Coordination and Record-Keeping"
+    description: >
+      Explain the planning and information systems that hold farm operations together, building on the record-keeping theme from the introductory lecture. Describe the planning task: sequencing operations across many paddocks and crops so that machinery and labour flow efficiently from job to job, inputs (seed, fertiliser, chemical, fuel) are on hand when needed, and each operation hits its window — a substantial logistical exercise on a large farm. Explain the role of information and coordination: knowing the status and requirements of every paddock, tracking what has been done and what remains, managing the supply of inputs and the movement of product, and coordinating a team of operators and contractors, often over large distances and long days. Emphasise the growing role of digital farm-management systems and telematics: machine-logged operations, real-time position and status of machinery, automated records of what was applied where and when, and connected logistics that coordinate the flow of grain and inputs — the same data streams that feed precision agriculture and, potentially, the digital-twin models of the modelling lectures. Reinforce the message that good operational management, like good agronomy, rests on accurate information: knowing the state of the whole system in real time is what allows a manager to deploy resources to the right place at the right time and to keep a complex, time-pressured operation running smoothly.
+    key_concepts:
+      - "Sequencing paddocks, machinery, labour and input supply"
+      - "Digital farm-management systems and telematics track status"
+      - "Shares data streams with precision agriculture and modelling"
+      - "Real-time information lets a manager deploy resources correctly"
+    wiki_query: "farm management telematics record keeping coordination WA"
+
+  - title: "Harvest: The Highest-Stakes Window"
+    description: >
+      Introduce harvest as the culminating and highest-stakes operation of the season, where a year's work and investment are finally realised as grain in the bin — or lost. Explain why harvest concentrates risk and pressure: the standing crop, representing the whole season's accumulated value, is exposed to weather that can rapidly degrade it (rain causing sprouting and falling-number loss and colour damage, wind and hail causing shattering and lodging losses), so the crop must be harvested promptly once mature, yet across a large area this takes weeks, creating an intense race against weather and time. Describe the competing pressures: harvesting too early (grain too moist) risks delivery rejection and storage spoilage, while harvesting too late risks weather damage and field losses, so timing and moisture management are critical; and the sheer scale means the harvester and the grain-handling logistics behind it must run at high capacity for long hours. Emphasise that harvest is where grain quality — protein, moisture, screenings, falling number, and freedom from contamination — is finally locked in and where it can be lost, connecting operational management directly to the quality and price themes of the agronomy and marketing lectures. Establish that managing harvest well means managing machinery capacity, grain logistics, quality, and weather risk together under extreme time pressure — the ultimate test of process management.
+    key_concepts:
+      - "Standing crop value is exposed to rapid weather damage"
+      - "Too early risks rejection; too late risks weather/field loss"
+      - "Grain quality is finally locked in (or lost) at harvest"
+      - "Machinery, logistics, quality and weather managed together"
+    wiki_query: "harvest timing weather risk grain quality WA"
+
+  - title: "The Harvester and Harvest Losses"
+    description: >
+      Examine the harvester (header) and the sources of harvest loss it must minimise. Describe the harvester's task at a functional level: cutting or gathering the crop, threshing the grain from the plant, separating grain from straw and chaff, and cleaning it, before delivering clean grain to the tank and discharging residue — increasingly with weed-seed destruction integrated at the residue exit (harvest weed seed control from the weeds lecture). Explain the main sources of harvest loss and their management: front (header) losses, where grain is shed at the cutting front before it enters the machine (the largest loss source in shatter-prone crops like canola, managed by windrowing, shatter-tolerant varieties, and careful front set-up); and threshing, separation, and cleaning losses inside the machine, where grain is lost out the back with the straw if the machine is overloaded or poorly adjusted. Explain the trade-off between capacity and loss: driving faster lifts throughput but increases losses, so there is an optimal ground speed that balances the value of getting the crop off quickly against the grain lost — a real-time process-management decision. Emphasise the importance of correct machine set-up and adjustment for the crop and conditions (which change through the day as moisture and crop condition change), and of monitoring losses, since harvest losses are invisible unless deliberately measured and can quietly cost a significant share of yield. Connect to the economics: minimising harvest loss protects the yield the whole season was spent building.
+    key_concepts:
+      - "Front (header) loss is largest in shatter-prone crops"
+      - "Threshing/separation/cleaning losses inside the machine"
+      - "Speed trades throughput against grain lost out the back"
+      - "Losses are invisible unless deliberately measured"
+    wiki_query: "harvester header loss threshing ground speed canola shatter"
+
+  - title: "Grain Quality, Moisture and Segregation at Harvest"
+    description: >
+      Explain how grain quality is managed and preserved through harvest, since the operational choices here determine the grade and value of the delivered grain. Moisture management: grain must be at or below the maximum receival moisture to be accepted and to store safely without spoilage, yet waiting for the crop to dry in the field exposes it to weather risk, so harvest timing balances moisture against weather — and where grain is harvested tough (moist), on-farm aeration or drying may be used to bring it to safe storage moisture. Segregation: because different varieties, grades, and qualities attract different prices and must meet different specifications, grain must be kept segregated from the header through on-farm storage to delivery — mixing a high-grade parcel with a lower one downgrades the whole lot, so tracking and separating grain streams is an important logistical discipline. Contamination and quality preservation: keeping grain free of foreign material, weed seeds, chemical residues, and admixture, and avoiding damage in handling. Emphasise that the value locked in at harvest depends on these operational choices — delivering grain that meets a premium specification, kept separate and clean, at acceptable moisture — and that a lapse (a rain event lowering falling number, a segregation error, a moisture rejection) can turn premium grain into a discounted or rejected load. This ties the operational management of harvest directly to the grain quality and marketing content of the unit.
+    key_concepts:
+      - "Moisture must meet receival limits; tough grain needs drying"
+      - "Segregation prevents downgrading a good parcel by mixing"
+      - "Contamination and admixture control preserve grade"
+      - "A single lapse can turn premium grain into a discounted load"
+    wiki_query: "grain moisture segregation contamination receival harvest WA"
+
+  - title: "On-Farm Storage and the Delivery Decision"
+    description: >
+      Examine on-farm grain storage and the strategic flexibility it provides, a significant and growing feature of WA grain logistics. Explain the two pathways grain can take at harvest: direct delivery to the central bulk handling system (fast and simple, but committing the grain to that system and its timing and grades), or storage on farm (in silos, sealed storage, or bags) for later delivery or sale. Explain the reasons growers invest in on-farm storage: harvest logistics (storing grain on farm lets the harvester keep running when the delivery system is congested or closed, removing a bottleneck); marketing flexibility (holding grain to sell later in the year when prices may be better, rather than selling into the harvest-time price trough); segregation control (keeping parcels separate on the grower's own terms); and access to markets that reward on-farm storage. Explain the requirements and risks: stored grain must be kept dry, cool, and insect-free (through aeration, sealed storage, and hygiene) or it spoils and loses value or is infested, so storage demands management skill and the risk of quality loss; and capital is tied up in storage infrastructure. Connect to risk and marketing: on-farm storage is both a logistics tool (decoupling harvest from delivery) and a marketing tool (giving control over the timing of sale), linking the operational content of this lecture to the price-risk management of the financial lecture.
+    key_concepts:
+      - "Direct delivery vs on-farm storage as two pathways"
+      - "Storage decouples harvest from a congested delivery system"
+      - "Also a marketing tool: sell later, avoid the harvest price trough"
+      - "Requires management skill; dry/cool/insect-free or it spoils"
+    wiki_query: "on-farm grain storage delivery marketing flexibility WA"
+
+  - title: "Weather, Fire and Operational Risk at Harvest"
+    description: >
+      Address the acute operational risks that concentrate at harvest, since managing them is part of running the operation safely and successfully. Weather risk: the dominant harvest risk, where an approaching rain front forces hard decisions about whether to push on (accepting tough grain or long hours) or stop, and where a poorly-timed rain can strip quality from a large area — so weather monitoring and the flexibility to respond drive harvest logistics. Fire risk: harvest occurs in hot, dry, high-fire-danger conditions with machinery working in dry crops and stubble, creating a serious fire hazard (from machine sparks, bearings, and exhausts), so harvest operations are governed by fire-risk rules — harvest bans on extreme-danger days, firefighting equipment on hand, and machine maintenance to prevent ignition — that constrain when work can proceed and impose a duty of care. Safety and fatigue: the long hours, night work, heavy machinery, and pressure of harvest create real risks to operator safety and from fatigue, demanding management. Emphasise that harvest management is not only about efficiency and quality but about operating safely and responsibly under pressure within legal and duty-of-care obligations — the same professional-responsibility theme raised for agrochemical use — and that a well-run harvest plans for these risks rather than being caught out by them.
+    key_concepts:
+      - "Weather forces push-on-or-stop decisions during harvest"
+      - "Hot, dry conditions create serious machinery fire risk"
+      - "Harvest bans and firefighting readiness on high-danger days"
+      - "Long hours and night work raise fatigue and safety risk"
+    wiki_query: "harvest fire risk weather safety fatigue WA"
+
+  - title: "From Paddock to Port: The Bulk Handling System"
+    description: >
+      Describe the grain supply chain that carries grain from the farm to the export port, the physical logistics that connect WA growers to world markets. Explain the structure of the WA system: grain is delivered from farms to a network of country receival sites, where it is sampled, graded, weighed, and segregated by grade, then accumulated and transported (by road and rail) to the export terminals at the ports, from which it is loaded onto bulk ships for export. Explain the distinctive WA context: the WA bulk handling system is dominated by CBH Group, a large grower-owned cooperative that operates the country receival network, storage, and much of the transport and port terminal infrastructure — a grower-controlled supply chain that is a notable feature of the WA industry. Explain the functions the system performs: aggregating the grain of thousands of growers into the large, uniform, quality-assured parcels that export markets and bulk shipping require; segregating grain by grade and quality so that specific specifications can be met and premiums captured; storing grain between harvest and shipment (since harvest is compressed but export is spread across the year); and moving enormous tonnages efficiently to port. Emphasise that this bulk, segregated, cooperative supply chain is what allows a large number of individual growers on variable soils to collectively supply reliable, specification-grade grain to demanding international customers — a critical piece of infrastructure underpinning WA's export competitiveness.
+    figure_id: "Fig-L13-SupplyChain"
+    image_prompt: >
+      Flow diagram of the WA grain supply chain from left to right: farm (header and on-farm storage), road transport to country receival sites (sampling, grading, segregation, storage), rail and road to port terminals, ship loading, export to world markets. Grade segregation shown as parallel streams kept separate through the chain. UWA blue (#27348B) infrastructure, gold (#E2B600) grain-flow arrows and grade streams, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Farm to country receival to port terminal to bulk ship"
+      - "CBH: a grower-owned cooperative dominates WA bulk handling"
+      - "Aggregates thousands of growers into uniform, graded parcels"
+      - "Storage bridges compressed harvest and year-round export"
+    wiki_query: "CBH bulk handling grain supply chain WA export"
+    figure_source: "manual"
+
+  - title: "Receival, Grading and Quality Assurance"
+    description: >
+      Explain what happens when grain is delivered, since the receival process is where the grower's grain is turned into a graded, valued, tradable commodity. Describe the receival process: each load is sampled and tested against the receival standards for its intended grade — measuring the quality parameters from the agronomy lectures (protein, moisture, screenings, test weight, falling number, defects, contamination, and variety) — and assigned to a grade accordingly, or rejected or downgraded if it fails a specification. Explain the consequences for the grower: the grade determines the price, so the quality management of the whole season and the harvest culminates in this grading decision, and a load that misses a specification (too much moisture, too many screenings, low falling number, contamination) is downgraded with a real financial penalty. Explain the system-level function of quality assurance: consistent, tested grading across the receival network gives buyers confidence that a WA grade means the same thing regardless of which grower or site it came from, which is what allows the aggregated bulk parcels to be sold against international specifications — the quality-assurance reputation that is part of WA's market advantage. Emphasise the connection back through the unit: the receival test is the moment of truth for all the agronomic decisions (variety, nutrition, disease control, harvest timing) that shape grain quality, and it is where the grower's control over quality meets the market's demand for it.
+    key_concepts:
+      - "Each load sampled and graded against receival standards"
+      - "Grade determines price; a missed spec is downgraded"
+      - "Consistent grading gives buyers confidence across sites/growers"
+      - "Receival is the moment of truth for the season's agronomy"
+    wiki_query: "grain receival grading standard specification WA"
+
+  - title: "Transport, Storage and Supply Chain Efficiency"
+    description: >
+      Examine the transport and storage logistics of the supply chain and the efficiency pressures on them, since these costs and constraints affect the grower's net return and the industry's competitiveness. Explain the transport task: moving very large tonnages from dispersed country sites to a few ports, by a combination of road and rail, in a compressed post-harvest period and then across the shipping year — a major logistical and cost undertaking where efficiency (the right mode, minimising handling, avoiding congestion) directly affects the cost of getting grain to market. Explain the storage task: because harvest is compressed into a few weeks but export shipping is spread across the year, the system must store large quantities of grain, segregated by grade, safely (dry, cool, pest-free) between receival and shipment. Explain the efficiency and cost pressures: supply-chain costs (receival, storage, transport, and port charges) are deducted from the grower's return, so the efficiency of the chain matters to farm profitability, and there is constant pressure to reduce handling, improve throughput, and invest in infrastructure (rail, port capacity, storage) — with debates over the balance between the cooperative bulk system and alternatives such as containerised export and direct grower marketing. Emphasise that the supply chain is not a passive pipe but an actively-managed system whose efficiency is a real determinant of how much of the world price reaches the WA grower, linking the logistics of this lecture to the economics of the financial lecture and the markets of the next.
+    key_concepts:
+      - "Road and rail move large tonnages to a few ports"
+      - "Storage spreads a compressed harvest across the export year"
+      - "Supply-chain costs are deducted from the grower's return"
+      - "Efficiency determines how much of the world price reaches WA"
+    wiki_query: "grain transport storage supply chain cost efficiency WA"
+
+  - title: "The Whole Chain: Connecting the Paddock to the World"
+    description: >
+      Conclude by drawing the process-management and logistics content together and connecting it to the arc of the unit. Reiterate the journey: agronomic decisions across the season build a crop of a certain yield and quality; time-critical operations, culminating in harvest, realise and preserve that value as graded grain; on-farm and system storage and the bulk handling, transport, and port infrastructure aggregate, segregate, and move that grain; and it is loaded onto ships bound for the world markets that the final lecture examines. Emphasise the systems perspective the whole unit teaches, now extended beyond the farm gate: a grower's return depends not only on growing the crop well but on executing operations efficiently within tight windows, preserving quality through harvest and storage, and moving grain through an efficient, quality-assured supply chain — and each link depends on the others, so a failure of timeliness, quality, or logistics anywhere erodes the value created everywhere else. Highlight how this lecture connects to the rest of the unit: timeliness and machinery capacity to the economics; grain quality and segregation to the agronomy; on-farm storage and delivery timing to price-risk management; telematics and digital coordination to precision agriculture; and the whole supply chain to the global food markets that set the price at the end of it. Reinforce that managing the process and the logistics — turning a standing crop into delivered, specification-grade grain at the lowest cost and loss — is as essential to a profitable, competitive WA grain business as the agronomy that grew the crop in the first place.
+    key_concepts:
+      - "Agronomy builds value; operations and logistics realise it"
+      - "Each link depends on the others across the whole chain"
+      - "Timeliness, quality and logistics connect back across the unit"
+      - "Sets up the world markets covered in the final lecture"
+    wiki_query: "grain supply chain paddock to port world market WA"

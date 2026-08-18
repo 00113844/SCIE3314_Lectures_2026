@@ -1,0 +1,172 @@
+topic: "Agronomy of Cereals: Wheat and Barley"
+auto_figures: true
+subtopics:
+
+  - title: "Wheat and Barley: The Backbone of WA Cropping"
+    description: >
+      Open by establishing wheat and barley as the foundation crops of the WA grainbelt — together occupying the majority of the cropped area and generating most of the region's grain export income. Explain why cereals dominate: they are well adapted to the Mediterranean winter-growing pattern, reliably establish even in marginal breaks, tolerate the poor and variable soils, have deep and liquid export markets, and are supported by mature agronomy, breeding, and machinery. Introduce the two crops' complementary roles: wheat as the higher-value milling staple and the rotational anchor, barley as a fast, robust, often more drought- and salt-tolerant cereal valued for both malting premiums and feed, frequently grown on the tougher country or later sowing slots. Preview the lecture's logic: to manage a cereal crop well an agronomist must understand its development (phenology and growth stages), how genotype, environment and management interact to determine yield, how the crop responds to and compensates for stress, and how agronomy, soils and climate shape both yield and the grain quality that determines price. These themes structure the lecture and recur across the unit.
+    key_concepts:
+      - "Cereals dominate: reliable establishment, deep markets"
+      - "Wheat: milling staple and rotational anchor"
+      - "Barley: robust, drought/salt-tolerant, malt or feed"
+    wiki_query: "wheat barley WA grainbelt dominant crops rotation"
+
+  - title: "Why Cereals Are Less Risky Than Break Crops"
+    description: >
+      Address directly the learning outcome of why cereals — especially wheat and barley — are lower-risk than legumes or canola for growers in the drier parts of the grainbelt, an idea central to understanding rotation and risk decisions. Lay out the reasons. Establishment reliability: cereals germinate and establish vigorously from a wider range of sowing conditions and marginal breaks than the more finicky pulses and canola, whose small seed and specific requirements make establishment failure more likely in a dry start. Stress tolerance and compensation: cereals tolerate drought, heat, and nutrient stress better and, crucially, compensate for stress through their tillering architecture (developed later in the lecture), so a cereal that suffers early stress can still recover a reasonable yield, whereas canola and pulses are less forgiving. Market depth and price stability: wheat and barley have large, liquid, well-understood markets, whereas pulse and even canola markets are thinner and more volatile. Agronomic maturity: cereal weed, disease and nutrition management is well established and lower-risk. Explain the consequence for rotation: in low-rainfall, high-risk environments growers lean heavily on cereals and use break crops sparingly and strategically, while in higher-rainfall, lower-risk zones the more valuable but riskier break crops can occupy a larger share. This risk gradient explains the geography of rotations across the grainbelt.
+    key_concepts:
+      - "Cereals establish more reliably than pulses/canola"
+      - "Tillering lets cereals compensate for early stress"
+      - "Deeper, more stable markets than break crops"
+      - "Risk gradient explains rotation geography across the belt"
+    wiki_query: "cereal risk establishment tolerance rotation WA break crop"
+
+  - title: "The Cereal Plant: Architecture and Yield Components"
+    description: >
+      Introduce the structure of the cereal plant and the yield-component framework that underlies all cereal agronomy and modelling. Describe the plant: a main stem plus tillers (side shoots), each capable of producing a head (spike/ear) bearing spikelets and florets that set grain; a root system; and leaves culminating in the flag leaf that supplies most of the grain's carbohydrate. Present the multiplicative yield-component chain — plants per unit area × heads per plant (driven by tillering) × grains per head × weight per grain — the framework, traceable to Engledow and Wadham, that lets an agronomist attribute a yield difference to the specific developmental stage at which it was set. Explain the key principle that these components are set sequentially through the season and compensate for one another: plant number is set at establishment, head number during tillering, grain number around flowering, and grain size during grain fill, so stress at any stage reduces the component being set then but can be partly offset by the components set later. This sequential, compensating structure is why understanding growth stages is essential to timing management, and why cereals are so resilient — themes developed through the rest of the lecture.
+    figure_id: "Fig-L06-YieldComponents"
+    image_prompt: >
+      Diagram of the cereal yield-component chain shown as a left-to-right multiplication: an icon of plants per square metre, times heads per plant (tillering plant icon), times grains per head (a wheat spike with grains), times thousand-grain weight (grain icons on a balance), equalling yield. Below each component, a small timeline bar shows the growth stage at which it is set (establishment, tillering, flowering, grain fill). UWA blue (#27348B) icons, gold (#E2B600) timeline and multiplication signs, academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Yield = plants/area x heads/plant x grains/head x grain weight"
+      - "Components set sequentially: establishment to grain fill"
+      - "Components compensate for stress set earlier"
+    wiki_query: "cereal yield components tillering heads grains weight WA"
+    figure_source: "manual"
+
+  - title: "The Zadoks Scale: A Common Language for Crop Development"
+    description: >
+      Introduce the Zadoks decimal growth scale as the universal language for describing cereal development, essential for timing every management input. Explain the two-digit structure: the first digit denotes the principal growth stage (0 germination, 1 seedling growth, 2 tillering, 3 stem elongation, 4 booting, 5 head emergence, 6 flowering/anthesis, 7 milk development, 8 dough development, 9 ripening) and the second digit subdivides it (for example Z13 = three leaves unfolded, Z30 = start of stem elongation, Z39 = flag leaf fully emerged, Z65 = mid-flowering). Emphasise why a precise, shared staging system matters: nearly every agronomic decision — the timing of herbicides (many of which damage the crop or are ineffective outside a specific window), nitrogen topdressing, plant growth regulators, and fungicides — is specified by growth stage, not by calendar date, because the crop's physiological readiness, not the date, determines the response. Explain that Zadoks stages are observable in the field, allowing an agronomist to walk a crop, determine its stage, and time an input correctly, and that they provide the bridge for comparing field crops against crop-model predictions. Mastery of growth staging is a core practical skill of the unit.
+    figure_id: "Fig-L06-Zadoks"
+    image_prompt: >
+      Horizontal wheat development timeline from sowing to ripening with plant drawings above each phase: germination, seedling, tillering, stem elongation, booting, head emergence, flowering, milk, dough, ripe. Each phase labelled with its Zadoks code range (Z0x, Z1x, Z2x, Z3x, Z4x, Z5x, Z6x, Z7x, Z8x, Z9x). Key management windows (post-emergent herbicide, nitrogen topdressing, fungicide, flowering) marked with gold (#E2B600) flags. UWA blue (#27348B) timeline, academic infographic, --ar 16:9, --no text.
+    key_concepts:
+      - "Two-digit code: principal stage plus sub-stage"
+      - "Inputs timed by growth stage, not calendar date"
+      - "Field-observable stages bridge to crop-model predictions"
+    wiki_query: "Zadoks growth stage scale cereal timing WA"
+    figure_source: "literature"
+
+  - title: "Vegetative Development: Germination, Emergence and Tillering"
+    description: >
+      Follow the crop through its vegetative phase and the agronomy it demands. Germination and emergence: driven by seedbed moisture and temperature, with sowing depth critical — too deep and the coleoptile (short in modern semi-dwarf varieties) cannot reach the surface, too shallow and the seed risks a drying seedbed. Establishment sets the plant-number yield component. Tillering: from around the three-leaf stage the plant produces tillers, each a potential head; tiller number responds strongly to conditions — good moisture, nitrogen, light (low density) and warmth promote tillering, while stress suppresses it. This is the first great compensation mechanism: a thin or stressed early crop tillers more to fill the canopy, while a thick or vigorous crop produces fewer tillers per plant, so head number is buffered across a wide range of plant densities. Explain the agronomic implications: early nitrogen and weed control protect tillering and canopy establishment, and the flexibility of tillering is a major reason cereals tolerate variable establishment far better than the non-tillering break crops. Note that not all tillers survive — many late tillers die if resources tighten around stem elongation, a self-thinning that further matches head number to available resources.
+    key_concepts:
+      - "Sowing depth balances coleoptile length against dry seedbed"
+      - "Tillering buffers head number across a range of densities"
+      - "Nitrogen, light and warmth promote tillering; stress suppresses it"
+      - "Late tillers self-thin if resources tighten"
+    wiki_query: "cereal tillering germination emergence sowing depth WA"
+
+  - title: "Reproductive Development: Stem Elongation to Flowering"
+    description: >
+      Cover the reproductive phase, when the yield-critical grain-number component is set and the crop is most sensitive to both stress and mis-timed management. Stem elongation (Z30 onward): the growing point, previously protected at ground level, rises up the stem, and from this point the developing head is vulnerable to frost and to certain herbicides — making Z30 a critical cut-off for many chemicals. The number of grain sites is being determined through this phase. Booting and head emergence (Z40–Z59): the head grows within the flag-leaf sheath and emerges. Flowering/anthesis (Z60–Z69): the yield-defining event, when florets are pollinated and grain number is finally set. Emphasise that the period around flowering is the crop's most vulnerable: frost can sterilise florets, heat above ~35 °C damages pollen, and water or nutrient stress reduces the grain number that can be supported — and these losses are largely irreversible because grain number, the most important yield component, is fixed here. This is why matching flowering to the safe window (between frost and heat/terminal drought) via variety and sowing date, and protecting the crop through this phase, are the highest priorities in cereal agronomy. Connect to the flowering-window concept from the climate and establishment lectures.
+    key_concepts:
+      - "Z30: growing point rises, becomes vulnerable to frost/herbicide"
+      - "Flowering (Z60-69) irreversibly sets grain number"
+      - "Frost, heat above ~35C, and stress all cut grain number here"
+      - "Highest-priority window: match flowering to the safe window"
+    wiki_query: "wheat stem elongation flowering frost heat grain number WA"
+
+  - title: "Grain Filling and Maturity"
+    description: >
+      Complete the developmental sequence with grain fill and maturity, when grain size — the final yield component — and much of grain quality are determined. After flowering, the grain accumulates starch and protein through the milk (Z70s) and dough (Z80s) stages, drawing on current photosynthesis from the flag leaf and upper canopy plus remobilised reserves stored in the stem before flowering. Grain size is set by the balance between the supply of assimilate and the duration of grain fill. Explain the dominant WA reality: in the Mediterranean environment grain fill almost always runs into the terminal drought and rising heat, so the fill period is truncated and grain is frequently smaller than its genetic potential — producing the pinched, screened grain of a dry finish and reducing both yield and quality. Discuss the physiology this creates: the flag leaf is the single most important photosynthetic organ during fill, supplying on the order of 43% of the wheat crop's grain-fill carbohydrate (barley leans more on the leaf just below the flag leaf), which is why protecting it with fungicide is such a high-value decision; pre-flowering stem reserves become a crucial buffer that sustains grain fill when the canopy fails under terminal stress, and a good finishing rain can lift grain size and test weight markedly. Maturity (Z90s) is reached when the grain dries down to harvestable moisture. Emphasise that the grain-fill period, though it sets "only" grain size, is where the terminal-drought penalty is paid and where quality is made or lost, so late-season stress management and timely harvest matter greatly.
+    key_concepts:
+      - "Flag leaf supplies roughly 43% of wheat's grain-fill carbon"
+      - "Terminal drought usually truncates fill in WA"
+      - "Pre-flowering stem reserves buffer a failing canopy"
+      - "Quality is made or lost during grain fill"
+    wiki_query: "grain fill flag leaf photosynthesis terminal drought WA"
+
+  - title: "Why Growth Stage Governs Management"
+    description: >
+      Consolidate the phenology material into its central practical lesson: almost every cereal management decision is timed by growth stage because the crop's response to an input depends on its developmental readiness, not the date. Give concrete examples that recur through the unit. Herbicides: many post-emergent chemicals are safe and effective only within a specific stage window and cause crop damage or fail outside it, and the growing point's rise at stem elongation is a hard deadline for several. Nitrogen: topdressing timing (from tillering through stem elongation) is matched to the stage at which the crop can convert nitrogen into extra heads and grains, and to the seasonal outlook. Fungicides: applied to protect specific leaves (especially the flag leaf) at defined stages when disease threatens the yield-forming canopy. Plant growth regulators: applied at stem elongation to manage lodging. Frost and heat risk assessment: keyed to the flowering stage. Emphasise the agronomist's core field skill: correctly identifying the growth stage of a crop that may be variable across a paddock, and using it to time inputs precisely. This staging-driven decision-making is the operational heart of cereal agronomy.
+    key_concepts:
+      - "Herbicide, nitrogen, fungicide and PGR windows are stage-specific"
+      - "Stage elongation (Z30) is a hard herbicide-safety deadline"
+      - "Frost/heat risk assessment is keyed to flowering stage"
+      - "Correctly staging a variable paddock is a core field skill"
+    wiki_query: "growth stage cereal herbicide nitrogen fungicide timing WA"
+
+  - title: "Genotype × Environment × Management"
+    description: >
+      Introduce the G × E × M framework as the organising principle for understanding why the same variety yields differently across paddocks and seasons, and why recommendations are always context-specific. Genotype (G): the variety's genetically determined characteristics — phenology (maturity, photoperiod and vernalisation response), yield potential, disease resistance, grain quality, and tolerances to frost, heat, drought, and acidity. Environment (E): the soil, climate, and season the crop experiences — rainfall amount and timing, temperature extremes, soil constraints. Management (M): the decisions the grower controls — sowing date, density, nutrition, weed, disease and pest control. Emphasise the interactions: the best variety depends on the environment (a quick variety for a late break, a slow one for early sowing); the best management depends on the variety and the season (a high-yield-potential variety in a good season justifies high nitrogen; the same investment is wasted on a drought). Explain that these interactions are precisely what make agronomy difficult and interesting — there is no single best variety or universal recipe, only the best combination of G, E and M for a given situation — and note the scale of the management lever: depending on the season and system, management decisions alone can account for anywhere from around 2% to 50% of total yield variability, which is why crop models, which can explore the full G × E × M factorial cheaply, are such valuable tools for untangling it, as developed in the modelling lectures.
+    key_concepts:
+      - "G: variety phenology, potential, resistance, tolerances"
+      - "E: rainfall, temperature, soil constraints of the season"
+      - "M: sowing date, density, nutrition, protection decisions"
+      - "Management alone can explain 2-50% of yield variability"
+    wiki_query: "genotype environment management interaction yield variability WA"
+
+  - title: "How Cereals Compensate for Stress"
+    description: >
+      Develop the crucial concept of stress compensation — the buffering that makes cereals so resilient and lower-risk than break crops — by tracing how the sequentially-set yield components offset one another. Because plant number, head number, grain number, and grain size are determined at successive stages, stress that reduces one component can be partly compensated by the components set later, provided conditions improve. A crop thinned by poor establishment tillers more, restoring head number. A crop stressed during tillering may still set adequate grains per head if conditions ease by flowering. A crop with reduced grain number can produce larger grains if the finish is kind. Explain that this compensation operates through the crop's responsiveness to resource availability at each stage — the same tillering and grain-set flexibility that a crop model represents through its source-sink and stress-factor logic. Stress the agronomic significance: this is why early stress is rarely fatal to cereal yield and why cereals recover from setbacks that would ruin a canola or pulse crop, and it is the physiological basis for the lower risk of cereals in marginal environments. But note the limit: compensation cannot recover losses at the critical flowering stage (frost, severe heat), where grain number is irreversibly lost, nor when terminal drought prevents the later components from compensating — so the timing of stress relative to development determines whether the crop can recover.
+    key_concepts:
+      - "Later components offset stress on earlier-set components"
+      - "Thinned crops tiller more; stressed crops still set grain later"
+      - "Basis for cereals' lower risk vs canola/pulses"
+      - "No compensation for flowering-stage or terminal-drought losses"
+    wiki_query: "cereal stress compensation tillering grain yield component WA"
+
+  - title: "Water-Use Efficiency in Cereals"
+    description: >
+      Return to water-use efficiency, introduced in the opening lecture, and apply it specifically to comparing and improving cereal performance. Restate the French-Schultz framework: potential yield rises with growing-season water use above an evaporation threshold, at a slope representing the crop's transpiration efficiency, and the gap between a paddock's actual yield and this water-limited potential reveals the scope for agronomic improvement. Use WUE as a diagnostic and comparison tool: a crop achieving close to its water-limited potential is well managed for that season, while a large yield gap points to a correctable constraint — weeds competing for water, disease or nutrient deficiency limiting canopy function, subsoil acidity or compaction restricting root access to water, or poorly matched phenology wasting the season. Explain how agronomy and breeding have lifted cereal WUE over decades: conservation agriculture and summer weed control increase the share of rainfall that reaches the crop; earlier sowing and better-matched phenology align growth with the efficient part of the season; improved nutrition and disease control keep the canopy functioning; and breeding has raised harvest index and transpiration efficiency. This makes WUE the unifying metric for judging whether all the agronomic decisions in this lecture are actually converting scarce water into grain.
+    figure_id: "Fig-L06-WUE"
+    image_prompt: >
+      French-Schultz style plot: x-axis growing-season water use (mm, 100-450), y-axis wheat yield (t/ha, 0-6), with a water-limited potential boundary line from an x-intercept near 110 mm. Two example paddocks marked: one on the line (well-managed) and one well below (large yield gap), with the gap annotated and labelled with possible causes (weeds, disease, subsoil constraint). An arrow shows how improved agronomy moves a paddock up toward the line. UWA blue (#27348B) boundary, gold (#E2B600) points, academic chart, --ar 16:9, --no text.
+    key_concepts:
+      - "French-Schultz potential vs actual yield reveals the yield gap"
+      - "Gap points to weeds, disease, nutrition or soil constraints"
+      - "Conservation ag, sowing timing and breeding all lift WUE"
+      - "WUE is the unifying metric for judging agronomic decisions"
+    wiki_query: "water use efficiency French-Schultz yield gap cereal WA"
+    figure_source: "literature"
+
+  - title: "Managing the Crop Across the Season: An Integrated View"
+    description: >
+      Synthesise the phenology and G × E × M material into the integrated, stage-by-stage management program an agronomist runs across a cereal season. Pre-sowing and sowing: choose variety and sowing date so flowering lands in the safe window, set target density, place seed and starter fertiliser accurately, and apply pre-emergent weed control. Early vegetative (emergence–tillering): protect establishment and tillering with timely post-emergent weed control and early nitrogen, matching nitrogen investment to the emerging seasonal outlook and stored moisture. Stem elongation: complete stage-critical herbicides before the growing point rises, apply the main nitrogen dressing to build grains-per-head potential in a promising season, and manage lodging risk. Flowering: the crop is committed — protect the yield-forming flag leaf with fungicide if disease threatens, and accept that frost and heat risk are now set by earlier variety and sowing decisions. Grain fill to harvest: monitor for late disease and pests, and harvest promptly at maturity to preserve grain quality. Emphasise that this program is continuously adjusted to the unfolding season — the essence of tactical, responsive agronomy under a variable climate — and that every decision is keyed to growth stage and weighed against the season's water and price outlook.
+    key_concepts:
+      - "Pre-sowing: variety/date choice, density, starter fertiliser"
+      - "Early vegetative: protect establishment and tillering"
+      - "Stem elongation: stage-critical herbicides, main N, lodging"
+      - "Flowering onward: disease protection, then harvest for quality"
+    wiki_query: "cereal season management program sowing flowering harvest WA"
+
+  - title: "Why Grain Quality Determines Price"
+    description: >
+      Establish that a cereal grower is not merely producing tonnes but producing grain of a specified quality, and that quality, as much as yield, determines income. Explain that grain is bought against strict specifications, and that grain meeting a higher-value classification earns a substantial premium while grain failing a specification is downgraded — sometimes from milling wheat to feed — with a large price penalty. Introduce the main quality parameters that are measured at delivery and that define grade. Protein content: central for wheat, determining suitability for bread, noodles, or feed, and directly priced. Test weight (hectolitre weight) and screenings: indicators of grain plumpness and soundness, degraded by a pinched, drought-affected finish. Falling number: a measure of sprouting damage from untimely rain, critical for milling and noodle wheats. Moisture: must be below a threshold for safe storage. Grain hardness, colour, and — for barley — germination, size, and protein for malting. Emphasise the agronomic consequence: because quality is shaped by variety, nutrition, and the season, and because it can be won or lost in the final weeks, managing for quality (not just yield) runs through variety choice, nitrogen strategy, and harvest timing. This links agronomy directly to the marketing and logistics content later in the unit.
+    key_concepts:
+      - "Grade premium/penalty can be as decisive as tonnage"
+      - "Protein, test weight/screenings, falling number, moisture"
+      - "Quality is won or lost in the final weeks"
+      - "Links agronomy directly to marketing and logistics"
+    wiki_query: "grain quality specification protein test weight screenings WA"
+
+  - title: "Wheat Classification and the Role of Protein"
+    description: >
+      Detail the Australian wheat classification system and the pivotal role of protein, since this shapes variety choice and nitrogen management. Explain that wheat varieties are classified by an independent authority into quality classes based on their genetic and functional characteristics — for example Australian Prime Hard and Australian Hard (high-protein milling wheats for bread and premium noodles), Australian Premium White and Australian Standard White (mid-protein general-purpose wheats important in WA), Australian Soft (low-protein wheats for biscuits and cakes), Australian Noodle wheat (bred for udon noodle markets, a WA specialty), and feed grades for grain failing milling specifications. Emphasise that a delivered load is graded by both the variety's class and its measured attributes at delivery (especially protein, screenings, and falling number), so a high-class variety still delivers a lower grade if the grain does not meet the specifications on the day. Explain the protein dynamic that agronomists must manage — the "dilution effect": protein reflects the balance between nitrogen supply and yield, so a big yield in a good season, built on plentiful soil moisture and starch accumulation, can dilute protein below the milling threshold even when total nitrogen uptake is unchanged, while nitrogen must be sufficient to fill both grain and protein. Ground this with the nitrogen economy behind it: roughly three-quarters of the nitrogen a crop accumulates in its shoots is remobilised into the grain during maturity, which is why late-season nitrogen status matters even after visible vegetative growth has finished. Managing nitrogen to hit both a yield and a protein target, under an uncertain season, is one of the subtlest problems in cereal agronomy and a prime application of crop modelling.
+    key_concepts:
+      - "Prime Hard/Hard (high protein) to Standard White to feed"
+      - "Grade depends on both variety class and delivered attributes"
+      - "Dilution effect: high yield can dilute protein below threshold"
+      - "~75% of shoot nitrogen remobilises into the grain"
+    wiki_query: "wheat protein classification dilution effect nitrogen remobilisation WA"
+
+  - title: "Barley Quality: The Malting Premium"
+    description: >
+      Cover barley quality and the distinctive malting-versus-feed decision that shapes its agronomy. Explain that barley is grown for two very different markets: malting barley, which must meet exacting specifications for the brewing and distilling industry and commands a significant premium, and feed barley, which has looser specifications and a lower price. Malting specifications are demanding and, importantly, partly outside the grower's control: grain must be from an accredited malting variety, plump and of high retention (large, even grain size), of moderate and consistent protein (typically neither too high nor too low), free of weather and disease damage, and capable of uniform, vigorous germination (so pre-harvest sprouting or excessive weathering disqualifies it). Ground the "moderate and consistent protein" specification with the actual window: malting protein must typically sit between about 9.5% and 12.5% — above 12.5% impairs brewery filtration and beer clarity, below 9.5% weakens yeast fermentation and head stability, so nitrogen management is aimed at a band, not a ceiling. Explain the agronomic and economic tension: growers aim for malting grade to capture the premium, but achieving the plump, moderate-protein, undamaged grain required depends heavily on a kind finish, and a poor season can push a crop grown for malting into feed — so the malting premium carries production risk, and the risk cuts both ways: a legume-heavy rotation raises background soil nitrogen and can push protein over 12.5% ("protein overshoot") in a dry, low-yielding season. Discuss how variety choice (some varieties are chosen specifically for lower screenings, others tolerate a higher protein tendency), moderate and well-timed nitrogen, disease control, and timely harvest are all directed at securing malting grade, and how barley's robustness and drought tolerance nonetheless make it a valuable, lower-risk cereal even when it defaults to feed.
+    key_concepts:
+      - "Malt protein window: roughly 9.5% to 12.5%"
+      - "Malting varieties, plumpness, and germination vigour required"
+      - "Legume-rich rotations risk protein overshoot in dry years"
+      - "Malting premium carries real production risk"
+    wiki_query: "malting barley protein window specification WA variety"
+
+  - title: "How Agronomy, Soils and Climate Shape Yield and Quality"
+    description: >
+      Conclude by drawing together the whole lecture into an integrated understanding of how the three influences — agronomy, soils, and climate — jointly determine both cereal yield and grain quality, reinforcing the G × E × M theme. Climate sets the envelope: growing-season rainfall and its reliability cap yield through water supply, temperature extremes at flowering and grain fill impose frost and heat penalties and shape grain size and quality, and the terminal drought that ends most WA seasons is the dominant influence on final grain plumpness and screenings. Soils modulate this: water- holding capacity determines how much of the rainfall is stored and available during the dry finish, subsoil constraints (acidity, compaction, salinity) restrict root access to that water, and nutrient status governs canopy function and protein. Agronomy is the lever the grower pulls within this envelope: variety and sowing date to match phenology to the season and escape frost and heat; nutrition to build yield and hit protein targets; weed, disease and pest control to protect the canopy and the water it uses; and timely harvest to preserve quality. Emphasise the unifying lesson: yield and quality are the joint outcome of a genotype expressing itself through a season's environment under the grower's management, and skilled cereal agronomy consists of reading that interaction and making, and continuously adjusting, the decisions that convert scarce water into the greatest value of grain that meets a market specification.
+    key_concepts:
+      - "Climate sets the envelope: water, frost, heat, terminal drought"
+      - "Soils modulate it: water storage, root access, nutrients"
+      - "Agronomy is the lever pulled within that envelope"
+      - "Yield and quality are the joint outcome of G x E x M"
+    wiki_query: "agronomy soil climate yield quality interaction WA cereal"

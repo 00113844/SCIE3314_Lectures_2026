@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build / tool output
+.playwright-mcp/
+*.tsbuildinfo
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.idea/
+*.swp
+
+# Local environment — never commit credentials
+.env
+.env.*
+*.pem
+*.key

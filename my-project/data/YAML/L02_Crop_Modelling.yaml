@@ -1,0 +1,131 @@
+topic: "Crop Modelling: Types, Uses and Limitations"
+auto_figures: true
+subtopics:
+
+  - title: "What Is a Model, and Why Do Agronomists Use Them?"
+    description: >
+      Open by defining a model in the broadest sense: a simplified representation of a real system, built to help us understand it, predict its behaviour, or make decisions about it. Emphasise that a model is deliberately incomplete — it captures the processes that matter for the question at hand and discards the rest. Motivate modelling in agriculture with the practical reality that field experiments are slow, expensive, and confounded by the single season and site in which they are run: a nitrogen-rate trial answers the question only for that paddock in that year's weather. A model, once built and tested, lets us ask "what if" across thousands of combinations of variety, sowing date, nitrogen rate, soil, and season in minutes, and lets us extrapolate — carefully — to seasons and sites we have never trialled. Introduce the three enduring reasons to model: prediction (what will happen if I do X?), understanding (writing the equations forces explicit, testable hypotheses about how a process works), and integration (only a model can track soil, water, nitrogen, weather, and crop physiology interacting simultaneously). This lecture builds the conceptual vocabulary of modelling; the companion crop-growth-model chapter applies it to APSIM in depth.
+    key_concepts:
+      - "Model definition: simplified, deliberately incomplete representation"
+      - "Why field experiments alone can't answer every question"
+      - "Three reasons to model: prediction, understanding, integration"
+    wiki_query: "crop simulation model agricultural decision support prediction understanding integration"
+
+  - title: "All Models Are Wrong, But Some Are Useful"
+    description: >
+      Anchor the lecture in George Box's aphorism — "all models are wrong, but some are useful" — and use it to establish the mature, critical attitude the unit expects toward every model and sensor. Explain what "wrong" means: every model omits processes, approximates others, and relies on parameters measured elsewhere that may not represent the target system. This is not a failure but a design choice. The right question is never "is this model correct?" but "is this model fit for the purpose I am using it for?" A simple rule-of-thumb yield calculator may be perfectly adequate for a quick paddock benchmark yet hopelessly inadequate for optimising a split nitrogen application on a waterlogging-prone duplex soil. Introduce the companion idea of appropriate complexity: adding detail to a model only improves it if the data and understanding exist to parameterise that detail; beyond a point, extra complexity adds uncertainty faster than it adds accuracy. Students should leave able to interrogate any model's assumptions, inputs, and domain of validity rather than treating its output as truth.
+    key_concepts:
+      - "Box's aphorism: all models are wrong, some are useful"
+      - "Fit for purpose, not correct, is the right question"
+      - "Appropriate complexity: detail only helps if data supports it"
+    wiki_query: "agricultural model fit for purpose appropriate complexity uncertainty"
+
+  - title: "Modelling and Experimentation: Partners, Not Rivals"
+    description: >
+      Correct the common misconception that models replace field experiments. In reality the two are complementary and mutually dependent. Experiments generate the observations needed to build, calibrate, and validate models; models, in turn, extend the reach of experiments by interpolating between treatments, extrapolating to unsampled seasons and sites, and identifying which new experiments would be most informative. Describe the virtuous cycle: field data reveal a pattern; a model formalises a hypothesis about the mechanism; the model predicts behaviour in untested conditions; a new experiment tests that prediction; disagreement exposes a flaw in the model and prompts refinement. Give the concrete example that underpins WA nitrogen research — long-term trials at a handful of sites provide the calibration data, and APSIM then generalises those findings across the full range of soils, seasons, and management the grainbelt actually experiences, something no feasible number of trials could sample. Modelling lets a limited, expensive experimental program answer far more questions than its raw treatments alone.
+    key_concepts:
+      - "Models and experiments are complementary, not substitutes"
+      - "The virtuous cycle: data, hypothesis, prediction, test"
+      - "APSIM generalises WA nitrogen-trial data across soils and seasons"
+    wiki_query: "APSIM nitrogen trial calibration WA grainbelt experiment model"
+
+  - title: "Descriptive versus Explanatory (Mechanistic) Models"
+    description: >
+      Introduce the first and most important axis for classifying models. A descriptive (empirical) model captures a statistical relationship observed in data without representing the underlying mechanism — for example, a regression of yield on growing-season rainfall, which fits the data it was built from but says nothing about why the relationship holds. An explanatory (mechanistic, process-based) model represents the actual biological and physical processes — light interception, photosynthesis, water uptake, nitrogen dynamics — so that the outcome emerges from the interaction of those processes. Contrast their strengths: empirical models are simple, transparent, and accurate within the range of data used to build them, but dangerous when extrapolated beyond that range; mechanistic models are harder to build and parameterise but can be applied, with care, to novel conditions (new varieties, future climates) because they encode causation rather than correlation. Note that most working agricultural models, including APSIM, are hybrids — mechanistic in structure but using empirical relationships (such as radiation-use efficiency) for processes too complex or poorly understood to represent from first principles.
+    figure_id: "Fig-L02-DescExpl"
+    image_prompt: >
+      Two-panel conceptual diagram. Left panel "Descriptive / empirical": a scatter plot with a fitted regression line, labelled "correlation — fits observed data, weak extrapolation". Right panel "Explanatory / mechanistic": a flow diagram of boxes (light, water, nitrogen) feeding into process arrows (photosynthesis, growth) producing yield, labelled "causation — processes represented, extrapolates with care". UWA blue (#27348B) and gold (#E2B600), clean academic diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Descriptive/empirical models: statistical fit, no mechanism"
+      - "Explanatory/mechanistic models: represent underlying processes"
+      - "Most working models, including APSIM, are hybrids"
+    wiki_query: "process based model mechanistic empirical agricultural simulation"
+    figure_source: "manual"
+
+  - title: "Static versus Dynamic Models"
+    description: >
+      Explain the distinction between models that represent a system at a single point in time and those that simulate its change through time. A static model produces an output from a set of inputs without any representation of time — for example, a fertiliser recommendation calculated from a soil test. A dynamic model tracks the evolution of state variables (soil water, crop biomass, leaf area, soil nitrogen) step by step, usually on a daily time step, with the state at the end of each day becoming the starting point for the next. Crop growth models are dynamic by necessity, because the value of a resource on any given day depends on the entire history that preceded it: today's crop growth depends on how much water was used yesterday, which depended on how big the canopy had grown, which depended on the nitrogen taken up weeks earlier. Emphasise that this daily-step, state-and-rate architecture — update the state, compute the rates of change, step forward — is the computational backbone of every major crop model, and is what allows a model to reproduce the path-dependent, cumulative nature of a growing season.
+    key_concepts:
+      - "Static models: single-point output, no time dimension"
+      - "Dynamic models: daily state-and-rate simulation"
+      - "Path-dependent, cumulative nature of a growing season"
+    wiki_query: "dynamic simulation model daily time step crop growth state variables"
+
+  - title: "Deterministic versus Stochastic Models"
+    description: >
+      Distinguish models that produce a single definite output from a given set of inputs (deterministic) from those that incorporate randomness and produce a distribution of possible outputs (stochastic). Most crop models, including APSIM, are deterministic in their equations: run the same inputs twice and you get exactly the same answer. Randomness enters agriculture, however, through the weather — which is genuinely uncertain. The standard way to handle this is to run a deterministic model across many years of historical weather, generating a distribution of outcomes that captures the real climatic variability of the location. This produces the exceedance probability curves that are far more decision-relevant than a single "expected" yield: a grower cares not just about the average outcome of a nitrogen strategy but about how it performs in the worst two years in ten. Explain that this Monte-Carlo-over-seasons approach effectively turns a deterministic model into a stochastic decision tool, and is the basis for risk-based management recommendations covered in the risk-management lecture.
+    key_concepts:
+      - "Deterministic models: same inputs, same output every time"
+      - "Weather uncertainty handled via historical-year runs"
+      - "Exceedance probability curves for risk-based decisions"
+    wiki_query: "exceedance probability yield distribution seasonal climate risk apsim"
+
+  - title: "Spatial versus Non-Spatial, Continuous versus Discrete"
+    description: >
+      Complete the taxonomy with two further axes. Spatial versus non-spatial: a non-spatial (point) model simulates a single homogeneous location — one soil, one weather record, one uniform crop — as most crop models do; a spatial model represents variation across the landscape, either by running a point model separately for each zone or grid cell and aggregating, or by explicitly modelling flows (of water, sediment, nutrients) between locations. This connects directly to precision agriculture, where a paddock is divided into management zones and a point model is run for each. Continuous versus discrete: continuous models represent variables that change smoothly (soil water content, biomass), whereas discrete models represent countable events or states (number of leaves, developmental stage, presence or absence of a pest). Most crop models mix both — continuous state variables updated at discrete daily time steps, with some discrete events (sowing, flowering, harvest) triggered when thresholds are crossed. Stress that these classification axes are not mutually exclusive: a real model such as APSIM is mechanistic, dynamic, deterministic, point-based, and mixes continuous and discrete elements — the axes are lenses for understanding a model's design, not boxes it must fit into.
+    key_concepts:
+      - "Point models vs spatial/zone-based models"
+      - "Continuous vs discrete state representation"
+      - "Classification axes are lenses, not exclusive boxes"
+    wiki_query: "variable rate technology management zones soil sensing precision agriculture spatial"
+
+  - title: "Scales of Modelling: From Gene to Globe"
+    description: >
+      Place crop models within the wider hierarchy of agricultural models by scale, so students appreciate that "modelling agriculture" spans many disciplines. At the finest scale, gene-to-phenotype and crop-physiology models represent processes within the plant. Crop growth models (APSIM, DSSAT, APSIM's crop modules) operate at the plant-and-paddock scale over a season. Farming-systems models extend to multi-year rotations and whole-farm resource use, adding economics and risk. Regional and land-use models aggregate to catchments and agricultural regions to assess water balance, salinity, and land-use change. Economic and trade models operate at national and global scale, representing markets, prices, and food security — the domain of the global food markets lecture. Emphasise two points: first, that outputs at one scale become inputs at the next (a crop model's yield distribution feeds a farm economic model, which feeds a regional supply model); and second, that choosing the right scale for a question is itself a modelling decision — using a detailed physiological model to answer a market question, or a coarse regional model to make a paddock decision, is a category error.
+    key_concepts:
+      - "Model hierarchy: gene, plant, paddock, farm, region, global"
+      - "Outputs at one scale become inputs at the next"
+      - "Choosing the right scale is itself a modelling decision"
+    wiki_query: "agricultural modeling scales farm regional decision support"
+
+  - title: "Common Agricultural Models You Should Know"
+    description: >
+      Give students a working familiarity with the named models they will encounter in the literature and in practice. APSIM (Agricultural Production Systems sIMulator), developed by CSIRO and Queensland DPI, is the dominant farming-systems model in Australia and the focus of the companion crop-growth chapter and the SCIE3314 practicals; its distinguishing design makes the soil the central shared resource that any crop module can draw on, enabling realistic multi-year rotation simulation. DSSAT (Decision Support System for Agrotechnology Transfer) is the widely-used US-originated crop-modelling suite, emphasising model portability across locations. The Wageningen family (SUCROS, LINTUL, WOFOST) established the canonical daily-step soil-plant-atmosphere framework in the Netherlands. Beyond crop growth, students should recognise Yield Prophet (a commercial APSIM-based decision service for Australian growers), simple WUE calculators (French-Schultz), and gross-margin and whole-farm economic models used in farm business analysis. For each, the key questions to ask are the same: what is it for, what are its inputs, what does it output, and — following Box — for what purpose is it fit?
+    key_concepts:
+      - "APSIM: soil-centred, multi-year rotation simulation"
+      - "DSSAT and the Wageningen model family (SUCROS, LINTUL, WOFOST)"
+      - "Yield Prophet: a commercial APSIM-based decision service"
+    wiki_query: "APSIM yield prophet decision support crop model WA"
+
+  - title: "The Anatomy of a Model: Inputs, Parameters, State and Outputs"
+    description: >
+      Give students the vocabulary to dissect any model. Inputs (driving variables): the external forcing that changes daily and comes from observation — weather, management events (sowing, fertiliser, irrigation). Parameters: the fixed coefficients that characterise a particular soil, crop variety, or process — radiation-use efficiency, phyllochron, soil water-holding limits; these are set during calibration and held constant through a run. State variables: the quantities the model tracks through time and updates each step — soil water in each layer, crop biomass, leaf area index, soil nitrogen pools. Rate variables: the computed rates of change that update the states each time step — growth rate, transpiration rate, mineralisation rate. Outputs: the state variables (and derived quantities like yield) written out for interpretation. Emphasise that distinguishing inputs from parameters from states is essential to using a model correctly: confusing a parameter that should be calibrated locally (like soil water-holding capacity) with a fixed universal constant is one of the most common and consequential modelling errors, producing confidently wrong answers.
+    key_concepts:
+      - "Inputs: driving variables (weather, management events)"
+      - "Parameters: fixed, calibrated coefficients"
+      - "State and rate variables tracked through time"
+      - "Confusing a parameter with a universal constant is a common error"
+    wiki_query: "model inputs parameters calibration soil water holding capacity"
+
+  - title: "Calibration and Validation: The Discipline of Testing"
+    description: >
+      Present the non-negotiable discipline that separates credible modelling from wishful thinking. Calibration is the process of adjusting a model's parameters so that its outputs agree with observed data for a specific site, crop, and set of seasons. Validation is the entirely separate step of testing the calibrated model against independent data — different years, sites, or varieties not used in calibration. Stress the cardinal rule: a model that reproduces the data it was calibrated on has demonstrated nothing about its predictive power; only agreement with independent data constitutes validation. A model tuned to fit one dataset perfectly but failing on new data is overfitted and worthless for extrapolation. Introduce the common quantitative measures of agreement — root mean square error (RMSE), its normalised form (CV-RMSE, ideally under about 15% for yield), bias, and the correlation between predicted and observed — and warn that good aggregate statistics can still hide systematic failures in particular conditions. The ground-truthing mindset this instils runs through every model and sensor in the unit.
+    figure_id: "Fig-L02-CalVal"
+    image_prompt: >
+      Two-panel scatter plot of predicted (y-axis) versus observed (x-axis) yield with a 1:1 line. Left panel "Calibration": points cluster tightly on the 1:1 line, labelled "fitted to this data". Right panel "Validation": points on independent data, more scattered but still close to the 1:1 line, labelled "independent test — this is what matters", with RMSE annotated. A small inset shows an overfitted case where validation points scatter badly. UWA blue (#27348B) 1:1 line, gold (#E2B600) points, academic style, --ar 16:9, --no text.
+    key_concepts:
+      - "Calibration: fitting parameters to observed data"
+      - "Validation: testing against independent data"
+      - "RMSE / CV-RMSE as agreement measures"
+      - "Overfitting: fits calibration data but fails on new data"
+    wiki_query: "APSIM model calibration validation nitrogen prediction agricultural"
+    figure_source: "literature"
+
+  - title: "Uncertainty, Sensitivity and the Limits of Prediction"
+    description: >
+      Teach students to reason about where a model's uncertainty comes from and how far to trust its predictions. Sources of uncertainty: input uncertainty (imperfect weather or soil data), parameter uncertainty (coefficients measured with error or borrowed from elsewhere), and structural uncertainty (processes the model simplifies or omits entirely — biotic stresses, spatial heterogeneity, extreme events). Introduce sensitivity analysis as the tool for identifying which inputs and parameters most influence the output, and therefore which are worth measuring carefully: for WA dryland wheat, the soil's plant-available water capacity and the seasonal rainfall dominate, so effort spent characterising those pays off far more than precision in minor parameters. Explain the practical consequence: a model's prediction should always be presented with an honest statement of its uncertainty and its domain of validity, and used to inform judgement rather than to replace it. This is the mature use of models that the unit aims to instil — confident enough to act on, humble enough to keep testing.
+    key_concepts:
+      - "Input, parameter and structural uncertainty"
+      - "Sensitivity analysis identifies what's worth measuring"
+      - "Plant-available water capacity dominates WA dryland-wheat sensitivity"
+    wiki_query: "sensitivity analysis uncertainty soil water holding capacity dryland wheat"
+
+  - title: "Limitations of Crop Models — and Where They Are Heading"
+    description: >
+      Close by consolidating the limitations of current crop models and previewing their future, connecting to themes developed across the unit. Key limitations: standard crop models simulate a single homogeneous point and ignore within-paddock spatial variability; they typically omit biotic stresses (weeds, pests, diseases) that are central to real yield loss; they simplify extreme events, waterlogging, and soil constraints; and their accuracy is capped by the quality of their soil and weather inputs. Future directions actively developing in 2026: coupling crop models with remote sensing so that satellite-observed canopy state continuously updates the simulation (data assimilation); running point models per management zone to add spatial resolution; hybrid machine-learning approaches that combine the mechanistic backbone with data-driven correction; and "digital twin" platforms where a model runs continuously in the background of a farm, updated with live weather and machine data, projecting the rest of the season to support in-season decisions such as variable-rate nitrogen topdressing. Emphasise the enduring message: models do not eliminate the need for skilled human judgement — they sharpen it, by making the consequences of assumptions explicit and testable.
+    key_concepts:
+      - "Models ignore spatial variability and biotic stress by default"
+      - "Data assimilation: coupling models with remote sensing"
+      - "Digital-twin platforms for in-season decisions"
+      - "Models sharpen human judgement, they don't replace it"
+    wiki_query: "crop model limitations remote sensing precision agriculture digital"

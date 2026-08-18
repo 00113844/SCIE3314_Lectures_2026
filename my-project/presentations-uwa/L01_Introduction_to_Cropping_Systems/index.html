@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Introduction to Cropping Systems — SCIE3314, Lecture 01</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme" />
+<link rel="stylesheet" href="../_shared/uwa-revealjs.css" />
+<link rel="stylesheet" href="../_shared/layouts.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/style.css" />
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ===================== TITLE ===================== -->
+    <section class="title-slide" data-background-color="#27348B">
+      <p class="eyebrow" style="color:#E2B600;">SCIE3314 · Cropping Systems</p>
+      <h1 style="color:#fff;">Introduction to Cropping Systems</h1>
+      <p class="title-subtitle" style="color:#fff;">One WA paddock, one system: soil to global market.</p>
+      <p class="title-meta" style="color:#fff;">Lecture 01 · University of Western Australia<br />Presented by Gustavo Alckmin</p>
+      <aside class="notes">
+        Target: ~2 min. Housekeeping first (recording, unit site, assessment dates if relevant).
+        Then the hook: "By the end of today you'll be able to look at one paddock and see it as a
+        system, not a checklist — and you'll have a map of exactly how the next 13 lectures unpack
+        that system piece by piece." Keep pulling on that thread all semester.
+      </aside>
+    </section>
+
+    <!-- ===================== OBJECTIVES ===================== -->
+    <section class="layout-takeaway">
+      <div>
+        <h2>What you'll be able to do by the end</h2>
+        <ul class="dense-bullets">
+          <li>Draw and read a systems diagram of a WA paddock (inputs, throughputs, outputs, feedback).</li>
+          <li>Explain why WA's scale, soils and rainfall shape every agronomic and economic choice in this unit.</li>
+          <li>Use water-use efficiency (French-Schultz) to diagnose a yield gap, and explain why yield is a distribution, not a number.</li>
+          <li>Justify rotation, no-till and residue decisions as system-level trade-offs, not isolated choices.</li>
+        </ul>
+      </div>
+      <div class="takeaway-card">
+        <span>Why it matters</span>
+        <p>Every later lecture in SCIE3314 is one component of the system this lecture maps out today.</p>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Read these out loud — students should be able to self-check against this
+        list at the end. Flag the first objective specifically: today includes a hands-on diagram
+        exercise (~10 min, mid-lecture), not just a lecture-and-listen format.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 1 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 1</p>
+      <h2 style="color:#fff;">What Is a System, and Why Does One Paddock Need One?</h2>
+      <p class="divider-note" style="color:#fff;">From the abstract idea of a system to a systems diagram of one WA paddock, then zoomed out to soil, farm and market scale.</p>
+      <aside class="notes">
+        Target: ~28 min for this whole section, including the 10-minute class exercise. Pacing
+        checkpoint: you should be roughly 32-33 minutes into the lecture by the end of this section.
+        The exercise is the one thing not to cut if running long — it's doing more pedagogical work
+        than any single content slide, since it forces students to construct a diagram rather than
+        just read one.
+      </aside>
+    </section>
+
+    <!-- 1. Systems Thinking — definition -->
+    <section>
+      <h2>What Is a System?</h2>
+      <div class="context-card">
+        <p class="context-q">A system is:</p>
+        <ul>
+          <li>A group of interacting or interrelated elements, acting under a shared set of rules or constraints, to form a unified whole.</li>
+          <li>Used to model everything from population dynamics to ecology to engineering — and, as this lecture will show, farm management and soil dynamics too.</li>
+        </ul>
+        <span class="source-chip">This is why modelling is a core skill in SCIE3314 — L02 onward makes this quantitative</span>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Don't rush past this — it's the idea the whole lecture is built on. Ask the
+        room: "what's a system you already think in terms of?" (traffic, an ecosystem, a sports
+        team) before mapping it onto agriculture. That analogy-first approach makes the diagram on
+        slide 4 land as familiar rather than jargon.
+      </aside>
+    </section>
+
+    <!-- 2. Systems Thinking — vocabulary -->
+    <section>
+      <h2>Vocabulary You'll Reuse All Semester</h2>
+      <ul class="concepts-list">
+        <li><span class="concept-num">1</span><span><b>Boundaries</b> — inputs, throughputs, outputs.</span></li>
+        <li><span class="concept-num">2</span><span><b>Dynamics</b> — delays, path dependency, transient vs steady state.</span></li>
+        <li><span class="concept-num">3</span><span><b>Resilience and tipping points</b> — thresholds beyond which a system shifts state (bifurcation).</span></li>
+      </ul>
+      <p class="context-card" style="margin-top:.8em; padding:.6em 1em; font-size:.55em;"><b>Careful:</b> "everything affects everything" is <i>not</i> systems thinking. The actual skill this unit builds is identifying which connections matter for a given agronomic decision — and which can be safely ignored.</p>
+      <aside class="notes">
+        Target: ~3 min. Spend real time on the "careful" box — it pre-empts a failure mode you'll
+        see in assignments (students listing every possible interaction instead of reasoning about
+        the important ones). Tell students explicitly: "the next slide is a picture of exactly
+        these three ideas — watch for boundaries, throughputs and a feedback loop as I draw it."
+      </aside>
+    </section>
+
+    <!-- 3. THE SYSTEMS DIAGRAM (Mermaid) -->
+    <section>
+      <h2>The Systems Diagram: One WA Paddock</h2>
+      <pre class="mermaid">
+flowchart LR
+  RAIN["Rainfall&lt;br/&gt;(input)"] --> SOIL
+  FERT["Fertiliser&lt;br/&gt;(input)"] --> CROP
+  SEED["Seed / variety&lt;br/&gt;(input)"] --> CROP
+  SOIL["Soil&lt;br/&gt;chemistry / physics / biology"] --> CROP["Crop growth&lt;br/&gt;(throughput)"]
+  MACH["Machinery &amp; tillage choice&lt;br/&gt;(input)"] --> SOIL
+  MACH --> CROP
+  CROP --> YIELD["Yield&lt;br/&gt;(output)"]
+  CROP -- stubble retained --> RESID["Surface residue"]
+  RESID -- conserves moisture and cools soil --> SOIL
+  RESID -- ties up nitrogen --> CROP
+  RESID -- carries disease inoculum --> CROP
+  YIELD --> FARM["Farm&lt;br/&gt;(cash flow, risk)"]
+  FARM --> MARKET["Market&lt;br/&gt;(prices, exports)"]
+  classDef inp fill:#F5F7FF,stroke:#27348B,color:#27348B
+  classDef out fill:#27348B,stroke:#27348B,color:#fff
+  class RAIN,FERT,SEED,MACH inp
+  class YIELD,FARM,MARKET out
+      </pre>
+      <p class="diagram-caption">Solid arrows = the direct flow from input to output. Dashed-feel loop (residue → soil/crop) = feedback — the same stubble decision from earlier in the lecture, now drawn as a system.</p>
+      <aside class="notes">
+        Target: ~4 min. Build this on the chalkboard alongside the slide if you can — draw boxes
+        and arrows live, one at a time, narrating as you go: "rainfall and fertiliser are inputs
+        crossing the paddock's boundary... soil and crop growth are the throughput, where the real
+        transformation happens... yield is the output that leaves the system." Then draw the
+        residue loop last and pause: "this is a feedback loop — an output of one process (retained
+        stubble) becomes an input back into two other processes (soil moisture, and nitrogen tie-up
+        in the crop)." This is the single diagram the whole lecture hangs off; students should be
+        able to sketch a simplified version of it from memory afterward.
+      </aside>
+    </section>
+
+    <!-- 4. Reading the diagram -->
+    <section>
+      <h2>Reading the Diagram: Mapping Vocabulary to Boxes</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>From slide 3's vocabulary...</h3>
+          <ul class="dense-bullets">
+            <li><b>Boundary</b> — the edge of "one paddock."</li>
+            <li><b>Inputs</b> — rainfall, fertiliser, seed, machinery/tillage choice.</li>
+            <li><b>Throughput</b> — soil and crop growth, where inputs are transformed.</li>
+            <li><b>Output</b> — yield, which then becomes an input to the farm and market scales.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>...to this diagram's loop</h3>
+          <ul class="dense-bullets">
+            <li>The residue loop is a <b>feedback loop</b>: today's output (stubble) becomes tomorrow's input.</li>
+            <li>It's <b>path-dependent</b>: this season's stubble decision changes next season's disease and nitrogen starting conditions — a "dynamics" idea from slide 3.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. This slide is the explicit "answer key" connecting abstract vocabulary
+        (slide 3) to the concrete diagram (slide 4) — walk it left-to-right, vocabulary term by
+        vocabulary term, pointing back at the diagram each time. This mapping is exactly what
+        students need to reproduce in the exercise next.
+      </aside>
+    </section>
+
+    <!-- 5. CLASS EXERCISE -->
+    <section>
+      <h2>Class Exercise: Diagram a Decision</h2>
+      <div class="context-card">
+        <p class="context-q">In groups of 3–4:</p>
+        <ul>
+          <li>Pick <b>one</b> scenario: (a) you sow lupins instead of continuous wheat this season, or (b) you burn the stubble instead of retaining it.</li>
+          <li>Sketch a boxes-and-arrows diagram tracing the decision's effects through <b>at least 3 different components</b> from today's paddock diagram (soil, crop protection, machinery, finance).</li>
+          <li>Identify <b>one feedback loop</b> in your diagram.</li>
+        </ul>
+        <span class="source-chip">Sketch on paper or whiteboard, then be ready to describe it</span>
+      </div>
+      <aside class="notes">
+        Target: ~10 min total — 2 min to explain + form groups, 6 min drawing (walk the room, prompt
+        stuck groups with "what does that change somewhere else?"), 2 min for 2-3 groups to hold up
+        or describe their diagram. This is a hard stop — don't let it run over into Part 2's time
+        budget.
+
+        Model answer if a group is stuck on (a) lupins: sowing lupins (machinery/agronomy input) →
+        fixes nitrogen via rhizobia (soil-chemistry effect, wa_wiki: faba beans/lupins can fix up
+        to ~192 kg N/ha) → reduces take-all inoculum for the following wheat (crop-protection
+        effect: take-all incidence drops from ~54% to ~15-19% after a legume break) → following
+        wheat needs less fertiliser (finance effect) → but pulse markets are thinner/more volatile
+        than wheat (finance/risk feedback back into next year's rotation choice — the feedback loop).
+
+        Model answer for (b) burning stubble: burning (machinery/management input) → destroys
+        weed-seed and disease inoculum short-term (crop-protection effect) → but removes the
+        moisture-conserving, erosion-protecting residue layer (soil-physics effect: no-till residue
+        normally cuts evaporation loss that a bare cultivation pass would otherwise lose at
+        15-20 mm per pass) → lower stored moisture going into next season (a feedback back into
+        next year's water balance, i.e. next year's version of this same diagram starts worse off).
+      </aside>
+    </section>
+
+    <!-- 6. One Paddock — soil sub-system -->
+    <section>
+      <h2>Zooming Into the "Soil" Box</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Chemistry — pH, nutrient availability, salinity, cation exchange capacity.</li>
+            <li>Physics — texture, structure, subsoil compaction, water-holding capacity.</li>
+            <li>Biology — organic matter, the soil microbiome, mycorrhizal associations, soilborne pathogens.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <pre class="mermaid">
+flowchart TB
+    MACH["<b>Machinery &amp;<br/>Wheel Traffic</b><br/>(External Input)"]
+    COMP["<b>Soil Compaction</b><br/>(Hardpan / Reduced Porosity)"]
+    ROOTS["<b>Root System</b><br/>(Restricted Penetration)"]
+    SOM["<b>Soil Organic Matter</b><br/>(Reduced)"]
+    STRUCT["<b>Soil Structure</b><br/>(Weakened)"]
+    
+    MACH --> COMP
+    COMP --> ROOTS
+    ROOTS --> SOM
+    SOM --> STRUCT
+    STRUCT -.-> COMP
+
+    classDef input fill:#F5F7FF,stroke:#27348B,color:#27348B,stroke-width:2px,font-size:14px
+    classDef stress fill:#FDF2F2,stroke:#D32F2F,color:#9A0007,stroke-width:2px,font-size:14px
+    classDef normal fill:#EBF3FA,stroke:#005696,color:#003059,stroke-width:2px,font-size:14px
+    classDef bio fill:#EBF7ED,stroke:#2E7D32,color:#1B5E20,stroke-width:2px,font-size:14px
+
+    class MACH input
+    class COMP stress
+    class ROOTS,STRUCT normal
+    class SOM bio
+          </pre>
+          <p class="diagram-caption"><strong>Soil Compaction Feedback Loop:</strong> Machinery causes compaction → restricts roots → reduces SOM → weakens structure → increases future compaction vulnerability.</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. WA's topsoil organic matter sits at roughly 1% in the wheatbelt — very low
+        by world standards, which is part of why the soil-biology dimension (mycorrhizae, microbial
+        activity) is so easily disrupted by cultivation. L03 (soil chemistry) and L12 (soil biology)
+        each pick up one of these three dimensions in depth — flag that now.
+      </aside>
+    </section>
+
+    <!-- 7. One Paddock — crop production sub-system -->
+    <section>
+      <h2>Zooming Into the "Crop Growth" Box</h2>
+      <ul class="dense-bullets">
+        <li><b>Seed and variety choice</b> — the genetic starting point.</li>
+        <li><b>Nutrition</b> — fertiliser type, rate and timing.</li>
+        <li><b>Crop protection</b> — herbicides (weeds), fungicides (disease), insecticides (pests) — each with its own mode of action and resistance-management logic.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. Keep this brisk — it's a labelling slide, depth comes in L06-L09. Worth
+        planting now: "mode of action" and "resistance management" recur constantly from L09
+        onward — every crop-protection tool can fail through resistance evolving, not just
+        through misuse.
+      </aside>
+    </section>
+
+    <!-- 8. One Paddock — machinery/management + interdependence -->
+    <section>
+      <h2>The Remaining Boxes — and Why None of This Is Independent</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Machinery &amp; management</h3>
+          <ul class="dense-bullets">
+            <li><b>Machinery &amp; operations</b> — tillage/no-tillage, seeding system, spraying, harvest, grain handling.</li>
+            <li><b>Management layer</b> — record-keeping, financial planning, risk management.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Back to the diagram's feedback loop</h3>
+          <ul class="dense-bullets">
+            <li>Retaining stubble is a <i>soil-physics</i> choice made via <i>machinery</i>.</li>
+            <li>It causes <i>nitrogen tie-up</i> — a soil-<i>chemistry</i> consequence, drawn as the residue → crop arrow.</li>
+            <li>It also affects <i>disease carryover</i> — a crop-<i>protection</i> consequence.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:.5em; margin-top:.6em;">This is the holistic project every agronomist manages: not a checklist ticked off in isolation, but a set of <b>interacting</b> technical components — exactly what slide 3's diagram drew.</p>
+      <aside class="notes">
+        Target: ~3 min. This is the payoff slide connecting the labelled boxes back to the diagram's
+        feedback loop — literally point back at slide 3/4 here. Tell students this exact example
+        (stubble) reappears in Part 4 in far more depth — a deliberate cohesion device.
+      </aside>
+    </section>
+
+    <!-- 9. From Paddock to System — definition -->
+    <section>
+      <h2>A Crop Is Not an Event — It's One Phase in a Managed System</h2>
+      <div class="context-card">
+        <p class="context-q">Cropping system definition:</p>
+        <ul>
+          <li>The integrated set of crops, soils, climate, machinery, inputs, and management decisions that together determine what is produced, how sustainably, and at what profit.</li>
+          <li>A crop is not an isolated event — a variety sown, sprayed and harvested — it's one phase in a continuous, managed biological system operating across years and decades.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Make the "years and decades" phrase explicit — it's the bridge to the
+        rotation and records content in Part 3, which only makes sense once students accept that a
+        cropping system has memory across seasons, not just within one (i.e. today's diagram, run
+        again next year, doesn't start from a blank slate).
+      </aside>
+    </section>
+
+    <!-- 10. From Paddock to System — cascade example -->
+    <section class="layout-quote">
+      <h2>Why Systems Thinking Is This Unit's Core Skill</h2>
+      <blockquote>Retaining stubble to conserve moisture cascades into weed seedbanks, disease carryover, nitrogen tie-up, seeding equipment choice, and frost risk. No single component can be optimised in isolation.</blockquote>
+      <p style="font-size:.55em; margin-top:1em; max-width:70%;">This systems perspective is the thread connecting every subsequent lecture, from crop modelling to global food markets.</p>
+      <aside class="notes">
+        Target: ~2 min. Let this one breathe — pause after reading the quote aloud. This is the
+        single sentence you want students to still remember in week 12.
+      </aside>
+    </section>
+
+    <!-- 11. Nested scales — the four scales -->
+    <section>
+      <h2>Nested Scales: From Soil to Global Market</h2>
+      <div class="layout-scale">
+        <div class="scale-row">
+          <div class="scale-chip">Soil<br><span style="font-size:.7em;">cm–m, chemistry/physics/biology</span></div>
+          <span class="scale-arrow">→</span>
+          <div class="scale-chip is-active">Paddock<br><span style="font-size:.7em;">today's diagram</span></div>
+          <span class="scale-arrow">→</span>
+          <div class="scale-chip">Farm<br><span style="font-size:.7em;">business: cash flow, risk</span></div>
+          <span class="scale-arrow">→</span>
+          <div class="scale-chip">Market<br><span style="font-size:.7em;">prices, exports, policy</span></div>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the same diagram from slide 3, zoomed out one level — the "Yield"
+        output box feeds "Farm," which feeds "Market," exactly as drawn. Walk each scale in order
+        with one concrete example: soil (a compaction layer at 15cm), paddock (this season's
+        rotation choice), farm (whether to buy a second header), market (a China tariff on canola).
+      </aside>
+    </section>
+
+    <!-- 12. Nested scales — why nesting matters -->
+    <section>
+      <h2>Scales Are Nested, Not Separate</h2>
+      <div class="journey-list">
+        <ul class="journey-list">
+          <li><b>1</b> A soil-chemistry constraint — subsoil acidity —</li>
+          <li><b>2</b> becomes a paddock-scale yield-potential problem,</li>
+          <li><b>3</b> which becomes a farm-scale financial decision (invest in lime?),</li>
+          <li><b>4</b> which is itself shaped by market-scale grain prices.</li>
+        </ul>
+      </div>
+      <p style="font-size:.55em; margin-top:.8em;">Reasoning well in this unit means being explicit about <b>which scale a question is being asked at</b>.</p>
+      <aside class="notes">
+        Target: ~2 min. This acidity→lime→price chain is a running example — L03 (soil acidity)
+        uses almost this exact chain with real numbers (WA's annual acidity-related cost to the
+        grains industry is estimated in the hundreds of millions of dollars), so tell students to
+        remember it. The instruction "be explicit about which scale" is something you can genuinely
+        enforce in tutorials: when a student's answer conflates scales, point back to this slide.
+      </aside>
+    </section>
+
+    <!-- 13. WA Grainbelt — description -->
+    <section>
+      <h2>The Western Australian Grainbelt</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>The crescent from Geraldton in the north, east to Southern Cross, south to Esperance.</li>
+            <li>Farms are large, highly mechanised, run by very few people per hectare.</li>
+            <li>Ancient, weathered, infertile soils under a winter-dominant Mediterranean rainfall pattern, with no reliable irrigation — a deliberately "low-input, low-output" system by world standards.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="./assets/isohyets_WA.jpg" alt="WA Grainbelt rainfall isohyets map" style="max-width:100%; height:auto; max-height:500px;" />
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. If there are international or eastern-states students in the room, contrast
+        WA briefly against a cropping region they already know — the scale and soil-poverty
+        combination genuinely is unusual globally.
+      </aside>
+    </section>
+
+    <!-- 14. WA Grainbelt — stats + why it matters -->
+    <section>
+      <h2>Why This Geography Shapes Every Decision in the Unit</h2>
+      <div class="layout-stats">
+        <div class="stat-card"><span class="stat-num">18M ha</span><span class="stat-label">arable grainbelt</span></div>
+        <div class="stat-card"><span class="stat-num">15–20 Mt</span><span class="stat-label">grain produced per season</span></div>
+        <div class="stat-card"><span class="stat-num">80–90%</span><span class="stat-label">of that grain exported</span></div>
+      </div>
+      <p style="font-size:.5em; margin-top:.8em;">Average WA broadacre farm is roughly <b>3,900 ha</b> — this combination of scale, export orientation, poor soils, variable rainfall and low labour explains why WA growers were among the earliest global adopters of no-tillage, controlled traffic, and precision agriculture.</p>
+      <aside class="notes">
+        Target: ~2 min. The export-exposure figure (80-90%) is the number worth making students
+        write down — L14 (global food markets) circles back to WA specifically because of it. Say
+        explicitly: "hold onto this number, L14 uses it directly."
+      </aside>
+    </section>
+
+   <!-- 15. Roadmap -->
+<section>
+    <!-- CSS for the Gold Lecture Badges -->
+    <style>
+        .lec-badge {
+            background-color: #ECA815; /* Gold matching the image */
+            color: #1D2A69; /* Dark blue text */
+            border-radius: 1em; /* Pill/Circle shape */
+            padding: 0.1em 0.5em;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 0.2em;
+        }
+    </style>
+
+    <h2 style="font-size: 1.4em; margin-bottom: 0.8em;">Roadmap: How This Unit Unpacks Each Component</h2>
+    
+    <!-- Grid container to utilize full slide width -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; text-align: left; font-size: 0.85em; margin-top: 1em;">
+        
+        <!-- Left Column -->
+        <ul style="margin: 0; padding-left: 1.5em;">
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L02</span> Quantitative modelling (hands-on in labs)</li>
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L03</span> Soil chemistry &amp; nutrition</li>
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L04</span> – <span class="lec-badge">L05</span> Climate &amp; world context</li>
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L06</span> – <span class="lec-badge">L08</span> Crop production (cereals, canola, pulses)</li>
+        </ul>
+
+        <!-- Right Column -->
+        <ul style="margin: 0; padding-left: 1.5em;">
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L09</span> Crop protection (herbicides, spraying)</li>
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L10</span>, <span class="lec-badge">L11</span>, <span class="lec-badge">L13</span> Farm-business scale: finance, logistics, precision ag</li>
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L12</span> Soil biology &amp; disease</li>
+            <li style="margin-bottom: 0.8em;"><span class="lec-badge">L14</span> Zoom out to global food markets</li>
+        </ul>
+        
+    </div>
+
+    <!-- Highlighted takeaway box at the bottom -->
+    <p style="font-size: 0.7em; margin-top: 2em; opacity: 0.9; font-style: italic; background-color: rgba(150, 150, 150, 0.1); padding: 15px; border-radius: 8px;">
+        Every later lecture is this lecture's systems map, examined one component at a time.
+    </p>
+
+    <aside class="notes">
+        Target: ~2 min. Point back to the slide 3 diagram one more time here: "every lecture on this list is one box, or one arrow, from that diagram." Consider telling students you'll do exactly that all semester, so they know to keep a photo of the diagram for reference.
+    </aside>
+
+</section>
+
+    <!-- ===================== PART 2 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 2</p>
+      <h2 style="color:#fff;">The Mediterranean Environment: Water as the Ceiling on Yield</h2>
+      <p class="divider-note" style="color:#fff;">Why WA's seasonal rhythm dictates timing, and how French-Schultz turns rainfall into a yield benchmark.</p>
+      <aside class="notes">
+        Target: ~22 min for this section. This is the most quantitative part of the lecture — work
+        the French-Schultz numbers live on the chalkboard. Checkpoint: aim to be roughly 55 minutes
+        into the lecture by the end of this section.
+      </aside>
+    </section>
+
+    <!-- 16. NEW FRAMING SLIDE: why WUE/yield gap/distribution matter -->
+    <section>
+      <h2>Why Are We Talking About Water Numbers? Because They're the System's Parameters</h2>
+      <pre class="mermaid">
+flowchart LR
+  A["Input: water available&lt;br/&gt;(GSR minus ~110mm evaporation)"] --> B["Process: transpiration efficiency&lt;br/&gt;(~20-25 kg grain / ha / mm)"]
+  B --> C["Output: grain yield (t/ha)"]
+  C -.->|"actual vs potential"| D["Yield Gap:&lt;br/&gt;diagnose the constraint"]
+  A -.->|"rainfall varies year to year"| E["Yield Distribution:&lt;br/&gt;a range of outcomes, not one number"]
+  classDef param fill:#F5F7FF,stroke:#27348B,color:#27348B
+  class A,B,C param
+      </pre>
+      <p style="font-size:.5em; margin-top:.6em;">French-Schultz, the yield gap, and yield-as-a-distribution are not three separate topics — they are the <b>input, process-efficiency, and output</b> parameters of the exact paddock system diagrammed in Part 1, plus how that system behaves under an uncertain input.</p>
+      <aside class="notes">
+        Target: ~2 min. This is the slide that answers "why are we spending 20 minutes on water
+        maths in an intro lecture?" — say that question out loud, then answer it with this diagram.
+        Map it explicitly: WUE is the "process" box's efficiency parameter (how well the system
+        converts water into grain); the yield gap is a diagnostic comparing the "output" box's
+        actual value to its theoretical ceiling; yield-as-distribution is what happens to the
+        "output" box when the "input" box (rainfall) is uncertain from year to year — which is
+        exactly the "dynamics: transient vs steady state" vocabulary from slide 2, now made
+        concrete. Every slide in this section is one of these three parameters, in order.
+      </aside>
+    </section>
+
+    <!-- 17. Mediterranean Rhythm — the pattern -->
+    <section>
+      <h2>The Mediterranean Rhythm</h2>
+      <ul class="dense-bullets">
+        <li>Cool wet winters, hot dry summers; rain mostly May–October.</li>
+        <li>Sow into the autumn "break" (~late April–June); grow on stored + in-season rain.</li>
+        <li>Flower in early spring; fill grain into a near-inevitable terminal drought.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. Sketch this as a timeline on the chalkboard — break, winter growth, spring
+        flowering, terminal drought — the next slide hangs specific operations off each point. This
+        rhythm is exactly why WA agronomy is described as "low-input, low-output": the system is
+        built around scarcity, not abundance.
+      </aside>
+    </section>
+
+    <!-- 18. Mediterranean Rhythm — operation timing -->
+    <section>
+      <h2>Every Input Is Timed Against This Rhythm</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3 style="font-size:0.85em; margin:.3em 0;">Across the season</h3>
+          <ul class="dense-bullets" style="font-size:0.75em;">
+            <li>Summer: weed control, stubble management.</li>
+            <li>The break: seeding, pre-emergent herbicides.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.85em; margin:.3em 0;">&nbsp;</h3>
+          <ul class="dense-bullets" style="font-size:0.75em;">
+            <li>Winter: nitrogen, in-crop weed control.</li>
+            <li>Spring: fungicides, flowering-time management. Summer: harvest.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:.45em; margin-top:.4em; line-height:1.4;"><b>The "window":</b> each operation has an optimal period — the art of farming at scale is finishing every operation, across the whole farm, inside that window despite weather, machinery and labour constraints.</p>
+      <aside class="notes">
+        Target: ~3 min. The "window" concept foreshadows L11 (precision ag) and L13 (logistics),
+        which both revisit "getting everything done in time" as their central problem. It's also
+        the agronomic reason WA farms are so large and mechanised.
+      </aside>
+    </section>
+
+    <!-- 19. Water as first limiting resource -->
+    <section>
+      <h2>Water as the First Limiting Resource</h2>
+      <div class="layout-takeaway">
+        <div>
+          <ul class="dense-bullets">
+            <li>No irrigation: growing-season rainfall + stored subsoil moisture sets the production ceiling.</li>
+            <li>Water balance: only a fraction of rainfall is transpired productively — the rest is lost to soil evaporation, runoff, deep drainage, and weeds.</li>
+          </ul>
+        </div>
+        <div class="takeaway-card">
+          <span>A concrete number</span>
+          <p>Each cultivation pass over bare soil can lose roughly 15–20 mm of stored rainfall straight to evaporation — one pass can cost a paddock a meaningful fraction of its whole-season water budget.</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. That 15-20mm-per-pass figure is worth writing on the board — it makes
+        "conserving water" concrete instead of abstract. Connect back to Part 1's stubble/machinery
+        example: now students have the water-balance vocabulary to understand *why* summer weed
+        control and no-till exist, not just that they exist. This slide is the bridge into
+        French-Schultz next.
+      </aside>
+    </section>
+
+    <!-- 20. WUE — definition & formula -->
+    <section>
+      <h2>Water-Use Efficiency: The French-Schultz Benchmark</h2>
+      <ul class="dense-bullets">
+        <li>WUE = grain yield produced per millimetre of water used (kg grain/ha/mm).</li>
+        <li>French &amp; Schultz (1984): potential yield ≈ f(growing-season rainfall − ~110mm soil evaporation loss).</li>
+        <li>The slope of that relationship — transpiration efficiency — is the biological potential: 20 kg/ha/mm for wheat, ~25 for barley/oats, ~12 for canola, ~15 for pulses.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~4 min. Write the formula on the chalkboard: Yield = slope × (GSR − 110). Do a live
+        worked example (e.g. 300mm GSR → (300-110)×20 = 3.8 t/ha potential). Then give the honest
+        reality check: real WA paddock data from Morawa and Merredin has shown ACTUAL WUE slopes as
+        low as 4.93 and 7.72 kg/ha/mm respectively — a quarter to a third of the 20 kg/ha/mm
+        theoretical ceiling. That gap is exactly what the next slide diagnoses.
+      </aside>
+    </section>
+
+    <!-- 21. WUE — figure, stats, yield gap -->
+    <section>
+      <h2>Reading the French-Schultz Line: The Yield Gap</h2>
+      <div class="layout-split">
+        <div class="split-media">
+          <img src="./assets/French_Schultz_Representation.png" alt="French-Schultz relationship showing water-limited potential yield" style="max-width:100%; height:auto; max-height:500px;" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Across WA, actual yields typically reach only 50–80% of water-limited potential — some paddocks as low as 30%.</li>
+            <li>Management (not environment) explains up to 36% of that gap — weeds, disease, nutrition, subsoil constraints, poor variety.</li>
+            <li>Counter-intuitively, the gap is often <i>narrower</i> in low-rainfall zones (&lt;250mm) and <i>wider</i> in higher-rainfall zones, where more water means more ways to lose it.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~4 min. The "narrower gap in low-rainfall zones" point is worth pausing on — it's
+        counter-intuitive to most students (more rain should mean it's easier, not harder, to hit
+        potential) and is a good discussion prompt: "why might more available water make it harder
+        to capture all of it productively?" (More biomass, more disease pressure, more weed growth,
+        more drainage/runoff loss.) This "gap = diagnosis opportunity" framing recurs in L10
+        (financial analysis) and L11 (precision ag) — tell students this chart comes back twice
+        more this semester with more sophistication layered on.
+      </aside>
+    </section>
+
+    <!-- 22. Closing the yield gap — genetics vs agronomy -->
+    <section>
+      <h2>Closing the Yield Gap: Two Routes</h2>
+      <div class="layout-cols-2">
+        <div>
+          <h3>Genetic improvement</h3>
+          <ul class="dense-bullets">
+            <li>Breeding lifts transpiration efficiency, harvest index, and tolerance to frost, heat and disease (e.g. semi-dwarf wheat varieties).</li>
+            <li>Steadily raises the achievable slope of the WUE line over decades.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Agronomic improvement</h3>
+          <ul class="dense-bullets">
+            <li>Earlier and more reliable sowing, better nutrition, effective weed/disease control, controlled traffic to reduce compaction.</li>
+            <li>Moves actual yield closer to potential within a given season.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="context-card" style="margin-top:.6em; padding:.6em 1em; font-size:.5em;">The historical record is decisive on which route has mattered more: roughly <b>70% of WA's yield gains since the 1970s</b> are attributed to management improvements, not genetic advances — most students assume it's the other way around.</p>
+      <aside class="notes">
+        Target: ~3 min. Lead with that 70% figure — it's genuinely surprising to most students, who
+        assume breeding drives most yield improvement. Note for students: genetics moves the
+        <i>line itself</i>, agronomy moves a paddock <i>toward</i> the line — worth stating that
+        distinction explicitly since it's easy to conflate on the chart.
+      </aside>
+    </section>
+
+    <!-- 23. Yield distribution -->
+    <section>
+      <h2>Yield Is a Distribution, Not a Number</h2>
+      <div class="context-card">
+        <p class="context-q">In a variable climate:</p>
+        <ul>
+          <li>In a good year, a paddock may approach its water-limited potential; in a drought year, the potential itself collapses.</li>
+          <li>Industry tools like <b>Yield Prophet</b> (built on the APSIM crop model) formalise this using <b>rainfall deciles (1–9)</b> — a probabilistic forecast of likely yield outcomes given the season so far, not a single predicted number.</li>
+          <li>This motivates matching input investment to seasonal outlook — e.g. spending on nitrogen in proportion to the water the season is likely to deliver.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. Naming Yield Prophet/APSIM here matters — it's a real, currently-used
+        industry tool, not a hypothetical, and L02's crop-modelling lab builds toward exactly this
+        kind of model. Good rhetorical question: "if you don't know the season yet, how much
+        nitrogen do you actually put on in May?" — don't answer it, let it preview L10's
+        exceedance-curve treatment of this same question.
+      </aside>
+    </section>
+
+    <!-- 24. Recap: what did we just optimise -->
+    <section>
+      <h2>So What Did We Just Optimise?</h2>
+      <div class="layout-cols-3">
+        <div>
+          <h3>Input</h3>
+          <ul class="dense-bullets"><li>Growing-season rainfall minus ~110mm evaporation — mostly outside a grower's control.</li></ul>
+        </div>
+        <div>
+          <h3>Process</h3>
+          <ul class="dense-bullets"><li>Transpiration efficiency (WUE) — the parameter genetics and agronomy both try to raise.</li></ul>
+        </div>
+        <div>
+          <h3>Output</h3>
+          <ul class="dense-bullets"><li>Yield — measured against potential (the gap) and understood as a distribution, not a point.</li></ul>
+        </div>
+      </div>
+      <p style="font-size:.5em; margin-top:.8em;">This is Part 2 mapped back onto the systems diagram from Part 1 — the same input/process/output structure, now with real numbers attached.</p>
+      <aside class="notes">
+        Target: ~2 min. This is a deliberate bookend to slide 16 — say explicitly: "we opened this
+        section by promising these numbers were system parameters, and that's exactly what we just
+        walked through." This kind of recap is what makes the cohesion between Part 1 and Part 2
+        explicit rather than implicit.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 3 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 3</p>
+      <h2 style="color:#fff;">Rotation and Records: Managing the System Over Years</h2>
+      <p class="divider-note" style="color:#fff;">Why crop sequence is the cheapest lever available, and why memory (records) is what makes multi-year decisions rational.</p>
+      <aside class="notes">
+        Target: ~22 min for this section. This is the most example-heavy section — resist
+        compressing the three-rotation-types slides into one. Checkpoint: aim to be roughly 77
+        minutes in by the end of this section.
+      </aside>
+    </section>
+
+    <!-- 25. Why rotate — disease & weeds -->
+    <section>
+      <h2>Why Rotate? Disease and Weed Mechanisms</h2>
+      <ul class="dense-bullets">
+        <li><b>Disease break:</b> many important pathogens (take-all, crown rot, blackleg, rhizoctonia to a degree) are host-specific and survive on residue or in soil between seasons — a non-host break crop starves the pathogen and collapses its inoculum. A wheat-after-lupin break can cut take-all incidence from roughly <b>54% down to 15–19%</b>.</li>
+        <li><b>Weed control:</b> rotating crops allows rotation of herbicide modes of action and of the timing/type of weed control (e.g. a break crop permits grass-selective chemistry unusable in a cereal), slowing herbicide resistance and running down grass-weed seedbanks.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~4 min. That 54%→15-19% take-all figure is a strong concrete number to lead with —
+        it makes "disease break" tangible rather than abstract. "Continuous wheat is tempting when
+        wheat is profitable" — say this out loud, it's the honest economic tension the rest of
+        Part 3 has to resolve.
+      </aside>
+    </section>
+
+    <!-- 26. Why rotate — nitrogen, soil, and the accounting point -->
+    <section>
+      <h2>Why Rotate? Nitrogen, Soil, and Where the Value Shows Up</h2>
+      <ul class="dense-bullets">
+        <li><b>Nitrogen supply:</b> grain legumes (lupin, field pea, faba bean) fix atmospheric nitrogen via <i>Rhizobium</i> symbiosis — faba beans alone can fix up to <b>~192 kg N/ha</b> — leaving a nitrogen credit for the following cereal.</li>
+        <li><b>Nitrogen immobilisation avoided:</b> cereal residues have a high carbon:nitrogen ratio (40–100:1) that locks up soil nitrogen as it breaks down; legume residues (C:N &lt;20:1) don't cause this problem.</li>
+        <li><b>The legume effect on yield:</b> wheat following a legume break has been shown to yield <b>86–203% more</b> than continuous wheat in WA trial data.</li>
+      </ul>
+      <p class="context-card" style="margin-top:.6em; padding:.6em 1em; font-size:.55em;">The value of a break crop is often realised <b>not in its own gross margin</b> but in the yield lift and cost saving it delivers to the subsequent cereal — a systems-level accounting that continuous wheat obscures.</p>
+      <aside class="notes">
+        Target: ~3 min. The 86-203% yield-boost figure is dramatic and worth pausing on — ask
+        students to guess the number before revealing it, most will guess far lower (10-20%). This
+        accounting point is the crux of the wheat-dominance tension coming up in slides 31-32.
+      </aside>
+    </section>
+
+    <!-- 27. Classic rotations — cereal-legume -->
+    <section>
+      <h2>The Classic WA Rotations — Cereal-Legume</h2>
+      <ul class="dense-bullets">
+        <li>Wheat-lupin on the sandplain, or wheat-field pea / wheat-faba bean on heavier soils.</li>
+        <li>Pairs a nitrogen-fixing pulse with a cereal that exploits both the nitrogen credit and the disease break.</li>
+        <li>Rhizobia inoculants are strain-specific (e.g. Group G for lupins) and are recommended for re-inoculation every 5–7 years, since persisting soil strains can genetically drift toward less-efficient nitrogen fixers over time.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. First of three rotation-type slides — keep the same rhythm across all three
+        (what it is → what it's for) so students can compare them like a checklist by the end. The
+        rhizobia re-inoculation detail is a nice piece of "hidden" agronomy most students have never
+        heard of — worth a beat of surprise.
+      </aside>
+    </section>
+
+    <!-- 28. Classic rotations — cereal-canola -->
+    <section>
+      <h2>The Classic WA Rotations — Cereal-Canola</h2>
+      <ul class="dense-bullets">
+        <li>Wheat-canola or barley-canola.</li>
+        <li>Canola gives a broadleaf disease and grass-weed break, with the added advantage of a valuable oilseed cash crop.</li>
+        <li>Has expanded enormously since the 1990s.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. Worth noting canola is the one break crop that's also a cash crop in its own
+        right — that's part of why it expanded so fast compared to pulses, foreshadowing the
+        wheat-dominance discussion two slides from now.
+      </aside>
+    </section>
+
+    <!-- 29. Classic rotations — diversified/pasture -->
+    <section>
+      <h2>The Classic WA Rotations — Diversified Sequences and Pasture</h2>
+      <ul class="dense-bullets">
+        <li>Longer sequences (e.g. canola-wheat-barley-lupin) spread risk across markets and diversify weed/disease pressure.</li>
+        <li>On mixed farms, a pasture phase historically provided the nitrogen and weed break — a role now partly displaced by pulses and chemical fallow.</li>
+        <li>Fallow water storage is strongly soil-dependent: clay soils can store up to ~125mm over summer, sandy soils as little as ~38mm — a big part of why break-crop viability varies so much by soil type across the grainbelt.</li>
+      </ul>
+      <p style="font-size:.5em; margin-top:.6em;">Commodity prices, herbicide-resistance pressure, and seasonal outlook shift the balance between these options every year — the "ideal" rotation on paper is constantly traded off against cash flow and the risk of a break crop failing in a dry start.</p>
+      <aside class="notes">
+        Target: ~3 min. The clay-125mm-vs-sand-38mm contrast is a good concrete number tying soil
+        physics (Part 1) back to rotation choice (Part 3) — another explicit cross-section callback
+        worth naming. That last line is the honest, unglamorous truth of farm decision-making, and
+        the direct set-up for the wheat-dominance slide next.
+      </aside>
+    </section>
+
+    <!-- 30. Wheat-dominance problem -->
+    <section>
+      <h2>The Wheat-Dominance Problem</h2>
+      <div class="context-card">
+        <p class="context-q">Why systems stay wheat-heavy despite the agronomic case for diversity:</p>
+        <ul>
+          <li>Wheat is lower-risk: deep, liquid markets, established agronomy, reliable establishment in dry starts.</li>
+          <li>Break crops — particularly pulses — are riskier: more sensitive to seasonal conditions, prone to disease and harvest difficulties, thinner and more volatile markets.</li>
+        </ul>
+      </div>
+      <aside class="notes">
+        Target: ~3 min. This is the tension the last five slides have been building toward — pause
+        and let students sit with the contradiction: "the agronomy says rotate (86-203% yield lift!)
+        — the risk profile says wheat." The next slide resolves it with how growers actually manage
+        this in practice.
+      </aside>
+    </section>
+
+    <!-- 31. Wheat-dominance — how to diversify successfully -->
+    <section>
+      <h2>Implementing Diverse Rotations Successfully</h2>
+      <ul class="dense-bullets">
+        <li>Match the break crop to soil type (lupins on deep sands, faba beans on heavier high-pH soils, canola widely).</li>
+        <li>Use the break crop strategically ahead of the highest-value or most weed/disease-threatened cereal.</li>
+        <li>Manage agronomic risk through variety choice, sowing time, integrated weed/disease programs.</li>
+        <li>Value the rotational benefit explicitly in the whole-farm gross margin, not crop-by-crop.</li>
+      </ul>
+      <p class="context-card" style="margin-top:.6em; padding:.6em 1em; font-size:.5em;">Accelerating driver: herbicide-resistant annual ryegrass increasingly forces growers into break crops and non-chemical tactics whether or not the single-year economics favour them.</p>
+      <aside class="notes">
+        Target: ~3 min. The herbicide-resistance driver is worth landing hard — it's the reason
+        rotation is becoming less optional over time, not more. Say: "L09 will make this resistance
+        point very concrete, including the computer models WA researchers use to simulate how fast
+        resistance spreads under different rotation choices."
+      </aside>
+    </section>
+
+    <!-- 32. Records — why they matter -->
+    <section>
+      <h2>Records: The Memory of the System</h2>
+      <ul class="dense-bullets">
+        <li>Because the benefits and costs of rotation, lime, herbicide use and nutrition play out over multiple years, decisions cannot be made rationally without a reliable history.</li>
+        <li>Modern farm management increasingly captures this digitally — from machine-logged operations, yield maps, and soil and tissue tests, feeding tools like Yield Prophet from slide 23.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. Connect explicitly to the "cropping system operates across years and
+        decades" definition from Part 1, and back to Yield Prophet/APSIM from Part 2 — records are
+        literally the data those tools run on. This feeds directly into L11 (precision agriculture)
+        and L10 (financial analysis) — name both.
+      </aside>
+    </section>
+
+    <!-- 33. Records — what to track + consequences -->
+    <section>
+      <h2>What to Track, and the Cost of Not Tracking It</h2>
+      <div class="layout-takeaway">
+        <div>
+          <ul class="dense-bullets">
+            <li>What was grown and yielded in each paddock.</li>
+            <li>Herbicides applied — and therefore resistance and residual-carryover risk.</li>
+            <li>Soil test results and lime history; fertiliser inputs and nutrient balance; disease and weed observations.</li>
+          </ul>
+        </div>
+        <div class="takeaway-card">
+          <span>Consequences of poor records</span>
+          <p>Herbicide plant-back/resistance problems, mis-timed or mis-placed inputs, and an inability to diagnose why a paddock under-performs.</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Keep brisk — this is a practical checklist slide, the "why" was already
+        established on the previous slide.
+      </aside>
+    </section>
+
+    <!-- ===================== PART 4 DIVIDER ===================== -->
+    <section class="section-divider" data-background-color="#002147">
+      <p class="eyebrow">Part 4</p>
+      <h2 style="color:#fff;">Tillage and Machinery: A System, Not a Single Practice</h2>
+      <p class="divider-note" style="color:#fff;">WA's fastest agronomic transition — and why some tillage is deliberately kept.</p>
+      <aside class="notes">
+        Target: ~20 min for this section, then ~3 min for the close. This section closes the loop
+        on the stubble/machinery feedback loop from the Part 1 diagram — remind students of that
+        explicitly when you reach the stubble slides at the end.
+      </aside>
+    </section>
+
+    <!-- 34. Tillage revolution — the problem -->
+    <section>
+      <h2>Why WA Abandoned the Plough</h2>
+      <ul class="dense-bullets">
+        <li>Traditional multi-pass cultivation on WA's fragile, sandy, low-organic-matter soils caused severe wind and water erosion.</li>
+        <li>It caused loss of soil structure and organic carbon, and moisture loss from the seedbed at exactly the time moisture was most precious — each cultivation pass loses roughly 15–20mm of stored rainfall to evaporation (the same figure from slide 19).</li>
+        <li>It also meant enormous fuel, labour and time costs across huge areas in narrow seeding windows.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. Connect "narrow seeding windows" straight back to the "window" concept from
+        Part 2, and the 15-20mm figure straight back to slide 19 — say explicitly "this is the same
+        number from Part 2, now explaining why cultivation itself was the problem."
+      </aside>
+    </section>
+
+    <!-- 35. Tillage revolution — the transition -->
+    <section>
+      <h2>The Tillage Revolution</h2>
+      <ul class="dense-bullets">
+        <li>Late 1980s through the 2000s: rapid shift from intensive cultivation to no-tillage (zero-till, direct drilling) across the WA grainbelt.</li>
+        <li>No-till adoption across the WA wheatbelt now sits at roughly <b>98%</b> — one of the most complete agronomic transitions in world agriculture.</li>
+        <li>Enabled by the coincident arrival of effective knockdown herbicides (glyphosate), which made weed control without cultivation possible.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~3 min. The ~98% adoption figure is worth pausing on — very few agricultural
+        practice changes anywhere in the world reach near-universal adoption this fast. Conservation
+        agriculture (next three slides) is "the response" — tell students the three principles
+        coming up are the technical content behind this one sentence.
+      </aside>
+    </section>
+
+    <!-- 35b. Tillage revolution — visual timeline -->
+    <section>
+      <h2>From Conventional to No-Till: The Transition</h2>
+      <pre class="mermaid" style="background:transparent; font-size:16px;">
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'16px'}}}%%
+flowchart LR
+
+A["Conventional Tillage<br/>(Pre-1990s)"]
+
+A --> B["Repeated cultivation"]
+
+B --> C1["✓ Weed control<br/>without herbicides"]
+B --> C2["✓ Seedbed preparation"]
+
+B --> D1["✗ Soil disturbance"]
+B --> D2["✗ Wind & water erosion"]
+B --> D3["✗ Organic matter decline"]
+B --> D4["✗ Moisture loss"]
+
+D2 --> E["Need for a new system"]
+
+E --> F["No-Till / Direct Drilling<br/>(Current system)"]
+
+F --> G["Minimal soil disturbance"]
+
+G --> H1["✓ Residue retained"]
+G --> H2["✓ Reduced erosion"]
+G --> H3["✓ Better water infiltration"]
+G --> H4["✓ Higher soil carbon"]
+
+G --> I1["✗ Weed control relies on herbicides"]
+G --> I2["✗ Herbicide resistance"]
+G --> I3["✗ Greater management complexity"]
+
+I2 --> J["Next challenge:<br/>Integrated Weed Management"]
+
+classDef good fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20;
+classDef bad fill:#FDECEC,stroke:#B71C1C,color:#7F0000;
+classDef neutral fill:#F5F7FF,stroke:#27348B,color:#27348B;
+
+class A,E,F,J neutral;
+class C1,C2,H1,H2,H3,H4 good;
+class D1,D2,D3,D4,I1,I2,I3 bad;
+      </pre>
+      <aside class="notes">
+        Target: ~1 min. This diagram shows the complete transition from conventional tillage to no-till systems. Walk through the flow: conventional tillage had benefits (weed control, seedbed prep) but critical problems (erosion, moisture loss) that drove the need for change. No-till solved many problems but introduced new challenges (herbicide reliance, resistance) that we'll address in L09.
+      </aside>
+    </section>
+
+    <!-- 36. Principles of CA — minimum disturbance -->
+    <section>
+      <h2>Principle 1: Minimum Soil Disturbance</h2>
+      <ul class="dense-bullets">
+        <li>Preserves soil structure, protects soil biota and mycorrhizal networks.</li>
+        <li>Keeps organic matter and its associated nutrients and water-holding capacity intact.</li>
+        <li>Documented WA no-till systems have reached WUE of roughly <b>17 kg grain/ha/mm</b> — nearly double some conventional-tillage comparisons — almost entirely through better moisture conservation.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. That 17 kg/ha/mm figure is a strong concrete before/after number — put it
+        next to the 20-25 kg/ha/mm theoretical ceiling from Part 2 to show how much of the "yield
+        gap" no-till alone can close. First of three principle slides, same rhythm each time.
+      </aside>
+    </section>
+
+    <!-- 37. Principles of CA — permanent soil cover -->
+    <section>
+      <h2>Principle 2: Permanent Soil Cover</h2>
+      <ul class="dense-bullets">
+        <li>Retained stubble and crop residue dissipate the kinetic energy of raindrops, preventing soil sealing (surface crusting) and keeping infiltration biopores open.</li>
+        <li>Moderates soil temperature and slows evaporation.</li>
+        <li>Feeds the soil biology that builds structure and cycles nutrients.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. The raindrop-kinetic-energy mechanism is worth explaining concretely — it's
+        not just "residue blocks the sun," it's a specific physical mechanism (impact energy →
+        surface crust → reduced infiltration) that residue prevents. This is the principle most
+        directly in tension with machinery (seeding through heavy stubble) — flag that the seeding
+        slides later exist specifically because of this tension.
+      </aside>
+    </section>
+
+    <!-- 38. Principles of CA — rotation/diversity + reinforcement -->
+    <section>
+      <h2>Principle 3: Crop Rotation and Diversity — and Why All Three Reinforce Each Other</h2>
+      <ul class="dense-bullets">
+        <li>As developed in Part 3: diverse sequences break disease and weed cycles and diversify the biological benefits to the soil.</li>
+      </ul>
+      <p class="context-card" style="margin-top:.6em; padding:.6em 1em; font-size:.55em;">No-tillage without stubble retention leaves soil exposed. Stubble retention without rotation concentrates disease and weeds. Conservation agriculture is a <b>system</b>, not a single practice — its full benefit emerges only when all three are applied together over time.</p>
+      <aside class="notes">
+        Target: ~3 min. This is a direct callback to the Part 1 systems-thinking framing and the
+        slide-3 diagram — say so explicitly: "this is the interdependence idea from the start of the
+        lecture, now applied to tillage." One of the most important cohesion moments in the deck.
+      </aside>
+    </section>
+
+    <!-- 39. Case for some tillage — problems -->
+    <section>
+      <h2>The Case for Some Tillage: What Persistent No-Till Can Cause</h2>
+      <ul class="dense-bullets">
+        <li>Hard-setting or water-repellent surface soils.</li>
+        <li>Stratification of nutrients and lime in the top few centimetres; subsoil compaction.</li>
+        <li>Herbicide-resistant weed seedbanks concentrated near the surface; build-up of stubble-borne disease.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. This is the critical-thinking pivot of the lecture: no single practice is
+        universally optimal, even one you've just spent three slides praising. Name that explicitly
+        — it models the reasoning you want in assignments.
+      </aside>
+    </section>
+
+    <!-- 40. Case for some tillage — strategic tools -->
+    <section>
+      <h2>Strategic Tillage Tools</h2>
+      <ul class="dense-bullets">
+        <li><b>Deep ripping</b> — one-off, to shatter subsoil compaction and open sandplain hardpans.</li>
+        <li><b>Mouldboard ploughing / spading</b> — to bury water-repellent topsoil and non-wetting sands, incorporate lime to depth, and bury weed seed.</li>
+        <li><b>Delving</b> — on duplex soils, bringing clay up from depth to the surface to improve the water-holding capacity of a sandy topsoil.</li>
+      </ul>
+      <p style="font-size:.5em; margin-top:.6em;">Compare with <b>controlled traffic farming (CTF)</b>, the non-tillage fix for compaction: confining machinery to permanent RTK-GPS-guided tracks (~2cm accuracy) shrinks the compacted "wheeled area" of a paddock from ~50% to ~15%, can add up to 75mm of plant-available water, cut fuel use by up to 50%, and lower operating costs by ~10%.</p>
+      <aside class="notes">
+        Target: ~4 min. This slide now contrasts two different responses to the same compaction
+        problem: strategic tillage (fix it after the fact) vs CTF (prevent it happening at all) —
+        worth stating that contrast explicitly. The CTF numbers (75mm PAW, 50%→15% wheeled area,
+        -50% fuel, -10% cost) are strong, specific figures worth reading slowly; this is also a
+        direct preview of L11 (precision agriculture), which is built entirely around GPS-guided
+        systems like this one.
+      </aside>
+    </section>
+
+    <!-- 41. Seeding machinery — tine openers -->
+    <section>
+      <h2>Seeding Machinery: Tine Openers</h2>
+      <div class="layout-split image-left">
+        <div class="split-media">
+          <img src="./assets/tyne.jpg" alt="Tine and disc opener comparison" style="max-width:100%; height:auto; max-height:500px;" />
+        </div>
+        <div>
+          <ul class="dense-bullets">
+            <li>Robust, lower cost, effective at breaking through hard-setting soils and placing fertiliser deeply.</li>
+            <li>Better incorporation of volatile pre-emergent herbicides (e.g. trifluralin) into the soil, and generally regarded as safer for crop establishment.</li>
+            <li>Disturbs more soil (bringing up weed seed, losing some moisture); can block in very heavy stubble. Dominant across the WA grainbelt.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">
+        Target: ~2 min. Introduce the seeding machine as "the single most important, and most
+        expensive, operational decision in a no-till system" before the tine-vs-disc comparison.
+        The trifluralin-incorporation point is the concrete agronomic reason tines still dominate,
+        despite discs' stubble advantage — set that up for the next slide's punchline.
+      </aside>
+    </section>
+
+    <!-- 42. Seeding machinery — disc openers + choice -->
+    <section>
+      <h2>Seeding Machinery: Disc Openers, and Making the Choice</h2>
+      <div class="layout-split">
+        <div>
+          <ul class="dense-bullets">
+            <li>Cut cleanly through high residue with minimal disturbance — ideal for full-stubble-retention systems and controlled traffic, and lower fuel consumption.</li>
+            <li>More expensive, demand higher stubble/moisture management skill, struggle in hard dry soils, can hair-pin residue into the seed slot.</li>
+            <li>Despite the stubble-handling advantage, disc seeder adoption across WA remains very low — around <b>1%</b> — precisely because of the herbicide-incorporation advantage tines hold.</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="./assets/disc.jpg" alt="Disc opener mechanism" style="max-width:100%; height:auto; max-height:500px;" />
+        </div>
+      </div>
+      <p style="font-size:.5em; margin-top:.6em;">The choice is a <b>system</b> decision tied to soil type, stubble load, rainfall zone, and the grower's residue-management philosophy — not simply "which machine is better." Advanced precision seeding systems (e.g. the Nautilus system) aim to combine deep, precise fertiliser placement with reduced soil disturbance either way.</p>
+      <aside class="notes">
+        Target: ~3 min. That 1% adoption figure is a striking, very citable number — most students
+        assume disc systems have taken over given their stubble-handling advantage; the reality is
+        the opposite, and the reason (herbicide incorporation from the previous slide) is a perfect
+        example of one system component (crop protection) constraining another (machinery choice) —
+        tie directly back to Principle 2 (permanent soil cover) and the Part 1 diagram.
+      </aside>
+    </section>
+
+    <!-- 43. Stubble — retention benefits -->
+    <section>
+      <h2>Stubble: The Case for Retention</h2>
+      <ul class="dense-bullets">
+        <li>Erosion protection, reduced evaporation and improved moisture conservation, cooler soil.</li>
+        <li>Prevents soil surface sealing/crusting (raindrop kinetic-energy dissipation, from Principle 2) and keeps infiltration biopores open.</li>
+        <li>Organic-matter return, improved water infiltration and biological activity — all central to conservation agriculture, as established in Part 4.</li>
+      </ul>
+      <aside class="notes">
+        Target: ~2 min. This is the callback to the interdependence example from Part 1's diagram —
+        remind students explicitly: "this is the stubble feedback loop from the very start of the
+        lecture — now we look at the whole trade-off properly."
+      </aside>
+    </section>
+
+    <!-- 44. Stubble — reasons to reduce/burn + modern default -->
+    <section>
+      <h2>Stubble: Why Growers Nonetheless Reduce or Burn It</h2>
+      <ul class="dense-bullets">
+        <li>Very heavy residue loads can physically impede seeding equipment (particularly tines).</li>
+        <li>Ties up nitrogen as microbes decompose high-carbon straw (the same C:N-ratio mechanism from slide 26); harbours stubble-borne disease (crown rot, yellow spot, blackleg) and pests.</li>
+        <li>Intercepts and binds pre-emergent herbicides so they never reach the soil; shelters weed seed.</li>
+      </ul>
+      <p class="context-card" style="margin-top:.6em; padding:.6em 1em; font-size:.5em;">Burning is sometimes used tactically as a weed-seed and disease-inoculum destruction tool, especially where herbicide resistance is severe. Modern position: retention is the default, but residue load is managed actively (harvest height, chaff handling, occasional strategic burning or grazing).</p>
+      <aside class="notes">
+        Target: ~3 min. Land the unit's core message explicitly here, out loud, as the last
+        substantive idea before the synthesis slide: "in a cropping system, every decision is a
+        balance across competing biological, operational and economic objectives — the skilled
+        agronomist reasons across the whole system rather than optimising any single part." Note
+        the C:N-ratio callback to slide 26 — the same mechanism (high C:N residue locks up nitrogen)
+        explains both why legume rotations help and why heavy cereal stubble can hurt.
+      </aside>
+    </section>
+
+    <!-- ===================== SYNTHESIS / CLOSE ===================== -->
+    <section class="close-slide" data-background-color="#27348B">
+      <h2 style="color:#fff;">Bringing It Together</h2>
+      <div class="synthesis-prompt">
+        <ul class="synthesis-list">
+          <li><strong>Systems, not checklists</strong>Soil, crop, machinery and management interact — optimise the whole, not one part. That's what the Part 1 diagram drew.</li>
+          <li><strong>Water is the ceiling</strong>French-Schultz, the yield gap, and yield distribution are that system's input, process and output parameters.</li>
+          <li><strong>Every choice trades off</strong>Rotation, tillage and stubble decisions all balance competing objectives over years, not one season.</li>
+        </ul>
+      </div>
+      <p class="closing-rule">Next lecture → L02 Crop Modelling (computer labs begin)</p>
+      <aside class="notes">
+        Target: ~3 min. Bridge to L02 explicitly: "today's hand-drawn systems diagram becomes a
+        quantitative computer model next lecture — the vocabulary from slide 2 (boundaries,
+        dynamics, resilience) is what L02's models are built from, and the exercise you did today
+        is effectively what a crop model does automatically." Take questions here if time allows —
+        this lecture has more callbacks than most, and students may want to check they've tracked
+        the connections correctly.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.6.0/chalkboard/plugin.js"></script>
+<!-- Multiplex intentionally NOT included — see _shared/_boilerplate_template.html and the
+     project_revealjs_uwa_boilerplate memory for why (reveal.js removed its own multiplex plugin;
+     real live sync needs a separately-hosted Socket.io server, not a CDN script). -->
+
+<!-- Mermaid: loaded directly (not as a reveal.js plugin — no such official plugin ships in the
+     reveal.js core package). All <section>s exist in the DOM from page load regardless of which
+     slide is showing, so a single mermaid.run() call renders every diagram up front. -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.08,
+    chalkboard: {
+      theme: 'chalkboard',
+      background: [ 'rgba(0,0,0,0)', 'rgba(255,255,255,0.05)' ],
+      toggleChalkboardButton: { left: '30px', bottom: '30px' },
+      toggleNotesButton: { left: '110px', bottom: '30px' }
+    },
+    plugins: [ RevealNotes, RevealMarkdown, RevealZoom, RevealHighlight, RevealChalkboard ]
+  });
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#F5F7FF',
+      primaryBorderColor: '#27348B',
+      primaryTextColor: '#27348B',
+      lineColor: '#27348B',
+      secondaryColor: '#E2B600',
+      fontFamily: 'Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif'
+    }
+  });
+  mermaid.run({ querySelector: '.mermaid' });
+</script>
+</body>
+</html>

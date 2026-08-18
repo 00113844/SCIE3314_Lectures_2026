@@ -1,0 +1,15 @@
+{
+  "name": "scie3314-reveal-generator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Grounded SCIE3314 YAML to RevealJS lecture deck generator",
+  "type": "module",
+  "scripts": {
+    "generate:lecture": "node --experimental-strip-types src/cli.ts generate:lecture",
+    "generate:all": "node --experimental-strip-types src/cli.ts generate:all",
+    "test": "node --experimental-strip-types tests/contracts.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

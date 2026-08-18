@@ -1,0 +1,171 @@
+/* ==================================================================
+   SCIE3314 RevealJS — Structural Layout Utilities
+   Pairs with uwa-revealjs.css (branding/typography). This file only
+   defines slide LAYOUT shapes so content authors can mix and match:
+   split-screen, two/three column, stat callouts, timelines, quotes,
+   figure placeholders, and dense-bullet lists.
+   ================================================================== */
+
+.reveal { font-size: 30px; }
+.reveal h1 { font-size: 2.1em; line-height: 1.08; }
+.reveal h2 { font-size: 1.35em; }
+.reveal section { text-align: left; padding: 0.6em 1em; }
+
+.eyebrow {
+  color: #E2B600;
+  font-size: .46em;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 0.8em !important;
+}
+
+/* ---------------------- Title / Divider slides ------------------ */
+.title-slide, .section-divider, .close-slide {
+  text-align: left;
+}
+.title-slide h1 { max-width: 82%; margin: 0 !important; }
+.title-slide .title-subtitle { max-width: 65%; font-size: .8em; margin-top: .8em !important; opacity: .92; }
+.title-slide .title-meta { font-size: .45em; opacity: .75; margin-top: 3em !important; }
+
+.section-divider .eyebrow { color: #E2B600; }
+.section-divider h2 { max-width: 80%; }
+.section-divider .divider-note { max-width: 68%; font-size: .68em; margin-top: 1em !important; opacity: .92; }
+
+/* ---------------------- Split-screen (text | image) -------------- */
+.layout-split {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 1.3em;
+  align-items: center;
+}
+.layout-split.image-left { grid-template-columns: .85fr 1.15fr; }
+.layout-split.image-left .split-media { order: -1; }
+.split-media img, .split-media .figure-placeholder { width: 100%; border-radius: 6px; }
+
+/* ---------------------- Two / three column text ------------------ */
+.layout-cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4em; align-items: start; }
+.layout-cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; align-items: start; }
+.layout-cols-2 h3, .layout-cols-3 h3 {
+  color: #27348B; font-size: .8em; margin: 0 0 .4em !important;
+  border-bottom: 3px solid #E2B600; padding-bottom: .2em;
+}
+
+/* ---------------------- Dense bullets + side takeaway ------------- */
+.layout-takeaway { display: grid; grid-template-columns: 1.4fr .6fr; gap: 1.2em; align-items: center; }
+.dense-bullets { margin: 0 !important; padding-left: 1.05em !important; }
+.dense-bullets li { font-size: .72em; line-height: 1.32; margin: 0 0 .6em !important; }
+.takeaway-card {
+  background: #27348B; color: #fff; border-radius: .3em; padding: 1em; text-align: left;
+}
+.takeaway-card span { color: #E2B600; font-size: .42em; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.takeaway-card p { font-size: .58em; line-height: 1.4; margin: .5em 0 0 !important; }
+
+/* ---------------------- Stat / number callouts -------------------- */
+.layout-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin-top: .6em; }
+.stat-card { background: #F5F7FF; border-top: 5px solid #E2B600; padding: .9em; text-align: left; }
+.stat-card .stat-num { color: #27348B; font-size: 1.5em; font-weight: 700; display: block; }
+.stat-card .stat-label { font-size: .5em; line-height: 1.3; display: block; margin-top: .3em; }
+
+/* ---------------------- Nested-scale / zoom diagram slide --------- */
+.layout-scale { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .4em; }
+.scale-row { display: flex; align-items: center; gap: .6em; width: 100%; justify-content: center; }
+.scale-chip {
+  background: #fff; border: 2px solid #27348B; border-radius: 999px;
+  padding: .35em 1em; font-size: .55em; font-weight: 600; color: #27348B;
+}
+.scale-chip.is-active { background: #27348B; color: #fff; }
+.scale-arrow { color: #E2B600; font-size: .8em; }
+
+/* ---------------------- Roadmap / journey list -------------------- */
+.journey-list { list-style: none; margin: 0 !important; padding: 0 !important; }
+.journey-list li { display: flex; align-items: flex-start; gap: .7em; margin: .3em 0; font-size: .50em; line-height: 1.25; }
+.journey-list b {
+  background: #E2B600; border-radius: 50%; color: #27348B; display: grid;
+  height: 1.7em; width: 1.7em; place-items: center; flex: none;
+}
+
+/* ---------------------- Key-concepts numbered list ----------------- */
+.concepts-list { list-style: none; padding: 0 !important; margin: 0 !important; }
+.concepts-list li { display: flex; gap: .6em; align-items: flex-start; font-size: .68em; margin: 0 0 .55em !important; }
+.concept-num {
+  background: #27348B; color: #fff; border-radius: 50%; flex: none;
+  width: 1.5em; height: 1.5em; display: grid; place-items: center; font-size: .8em; font-weight: 700;
+}
+
+/* ---------------------- Figure placeholder ------------------------- */
+.figure-placeholder {
+  background: #FFF7D7; border: 2px dashed #E2B600; border-radius: 8px;
+  padding: 1em; text-align: center; font-size: .55em; color: #333;
+}
+.figure-placeholder .fp-tag { font-weight: 700; color: #27348B; }
+
+/* ---------------------- WA field-context card ---------------------- */
+.context-card {
+  border-left: 8px solid #E2B600; background: #fff;
+  box-shadow: 0 10px 24px rgba(39,52,139,.10); padding: 1em 1.2em;
+}
+.context-card .context-q { color: #27348B; font-size: .78em; font-weight: 700; margin-bottom: .5em; }
+.context-card ul { font-size: .58em; margin: 0 !important; padding-left: 1.05em !important; }
+.source-chip {
+  display: inline-block; background: #F5F7FF; border-radius: 99px; color: #27348B;
+  font-size: .42em; font-weight: 700; padding: .45em .85em; margin-top: 1em;
+}
+
+/* ---------------------- Quote / discussion prompt ------------------- */
+.layout-quote {
+  display: flex; flex-direction: column; justify-content: center; height: 100%;
+}
+.layout-quote blockquote {
+  font-size: 1.05em; color: #27348B; border-left: 6px solid #E2B600;
+  padding-left: .7em; margin: 0; font-style: italic;
+}
+
+/* ---------------------- Synthesis / close --------------------------- */
+.synthesis-prompt {
+  background: #27348B; color: #fff; font-size: .68em; line-height: 1.35;
+  margin: .8em 0; padding: 1em 1.2em;
+}
+.synthesis-list { display: grid; gap: .5em; grid-template-columns: repeat(3, 1fr); list-style: none; margin: 0 !important; padding: 0 !important; }
+.synthesis-list li { background: #F5F7FF; font-size: .48em; padding: .8em; }
+.synthesis-list strong { color: #27348B; display: block; font-size: 1.1em; margin-bottom: .35em; }
+.closing-rule {
+  border-top: 1px solid rgba(255,255,255,.35); color: #fff; font-size: .55em;
+  letter-spacing: .08em; margin-top: 2.4em; padding-top: 1em; text-transform: uppercase;
+}
+
+/* ---------------------- Chalkboard button polish --------------------- */
+.reveal .chalkboard-button, .reveal .notes-canvas-button {
+  opacity: .55;
+}
+.reveal .chalkboard-button:hover, .reveal .notes-canvas-button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .layout-split, .layout-cols-2, .layout-cols-3, .layout-takeaway, .layout-stats { grid-template-columns: 1fr; }
+}
+
+/* ---------------------- Compact data table (dense multi-column) ------ */
+/* For reference tables with many rows/columns (crop nutrient-removal
+   tables etc.) where the default .reveal table font-size (0.85em) is too
+   large to fit a 9-10 row table on one slide without overflow. */
+.compact-table table { width: 100%; border-collapse: collapse; font-size: .5em; }
+.compact-table th, .compact-table td { padding: .35em .5em; text-align: center; border-bottom: 1px solid #E5E5E5; }
+.compact-table th:first-child, .compact-table td:first-child { text-align: left; }
+.compact-table th { background: #27348B; color: #fff; font-size: .95em; }
+.compact-table tr:nth-child(even) td { background: #F5F7FF; }
+.compact-table caption { caption-side: bottom; font-size: .42em; opacity: .75; margin-top: .5em; text-align: left; }
+
+/* ---------------------- Mermaid systems diagrams --------------------- */
+/* No official reveal.js plugin ships a mermaid integration reliably (the
+   `plugin/mermaid/mermaid.js` path some pipelines reference does not exist
+   in the reveal.js core package). The robust approach is to load mermaid.js
+   directly from CDN and call mermaid.run() once — reveal.js keeps every
+   <section> in the DOM at all times (just hidden via CSS), so a single
+   run at page load renders every diagram regardless of which slide is
+   currently showing. See presentations-uwa/L01.../index.html for the
+   two-line init pattern. */
+.reveal .mermaid { max-height: 48vh; display: flex; justify-content: center; }
+.reveal pre.mermaid { background: transparent; box-shadow: none; padding: 0; width: 100%; }
+.diagram-caption { font-size: .48em; opacity: .8; margin-top: .6em; text-align: center; }

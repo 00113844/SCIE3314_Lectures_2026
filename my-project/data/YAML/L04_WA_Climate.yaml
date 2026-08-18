@@ -1,0 +1,152 @@
+topic: "The Climate of the Western Australian Grainbelt"
+auto_figures: true
+subtopics:
+
+  - title: "Climate as the Master Variable"
+    description: >
+      Open by establishing climate as the single most important determinant of what can be grown, when, and how reliably across the WA grainbelt — the backdrop against which every agronomic decision in the unit is made. In a rainfed system with no irrigation, the amount, timing, and reliability of rainfall set the ceiling on yield; temperature governs the pace of crop development and the risk of frost and heat; and the interplay of the two defines the length and quality of the growing season. Distinguish weather (the day-to-day conditions a grower reacts to) from climate (the long-term statistical distribution of weather that shapes strategic decisions such as variety choice, rotation, and investment). Preview the lecture's structure: first the Mediterranean seasonal pattern and how it defines the growing season; then the large-scale ocean-atmosphere drivers that make WA rainfall so variable from year to year; and finally the observed long-term drying trend and its profound implications for the industry. Emphasise that understanding these drivers is what allows a grower to interpret a seasonal forecast, time inputs to the season, and manage the risk that variability creates.
+    key_concepts:
+      - "Climate as the unit's master variable"
+      - "Weather (day-to-day) versus climate (long-term distribution)"
+      - "Lecture preview: seasonal pattern, drivers, drying trend"
+    wiki_query: "climate master variable rainfall temperature growing season yield"
+
+  - title: "Key Concepts in Agrometeorology"
+    description: >
+      Introduce the physical vocabulary of agrometeorology that the rest of the lecture, and the unit's water-use-efficiency framework, depends on. Water enters the system as rainfall (and, where used, irrigation) and leaves it as evaporation from the soil surface and transpiration through the crop — together evapotranspiration — with the balance between water in and water out determining what is available to the crop at any point in the season. Rain itself forms through the water cycle: evaporation from ocean and land, atmospheric moisture transport, and condensation into precipitation as air masses cool, most directly relevant to WA through the moisture-bearing systems (fronts, cloudbands) covered later in this lecture. Irradiance — solar radiation, and specifically the photosynthetically active radiation (PAR) that drives crop growth — follows daily and seasonal patterns governed by day length (photoperiod) and cloud cover, and interacts with temperature, which itself follows a predictable seasonal cycle in the Mediterranean climate. Introduce soil water-holding capacity: the wilting point (the moisture below which a crop cannot extract further water), field capacity (the moisture a soil holds after free drainage ceases), and saturation (all pore space filled), which together define the plant-available water window a soil can offer a crop. These pieces combine into the soil water balance — inputs (rainfall, stored moisture) minus outputs (evaporation, transpiration, drainage, runoff) — the same accounting framework that underpins the water-limited yield potential introduced in L01.
+    key_concepts:
+      - "Evapotranspiration: rainfall in, evaporation and transpiration out"
+      - "Irradiance (PAR), photoperiod and seasonal temperature patterns"
+      - "Soil water-holding capacity: wilting point, field capacity, saturation"
+      - "Soil water balance as the accounting framework for yield potential"
+    wiki_query: "soil water balance evapotranspiration wilting point field capacity plant available water"
+
+  - title: "Climate Classification"
+    description: >
+      Situate the WA grainbelt's climate within a global classification framework, so students can compare it to other cropping regions and understand why climate type dictates which crops and systems are viable. Introduce the Koppen climate classification, the standard system grouping world climates by temperature and precipitation pattern; the WA grainbelt falls within the Csa/Csb Mediterranean classes — hot- or warm-summer climates with dry summers and wet winters — shared with other major grain-producing Mediterranean-climate regions (California, central Chile, the Mediterranean basin, and parts of South Africa), which is why agronomic lessons and germplasm often transfer between these regions. Introduce growing-degree-days (GDD) as the standard method for quantifying the thermal time available to a crop — accumulated temperature above a base threshold that drives phenological development — and critical periods, the specific developmental windows (such as flowering) where temperature and water stress have disproportionate effects on yield, a concept that recurs throughout the cereal and canola agronomy lectures. Emphasise the general principle: climate type does not just constrain which crops can be grown, but which farming systems — irrigated versus dryland, single versus double cropping, the whole conservation-agriculture toolkit — make sense in a given region.
+    key_concepts:
+      - "Koppen classification: WA grainbelt as Mediterranean (Csa/Csb)"
+      - "Comparable Mediterranean-climate cropping regions worldwide"
+      - "Growing-degree-days as thermal-time accounting"
+      - "Critical periods: developmental windows most sensitive to stress"
+    wiki_query: "mediterranean climate type world grain regions comparison rainfall pattern"
+
+  - title: "The Mediterranean Pattern: Winter Rain, Summer Drought"
+    description: >
+      Describe the defining Mediterranean rainfall pattern of south-western Australia in detail. The great majority of rainfall falls in the cool months from May to October, delivered by cold fronts and low-pressure systems embedded in the westerly wind belt that migrates north over the continent in winter; summers are hot and largely dry, dominated by the subtropical high-pressure ridge that sits over southern Australia and suppresses rainfall. Explain why this pattern is agronomically favourable for winter crops: rainfall and cool, low-evaporation conditions coincide, so water arrives when crops can use it efficiently, and the dry summer allows reliable harvest and grain storage. Introduce the spatial gradient across the grainbelt — a strong decline in both total rainfall and its winter-dominance from the higher-rainfall southern and western margins (500–600+ mm, longer season) toward the drier northern and eastern interior (300 mm or less, shorter season) — which defines the low, medium, and high rainfall zones that determine crop choice, yield potential, and risk across the region. This gradient means agronomic recommendations are always zone-specific.
+    figure_id: "Fig-L04-Seasonality"
+    image_prompt: >
+      Climate diagram (Walter-Lieth style) for a WA grainbelt town such as Merredin. X-axis months January to December. Blue bars show monthly rainfall peaking May-August; a red line shows mean monthly temperature peaking in summer. Shading highlights the May-October growing season where the temperature line is low and rainfall is high, and the hot dry summer where they diverge. UWA blue (#27348B) rainfall bars, gold (#E2B600) growing-season shading, academic climate diagram, --ar 16:9, --no text.
+    key_concepts:
+      - "Winter-dominant rainfall from westerly fronts; dry summer"
+      - "Coincidence of rain and low evaporation favours winter crops"
+      - "Rainfall gradient: high-rainfall margins to dry interior"
+    wiki_query: "mediterranean pattern winter rain summer drought rainfall gradient grainbelt zones"
+    figure_source: "manual"
+
+  - title: "Defining the Growing Season: Break, Length and Terminal Drought"
+    description: >
+      Formalise the concept of the growing season and the three events that bracket it, since these govern the timing of every operation. The break of season: the first substantial autumn rains (conventionally defined as a threshold of accumulated rainfall over a few days, often around 25 mm) that wet the soil enough to germinate the crop and begin sowing; its timing is highly variable (from April to July) and is one of the most consequential uncertainties a grower faces, since a late break shortens the season and penalises yield. The growing season proper: the period when rainfall exceeds evaporative demand and the crop can grow, running through winter and early spring. The terminal drought: the point in spring when rainfall ceases and rising temperature and evaporation exhaust soil moisture, forcing the crop to complete grain fill on stored water and inevitably curtailing yield. Explain how growing-season length — from break to terminal drought — sets the yield potential and dictates variety maturity and sowing date, and how the grower's fundamental strategic problem is matching the crop's development to a season whose start and end are uncertain. This timing logic underlies the establishment and phenology decisions throughout the unit.
+    key_concepts:
+      - "The break of season: timing sets sowing and yield potential"
+      - "Growing season: rainfall exceeds evaporative demand"
+      - "Terminal drought forces grain fill on stored water"
+    wiki_query: "growing season break terminal drought sowing timing"
+
+  - title: "Temperature: Frost and Heat at the Margins of the Season"
+    description: >
+      Turn to temperature and the two temperature extremes that bracket the reproductive period and cause the most damaging, non-linear yield losses. Frost: clear, still nights in late winter and early spring produce radiation frosts that, if they coincide with flowering, sterilise cereal florets and can destroy a crop's yield in a single event; frost risk is worst in low-lying valleys and on certain soils, and its severity has, counterintuitively, not eased with warming because clearer skies under the drying climate promote radiation cooling. Heat: high temperatures during flowering and grain fill damage pollen viability (with wheat pollen impaired above about 35 °C), accelerate development, and shorten grain fill, shrivelling grain and cutting both yield and quality. Explain the resulting squeeze: growers want to flower late enough to escape frost but early enough to avoid heat and terminal drought, defining the optimal flowering window introduced in the establishment lecture. Emphasise that both frost and heat are threshold, event-driven risks that seasonal averages conceal — a point of direct relevance to how crop models must represent them — and that managing them through variety phenology and sowing date is central to WA agronomy.
+    key_concepts:
+      - "Radiation frost at flowering sterilises cereal florets"
+      - "Heat above ~35C damages pollen viability and grain fill"
+      - "Optimal flowering window balances frost, heat and drought risk"
+    wiki_query: "frost flowering wheat barley yield loss heat stress grain fill"
+
+  - title: "Why Is WA Rainfall So Variable? Introducing the Climate Drivers"
+    description: >
+      Motivate the core scientific content of the lecture: the extreme year-to-year variability of WA rainfall is not random noise but is driven, in substantial part, by identifiable large-scale patterns of ocean temperature and atmospheric circulation that can be monitored and, to a degree, forecast. Explain the value of understanding these drivers: they underpin the seasonal climate outlooks growers use to make pre-season decisions (crop choice, input investment, and risk exposure), and they explain the spatial and temporal patterns of good and poor seasons. Introduce the four principal drivers affecting the WA grainbelt and the Australian continent as a whole, each of which the lecture will examine: the El Niño–Southern Oscillation (ENSO) in the Pacific, the Indian Ocean Dipole (IOD), the Southern Annular Mode (SAM), and the subtropical ridge and its associated blocking. Emphasise that these drivers operate on different oceans and timescales, that they interact (sometimes reinforcing, sometimes cancelling), and that WA — uniquely positioned between the Indian and Southern Oceans — is influenced by a different mix of drivers than eastern Australia, which is why WA and eastern seasons often diverge.
+    key_concepts:
+      - "Rainfall variability is driven by identifiable ocean-atmosphere patterns"
+      - "Four drivers to come: ENSO, IOD, SAM, subtropical ridge"
+      - "WA sits between the Indian and Southern Oceans, unlike eastern Australia"
+    wiki_query: "rainfall variability climate drivers seasonal outlook WA"
+
+  - title: "El Niño–Southern Oscillation (ENSO)"
+    description: >
+      Explain ENSO, the best-known driver of Australian climate variability, centred on the tropical Pacific Ocean. Describe the oscillation between three states. El Niño: warming of the central and eastern tropical Pacific shifts atmospheric convection eastward away from Australia, typically reducing rainfall and raising the risk of drought and heat across much of eastern and, less strongly, southern Australia. La Niña: the opposite phase, with a warm western Pacific pool near Australia, typically bringing above-average rainfall to eastern and northern Australia. Neutral: neither extreme. Introduce the indices used to monitor ENSO — the Southern Oscillation Index (SOI, a pressure difference between Tahiti and Darwin) and sea-surface-temperature indices such as NINO3.4. Crucially, qualify ENSO's influence on WA specifically: its effect on the south-west grainbelt is real but weaker and less reliable than on eastern Australia, because WA's winter rainfall is governed more by the Indian and Southern Oceans than by the Pacific. This is why an El Niño announcement, though a serious warning for eastern growers, is a less decisive signal for WA — a distinction students must grasp to interpret national forecasts correctly.
+    figure_id: "Fig-L04-ENSO"
+    image_prompt: >
+      Two-panel Pacific Ocean schematic. Left "El Niño": warm sea-surface temperatures (red) in the central-eastern Pacific, convection and rainfall shifted east away from Australia, drier Australia. Right "La Niña": warm pool (red) in the western Pacific near Australia, enhanced convection and rainfall over eastern Australia. Walker circulation arrows shown in each. Australia outlined at lower left. UWA blue (#27348B) ocean, gold (#E2B600) convection and labels, academic climate schematic, --ar 16:9, --no text.
+    key_concepts:
+      - "El Nino: warm eastern Pacific, typically drier Australia"
+      - "La Nina: warm western Pacific, typically wetter Australia"
+      - "SOI and NINO3.4 as the monitoring indices"
+      - "ENSO's WA influence is real but weaker than on eastern Australia"
+    wiki_query: "el nino southern oscillation ENSO rainfall australia"
+    figure_source: "literature"
+
+  - title: "The Indian Ocean Dipole (IOD): WA's Dominant Driver"
+    description: >
+      Present the Indian Ocean Dipole as the single most important driver of winter and spring rainfall for the WA grainbelt and much of southern Australia — the driver students should associate most strongly with WA. Define the IOD as the difference in sea-surface temperature between the western (near Africa) and eastern (near Indonesia) tropical Indian Ocean. Describe its phases. Positive IOD: cooler water in the eastern Indian Ocean off Indonesia reduces the moisture available to weather systems moving across to Australia, typically suppressing winter–spring rainfall and raising drought and frost risk across southern and south-eastern Australia. Negative IOD: warmer eastern Indian Ocean feeds more moisture into Australian systems, typically bringing wetter winters and springs. Neutral: little dipole signal. Explain the agronomic importance: because the IOD peaks in the crucial winter–spring period and directly modulates the moisture supply to the systems that deliver WA's growing-season rain, it is highly relevant to grain outcomes, and a developing positive IOD is a genuine warning of a poor finish to the WA season. Note that ENSO and the IOD are physically linked and often coincide (El Niño with positive IOD producing compounding dry conditions), which is why the worst droughts occur when multiple drivers align against rainfall.
+    key_concepts:
+      - "IOD: sea-surface-temperature difference across the Indian Ocean"
+      - "Positive IOD suppresses WA winter-spring rainfall"
+      - "Negative IOD brings wetter winters and springs"
+      - "ENSO and IOD often coincide, compounding dry conditions"
+    wiki_query: "indian ocean dipole rainfall WA winter spring"
+
+  - title: "The Southern Annular Mode (SAM)"
+    description: >
+      Introduce the Southern Annular Mode, the north–south movement of the belt of westerly winds and their embedded cold fronts that circle the Southern Ocean — the systems that actually deliver most of WA's winter rain. Describe its phases and their seasonally-dependent effects. A positive SAM contracts the westerlies poleward (southward), which in winter tends to push the rain-bearing fronts south of the southern coastline and reduce winter rainfall across the south-west, while a negative SAM expands the westerlies northward, bringing the fronts and their rain further onto the continent and generally increasing winter rainfall. Emphasise two features that make SAM distinct from ENSO and the IOD: it operates on a much shorter timescale (weeks rather than months), so it contributes to variability within a season and is harder to forecast far ahead; and its rainfall effect reverses between seasons and regions, so its interpretation depends on the time of year. Explain the direct mechanistic relevance to WA: because the cold fronts of the westerly belt are the primary rain-delivery system for the grainbelt, the latitude of that belt — governed by SAM — strongly influences whether a given month is wet or dry, making SAM an important component of the sub-seasonal variability growers experience.
+    key_concepts:
+      - "SAM: north-south movement of the westerly wind belt"
+      - "Positive SAM pushes winter fronts south, reducing rainfall"
+      - "Operates on weeks, not months - drives within-season variability"
+    wiki_query: "southern annular mode westerly winds cold fronts rainfall"
+
+  - title: "The Subtropical Ridge, Cut-Off Lows and Cold Fronts"
+    description: >
+      Complete the picture of rainfall mechanisms by describing the actual weather systems that produce (or withhold) WA grainbelt rain, and how the large-scale drivers modulate them. The subtropical ridge: the belt of high pressure that dominates southern Australia in summer and retreats north in winter; its position and strength control whether fronts can reach the grainbelt, and a trend toward a stronger, more southerly ridge is implicated in the long-term drying. Cold fronts: the workhorses of WA winter rainfall, embedded in the westerly belt and delivering the frequent, moderate falls that sustain the growing season. Cut-off lows and northwest cloudbands: less frequent but important systems — cut-off lows can deliver heavy, widespread rain, and northwest cloudbands draw tropical Indian Ocean moisture across the continent, sometimes producing the season-making rains, their moisture supply modulated by the IOD. Explain how the climate drivers act through these systems: the IOD and ENSO change the moisture available to them and the SAM changes their latitude, so the abstract indices translate into real rain through their effect on the frequency, track, and moisture content of these systems. This mechanistic understanding lets growers and agronomists read unfolding weather in the context of the seasonal drivers.
+    key_concepts:
+      - "Subtropical ridge position/strength controls whether fronts reach WA"
+      - "Cold fronts: the main rainfall-delivery system"
+      - "Cut-off lows and northwest cloudbands as secondary rain sources"
+    wiki_query: "subtropical ridge cold fronts cutoff lows cloudband rainfall"
+
+  - title: "Seasonal Forecasting: Using the Drivers to Manage Risk"
+    description: >
+      Bring the drivers together into the practical tool growers actually use: the seasonal climate forecast, and its role in decision-making. Explain that the Bureau of Meteorology and other providers issue probabilistic outlooks — the chance of exceeding median rainfall over coming months — generated by dynamical climate models that simulate the ocean and atmosphere (including the drivers just discussed) forward in time. Stress the probabilistic nature: a forecast of "65% chance of a drier-than-median spring" is a shift in the odds, not a certainty, and must be used to weight decisions rather than to make them deterministically. Describe how growers integrate these outlooks: adjusting nitrogen investment (spending more in seasons the outlook favours, holding back when it warns of a dry finish), choosing crop and variety, and setting risk exposure — always in combination with what the season has actually delivered so far (stored soil moisture and the timing of the break, which are more certain than the forecast). Acknowledge the limits: forecast skill is modest, particularly for the autumn break, and declines with lead time, so forecasts supplement rather than replace the flexible, in-season, tactical management that a variable climate demands. This links directly to the risk-management lecture.
+    key_concepts:
+      - "Probabilistic outlooks, not certainties"
+      - "Nitrogen investment and variety choice adjusted to the outlook"
+      - "Forecast skill is modest and declines with lead time"
+    wiki_query: "seasonal climate outlook forecast nitrogen investment risk decision"
+
+  - title: "The Observed Drying Trend in South-West WA"
+    description: >
+      Present the striking and well-documented long-term decline in cool-season rainfall across south-western Australia — one of the clearest regional climate-change signals anywhere in the world, and of existential importance to the grain industry. Describe the observations: since the mid-twentieth century, and accelerating from around the 1970s, autumn and winter rainfall over the south-west has fallen substantially (a decline of roughly 15–20% in May–July rainfall), the number of rain-bearing fronts reaching the region has decreased, and the decline has been strongest in the higher-rainfall western and southern margins that were once the most reliable cropping country. Explain the attributed mechanisms: a poleward shift and strengthening of the subtropical ridge and the storm tracks (linked to a trend toward more positive SAM and to broader circulation changes driven by greenhouse warming and, historically, ozone depletion), which push the rain-bearing westerlies and their fronts further south, away from the continent. Emphasise that this is not a forecast but a measured, sustained trend already reshaping the industry — the reason the grainbelt's viable cropping zone and its agronomy have shifted over recent decades.
+    key_concepts:
+      - "15-20% decline in May-July rainfall since the 1970s"
+      - "Strongest decline in the formerly-reliable high-rainfall margins"
+      - "Attributed to a poleward shift/strengthening of the subtropical ridge"
+    wiki_query: "rainfall decline south west western australia drying trend subtropical ridge"
+
+  - title: "How Growers Have Adapted to a Drier Climate"
+    description: >
+      Document the remarkable adaptation of the WA grain industry to a drying climate — a case study in agronomic and technological resilience. Counterintuitively, despite substantially less growing-season rainfall, total grain production and water-use efficiency have risen over the same decades, because growers and researchers have transformed the system to capture more value from less water. Enumerate the adaptations: conservation agriculture (no-tillage and stubble retention) conserving scarce soil moisture; earlier and dry sowing to make full use of the shortened season and every millimetre; summer weed control to bank soil moisture; improved varieties with higher transpiration efficiency, better disease resistance, and phenology matched to the new season shape; precise, responsive nitrogen management matched to seasonal potential; controlled traffic reducing compaction and improving infiltration; and a shift in the crop mix and the geographic distribution of cropping. Frame this as a demonstration that the yield gap between actual and water-limited potential has been closed faster than the climate has dried — but caution that this adaptation has limits, and that continued drying will test them. This adaptation story is the practical payoff of the agronomy, breeding, and precision-agriculture content across the unit.
+    key_concepts:
+      - "Production and WUE have risen despite less rainfall"
+      - "Adaptations: no-till, early/dry sowing, summer weed control"
+      - "Improved varieties and responsive nitrogen management"
+      - "Yield gap closed faster than the climate has dried, but with limits"
+    wiki_query: "growers adapted drier climate no till water use efficiency conservation agriculture"
+
+  - title: "The Future Climate and Its Implications for WA Grain"
+    description: >
+      Close by projecting forward and drawing out the strategic implications for the WA grain industry, connecting to the climate-change scenarios explored with crop models. Summarise the consensus projections for the south-west: continued decline in cool-season rainfall, higher temperatures, more frequent and intense heat extremes during the sensitive flowering and grain-fill period, a shorter effective growing season, and — a partial offset — rising atmospheric CO2 that boosts the water-use efficiency and potential yield of the C3 crops that dominate WA cropping. Explain the net picture that crop-model studies consistently produce: the CO2 fertilisation benefit partially but not fully compensates for the negative effects of warming and drying, with the balance varying greatly year to year, so the dominant consequence is increased variability and risk rather than a simple uniform decline. Draw out the strategic responses the industry is pursuing: continued breeding for heat, drought, and frost tolerance and for phenology matched to the shifting season; further gains in water-use efficiency and moisture conservation; better seasonal forecasting and risk management; and possible shifts in crop mix and the spatial extent of viable cropping. Reinforce the unit's throughline: a drying, more variable, more extreme climate makes the disciplined, systems-based, risk-aware agronomy taught in SCIE3314 more essential than ever to the future of WA grain production.
+    key_concepts:
+      - "Projections: less cool-season rain, more heat extremes"
+      - "CO2 fertilisation partially offsets warming/drying, doesn't erase it"
+      - "Net effect is more variability and risk, not uniform decline"
+      - "Strategic responses: breeding, WUE, forecasting, crop-mix shifts"
+    wiki_query: "future climate projection CO2 heat drought breeding WA grain"
