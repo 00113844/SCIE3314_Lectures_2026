@@ -36,6 +36,12 @@ Each deck starts from the UWA CSS in `data/_uwa-revealjs.css` and receives a mat
 
 Run the small contract suite with `npm test`.
 
+## Landing Page (Online)
+
+The course landing page is published with GitHub Pages from `my-project/index.html` and is available at:
+
+`https://00113844.github.io/SCIE3314_Lectures_2026/`
+
 ## Enhanced YAML Schema (Proposed)
 
 **Status**: Under review (see [`docs/YAML_Structure_Proposal.md`](docs/YAML_Structure_Proposal.md))
