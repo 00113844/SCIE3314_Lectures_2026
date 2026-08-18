@@ -74,7 +74,7 @@ Most of the JPG plates below are reproduced in the source deck from the **DPIRD/
 | `image54.png` | ✓ | N uptake (kg/ha) against growth stage, Foundation / Construction / Production phases. **Northern-hemisphere month axis — read the GS labels, not the months.** |
 | `image52.JPG` | ✓ | Thinner vs thicker canopy: 6.18 t/ha @ 12.0% protein vs 6.20 t/ha @ 10.6% protein. The cleanest illustration of the dilution effect available. |
 | `image45.png` | ✓ | Three barley grains showing a grain-brightness / colour progression |
-| `image25.png` | ✓ | Four-panel barley disease and stress symptom photos |
+| `image25.png` |  | Four-panel barley disease and stress symptom photos. No longer used — superseded on the screenings slide by `screening.jpg`. Kept as a candidate if a disease-symptom slide is ever added. |
 | `image56.png` |  | AHDB wheat growth guide — **thermal time vs growth stage** chart. Stored rotated; superseded by `image56_rotated.png`. |
 | `image57.png` |  | Key management action timings (herbicides, PGRs, fungicides, insecticides, N) against growth stage. Stored rotated; superseded by `image57_rotated.png`. |
 | `image56_rotated.png` | ✓ | **Derived asset.** `image56.png` rotated 90° clockwise into its correct reading orientation and re-rendered at 2× (1604×460). |
@@ -104,8 +104,15 @@ existing assets; one is not:
 - `Fig-L06-Zadoks` → covered by `image56_rotated.png` (the single-figure version, on the
   "whole sequence against thermal time" slide), plus the reference-definition plate
   (`image18`/`image22`/`image30`) and the GS photo plates.
-- **`Fig-L06-WUE`** → **not covered**, and **deliberately left that way.** The French–Schultz
-  plot is still an honest `figure-placeholder` on the water-use-efficiency slide. That slide is
-  peripheral to this lecture's topic — French–Schultz belongs to L01 — and it is now the first
-  item on the cut list in the pacing comment at the top of `../index.html`. Source the figure
-  only if the slide is being kept.
+- `Fig-L06-WUE` → **now covered** by `French_Schultz_Representation.png`. The placeholder has been
+  replaced. Note the slide remains first on the cut list in the pacing comment at the top of
+  `../index.html` — not because the figure was missing, but because French–Schultz is peripheral to
+  this lecture's topic and is taught in L01. Cut the slide if time is short; the figure is there if
+  it is kept.
+
+## Derived and supplied assets not from the source deck
+
+| File | ✓ | Content |
+|---|---|---|
+| `French_Schultz_Representation.png` | ✓ | **Supplied separately.** French–Schultz plot: wheat yield (0–7 t/ha) against growing-season rainfall (0–500 mm), with the water-limited potential boundary rising from an x-intercept at ~100 mm (annotated "evaporation from soil") and paddock points scattered below it. The line's slope reads ≈20 kg/ha/mm, matching the wheat benchmark quoted on the slide. |
+| `screening.jpg` | ✓ | **Supplied separately.** Slotted grading sieves holding wheat, barley and oat samples, with maize on a round-holed screen. Replaced `image25.png` (four-panel disease/stress photos) on the screenings slide — the sieves show the *measurement*, and make the point that the apertures are slots, so what is graded is grain **width**. |
