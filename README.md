@@ -42,6 +42,8 @@ The course landing page is published with GitHub Pages from `my-project/index.ht
 
 `https://00113844.github.io/SCIE3314_Lectures_2026/`
 
+To publish from the deployment workflow, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
+
 ## Enhanced YAML Schema (Proposed)
 
 **Status**: Under review (see [`docs/YAML_Structure_Proposal.md`](docs/YAML_Structure_Proposal.md))
